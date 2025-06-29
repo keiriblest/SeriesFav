@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seriesfav (Lectura)</title>
+  <title>Seriesfav</title>
   <style>
     :root {
       --bg: #f9f9f9;
@@ -25,11 +24,10 @@
       padding: 1rem;
     }
     h1, h2 {
-      margin-top: 1.5rem;
-      text-align: center;
+      margin-top: 2rem;
     }
     .platform {
-      margin: 1rem 0;
+      margin-top: 1.5rem;
       padding: 1rem;
       border-radius: 10px;
       background: var(--card);
@@ -38,7 +36,6 @@
     .category {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -47,7 +44,7 @@
       border: 1px solid var(--secondary);
       padding: 0.5rem;
       border-radius: 8px;
-      width: 140px;
+      width: 150px;
       text-align: center;
       position: relative;
     }
@@ -63,24 +60,21 @@
       font-size: 0.75rem;
       color: var(--secondary);
     }
-    #buscador {
-      margin: 1rem auto;
-      display: block;
-      padding: 0.5rem;
-      width: 90%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
     button.toggle-dark {
-      display: block;
-      margin: 0 auto 1rem;
+      margin-top: 1rem;
       padding: 0.5rem 1rem;
       background: var(--secondary);
       color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+    #buscador {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -112,20 +106,12 @@
   <script>
     const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Cines", "Otras"];
     const secciones = ["vistas", "no-vistas", "proximas"];
-    const datos = JSON.parse(localStorage.getItem("seriesData") || "[]");
+    let datos = JSON.parse(localStorage.getItem("seriesData") || "[]");
 
     function toggleTheme() {
       document.body.classList.toggle("dark");
       const btn = document.querySelector(".toggle-dark");
       btn.textContent = document.body.classList.contains("dark") ? "Modo Claro" : "Modo Oscuro";
-    }
-
-    function filtrarSeries() {
-      const filtro = document.getElementById("buscador").value.toLowerCase();
-      document.querySelectorAll(".item").forEach(item => {
-        const titulo = item.querySelector(".titulo").textContent.toLowerCase();
-        item.style.display = titulo.includes(filtro) ? "block" : "none";
-      });
     }
 
     function agregarItem(titulo, plataforma, seccion, imgURL, descripcion = "", fecha = "") {
@@ -141,6 +127,14 @@
         if (platform.querySelector("h3").textContent === plataforma) {
           platform.querySelector(".category").appendChild(item);
         }
+      });
+    }
+
+    function filtrarSeries() {
+      const filtro = document.getElementById("buscador").value.toLowerCase();
+      document.querySelectorAll(".item").forEach(item => {
+        const titulo = item.querySelector(".titulo").textContent.toLowerCase();
+        item.style.display = titulo.includes(filtro) ? "block" : "none";
       });
     }
 
