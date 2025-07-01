@@ -5,29 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seriesfav</title>
   <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --card: #fff;
+      --secondary: #007bff;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1e1e1e;
+    }
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 2rem;
     }
+    h1, h2, h3 {
+      margin-top: 1.5rem;
+    }
+    .toggle-dark {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #buscador {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
     .platform {
-      margin-top: 2rem;
-      padding: 1rem;
+      margin-top: 1rem;
       border-radius: 10px;
-      background: #fff;
+      background: var(--card);
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .platform h3 {
+      background: var(--secondary);
+      color: white;
+      margin: 0;
+      padding: 0.75rem;
+      cursor: pointer;
     }
     .category {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1rem;
+      padding: 1rem;
     }
     .item {
-      background: #fff;
-      border: 1px solid #007bff;
+      background: var(--card);
+      border: 1px solid var(--secondary);
       padding: 0.5rem;
       border-radius: 8px;
       width: 150px;
@@ -37,19 +74,34 @@
     .item img {
       max-width: 100%;
       border-radius: 4px;
+      cursor: pointer;
     }
     .descripcion-box {
-      margin-top: 0.5rem;
+      display: none;
       font-size: 0.85rem;
+      margin-top: 0.5rem;
     }
     .fecha-estreno {
       font-size: 0.75rem;
-      color: #007bff;
+      color: var(--secondary);
+    }
+    .descripcion-btn {
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      padding: 0.25rem;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      font-size: 0.75rem;
     }
   </style>
 </head>
 <body>
   <h1>Seriesfav</h1>
+  <button class="toggle-dark" onclick="toggleTheme()">Modo Oscuro</button>
+  <input id="buscador" type="text" placeholder="Buscar series por título..." oninput="filtrarSeries()" />
+
   <div id="contenido"></div>
 
   <script>
@@ -464,37 +516,67 @@
   },
 ];
 
-    const contenedor = document.getElementById("contenido");
-    const secciones = ["vistas", "no-vistas", "proximas"];
-    const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Cines", "Otras"];
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".toggle-dark");
+      btn.textContent = document.body.classList.contains("dark") ? "Modo Claro" : "Modo Oscuro";
+    }
 
-    for (let seccion of secciones) {
-      const sec = document.createElement("section");
-      sec.innerHTML = `<h2>${seccion.replace('-', ' ')}</h2>`;
-      for (let plataforma of plataformas) {
-        const platDiv = document.createElement("div");
-        platDiv.className = "platform";
-        platDiv.innerHTML = `<h3>${plataforma}</h3><div class="category" data-plataforma="${plataforma}"></div>`;
-        sec.appendChild(platDiv);
-      }
-      contenedor.appendChild(sec);
+    function togglePlataforma(header) {
+      const category = header.nextElementSibling;
+      category.style.display = category.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function filtrarSeries() {
+      const filtro = document.getElementById("buscador").value.toLowerCase();
+      document.querySelectorAll(".item").forEach(item => {
+        const titulo = item.querySelector(".titulo").textContent.toLowerCase();
+        item.style.display = titulo.includes(filtro) ? "block" : "none";
+      });
     }
 
     function agregarItem(serie) {
       const item = document.createElement("div");
       item.className = "item";
       item.innerHTML = `
-        <img src="${serie.imgURL}" alt="Poster" />
+        <img src="${serie.imgURL}" alt="Poster" onclick="toggleDescripcion(this)" />
         <p class="titulo">${serie.titulo}</p>
         <div class="fecha-estreno">${serie.fecha ? 'Estreno: ' + serie.fecha : ''}</div>
+        <button class="descripcion-btn" onclick="verDescripcion(this)">Descripción</button>
         <div class="descripcion-box">${serie.descripcion}</div>
       `;
-      const section = document.querySelector(`#contenido section:nth-child(${
-        secciones.indexOf(serie.seccion) + 1
-      })`);
+      const section = document.querySelector(`#${serie.seccion}`);
       const platformBox = section.querySelector(`[data-plataforma='${serie.plataforma}']`);
       if (platformBox) platformBox.appendChild(item);
     }
+
+    function toggleDescripcion(img) {
+      const item = img.closest(".item");
+      const box = item.querySelector(".descripcion-box");
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function verDescripcion(btn) {
+      const box = btn.parentElement.querySelector(".descripcion-box");
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+
+    const secciones = ["vistas", "no-vistas", "proximas"];
+    const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Cines", "Otras"];
+
+    const contenedor = document.getElementById("contenido");
+    secciones.forEach(seccion => {
+      const sec = document.createElement("section");
+      sec.id = seccion;
+      sec.innerHTML = `<h2>${seccion.replace('-', ' ')}</h2>`;
+      plataformas.forEach(plataforma => {
+        const platDiv = document.createElement("div");
+        platDiv.className = "platform";
+        platDiv.innerHTML = `<h3 onclick='togglePlataforma(this)'>${plataforma}</h3><div class='category' data-plataforma='${plataforma}'></div>`;
+        sec.appendChild(platDiv);
+      });
+      contenedor.appendChild(sec);
+    });
 
     datos.forEach(agregarItem);
   </script>
