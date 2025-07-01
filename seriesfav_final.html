@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seriesfav</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+    }
+    .platform {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .category {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .item {
+      background: #fff;
+      border: 1px solid #007bff;
+      padding: 0.5rem;
+      border-radius: 8px;
+      width: 150px;
+      text-align: center;
+      position: relative;
+    }
+    .item img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .descripcion-box {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .fecha-estreno {
+      font-size: 0.75rem;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Seriesfav</h1>
+  <div id="contenido"></div>
+
+  <script>
+    let datos = [
+  {
+    titulo: "Dark",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://m.media-amazon.com/images/M/MV5BZTE1YTczZWUtNTI5Ny00NzI0LWFmODctYzZiYzQ3MmRmOWZlXkEyXkFqcGc@._V1_.jpg",
+    descripcion: "es una serie de televisi\u00f3n alemana de ciencia ficci\u00f3n y misterio que trata sobre\u00a0la desaparici\u00f3n de un ni\u00f1o en el pueblo ficticio de Winden, lo que lleva a cuatro familias a descubrir una compleja red de conexiones y secretos que abarcan tres generaciones y viajes en el tiempo",
+    fecha: ""
+  },
+  {
+    titulo: "El Eternauta ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/El_eternauta_Serie_de_TV-564337864-large.jpg",
+    descripcion: "Una noche de verano en Buenos Aires, una misteriosa nevada mortal acaba con la mayor parte de la poblaci\u00f3n y deja aisladas a miles de personas en sus casas. Versi\u00f3n contempor\u00e1nea basada en la novela gr\u00e1fica hom\u00f3nima.",
+    fecha: ""
+  },
+  {
+    titulo: "Pulso",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Pulso_Serie_de_TV-107075411-large.jpg",
+    descripcion: "Un grupo de residentes de Urgencias lidia con sus problemas laborales y personales en el Maguire Medical Center, un hospital de Miami sacudido por una pol\u00e9mica acusaci\u00f3n.",
+    fecha: ""
+  },
+  {
+    titulo: "Devil May Cry",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Devil_May_Cry_Serie_de_TV-846700931-large.jpg",
+    descripcion: "El cazador de demonios a sueldo Dante en su intento de frustrar una invasi\u00f3n demon\u00edaca de la Tierra encabezada por un poderoso demonio conocido como el Conejo Blanco, al tiempo que entra en conflicto con una soldado, Mary.",
+    fecha: ""
+  },
+  {
+    titulo: "Nicky Jam: El Ganador",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Nicky_Jam_El_ganador_Serie_de_TV-128726606-large.jpg",
+    descripcion: "Nicky Jam, estrella de reguet\u00f3n, comparte su lucha para dejar las drogas y su camino al \u00e9xito internacional en esta dramatizaci\u00f3n de su vida.",
+    fecha: ""
+  },
+  {
+    titulo: "Cassandra",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Cassandra_Serie_de_TV-180059494-large.jpg",
+    descripcion: "La casa inteligente m\u00e1s antigua de Alemania despierta despu\u00e9s de d\u00e9cadas a su ayudante IA, Cassandra, cuando una nueva familia se muda a ella. Cassandra, decidida a no volver a ser abandonada, manipula los acontecimientos utilizando los recursos de la casa para convertirse en parte de la familia.",
+    fecha: ""
+  },
+  {
+    titulo: "El agente nocturno ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/El_agente_nocturno_Serie_de_TV-308367960-large.jpg",
+    descripcion: "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la pol\u00edtica en el lugar de trabajo y la carga emocional de tratar a pacientes en estado cr\u00edtico.",
+    fecha: ""
+  },
+  {
+    titulo: "Sakamoto Days",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Sakamoto_Days_Serie_de_TV-186166750-large.jpg",
+    descripcion: "Taro Sakamoto era conocido como el sicario m\u00e1s fuerte, temido por los villanos y un ejemplo a seguir para el resto de sicarios. Sin embargo, un d\u00eda... \u00a1Se enamor\u00f3! Se retir\u00f3, se cas\u00f3, se convirti\u00f3 en padre y... \u00a1Engord\u00f3! Ahora es un hombre regordete que lleva una tienda. Sin embargo, \u00a1su verdadera identidad es la de un asesino legendario! Como padre de una ni\u00f1a, deber\u00e1 proteger a su familia y su vida cotidiana de los inminentes peligros.",
+    fecha: ""
+  },
+  {
+    titulo: "Machos Alfa",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Machos_alfa_Serie_de_TV-396252076-large.jpg",
+    descripcion: "La abolici\u00f3n del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones est\u00e1n perdiendo su trono, privilegios e identidad. A\u00f1os atr\u00e1s habr\u00edan sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
+    fecha: ""
+  },
+  {
+    titulo: "Cyberpunk Edgerunners",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Cyberpunk_Edgerunners_Miniserie_de_TV-911681623-large.jpg",
+    descripcion: "Narra la historia de un chico que malvive en las calles de una ciudad futurista obsesionada con la tecnolog\u00eda y la modificaci\u00f3n corporal. Con todo en su contra, opta por buscarse la vida convirti\u00e9ndose en un \u2018edgerunner\u2019, un mercenario proscrito\u2019. Serie de animaci\u00f3n basada en el videojuego \"Cyberpunk 2077\".",
+    fecha: ""
+  },
+  {
+    titulo: "Arcane League of Legends ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Arcane_League_of_Legends_Serie_de_TV-266443454-large.jpg",
+    descripcion: "Ahonda en el precario equilibrio entre la rica ciudad de Piltover y la s\u00f3rdida y oprimida Zaun. La tensi\u00f3n entre ambas ciudades-estado se exacerba, por un lado, debido a la creaci\u00f3n en Piltover de algo llamado 'Hextech', que permite a cualquiera controlar la energ\u00eda m\u00e1gica, y, por otro, de una nueva droga en Zaun llamada 'Shimmer', que transforma a los humanos en monstruos. La rivalidad entre las dos ciudades divide a las familias y los amigos. 'Arcane' da vida a las relaciones que moldean a algunos de los famosos campeones de \u2018League of Legends\u2019, como Vi, Jinx, Caitlyn, Jayce y Viktor.",
+    fecha: ""
+  },
+  {
+    titulo: "Asalto al Banco Central ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Asalto_al_Banco_Central_Miniserie_de_TV-977152455-large.jpg",
+    descripcion: "Barcelona, 23 de mayo de 1981. Han pasado tres meses exactos desde el intento de golpe de estado en el congreso de los diputados cuando once hombres encapuchados entran en la sede del Banco Central de Barcelona. Lo que comienza como un espectacular atraco pronto se convierte en un verdadero desaf\u00edo para la reciente democracia espa\u00f1ola. Los atracadores tienen m\u00e1s de 200 rehenes en el banco y amenazan con matarles si el gobierno no accede a liberar al coronel Tejero y a otros tres responsables del 23F.",
+    fecha: ""
+  },
+  {
+    titulo: "El abogado del Lincoln",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/the_lincoln_lawyer-712454950-large.jpg",
+    descripcion: "El abogado de Los \u00c1ngeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su pr\u00e1ctica jur\u00eddica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas m\u00e1s vendidas de Michael Connelly.",
+    fecha: ""
+  },
+  {
+    titulo: "The Umbrella Academy ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/the_umbrella_academy-457077469-large.jpg",
+    descripcion: "La vida de los miembros separados de una familia de superh\u00e9roes -Monocle, Spaceboy, Kraken, Rumor, S\u00e9ance, Number Five, Horror y White Violin-, quienes trabajan juntos para resolver la misteriosa muerte de su padre mientras se enfrentan juntos a numerosos conflictos debido a sus muy diferentes personalidades y habilidades.",
+    fecha: ""
+  },
+  {
+    titulo: "Stranger Things ",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/stranger_things-875025085-large.jpg",
+    descripcion: "Homenaje a los cl\u00e1sicos misterios sobrenaturales de los a\u00f1os 80, \"Stranger Things\" es la historia de un ni\u00f1o que desaparece en el peque\u00f1o pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su b\u00fasqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terror\u00edficas y una ni\u00f1a muy, muy rara.",
+    fecha: ""
+  },
+  {
+    titulo: "Scooby Doo Misterios S.A",
+    plataforma: "Netflix",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/scooby_doo_mystery_incorporated-268781594-large.jpg",
+    descripcion: "Un pueblo peque\u00f1o y tranquilo, Gruta de Cristal (tambi\u00e9n conocido como Cueva Cristal), cuenta con una larga historia de avistamientos de fantasmas, duendes, posesi\u00f3n de demonios y otros sucesos paranormales. Este pueblo es el hogar del famoso grupo conocido como \"Misterio a la Orden\", compuesto por los adolescentes Fred Jones, Daphne Blake, Vilma Dinkley, Shaggy Rogers y por supuesto, el gran dan\u00e9s Scooby-Doo, donde ellos viven junto a sus familias. Siendo esta una secuela de la serie original, retrata a la pandilla como se los vi\u00f3 en \u00bfScooby-Doo, D\u00f3nde est\u00e1s?: los chicos son mejores amigos, asisten a la escuela secundaria, y durante el verano y las vacaciones, salen a viajar por todos lados en su camioneta, la M\u00e1quina del Misterio. Adem\u00e1s, en su tiempo libre, van a la fuente de sodas a tomar helados, o a acompa\u00f1ar a su amiga Angel Dynamita mientras conduce su programa en la estaci\u00f3n de radio K-Ghoul. A ellos les encanta resolver misterios, y la ciudad Gruta de Cristal es famosa por su historial de extra\u00f1as desapariciones y ataques de monstruos, por lo cual es una atracci\u00f3n para millones de turistas que la visitan, ansiosos de ser testigos de dichos eventos supernaturales.",
+    fecha: ""
+  },
+  {
+    titulo: "Star Wars Tales of the Underworld ",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://images.justwatch.com/poster/331358057/s718/star-wars-tales-of-the-underworld.jpg",
+    descripcion: "El viaje de dos famosos cazarrecompensas: la exasesina del lado oscuro Asajj Ventress, que recibe una nueva oportunidad en la vida y debe huir con un nuevo e inesperado aliado, y el forajido Cad Bane, que se enfrenta a su pasado cuando se enfrenta a un viejo amigo, ahora alguacil al otro lado de la ley.",
+    fecha: ""
+  },
+  {
+    titulo: "Andor",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Andor_Serie_de_TV-324362036-large.jpg",
+    descripcion: "Ambientada cinco a\u00f1os antes de los eventos de la pel\u00edcula Rogue One,\u200b la serie sigue al esp\u00eda Cassian Andor durante los a\u00f1os de formaci\u00f3n de la Alianza Rebelde.\u200b La serie muestra la transformaci\u00f3n de Andor, un ladr\u00f3n que se convierte en revolucionario y finalmente se une a la Rebeli\u00f3n contra el Imperio Gal\u00e1ctico.",
+    fecha: ""
+  },
+  {
+    titulo: "Tu amigo y vecino Spiderman ",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Tu_amigo_y_vecino_Spider_Man_Serie_de_TV-970131418-large.jpg",
+    descripcion: "Serie de animaci\u00f3n que cuenta c\u00f3mo Peter Parker se convirti\u00f3 en un h\u00e9roe, en una aventura nunca vista cuyo estilo es todo un homenaje a los primeros c\u00f3mics del personaje.",
+    fecha: ""
+  },
+  {
+    titulo: "Star Wars: The Bad Batch",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/star_wars_the_bad_batch-919515341-mmed.jpg",
+    descripcion: "Un \"mala remesa\" de clones experimentales de \u00e9lite intentan abrirse camino a trav\u00e9s de una galaxia en constante evoluci\u00f3n justo cuando se empiezan a experimentar las primeras consecuencias de la Guerra de los Clones.",
+    fecha: ""
+  },
+  {
+    titulo: "The Mandalorian",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/the_mandalorian_3-118237548-mmed.jpg",
+    descripcion: "Ambientada tras la ca\u00edda del Imperio y antes de la aparici\u00f3n de la Primera Orden, la serie sigue los pasos de Mando, un cazarrecompensas perteneciente a la legendaria tribu de los mandalorianos, un pistolero solitario que trabaja en los confines de la galaxia, donde no alcanza la autoridad de la Nueva Rep\u00fablica.",
+    fecha: ""
+  },
+  {
+    titulo: "Star Wars: Rebels",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/star_wars_rebels_steps_into_shadow-278550638-mmed.jpg",
+    descripcion: "La obra se desarrolla en el espacio temporal que va desde Star Wars: Episode III - Revenge of the Sith hasta Star Wars: Episode IV - A New Hope. El canciller supremo Palpatine ha ideado una falsa guerra para aumentar su poder dentro de la Rep\u00fablica gal\u00e1ctica y con ella ha proclamado un Imperio del que \u00e9l es l\u00edder supremo. Para consolidar su nuevo r\u00e9gimen tratar\u00e1 de destruir a la noble Orden Jedi, al tiempo que surge en la sombra un movimiento rebelde.",
+    fecha: ""
+  },
+  {
+    titulo: "Ahsoka",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/ahsoka-572593600-large.jpg",
+    descripcion: "Serie protagonizada por el personaje Ahsoka Tano (Rosario Dawson) y ubicada dentro de la l\u00ednea temporal de \u201cThe Mandalorian\u201d. Ambientada despu\u00e9s de la ca\u00edda del Imperio, la serie sigue al antiguo caballero Jedi mientras investiga una amenaza que se cierne sobre la galaxia.",
+    fecha: ""
+  },
+  {
+    titulo: "El Libro de Boba Fett",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/the_book_of_boba_fett-736176382-large.jpg",
+    descripcion: "Spin-off de \"The Mandalorian\" centrado en el cazarecompensas Boba Fett y su lugarteniente Fennec Shand, que vuelven al planeta Tatooine lidiando con el inframundo gal\u00e1ctico para reclamar el territorio que en su d\u00eda gobern\u00f3 Jabba el Hutt.",
+    fecha: ""
+  },
+  {
+    titulo: "How to get away with murder ",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/how_to_get_away_with_murder-762981521-large.jpg",
+    descripcion: "Trata sobre un grupo de ambiciosos estudiantes de Derecho y su brillante y misteriosa profesora de defensa criminal. Estos j\u00f3venes se ver\u00e1n envueltos en un complot de asesinato que cambiar\u00e1 el curso de sus vidas.",
+    fecha: ""
+  },
+  {
+    titulo: "Shogun",
+    plataforma: "Disney Plus",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/shogun-329020163-large.jpg",
+    descripcion: "Ambientada en el Jap\u00f3n del siglo XVII, lord Yoshii Toranaga lucha por su vida mientras que sus enemigos en el Consejo de regentes se al\u00edan contra \u00e9l cuando un misterioso barco europeo aparece abandonado cerca de un pueblo pesquero.",
+    fecha: ""
+  },
+  {
+    titulo: "Stick",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://m.media-amazon.com/images/M/MV5BOTQyYjE2NjgtMTA1OC00YWQwLWE0NDUtMDg2MGFiNGQ0ZDJkXkEyXkFqcGc@._V1_.jpg",
+    descripcion: "Es una nueva serie de comedia sobre el golf creada por Jason Keller y protagonizada y producida por Owen Wilson. Wilson da vida a Pryce Cahill, un ex golfista profesional cuya carrera se vino abajo de forma prematura hace 20 a\u00f1os. Tras el fracaso de su matrimonio y de perder su empleo en una tienda de deportes de Indiana, Pryce decide apostar todo su futuro por un joven y atribulado talento del golf de 17 a\u00f1os llamado Santi (Peter Dager). \u00abStick\u00bb es una comedia con los sentimientos a flor de piel que trata de una forma \u00fanica las relaciones de una familia encontrada dentro del mundillo del golf.",
+    fecha: ""
+  },
+  {
+    titulo: "Severance",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://m.media-amazon.com/images/I/71ex5dOVfWL._UF894,1000_QL80_.jpg",
+    descripcion: "Mark Scout lidera un equipo en Lumon Industries, cuyos empleados se han sometido a un procedimiento de despido, que implica la divisi\u00f3n quir\u00fargica de sus recuerdos entre el trabajo y la vida personal.",
+    fecha: ""
+  },
+  {
+    titulo: "Murderbot",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/murderbot-487787608-large.jpg",
+    descripcion: "En un futuro tecnol\u00f3gico, un robot de seguridad rebelde consigue en secreto voluntad propia. Para no llamar la atenci\u00f3n, se une a rega\u00f1adientes a una nueva misi\u00f3n. Debe proteger a unos cient\u00edficos en un planeta peligroso... aunque solo quiere ver culebrones.",
+    fecha: ""
+  },
+  {
+    titulo: "KRANK: Berl\u00edn al l\u00edmite ",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/KRANK_Berlain_al_laimite_Serie_de_TV-251935233-large.jpg",
+    descripcion: "Despu\u00e9s de que su vida personal se haya desmoronado, una joven doctora que quiere empezar de cero toma el mando de las Urgencias del hospital m\u00e1s duro y ca\u00f3tico de Berl\u00edn. Luchando contra la resistencia del personal y un sistema desmantelado, debe unirse a su equipo de rebeldes para salvar vidas.",
+    fecha: ""
+  },
+  {
+    titulo: "Materia Oscura",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Materia_oscura_Serie_de_TV-192577821-large.jpg",
+    descripcion: "El f\u00edsico Jason Dessen acaba en una versi\u00f3n alternativa de su vida tras construir una m\u00e1quina que ofrece ir a vidas alternativas a la de uno mismo. Para volver con su vida original, Jason se embarcar\u00e1 en un tortuoso viaje para intentar salvar a su familia del enemigo m\u00e1s aterrador.",
+    fecha: ""
+  },
+  {
+    titulo: "Smoke",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Smoke_Serie_de_TV-518265181-large.jpg",
+    descripcion: "Inspirada en hechos reales, cuenta la historia de una detective atormentada y un enigm\u00e1tico investigador de incendios provocados que siguen la pista de dos pir\u00f3manos en serie.",
+    fecha: ""
+  },
+  {
+    titulo: "Silo",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Silo_Serie_de_TV-338930565-large.jpg",
+    descripcion: "En un futuro t\u00f3xico y en ruinas, existe una comunidad en un gigantesco silo subterr\u00e1neo que se hunde a cientos de pisos de profundidad. All\u00ed, la gente vive en una sociedad llena de normas que creen destinadas a protegerles.",
+    fecha: ""
+  },
+  {
+    titulo: "Bad Monkey",
+    plataforma: "Apple TV",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/bad_monkey-862554487-mmed.jpg",
+    descripcion: "Un detective convertido en inspector de restaurantes en el sur de Florida se ve arrastrado a un mundo de codicia y corrupci\u00f3n cuando un turista encuentra un brazo amputado mientras pescaba. Y s\u00ed, hay un mono.",
+    fecha: ""
+  },
+  {
+    titulo: "Rick and Morty",
+    plataforma: "HBO Max",
+    seccion: "vistas",
+    imgURL: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10376284_b_v13_ac.jpg",
+    descripcion: "Una serie animada que sigue las haza\u00f1as de un s\u00faper cient\u00edfico y su no tan brillante nieto.",
+    fecha: ""
+  },
+  {
+    titulo: "Efectos Secundarios",
+    plataforma: "HBO Max",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Efectos_secundarios_Serie_de_TV-774719749-large.jpg",
+    descripcion: "Marshall y Frances, excompa\u00f1eros de laboratorio, revelan una conspiraci\u00f3n en la que est\u00e1n implicadas las grandes farmac\u00e9uticas y el gobierno para extraer un hongo que podr\u00eda contener la soluci\u00f3n para curar todas las enfermedades del mundo.",
+    fecha: ""
+  },
+  {
+    titulo: "From",
+    plataforma: "HBO Max",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/From_Serie_de_TV-265636059-large.jpg",
+    descripcion: "El misterio de un pueblo de pesadilla en el centro de Am\u00e9rica, que atrapa a todos los que entran. Sus habitantes luchan por mantener una apariencia de normalidad, pero tambi\u00e9n deben lidiar con las amenazas del bosque circundante; incluidas las aterradoras criaturas que salen cuando se pone el sol.",
+    fecha: ""
+  },
+  {
+    titulo: "The Pitt",
+    plataforma: "HBO Max",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/The_Pitt_Serie_de_TV-462642330-large.jpg",
+    descripcion: "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la pol\u00edtica en el lugar de trabajo y la carga emocional de tratar a pacientes en estado cr\u00edtico.",
+    fecha: ""
+  },
+  {
+    titulo: "Reacher",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Reacher_Serie_de_TV-132974734-large.jpg",
+    descripcion: "Cuando lo arrestan por un asesinato que no cometi\u00f3, el oficial retirado de la polic\u00eda militar Jack Reacher se ve envuelto en una conspiraci\u00f3n letal de polic\u00edas corruptos, empresarios turbios y pol\u00edticos intrigantes. Solo con su ingenio, debe descubrir qu\u00e9 est\u00e1 sucediendo en Margrave, Georgia. La primera temporada de \"Reacher\" se basa en la exitosa novela \"Zona peligrosa\" de Lee Child.",
+    fecha: ""
+  },
+  {
+    titulo: "Invincible",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Invencible_Serie_de_TV-966285668-large.jpg",
+    descripcion: "Cuando Mark Grayson hereda superpoderes con 17 a\u00f1os, se convierte en uno de los superh\u00e9roes m\u00e1s grandes de la Tierra, junto con su padre. Todos sus sue\u00f1os anhelados desde que era ni\u00f1o se hacen realidad... hasta que sucede algo que lo cambia todo.",
+    fecha: ""
+  },
+  {
+    titulo: "Jackal",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Chacal_Serie_de_TV-156253143-large.jpg",
+    descripcion: "El Chacal, un escurridizo y solitario asesino sin rival, se gana la vida trabajando para el mejor postor. Sin embargo, tras su \u00faltimo asesinato, su camino se cruza con el de una tenaz agente de inteligencia brit\u00e1nica del MI6, que empieza a seguirle la pista en una incansable persecuci\u00f3n a trav\u00e9s de Europa, dejando un rastro de destrucci\u00f3n a su paso.",
+    fecha: ""
+  },
+  {
+    titulo: "Fallout",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Fallout_Serie_de_TV-905335408-large.jpg",
+    descripcion: "Basado en una de las sagas de videojuegos m\u00e1s importantes de todos los tiempos, es la historia de los que tienen y de los que no tienen en un mundo en el que pr\u00e1cticamente no queda nada que tener. 200 a\u00f1os despu\u00e9s del apocalipsis, los apacibles habitantes de los refugios de lujo se ven obligados a regresar al infierno irradiado que dejaron sus antepasados y se sorprenden al descubrir que les espera un universo incre\u00edblemente complejo, alegremente extra\u00f1o y muy violento.",
+    fecha: ""
+  },
+  {
+    titulo: "Cross",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Cross_Serie_de_TV-139324483-large.jpg",
+    descripcion: "Alex Cross es un detective y psic\u00f3logo forense, capaz de indagar en las mentes de los asesinos y sus v\u00edctimas, para intentar identificar y capturar a los culpables. Serie basada en las novelas de James Paterson.",
+    fecha: ""
+  },
+  {
+    titulo: "CITADEL: Diana",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/Citadel_Diana_Serie_de_TV-291950713-large.jpg",
+    descripcion: "Mil\u00e1n, 2030: Diana Cavalieri es una agente doble del sindicato secreto Citadel, infiltrada en Manticore, la agencia rival que destruy\u00f3 Citadel ocho a\u00f1os antes. Atrapada en el frente enemigo, Diana podr\u00eda abandonar para siempre la agencia, pero debe decidir si conf\u00eda en un inesperado aliado: el heredero de Manticore Italia, Edo Zani.",
+    fecha: ""
+  },
+  {
+    titulo: "Devils",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/devils-392272613-large.jpg",
+    descripcion: "Ambientada en Londres durante la crisis europea, Devils contar\u00e1 c\u00f3mo el director general de un gran banco estadounidense (Patrick Dempsey), da la bienvenida a un despiadado comerciante italiano (Alessandro Borghi). Cuando el italiano termine envuelto en una guerra financiera intercontinental que sacude Europa, tendr\u00e1 que elegir entre aliarse con su mentor o enfrentarse a \u00e9l.",
+    fecha: ""
+  },
+  {
+    titulo: "Dexter: Pecado original",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/dexter_original_sin-441120993-large.jpg",
+    descripcion: "Ambientada en Miami en 1991, 15 a\u00f1os antes de los eventos de la serie original, la precuela sigue a Dexter mientras pasa de estudiante a vengativo asesino en serie. Con ayuda de su padre, adoptar\u00e1 un c\u00f3digo pensado para encontrar y matar a aquellos que merecen ser eliminados de la sociedad, sin llamar la atenci\u00f3n",
+    fecha: ""
+  },
+  {
+    titulo: "Chucky",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/chucky-744354766-large.jpg",
+    descripcion: "Despu\u00e9s de que un mu\u00f1eco vintage de Chucky aparece en una venta de patio suburbana, una ciudad estadounidense se ve sumida en el caos, luego de que una serie de cr\u00edmenes horribles comienzan a exponer las hipocres\u00edas y los secretos de la ciudad.",
+    fecha: ""
+  },
+  {
+    titulo: "Teacup",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/teacup-824971681-large.jpg",
+    descripcion: "Un variopinto grupo de personas de la Georgia rural deben unirse ante una misteriosa amenaza para sobrevivir. A medida que van descubriendo la verdad sobre varios sucesos inexplicables, deber\u00e1n hacer frente a problemas del pasado y resentimientos mutuos, vi\u00e9ndose forzados a aceptar la dura realidad y unirse por el bien de su localidad, o todos ellos acabar\u00e1n aniquilados.",
+    fecha: ""
+  },
+  {
+    titulo: "Bel Air",
+    plataforma: "Prime",
+    seccion: "vistas",
+    imgURL: "https://pics.filmaffinity.com/bel_air-172333464-large.jpg",
+    descripcion: "El viaje de un adolescente cuya vida se transforma para siempre cuando se muda de las calles del oeste de Filadelfia a vivir con sus familiares en uno de los suburbios m\u00e1s ricos de Los \u00c1ngeles.",
+    fecha: ""
+  },
+  {
+    titulo: "Star Wars: The Clone Wars",
+    plataforma: "Disney Plus",
+    seccion: "no-vistas",
+    imgURL: "https://pics.filmaffinity.com/star_wars_the_clone_wars-575954204-large.jpg",
+    descripcion: "Nueva entrega de la saga gal\u00e1ctica pero esta vez realizada con animaci\u00f3n 3D. Cada vez m\u00e1s Sistemas caen bajo el poder del Lado Oscuro. Anakin Skywalker y su Padawan Ahsoka Tano son enviados a una peligrosa misi\u00f3n. El Conde Dooku y sus siniestros agentes intentar\u00e1n detenerlos.",
+    fecha: ""
+  },
+  {
+    titulo: "Succecion",
+    plataforma: "HBO Max",
+    seccion: "no-vistas",
+    imgURL: "https://pics.filmaffinity.com/succession-557515294-large.jpg",
+    descripcion: "Serie que sigue a la disfuncional familia del magnate Logan Roy y sus cuatro hijos, que controlan una de las empresas de medios de comunicaci\u00f3n y entretenimiento m\u00e1s importantes del mundo. Los problemas llegan cuando se plantea qui\u00e9n ser\u00e1 el sucesor del patriarca.",
+    fecha: ""
+  },
+];
+
+    const contenedor = document.getElementById("contenido");
+    const secciones = ["vistas", "no-vistas", "proximas"];
+    const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Cines", "Otras"];
+
+    for (let seccion of secciones) {
+      const sec = document.createElement("section");
+      sec.innerHTML = `<h2>${seccion.replace('-', ' ')}</h2>`;
+      for (let plataforma of plataformas) {
+        const platDiv = document.createElement("div");
+        platDiv.className = "platform";
+        platDiv.innerHTML = `<h3>${plataforma}</h3><div class="category" data-plataforma="${plataforma}"></div>`;
+        sec.appendChild(platDiv);
+      }
+      contenedor.appendChild(sec);
+    }
+
+    function agregarItem(serie) {
+      const item = document.createElement("div");
+      item.className = "item";
+      item.innerHTML = `
+        <img src="${serie.imgURL}" alt="Poster" />
+        <p class="titulo">${serie.titulo}</p>
+        <div class="fecha-estreno">${serie.fecha ? 'Estreno: ' + serie.fecha : ''}</div>
+        <div class="descripcion-box">${serie.descripcion}</div>
+      `;
+      const section = document.querySelector(`#contenido section:nth-child(${
+        secciones.indexOf(serie.seccion) + 1
+      })`);
+      const platformBox = section.querySelector(`[data-plataforma='${serie.plataforma}']`);
+      if (platformBox) platformBox.appendChild(item);
+    }
+
+    datos.forEach(agregarItem);
+  </script>
+</body>
+</html>
