@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,6 +54,26 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    .actions {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 0.5rem;
+      border-radius: 6px;
+      z-index: 10;
+    }
+    .actions button {
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      padding: 0.3rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
     .descripcion-box {
       margin-top: 0.5rem;
       font-size: 0.85rem;
@@ -71,6 +92,20 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    form {
+      margin-top: 2rem;
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form select, form textarea {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
     #buscador {
       margin: 2rem 0 1rem;
       padding: 0.5rem;
@@ -85,6 +120,28 @@
   <button class="toggle-dark" onclick="toggleTheme()">Modo Oscuro</button>
   <input id="buscador" type="text" placeholder="Buscar series por título..." oninput="filtrarSeries()" />
 
+  <form id="add-form">
+    <input type="text" id="titulo" placeholder="Título" required />
+    <input type="url" id="imagen" placeholder="URL de imagen" required />
+    <textarea id="descripcion" placeholder="Descripción"></textarea>
+    <select id="plataforma">
+      <option>Netflix</option>
+      <option>Disney Plus</option>
+      <option>Apple TV</option>
+      <option>HBO Max</option>
+      <option>Prime</option>
+      <option>Cines</option>
+      <option>Otras</option>
+    </select>
+    <select id="seccion" onchange="mostrarFechaCampo()">
+      <option value="vistas">Vistas</option>
+      <option value="no-vistas">No Vistas</option>
+      <option value="proximas">Próximas</option>
+    </select>
+    <input type="text" id="fecha" placeholder="Día y mes (solo para próximas)" style="display: none;" />
+    <button type="submit">Añadir</button>
+  </form>
+
   <section id="vistas"><h2>Vistas</h2></section>
   <section id="no-vistas"><h2>No Vistas</h2></section>
   <section id="proximas"><h2>Próximas Estrenos del Mes</h2></section>
@@ -98,34 +155,23 @@
 
   <template id="item-template">
     <div class="item">
-      <img src="" alt="Poster" onclick="toggleDescripcionImg(this)" />
+      <img src="" alt="Poster" onclick="toggleActions(this)" />
       <p class="titulo"></p>
       <div class="fecha-estreno"></div>
       <div class="descripcion-box"></div>
+      <div class="actions"></div>
     </div>
   </template>
 
   <script>
     const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Cines", "Otras"];
     const secciones = ["vistas", "no-vistas", "proximas"];
-    let datos = [
-      {
-        titulo: "Ejemplo 1",
-        plataforma: "Netflix",
-        seccion: "vistas",
-        imgURL: "img/ejemplo1.jpg",
-        descripcion: "Descripción de Ejemplo 1",
-        fecha: "5 julio"
-      },
-      {
-        titulo: "Ejemplo 2",
-        plataforma: "Disney Plus",
-        seccion: "proximas",
-        imgURL: "img/ejemplo2.jpg",
-        descripcion: "Descripción de Ejemplo 2",
-        fecha: "10 julio"
-      }
-    ];
+    let datos = JSON.parse(localStorage.getItem("seriesData") || "[]");
+
+    function mostrarFechaCampo() {
+      const seccion = document.getElementById("seccion").value;
+      document.getElementById("fecha").style.display = seccion === "proximas" ? 'block' : 'none';
+    }
 
     function toggleTheme() {
       document.body.classList.toggle("dark");
@@ -133,9 +179,50 @@
       btn.textContent = document.body.classList.contains("dark") ? "Modo Claro" : "Modo Oscuro";
     }
 
-    function toggleDescripcionImg(img) {
-      const box = img.closest(".item").querySelector(".descripcion-box");
+    function toggleActions(img) {
+      const item = img.closest(".item");
+      const box = item.querySelector(".actions");
+      box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function crearBotones(seccion, item) {
+      const cont = document.createElement("div");
+      cont.className = "actions";
+
+      if (seccion !== "vistas") cont.innerHTML += `<button onclick="mover(this, 'vistas')">→ Vistas</button>`;
+      if (seccion !== "no-vistas") cont.innerHTML += `<button onclick="mover(this, 'no-vistas')">→ No Vistas</button>`;
+      if (seccion !== "proximas") cont.innerHTML += `<button onclick="mover(this, 'proximas')">→ Próximas</button>`;
+
+      cont.innerHTML += `<button onclick="toggleDescripcion(this)">Ver descripción</button>`;
+      cont.innerHTML += `<button onclick="editar(this)">Editar</button>`;
+      cont.innerHTML += `<button onclick="eliminar(this)">Eliminar</button>`;
+      return cont;
+    }
+
+    function toggleDescripcion(btn) {
+      const box = btn.closest(".item").querySelector(".descripcion-box");
       box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function editar(btn) {
+      const item = btn.closest(".item");
+      const titulo = item.querySelector(".titulo").textContent;
+      const imgURL = item.querySelector("img").src;
+      const descripcion = item.querySelector(".descripcion-box").textContent;
+      const fecha = item.querySelector(".fecha-estreno").textContent.replace("Estreno: ", "");
+      const plataforma = item.closest(".platform").querySelector("h3").textContent;
+      const seccion = item.closest("section").id;
+
+      document.getElementById("titulo").value = titulo;
+      document.getElementById("imagen").value = imgURL;
+      document.getElementById("descripcion").value = descripcion;
+      document.getElementById("plataforma").value = plataforma;
+      document.getElementById("seccion").value = seccion;
+      document.getElementById("fecha").value = fecha;
+      mostrarFechaCampo();
+
+      item.remove();
+      guardarDatos();
     }
 
     function agregarItem(titulo, plataforma, seccion, imgURL, descripcion = "", fecha = "") {
@@ -145,6 +232,7 @@
       item.querySelector("img").src = imgURL;
       item.querySelector(".descripcion-box").textContent = descripcion;
       if (fecha) item.querySelector(".fecha-estreno").textContent = `Estreno: ${fecha}`;
+      item.querySelector(".actions").replaceWith(crearBotones(seccion, item));
 
       const contenedores = document.querySelectorAll(`#${seccion} .platform`);
       contenedores.forEach(platform => {
@@ -152,6 +240,54 @@
           platform.querySelector(".category").appendChild(item);
         }
       });
+    }
+
+    function mover(btn, destino) {
+      const item = btn.closest(".item");
+      const plataforma = item.closest(".platform").querySelector("h3").textContent;
+      const titulo = item.querySelector(".titulo").textContent;
+      const imgURL = item.querySelector("img").src;
+      const descripcion = item.querySelector(".descripcion-box").textContent;
+      const fecha = item.querySelector(".fecha-estreno").textContent.replace("Estreno: ", "");
+      item.remove();
+      agregarItem(titulo, plataforma, destino, imgURL, descripcion, destino === "proximas" ? fecha : "");
+      guardarDatos();
+    }
+
+    function eliminar(btn) {
+      btn.closest(".item").remove();
+      guardarDatos();
+    }
+
+    document.getElementById("add-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const titulo = document.getElementById("titulo").value;
+      const imgURL = document.getElementById("imagen").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const plataforma = document.getElementById("plataforma").value;
+      const seccion = document.getElementById("seccion").value;
+      const fecha = document.getElementById("fecha").value;
+      agregarItem(titulo, plataforma, seccion, imgURL, descripcion, seccion === "proximas" ? fecha : "");
+      guardarDatos();
+      e.target.reset();
+      mostrarFechaCampo();
+    });
+
+    function guardarDatos() {
+      const items = [];
+      document.querySelectorAll(".item").forEach(item => {
+        const plataforma = item.closest(".platform").querySelector("h3").textContent;
+        const seccion = item.closest("section").id;
+        items.push({
+          titulo: item.querySelector(".titulo").textContent,
+          plataforma,
+          seccion,
+          imgURL: item.querySelector("img").src,
+          descripcion: item.querySelector(".descripcion-box").textContent,
+          fecha: item.querySelector(".fecha-estreno").textContent.replace('Estreno: ', '')
+        });
+      });
+      localStorage.setItem("seriesData", JSON.stringify(items));
     }
 
     function filtrarSeries() {
