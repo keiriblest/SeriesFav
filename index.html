@@ -4,98 +4,171 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seriesfav</title>
-  <style>
-    :root {
-      --bg: #f9f9f9;
-      --text: #333;
-      --card: #fff;
-      --secondary: #007bff;
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #eee;
-      --card: #1e1e1e;
-    }
-    body {
-      font-family: sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 2rem;
-    }
-    h1, h2, h3 {
-      margin-top: 1.5rem;
-    }
-    .toggle-dark {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: var(--secondary);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #buscador {
-      margin: 1rem 0;
-      padding: 0.5rem;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .platform {
-      margin-top: 1rem;
-      border-radius: 10px;
-      background: var(--card);
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .platform h3 {
-      background: var(--secondary);
-      color: white;
-      margin: 0;
-      padding: 0.75rem;
-      cursor: pointer;
-    }
-    .category {
-      display: none;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .item {
-      background: var(--card);
-      border: 1px solid var(--secondary);
-      padding: 0.5rem;
-      border-radius: 8px;
-      width: 150px;
-      text-align: center;
-      position: relative;
-    }
-    .item img {
-      max-width: 100%;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .descripcion-box {
-      display: none;
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
-    }
-    .fecha-estreno {
-      font-size: 0.75rem;
-      color: var(--secondary);
-    }
-    .descripcion-btn {
-      background: var(--secondary);
-      color: #fff;
-      border: none;
-      padding: 0.25rem;
-      border-radius: 5px;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      font-size: 0.75rem;
-    }
-  </style>
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root{
+  --bg:#f9fafb;
+  --text:#111827;
+  --card:#ffffff;
+  --secondary:#4a90e2;
+  --border:#e5e7eb;
+  --radius:16px;
+  --transition:.3s ease;
+}
+
+body.dark{
+  --bg:#0b0b0b;
+  --text:#e5e7eb;
+  --card:#151515;
+  --border:#2a2a2a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:clamp(1rem,2vw + 1rem,2.5rem);
+  transition:background var(--transition),color var(--transition);
+}
+
+h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
+
+.toggle-dark{
+  background:var(--secondary);
+  color:#fff;
+  border:0;
+  padding:.6rem 1rem;
+  border-radius:var(--radius);
+  cursor:pointer;
+  transition:background var(--transition),transform var(--transition);
+}
+.toggle-dark:hover{background:#357acc;transform:translateY(-1px)}
+
+#buscador{
+  display:block;
+  margin:1rem auto;
+  padding:.85rem 1rem;
+  width:100%;
+  max-width:1200px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:var(--card);
+  color:var(--text);
+  transition:box-shadow var(--transition),border-color var(--transition);
+}
+#buscador:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 4px rgba(74,144,226,.15)}
+
+#contenido{max-width:1200px;margin:0 auto}
+
+.platform{
+  margin-top:1.5rem;
+  border-radius:var(--radius);
+  background:var(--card);
+  border:1px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,.04);
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.platform:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+
+.platform h3{
+  background:var(--secondary);
+  color:#fff;
+  margin:0;
+  padding:1rem;
+  cursor:pointer;
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  letter-spacing:.2px;
+  transition:background var(--transition);
+}
+.platform h3:hover{background:#357acc}
+
+.category{
+  /* IMPORTANT: keep flex so existing JS that sets display:flex still works */
+  display:none;
+  padding:1rem;
+  gap:1rem;
+  flex-wrap:wrap;
+  align-items:stretch;
+  animation:fadeIn .25s ease;
+}
+
+/* Responsive cards using flexbox */
+.item {
+  flex: 1 1 clamp(140px, 22vw, 220px);
+  max-width: clamp(140px, 22vw, 220px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:#d7dbe0}
+
+/* Uniform posters without distortion */
+.item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border: 0;
+}
+
+/* Content spacing inside cards (applies to existing elements) */
+.item *:not(img){
+  padding-left:.75rem;
+  padding-right:.75rem;
+}
+
+.descripcion-box{
+  display:none;
+  font-size:.9rem;
+  line-height:1.4;
+  margin:.35rem 0 .6rem;
+  padding-left:.75rem;
+  padding-right:.75rem;
+}
+
+.fecha-estreno{
+  font-size:.8rem;
+  color:var(--secondary);
+  padding-top:.25rem;
+  padding-bottom:.25rem;
+}
+
+.descripcion-btn{
+  background:var(--secondary);
+  color:#fff;
+  border:none;
+  padding:.45rem .7rem;
+  border-radius:8px;
+  margin:.5rem .75rem .9rem;
+  cursor:pointer;
+  font-size:.8rem;
+  transition:background var(--transition),transform var(--transition);
+}
+.descripcion-btn:hover{background:#357acc;transform:translateY(-1px)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+
 </head>
 <body>
   <h1>Seriesfav</h1>
