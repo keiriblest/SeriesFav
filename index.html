@@ -120,8 +120,9 @@ h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
 /* Uniform posters without distortion */
 .item img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
   display: block;
   border: 0;
 }
@@ -167,6 +168,61 @@ h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
 }
+
+/* Animated gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(-45deg, #e66465, #9198e5, #4a90e2, #2b5876);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: bgAnimation 20s ease infinite;
+  opacity: 0.2;
+}
+
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Modal for description */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card);
+  color: var(--text);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  display: none;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+}
+
+.modal-overlay.active {
+  display: block;
+}
+
 </style>
 
 </head>
@@ -176,6 +232,10 @@ h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
   <input id="buscador" type="text" placeholder="Buscar series por título..." oninput="filtrarSeries()" />
 
   <div id="contenido"></div>
+
+<div class="modal-overlay" onclick="closeModal()"></div>
+<div class="modal" id="descripcionModal"></div>
+
 
   <script>
     let datos = [
@@ -1116,6 +1176,49 @@ h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
     });
 
     datos.forEach(agregarItem);
-  </script>
+  
+function mostrarDescripcion(button) {
+  const item = button.closest('.item');
+  const title = item.querySelector('img').alt || item.querySelector('img').title || 'Descripción';
+  const description = item.dataset.descripcion || 'Sin descripción';
+  const modal = document.getElementById('descripcionModal');
+  const overlay = document.querySelector('.modal-overlay');
+  modal.innerHTML = `<h2>${title}</h2><p>${description}</p>`;
+  modal.classList.add('active');
+  overlay.classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('descripcionModal').classList.remove('active');
+  document.querySelector('.modal-overlay').classList.remove('active');
+}
+
+
+function openModal(descripcion) {
+  const modal = document.getElementById('descripcionModal');
+  const overlay = document.querySelector('.modal-overlay');
+
+  modal.innerHTML = `
+    <button onclick="closeModal()" style="
+      position:absolute;
+      top:10px; right:10px;
+      background:#e53e3e;
+      color:#fff;
+      border:none;
+      padding:0.4rem 0.6rem;
+      border-radius:8px;
+      cursor:pointer;">Cerrar</button>
+    <p>${descripcion}</p>
+  `;
+  modal.classList.add('active');
+  overlay.classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('descripcionModal').classList.remove('active');
+  document.querySelector('.modal-overlay').classList.remove('active');
+}
+
+</script>
 </body>
 </html>
