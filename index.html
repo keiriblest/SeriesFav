@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seriesfav</title>
-  
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seriesfav - Mejorado</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-:root{
+:root {
   --bg:#f9fafb;
   --text:#111827;
   --card:#ffffff;
@@ -18,7 +18,15 @@
   --transition:.3s ease;
 }
 
-body.dark{
+
+body.dark {
+  --bg: linear-gradient(180deg,#0b0b0b,#1a1a1a);
+  --text:#e5e7eb;
+  --card:#151515;
+  --border:#2a2a2a;
+}
+
+body.dark {
   --bg:#0b0b0b;
   --text:#e5e7eb;
   --card:#151515;
@@ -26,19 +34,30 @@ body.dark{
 }
 
 *{box-sizing:border-box}
-
-body{
+body {
   font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
   margin:0;
-  padding:clamp(1rem,2vw + 1rem,2.5rem);
+  padding-top:80px; /* espacio para barra fija */
   transition:background var(--transition),color var(--transition);
 }
+h1 {margin:0;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
 
-h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
-
-.toggle-dark{
+/* Barra fija */
+.top-bar {
+  position:fixed;
+  top:0;left:0;right:0;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  padding:.5rem 1rem;
+  z-index:100;
+}
+.toggle-dark {
   background:var(--secondary);
   color:#fff;
   border:0;
@@ -49,196 +68,384 @@ h1{margin:0 0 1rem;font-size:clamp(1.5rem,1rem + 2.5vw,2.25rem);font-weight:600}
 }
 .toggle-dark:hover{background:#357acc;transform:translateY(-1px)}
 
-#buscador{
-  display:block;
-  margin:1rem auto;
-  padding:.85rem 1rem;
-  width:100%;
-  max-width:1200px;
-  border:1px solid var(--border);
+#buscador {
+  flex: 1 1 250px;
+  max-width: 400px;
+  padding: .65rem 2.5rem .65rem 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: .95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%236b7280' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.8rem center;
+  background-size: 18px;
+}
+
+select {
+  margin-left:.5rem;
+  padding:.5rem;
   border-radius:var(--radius);
-  background:var(--card);
+  border:1px solid var(--border);
+  background:var(--bg);
   color:var(--text);
-  transition:box-shadow var(--transition),border-color var(--transition);
-}
-#buscador:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 4px rgba(74,144,226,.15)}
-
-#contenido{max-width:1200px;margin:0 auto}
-
-.platform{
-  margin-top:1.5rem;
-  border-radius:var(--radius);
-  background:var(--card);
-  border:1px solid var(--border);
-  overflow:hidden;
-  box-shadow:0 1px 4px rgba(0,0,0,.04);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.platform:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
-
-.platform h3{
-  background:var(--secondary);
-  color:#fff;
-  margin:0;
-  padding:1rem;
-  cursor:pointer;
-  font-size:1rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  letter-spacing:.2px;
-  transition:background var(--transition);
-}
-.platform h3:hover{background:#357acc}
-
-.category{
-  /* IMPORTANT: keep flex so existing JS that sets display:flex still works */
-  display:none;
-  padding:1rem;
-  gap:1rem;
-  flex-wrap:wrap;
-  align-items:stretch;
-  animation:fadeIn .25s ease;
 }
 
-/* Responsive cards using flexbox */
+/* Contenido */
+#contenido {
+  max-width: 1400px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+@media (min-width: 600px) {
+  #contenido { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1024px) {
+  #contenido { grid-template-columns: repeat(6, 1fr); }
+}
+
 .item {
-  flex: 1 1 clamp(140px, 22vw, 220px);
-  max-width: clamp(140px, 22vw, 220px);
+  flex:1 1 clamp(160px, 20vw, 220px);
+  max-width: clamp(160px, 20vw, 220px);
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  text-align: left;
-  transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position:relative;
 }
-.item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:#d7dbe0}
-
-/* Uniform posters without distortion */
-.item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 2 / 3;
-  object-fit: contain;
-  display: block;
-  border: 0;
+.item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.item img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.badge {
+  position:absolute;top:8px;left:8px;
+  background:var(--secondary);color:#fff;
+  padding:2px 6px;font-size:.7rem;
+  border-radius:6px;
 }
+.item h4{margin:.5rem;font-size:1rem}
+.fecha-estreno{font-size:.8rem;color:var(--secondary);margin:.2rem .5rem}
+.descripcion-btn{margin:.5rem;background:var(--secondary);color:#fff;border:none;padding:.4rem;border-radius:8px;cursor:pointer}
 
-/* Content spacing inside cards (applies to existing elements) */
-.item *:not(img){
-  padding-left:.75rem;
-  padding-right:.75rem;
-}
-
-.descripcion-box{
-  display:none;
-  font-size:.9rem;
-  line-height:1.4;
-  margin:.35rem 0 .6rem;
-  padding-left:.75rem;
-  padding-right:.75rem;
-}
-
-.fecha-estreno{
-  font-size:.8rem;
-  color:var(--secondary);
-  padding-top:.25rem;
-  padding-bottom:.25rem;
-}
-
-.descripcion-btn{
-  background:var(--secondary);
-  color:#fff;
-  border:none;
-  padding:.45rem .7rem;
-  border-radius:8px;
-  margin:.5rem .75rem .9rem;
-  cursor:pointer;
-  font-size:.8rem;
-  transition:background var(--transition),transform var(--transition);
-}
-.descripcion-btn:hover{background:#357acc;transform:translateY(-1px)}
-
-@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-
-/* Respect user's reduced motion preference */
-@media (prefers-reduced-motion:reduce){
-  *{animation:none !important;transition:none !important}
-}
-
-/* Animated gradient background */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(-45deg, #e66465, #9198e5, #4a90e2, #2b5876);
-  background-size: 600% 600%;
-  z-index: -1;
-  animation: bgAnimation 20s ease infinite;
-  opacity: 0.2;
-}
-
-@keyframes bgAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Modal for description */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--card);
-  color: var(--text);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  z-index: 1000;
-  max-width: 90%;
-  max-height: 80%;
-  overflow-y: auto;
-  display: none;
-}
-
-.modal.active {
-  display: block;
-}
-
+/* Modal */
 .modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
-  display: none;
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.3);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:1000;
+}
+.modal {
+  background:var(--card);color:var(--text);
+  border-radius:var(--radius);max-width:600px;width:90%;
+  padding:1rem;max-height:90vh;overflow-y:auto;position:relative;
+}
+.modal img{width:100%;border-radius:var(--radius)}
+.modal h2{margin-top:.5rem}
+.modal p{line-height:1.4}
+.modal-close {
+  position:absolute;top:8px;right:8px;background:var(--secondary);color:#fff;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;
+}
+.modal-nav {
+  display:flex;justify-content:space-between;margin-top:1rem;
 }
 
-.modal-overlay.active {
-  display: block;
+.item img {
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
+}
+.item img.loading {
+  background: linear-gradient(90deg,#e5e7eb 25%,#f3f4f6 50%,#e5e7eb 75%);
+  background-size:200% 100%;
+  animation:skeleton 1.2s infinite;
+}
+@keyframes skeleton {
+  0% {background-position:200% 0;}
+  100% {background-position:-200% 0;}
 }
 
+
+.item h4{margin:.5rem;font-size:1.1rem;font-weight:600}
+.fecha-estreno{font-size:.85rem;color:var(--secondary);margin:.2rem .5rem}
+.item .descripcion-btn{font-size:.85rem}
+.descripcion-texto{font-size:.9rem;color:#6b7280}
+
+
+
+
+button, .descripcion-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: #fff;
+  border: none;
+  padding: .55rem 1.3rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all .25s ease;
+}
+button svg, .descripcion-btn svg {
+  width: 18px;
+  height: 18px;
+}
+button:hover, .descripcion-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+button:active {
+  transform: translateY(0) scale(.96);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+}
+button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+
+
+
+button, .descripcion-btn {
+  background: var(--secondary);
+  color: #fff;
+  border: none;
+  padding: .55rem 1.2rem;
+  border-radius: 9999px; /* estilo pill */
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 500;
+  letter-spacing: .3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+button:hover, .descripcion-btn:hover {
+  background:#357acc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+
+
+
+/* Botón de cambio de tema */
+.toggle-dark {
+  background: transparent !important;
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: .4rem .6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.toggle-dark:hover {
+  border-color: var(--secondary);
+  transform: scale(1.1);
+}
+.toggle-dark:active {
+  background: transparent !important;
+}
+
+
+/* Botones del modal minimalistas */
+.modal-close, 
+.modal-nav button {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+  background: transparent;
+  border: none;
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.modal-close:hover, 
+.modal-nav button:hover {
+  color: var(--secondary);
+  background: rgba(0,0,0,0.05);
+  transform: scale(1.15);
+}
+
+.modal-close:hover, 
+.modal-nav button:hover {
+  border-color: var(--secondary);
+  background: rgba(0,0,0,0.06);
+  transform: scale(1.05);
+}
+
+
+
+</style>
+<style>
+/* === Overrides para compactar la barra y controles === */
+.top-bar { padding: .2rem .5rem !important; gap: .35rem !important; }
+.top-bar h1 { font-size: 1rem !important; margin: 0 .4rem 0 0 !important; }
+
+#buscador {
+  flex: 1 1 250px;
+  max-width: 400px;
+  padding: .65rem 2.5rem .65rem 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: .95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%236b7280' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.8rem center;
+  background-size: 18px;
+}
+
+.top-bar select { font-size: .8rem !important; padding: .25rem .45rem !important; }
+.toggle-dark { font-size: .8rem !important; padding: .3rem .5rem !important; }
+/* Reducir separación inferior total para que se vean las primeras carátulas */
+#contenido { margin-top: 64px !important; } /* por si la barra quedó más baja */
+</style><style>
+/* En el modal, solo mostramos fecha para 'Próximas'. Por defecto, ocultamos nodos genericos de fecha */
+.modal [class*="fecha"] { display: none; }
+</style>
+<style>
+.modal-close, .modal-nav button {
+  border: 2px solid var(--border);
+}
+
+body.dark .modal-close, 
+body.dark .modal-nav button {
+  border: 2px solid #e5e7eb; /* borde claro en modo oscuro */
+}
+</style>
+
+
+<style>
+.modal-close svg, .modal-nav button svg {
+  width: 36px !important;
+  height: 36px !important;
+}
+</style>
+
+
+<style>
+.modal-close, .modal-nav button {
+  width: 56px !important;
+  height: 56px !important;
+}
+
+.modal-close svg, .modal-nav button svg {
+  width: 42px !important;
+  height: 42px !important;
+  stroke-width: 2.5; /* un poco más anchos */
+}
 </style>
 
 </head>
 <body>
-  <h1>Seriesfav</h1>
-  <button class="toggle-dark" onclick="toggleTheme()">Modo Oscuro</button>
-  <input id="buscador" type="text" placeholder="Buscar series por título..." oninput="filtrarSeries()" />
+<div class="top-bar">
+<h1>Seriesfav</h1>
+<input id="buscador" oninput="filtrarSeries()" placeholder="Buscar..." type="text"/>
+<select id="filtro-seccion" onchange="filtrarSeries()">
+<option value="">Todas las secciones</option>
+<option value="vistas">Vistas</option>
+<option value="no-vistas">No vistas</option>
+<option value="proximas">Próximas</option>
+</select>
+<select id="filtro-plataforma" onchange="filtrarSeries()">
+<option value="">Todas las plataformas</option>
+<option>Netflix</option>
+<option>Disney Plus</option>
+<option>Apple TV</option>
+<option>HBO Max</option>
+<option>Prime</option>
+<option>Pelis</option>
+<option>Otras</option>
+</select>
 
-  <div id="contenido"></div>
+<button class="toggle-dark" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+  <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+  </svg>
+  <svg id="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+    <circle cx="12" cy="12" r="5"/>
+    <g stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="1" x2="12" y2="4"/>
+      <line x1="12" y1="20" x2="12" y2="23"/>
+      <line x1="1" y1="12" x2="4" y2="12"/>
+      <line x1="20" y1="12" x2="23" y2="12"/>
+      <line x1="4.2" y1="4.2" x2="6.4" y2="6.4"/>
+      <line x1="17.6" y1="17.6" x2="19.8" y2="19.8"/>
+      <line x1="4.2" y1="19.8" x2="6.4" y2="17.6"/>
+      <line x1="17.6" y1="6.4" x2="19.8" y2="4.2"/>
+    </g>
+  </svg>
+</button>
+    
+</div>
+<div id="contenido"></div>
+<div class="modal-overlay" id="overlay">
+<div class="modal" id="modal">
 
-<div class="modal-overlay" onclick="closeModal()"></div>
-<div class="modal" id="descripcionModal"></div>
+    <button class="modal-close" onclick="cerrarModal()" aria-label="Cerrar">
+      <svg width="24" height="24" viewBox="0 0 24 24" 
+        fill="none" stroke="currentColor" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div id="modal-content"></div>
+    <div class="modal-nav">
+      <button onclick="navegarModal(-1)" aria-label="Anterior">
+        <svg width="28" height="28" viewBox="0 0 24 24" 
+          fill="none" stroke="currentColor" stroke-width="2" 
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <button onclick="navegarModal(1)" aria-label="Siguiente">
+        <svg width="28" height="28" viewBox="0 0 24 24" 
+          fill="none" stroke="currentColor" stroke-width="2" 
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
 
+</div>
+</div>
+<script>
 
-  <script>
-    let datos = [
+let datos = [
   {
     "titulo": "Pulso",
     "plataforma": "Netflix",
@@ -1111,114 +1318,136 @@ body::before {
     "descripcion": "Cuatro años después de enfrentarse involuntariamente a la mafia rusa, Hutch sigue manteniendo con la organización criminal una deuda de 30 millones de dólares que trata de saldar poco a poco con una serie interminable de golpes contra matones internacionales. Pese a disfrutar como siempre de la faceta más trepidante y física de su «trabajo», Hutch y su esposa Becca se sienten agotados y distanciados. Para intentar remediarlo, deciden llevarse a sus hijos de escapada al mismo lugar al que Hutch iba de vacaciones con su hermano Harry cuando eran pequeños. Acompañados del padre de Hutch, la familia llega a la pequeña localidad turística de Plummerville con ganas de disfrutar de un merecido y soleado descanso. Pero cuando un encuentro fortuito con una panda de indeseables de la zona pone a la familia en el punto de mira de un mandamás corrupto del parque temático local y de su turbio sheriff, Hutch se convertirá en el objetivo de la líder criminal más sanguinaria y perturbada que él (o cualquiera) haya conocido.",
     "fecha": "14/8"
   }
-];
+]
 
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-      const btn = document.querySelector(".toggle-dark");
-      btn.textContent = document.body.classList.contains("dark") ? "Modo Claro" : "Modo Oscuro";
-    }
 
-    function togglePlataforma(header) {
-      const category = header.nextElementSibling;
-      category.style.display = category.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function filtrarSeries() {
-      const filtro = document.getElementById("buscador").value.toLowerCase();
-      document.querySelectorAll(".item").forEach(item => {
-        const titulo = item.querySelector(".titulo").textContent.toLowerCase();
-        item.style.display = titulo.includes(filtro) ? "block" : "none";
-      });
-    }
-
-    function agregarItem(serie) {
-      const item = document.createElement("div");
-      item.className = "item";
-      item.innerHTML = `
-        <img src="${serie.imgURL}" alt="Poster" onclick="toggleDescripcion(this)" />
-        <p class="titulo">${serie.titulo}</p>
-        <div class="fecha-estreno">${serie.fecha ? 'Estreno: ' + serie.fecha : ''}</div>
-        <button class="descripcion-btn" onclick="verDescripcion(this)">Descripción</button>
-        <div class="descripcion-box">${serie.descripcion}</div>
-      `;
-      const section = document.querySelector(`#${serie.seccion}`);
-      const platformBox = section.querySelector(`[data-plataforma='${serie.plataforma}']`);
-      if (platformBox) platformBox.appendChild(item);
-    }
-
-    function toggleDescripcion(img) {
-      const item = img.closest(".item");
-      const box = item.querySelector(".descripcion-box");
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function verDescripcion(btn) {
-      const box = btn.parentElement.querySelector(".descripcion-box");
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
-    }
-
-    const secciones = ["vistas", "no-vistas", "proximas"];
-    const plataformas = ["Netflix", "Disney Plus", "Apple TV", "HBO Max", "Prime", "Pelis", "Otras"];
-
-    const contenedor = document.getElementById("contenido");
-    secciones.forEach(seccion => {
-      const sec = document.createElement("section");
-      sec.id = seccion;
-      sec.innerHTML = `<h2>${seccion.replace('-', ' ')}</h2>`;
-      plataformas.forEach(plataforma => {
-        const platDiv = document.createElement("div");
-        platDiv.className = "platform";
-        platDiv.innerHTML = `<h3 onclick='togglePlataforma(this)'>${plataforma}</h3><div class='category' data-plataforma='${plataforma}'></div>`;
-        sec.appendChild(platDiv);
-      });
-      contenedor.appendChild(sec);
-    });
-
-    datos.forEach(agregarItem);
-  
-function mostrarDescripcion(button) {
-  const item = button.closest('.item');
-  const title = item.querySelector('img').alt || item.querySelector('img').title || 'Descripción';
-  const description = item.dataset.descripcion || 'Sin descripción';
-  const modal = document.getElementById('descripcionModal');
-  const overlay = document.querySelector('.modal-overlay');
-  modal.innerHTML = `<h2>${title}</h2><p>${description}</p>`;
-  modal.classList.add('active');
-  overlay.classList.add('active');
+// Tema
+function toggleTheme() {
+  document.body.classList.toggle('dark');
 }
 
-function closeModal() {
-  document.getElementById('descripcionModal').classList.remove('active');
-  document.querySelector('.modal-overlay').classList.remove('active');
+let indiceModal = 0;
+function renderSeries(lista) {
+  const cont = document.getElementById('contenido');
+  cont.innerHTML = '';
+  lista.forEach((serie,i)=>{
+    const card = document.createElement('div');
+    card.className = 'item';
+    if(serie.seccion) {
+      const badge = document.createElement('div');
+      badge.className = 'badge';
+      badge.textContent = serie.seccion;
+      card.appendChild(badge);
+    }
+    const img = document.createElement('img');
+    img.src = serie.imgURL;
+    img.alt = serie.titulo;
+    card.appendChild(img);
+    const title = document.createElement('h4');
+    title.textContent = serie.titulo;
+    card.appendChild(title);
+    if(serie.seccion === 'proximas' && serie.fecha) {
+      const fecha = document.createElement('div');
+      fecha.className = 'fecha-estreno';
+      fecha.textContent = serie.fecha;
+      card.appendChild(fecha);
+    }
+    const btn = document.createElement('button');
+    btn.className = 'descripcion-btn';
+    btn.textContent = 'Ver más';
+    btn.onclick = ()=>abrirModal(i, lista);
+    card.appendChild(btn);
+    cont.appendChild(card);
+  });
 }
 
+function filtrarSeries() {
+  const busqueda = document.getElementById('buscador').value.toLowerCase();
+  const seccion = document.getElementById('filtro-seccion').value;
+  const plataforma = document.getElementById('filtro-plataforma').value;
+  const filtradas = datos.filter(s=>{
+    return (!busqueda || s.titulo.toLowerCase().includes(busqueda))
+      && (!seccion || s.seccion===seccion)
+      && (!plataforma || s.plataforma===plataforma);
+  });
+  renderSeries(filtradas);
+}
 
-function openModal(descripcion) {
-  const modal = document.getElementById('descripcionModal');
-  const overlay = document.querySelector('.modal-overlay');
-
-  modal.innerHTML = `
-    <button onclick="closeModal()" style="
-      position:absolute;
-      top:10px; right:10px;
-      background:#e53e3e;
-      color:#fff;
-      border:none;
-      padding:0.4rem 0.6rem;
-      border-radius:8px;
-      cursor:pointer;">Cerrar</button>
-    <p>${descripcion}</p>
+function abrirModal(index, lista) {
+  indiceModal = index;
+  window.listaActual = lista;
+  const serie = lista[index];
+  const fechaHTML = (serie.seccion === 'proximas' && serie.fecha)
+    ? `<p><strong>Fecha:</strong> ${serie.fecha}</p>`
+    : '';
+  document.getElementById('modal-content').innerHTML = `
+    <img src="${serie.imgURL}" alt="${serie.titulo}" / loading="lazy">
+    <h2>${serie.titulo}</h2>
+    <p><strong>Plataforma:</strong> ${serie.plataforma}</p>
+    ${fechaHTML}
+    <p>${serie.descripcion}</p>
   `;
-  modal.classList.add('active');
-  overlay.classList.add('active');
+  document.getElementById('overlay').style.display='flex';
+  ocultarFechaModalSiNoProximas();
 }
 
-function closeModal() {
-  document.getElementById('descripcionModal').classList.remove('active');
-  document.querySelector('.modal-overlay').classList.remove('active');
+
+function ocultarFechaModalSiNoProximas() {
+  try {
+    const contenido = document.getElementById('modal-content');
+    const texto = contenido?.textContent?.toLowerCase() || '';
+    // si no aparece "próximas" o "proximas" en el bloque, aseguramos que no haya nodos "Fecha:" residuales
+    if (!texto.includes('próximas') && !texto.includes('proximas')) {
+      [...contenido.querySelectorAll('*')].forEach(el=>{
+        const t = (el.textContent||'').toLowerCase();
+        if (t.startsWith('fecha:') || el.className?.toLowerCase?.().includes('fecha')) {
+          el.remove();
+        }
+      });
+    }
+  } catch(e){}
+}
+
+function cerrarModal() {
+  document.getElementById('overlay').style.display='none';
+}
+
+function navegarModal(dir) {
+  indiceModal += dir;
+  if(indiceModal<0) indiceModal = window.listaActual.length-1;
+  if(indiceModal>=window.listaActual.length) indiceModal=0;
+  abrirModal(indiceModal, window.listaActual);
+}
+
+// Inicializar
+renderSeries(datos);
+
+// Aplicar skeleton mientras cargan imágenes
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".item img").forEach(img => {
+    img.classList.add("loading");
+    img.addEventListener("load", () => img.classList.remove("loading"));
+  });
+});
+
+
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+  const btn = document.getElementById("theme-toggle");
+  if (document.body.classList.contains("dark")) {
+    btn.textContent = "☀️";
+  } else {
+    btn.textContent = "🌙";
+  }
 }
 
 </script>
 </body>
 </html>
+
+<style>
+.modal-close svg, .modal-nav button svg {
+  width: 32px;
+  height: 32px;
+}
+</style>
