@@ -2055,7 +2055,14 @@
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "21/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9s6h7u"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9s6h7u",
+    "descargas": [
+      {
+        "temporada": "Peli",
+        "capitulo": "",
+        "url": "https://drive.google.com/file/d/1_m2mDrMp24WZ0Zx2aS5LARb5BodYaQev/view"
+      }
+    ]
   },
   {
     "titulo": "Sisu 2",
