@@ -120,6 +120,39 @@
             justify-content: center; 
         }
 
+        /* Estilos para el contenedor de imagen en el Modal */
+        .modal-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .modal-image-blur {
+            position: absolute;
+            inset: -20px;
+            background-size: cover;
+            background-position: center;
+            filter: blur(25px) brightness(0.4);
+            z-index: 1;
+        }
+
+        .modal-image-main {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Asegura que se vea completa sin cortarse */
+            padding: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .modal-image-main {
+                padding: 10px;
+            }
+        }
+
         .promo-widget { 
             width: 100%; 
             max-width: 260px;
@@ -135,7 +168,6 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* Estilos personalizados de scrollbar */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
     </style>
@@ -155,7 +187,6 @@
         </div>
         
         <nav class="flex flex-col gap-2 w-full px-4">
-            <!-- Secciones (Visibles solo en escritorio dentro del sidebar o móviles en el panel lateral) -->
             <div class="hidden lg:block space-y-2">
                 <div onclick="cambiarSeccion('series')" id="btn-series-side" class="nav-link active flex items-center gap-4 p-3 text-white">
                     <i class="fas fa-tv text-xl w-6 text-center"></i>
@@ -171,7 +202,6 @@
                 </div>
             </div>
 
-            <!-- Filtros -->
             <div class="filter-group mt-6 space-y-6">
                 <div class="px-2">
                     <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-3 block">Filtrar por Estado</label>
@@ -249,18 +279,18 @@
     <!-- Modal Unificado -->
     <div id="modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 lg:p-6 bg-black/98 backdrop-blur-2xl overflow-y-auto" onclick="if(event.target === this) cerrarModal()">
         
-        <!-- Botón Cerrar Móvil -->
         <button onclick="cerrarModal()" class="fixed top-4 right-4 text-white bg-white/10 w-10 h-10 rounded-full flex items-center justify-center z-[210] lg:hidden">
             <i class="fas fa-times"></i>
         </button>
 
-        <!-- Contenedor del Modal -->
         <div id="modal-content-wrapper" class="bg-[#111] max-w-4xl w-full rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10 flex flex-col md:grid md:grid-cols-[1.5fr_2fr] shadow-2xl relative animate-in fade-in zoom-in duration-300">
-            <!-- Imagen/Poster -->
-            <div id="m-img" class="bg-black flex items-center justify-center h-[40vh] md:h-auto overflow-hidden"></div>
+            <!-- Imagen/Poster con efectos de adaptación -->
+            <div id="m-img" class="bg-black relative h-[45vh] md:h-full min-h-[300px] overflow-hidden">
+                <!-- Se poblará dinámicamente con la doble imagen -->
+            </div>
             
             <!-- Info -->
-            <div id="m-info-panel" class="p-6 lg:p-10 flex flex-col justify-center">
+            <div id="m-info-panel" class="p-6 lg:p-10 flex flex-col justify-center bg-[#111]">
                 <div class="flex items-center gap-3 mb-2">
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
                     <span id="m-release-date" class="hidden font-medium text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300"></span>
@@ -443,12 +473,9 @@
 
         function cambiarSeccion(nuevaSeccion) {
             seccionActual = nuevaSeccion;
-            
-            // Actualizar UI Escritorio
             ['series', 'peliculas', 'favoritos'].forEach(l => {
                 const sideBtn = document.getElementById(`btn-${l}-side`);
                 const botBtn = document.getElementById(`btn-${l}-bot`);
-                
                 if (l === nuevaSeccion) {
                     sideBtn.classList.add('active', 'text-white');
                     botBtn.classList.add('text-red-600');
@@ -459,14 +486,10 @@
                     botBtn.classList.add('text-gray-500');
                 }
             });
-
-            // Titulos Dinámicos
             const titles = { 'series': 'Catálogo de Series', 'peliculas': 'Cine y Películas', 'favoritos': 'Mi Lista Personal' };
             const subtitles = { 'series': 'Explora tus series favoritas.', 'peliculas': 'Los mejores estrenos en un solo lugar.', 'favoritos': 'Contenido que guardaste para ver después.' };
-            
             document.getElementById('main-title').innerText = titles[nuevaSeccion];
             document.getElementById('main-subtitle').innerText = subtitles[nuevaSeccion];
-
             filtrar();
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
@@ -501,7 +524,14 @@
             
             document.getElementById('m-title').innerText = s.titulo;
             document.getElementById('m-desc').innerText = s.descripcion;
-            document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="w-full h-full object-cover md:object-contain">`;
+            
+            // Lógica de imagen mejorada con fondo desenfocado
+            document.getElementById('m-img').innerHTML = `
+                <div class="modal-image-container">
+                    <div class="modal-image-blur" style="background-image: url('${s.imgURL}')"></div>
+                    <img src="${s.imgURL}" class="modal-image-main" alt="${s.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=SeriesFav'">
+                </div>
+            `;
             
             document.getElementById('m-trailer-btn').onclick = () => reproducirTrailerJSON(s);
             
@@ -528,9 +558,7 @@
             const controls = document.getElementById('dl-controls');
             selector.classList.remove('hidden');
             selector.classList.add('flex');
-
             const esPeliODescargaPeli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
-
             if (esPeliODescargaPeli) {
                 controls.innerHTML = `<p class="text-gray-400 text-sm text-center">Enlace directo disponible para esta película.</p>`;
                 document.getElementById('dl-confirm-btn').onclick = () => {
@@ -540,7 +568,6 @@
                 };
             } else {
                 const temps = [...new Set(s.descargas.map(d => d.temporada))].sort();
-                
                 let html = `<div>
                     <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Temporada</label>
                     <select id="sel-temp" class="sidebar-select">
@@ -551,20 +578,16 @@
                     <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Capítulo</label>
                     <select id="sel-cap" class="sidebar-select"></select>
                 </div>`;
-                
                 controls.innerHTML = html;
                 const selTemp = document.getElementById('sel-temp');
                 const selCap = document.getElementById('sel-cap');
-
                 const actualizarCapitulos = () => {
                     const tempElegida = selTemp.value;
                     const caps = s.descargas.filter(d => d.temporada === tempElegida);
                     selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
                 };
-
                 selTemp.onchange = actualizarCapitulos;
                 actualizarCapitulos();
-
                 document.getElementById('dl-confirm-btn').onclick = () => {
                     const url = selCap.value;
                     if (url) window.open(url, '_blank');
@@ -584,13 +607,11 @@
             const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
             const videoTitleLabel = document.getElementById('video-title');
-
             modalContent.classList.add('hidden');
             videoPanel.classList.remove('hidden');
             iframe.classList.add('hidden');
             loader.classList.remove('hidden');
             videoTitleLabel.innerText = s.titulo;
-
             if (s.trailerURL && s.trailerURL.trim() !== "") {
                 iframe.src = s.trailerURL;
                 iframe.classList.remove('hidden');
