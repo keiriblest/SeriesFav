@@ -2025,7 +2025,44 @@
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "27/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
+    "descargas": [
+      {
+        "temporada": "T5",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1HFze2I5rMs-Wtjs-4v6607i6MFH7-RfI/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1izZHgbaF7Ld7LxG5GG_I4B0bfn4yrBXp/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1fc1PnqlROHdUiITQ019-EZcjE9zcQxDI/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1_BB1V4AlANujqjVKvlf841i6JF9y1jp0/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1k_gtKsLDIWTdsKS62YQ4JBNbtDj4GQkj/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1VPw6Nty0jxYmIudvCsaGBm_FfGvuMopu/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1qVk6MmbEnCVQBOiH0rP4PsL4xCiRHjy5/view"
+      }
+    ]
   },
   {
     "titulo": "The Manipulated",
