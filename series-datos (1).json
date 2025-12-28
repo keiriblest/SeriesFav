@@ -711,7 +711,104 @@
     "plataforma": "Apple TV",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x87z7jr"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x87z7jr",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1w1RadmUlZo5Ncx5838Smx6thm06IrxGg/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1ZQBZRJzyTnNg8YzqczlnIIDt8fyVFwJs/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1ruwvp0jxlukDzaNHPAli8FzPXNsU32VQ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/17dylUzB0WeOZh7_Dk-GrvRbSJOmr2-Hz/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1UJP2o8_at2Br0fx-_eprCYtyfRtZxBVc/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1_InB94QbTV1DrQHO_zasEXFTQhET70fN/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1yZmslwAdUNP8iqI909vqjR_MYWBuKVZW/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1GxCTMMcA1Uc2IsA5bgsUY-ilTJ4kev2R/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://drive.google.com/file/d/1BQ8QFpHcObXHsJysx2F40dEq5VIifUZV/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1548Q-b1MGtQEeGAeKcjDDDj3GjvzmRVU/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1Q8a-KQJTDelfAB3owkiTb9IQlIcM9D8n/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1iHnDHiT8quhPSjt351Ma9nA9CEWmTayX/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1HNYuBEo6j5PuYxX0x9-dXYgsrDzKvUAi/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1vnAXrPIwpOSPJCtsSU74Ht_Amk_r0ekd/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1vnLrxKwRCN7Cxb5dArCadbZhTIC9PITH/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/17tlOFQRmdihLmK-t1XJXZM1UuzTu5TET/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1YzcvGA6HcFrS_o_y8Zy8XDb2fwuEYKdd/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://drive.google.com/file/d/1ZiRvPWdRE3rX7clJbH4eB7UL1kG72PYk/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://drive.google.com/file/d/1R4Sd_WeQDQVu8PtuhBpuDZZXdn0Zp6TK/view"
+      }
+    ]
   },
   {
     "titulo": "Silo",
