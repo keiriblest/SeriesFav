@@ -905,7 +905,14 @@
     "plataforma": "Apple TV",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9qssse"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qssse",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1Fv7rCwfxrOhIC5_iTNjXErLu37T8OvTN/view"
+      }
+    ]
   },
   {
     "titulo": "Rick and Morty",
@@ -2633,52 +2640,57 @@
     "imgURL": "https://pics.filmaffinity.com/playing_gracie_darling-310067168-large.jpg",
     "descripcion": "El Juego de Grace Darling\nHace años, su mejor amiga de la infancia desapareció en una sesión de espiritismo a los 14 años. Ahora, con 27, esta psicóloga debe enfrentarse a su tormentoso pasado cuando se esfuma otra chica.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "1/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9uv8og"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9uv8og",
+    "descargas": []
   },
   {
     "titulo": "Los Abandonados",
     "imgURL": "https://pics.filmaffinity.com/the_abandons-631588627-large.jpg",
     "descripcion": "Un grupo de familias diversas y atípicas viven plácidamente del trabajo de sus tierras pero su tranquilidad está a punto de ser perturbada. Una fuerza económica y gran de poder totalmente corrupta codicia ese territorio de por lo que se dispone a expulsar a esos clanes de su hogar. Pero entonces los hombres y mujeres implicados se ven obligados a perseguir su Destino Manifiesto y quizá no le guste el resultado. Reorganizados en una especie de tribu común estarán dispuestos a buscar justicia para recuperar sus casas y bienes, incluso aunque para ello actúen al margen de la ley.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "4/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9t97rs"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9t97rs",
+    "descargas": []
   },
   {
     "titulo": "Record of Ragnarok",
     "imgURL": "https://pics.filmaffinity.com/shumatsu_no_valkyrie-425323219-large.jpg",
     "descripcion": "Cada mil años, los dioses del mundo se reúnen en el cielo para decidir el destino de la humanidad. En esta ocasión, los dioses deciden que la humanidad ha de llegar a su fin debido a su actos del pasado, pero la hermana mayor de las Valkirias, Brunhilda, propone que los dioses y los humanos luchen en el \"Rargnarok\", celebrando combates uno contra uno entre 13 dioses y 13 de los más poderosos guerreros humanos, y quien consiga siete victorias, será el ganador.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "10/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9tlhzw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tlhzw",
+    "descargas": []
   },
   {
     "titulo": "El Hombre Contra El Bebe",
     "imgURL": "https://pics.filmaffinity.com/man_vs_baby-985111369-large.jpg",
     "descripcion": "Tras una desastrosa experiencia al cuidar una mansión de alta tecnología obstaculizada por un inconveniente insecto, Trevor Bingley se encuentra ahora cuidando un lujoso ático en Londres, con una compañía que no había pedido.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "11/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9tjng4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tjng4",
+    "descargas": []
   },
   {
     "titulo": "Tomb Raider: La Leyenda de Lara Croft",
     "imgURL": "https://pics.filmaffinity.com/tomb_raider_the_legend_of_lara_croft-941097057-large.jpg",
     "descripcion": "Más de 25 años después de su primera aparición, Lara Croft sigue explorando misterios ancestrales y descubriendo verdades perdidas en destinos impresionantes y peligrosos.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "11/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9u1684"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9u1684",
+    "descargas": []
   },
   {
     "titulo": "Ciudad de Sombras",
     "imgURL": "https://pics.filmaffinity.com/ciudad_de_sombras-714457722-large.jpg",
     "descripcion": "Un macabro crimen ha ocurrido en La Pedrera - Casa Milà: un cuerpo quemado ha aparecido en la fachada del emblemático edificio de Gaudí. El inspector Milo Malart (Isak Férriz), hasta ahora suspendido por indisciplina en los Mossos, regresa a la actividad en la ciudad condal para, de la mano de la subinspectora Rebeca Garrido (Verónica Echegui), tratar de dar con el autor del crimen.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "12/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tvn5c",
     "descargas": [
@@ -2719,43 +2731,47 @@
     "imgURL": "https://pics.filmaffinity.com/emily_in_paris-798819903-large.jpg",
     "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "18/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9uz9zq"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9uz9zq",
+    "descargas": []
   },
   {
     "titulo": "Innato",
     "imgURL": "https://pics.filmaffinity.com/innato-256004460-large.jpg",
     "descripcion": "Sara es una psicóloga que ha dejado atrás un traumático pasado como hija de Félix Garay, un asesino múltiple bautizado en su momento por la prensa como “el asesino del gasoil”. Hoy, la vida idílica que Sara ha construido, junto a su marido Aitor y su hijo adolescente Sebas, se tambalea cuando Félix es liberado de prisión, coincidiendo con una nueva ola de crímenes que parecen replicar los asesinatos perpetrados 25 años atrás. Tras haber ocultado su pasado a su familia durante años, Sara ahora debe colaborar con la policía para resolver los nuevos casos.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "23/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9u3uts"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9u3uts",
+    "descargas": []
   },
   {
     "titulo": "Trol 2",
     "imgURL": "https://pics.filmaffinity.com/troll2-304164799-large.jpg",
     "descripcion": "Nora, Andreas y el capitán Kris vuelven a la carga cuando un nuevo troll despierta de su letargo. Esta vez, necesitarán más ayuda para vencerlo.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "1/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9shd8c"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9shd8c",
+    "descargas": []
   },
   {
     "titulo": "Jay Kelly",
     "imgURL": "https://pics.filmaffinity.com/jay_kelly-162482612-large.jpg",
     "descripcion": "Jay Kelly es una gran estrella de cine que a sus sesenta años se encuentra en crisis vital y que, ante el homenaje que le va a brindar un importante festival de cine, tendrá que enfrentarse a un ajuste de cuentas personal volviendo a entrar en contacto con todos aquellos que han formado parte de su vida. Y es que todo el mundo conoce a Jay Kelly, pero Jay Kelly no se conoce a sí mismo.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "5/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9s7joi"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9s7joi",
+    "descargas": []
   },
   {
     "titulo": "Puñales por la espalda: De entre los muertos",
     "imgURL": "https://pics.filmaffinity.com/wake_up_dead_man_a_knives_out_mystery-211944387-large.jpg",
     "descripcion": "El detective Benoit Blanc se une a un joven y honesto sacerdote para investigar un crimen totalmente imposible en la iglesia de un pequeño pueblo con una oscura historia. Tercera entrega de la saga \"Puñales por la espalda\"",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "10/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9u7p8a",
     "descargas": [
@@ -2771,25 +2787,27 @@
     "imgURL": "https://pics.filmaffinity.com/daehongsu-874844104-large.jpg",
     "descripcion": "En el que podría ser el último día de la Tierra, una lucha a vida o muerte en un piso inundado se convierte en la única esperanza de supervivencia de la humanidad.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "19/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9uhjpa"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9uhjpa",
+    "descargas": []
   },
   {
     "titulo": "La Familia McMullen",
     "imgURL": "https://pics.filmaffinity.com/the_family_mcmullen-395367951-large.jpg",
     "descripcion": "Una familia unida enfrenta los altibajos de la vida mientras lidian con desafíos personales y relaciones cambiantes. Sus lazos se ponen a prueba, revelando lo complejo del amor y la lealtad familiar.",
     "plataforma": "HBO Max",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "5/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9rjzi4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rjzi4",
+    "descargas": []
   },
   {
     "titulo": "Fallout",
     "imgURL": "https://pics.filmaffinity.com/fallout-801397409-large.jpg",
     "descripcion": "Basado en una de las sagas de videojuegos más importantes de todos los tiempos, es la historia de los que tienen y de los que no tienen en un mundo en el que prácticamente no queda nada que tener. 200 años después del apocalipsis, los apacibles habitantes de los refugios de lujo se ven obligados a regresar al infierno irradiado que dejaron sus antepasados y se sorprenden al descubrir que les espera un universo increíblemente complejo, alegremente extraño y muy violento.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "17/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tq64o",
     "descargas": [
@@ -2805,16 +2823,17 @@
     "imgURL": "https://pics.filmaffinity.com/atasco_3-336104197-large.jpg",
     "descripcion": "Tercera temporada de \"Atasco\". Llegará con seis nuevos episodios a finales de año en Prime Video.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "22/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9jubxq"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9jubxq",
+    "descargas": []
   },
   {
     "titulo": "Ya No Quedan Junglas",
     "imgURL": "https://pics.filmaffinity.com/ya_no_quedan_junglas-987118032-large.jpg",
     "descripcion": "Theo, conocido como 'el Gentleman', es un exsoldado estadounidense cuya existencia solitaria y miserable transcurre entre sus recuerdos de un pasado mejor con su difunta esposa y su habitual cita de los jueves con Olga, una prostituta a la que paga por conversar, recordando quién fue una vez y soñando con lo que podría haber sido. Cuando Olga es asesinada, Theo busca una venganza brutal. El rastro de sangre que deja es seguido por Iborra, una inspectora de policía alcohólica, y Herodes, un despiadado asesino a sueldo. El cruce de estos personajes al límite tendrá un abrupto desenlace cuando el presente venga a cobrarse las deudas del pasado.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "5/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9n3e58",
     "descargas": [
@@ -2830,7 +2849,7 @@
     "imgURL": "https://pics.filmaffinity.com/shadow_force-463298944-large.jpg",
     "descripcion": "Con una recompensa por sus cabezas, una pareja huye con su hijo para escapar de su antigua organización: una unidad de operaciones en la sombra que ha sido enviada para liquidarlos.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "10/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9ggtqo",
     "descargas": [
@@ -2846,52 +2865,57 @@
     "imgURL": "https://pics.filmaffinity.com/long_gone_heroes-130729309-large.jpg",
     "descripcion": "Gunner, un soldado de las fuerzas especiales que ha sido testigo del lado más oscuro del país y del combate, se ve obligado a volver al campo de batalla para salvar a su sobrina, que está retenida en Sudamérica. A medida que la lucha se intensifica, Gunner y su equipo descubren que la desaparición de la sobrina forma parte de una operación privada corrupta que les toca demasiado de cerca.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "15/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9s0mn6"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9s0mn6",
+    "descargas": []
   },
   {
-    "titulo": "Percy Jackson y los dioses del Olimpo",
+    "titulo": "Percy Jackson y los Dioses del Olimpo",
     "imgURL": "https://pics.filmaffinity.com/percy_jackson_and_the_olympians-505307934-large.jpg",
     "descripcion": "Percy Jackson emprende una peligrosa misión. Dejando atrás a los monstruos y burlando a los dioses, recorrerá Estados Unidos para devolver el Rayo Maestro de Zeus y evitar la guerra. Con ayuda de sus compañeros de misión, Annabeth y Grover, el viaje de Percy lo acercará más a las respuestas que busca: cómo encajar en un mundo que le es ajeno y si logrará entender su destino. Serie de Disney+ basada en las novelas 'Percy Jackson y los dioses del Olimpo', de Rick Riordan, que coescribe el guion de la adaptación.",
     "plataforma": "Disney Plus",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "10/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmzve"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmzve",
+    "descargas": []
   },
   {
     "titulo": "Made in Korea",
     "imgURL": "https://pics.filmaffinity.com/made_in_korea-238210546-large.jpg",
     "descripcion": "Ambientada en la década de 1970, Baek Ki Tae es un hombre ambicioso, sediento de riqueza y poder. Jang Gun Young es un fiscal con instinto animal y una tenacidad temible. Ante un incidente importante, Jang Gun Young hace todo lo posible para detener a Baek Ki Tae. Las personas que los rodean incluyen a la cabildera Choi Yoo Ji, la investigadora Oh Ye Jin, Bae Geum Ji y el secretario en jefe Cheon Seok Joong.",
     "plataforma": "Disney Plus",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "24/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9u6n38"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9u6n38",
+    "descargas": []
   },
   {
     "titulo": "Furtivo",
     "imgURL": "https://pics.filmaffinity.com/traques-906801638-large.jpg",
     "descripcion": "Franck y sus amigos de toda la vida cazan juntos todos los fines de semana, pero un domingo, se topan con otro grupo de cazadores que empieza a perseguirlos sin explicación alguna.",
     "plataforma": "Apple TV",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "3/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9td00c"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9td00c",
+    "descargas": []
   },
   {
     "titulo": "The Iris Affair",
     "imgURL": "https://pics.filmaffinity.com/the_iris_affair-978053357-large.jpg",
     "descripcion": "Cuando la enigmática genio Iris Nixon resuelve una serie de complejos rompecabezas en línea, es conducida a una plaza de Florencia donde conoce al carismático empresario Cameron Beck. Éste la invita a trabajar para él para desentrañar una poderosa tecnología de alto secreto. A Iris le pica la curiosidad y acepta. Pero cuando Iris descubre su peligroso potencial, roba el diario que contiene la secuencia de activación del dispositivo y desaparece. Lo que sigue es una persecución implacable, desde una remota cabaña en Cerdeña hasta las bulliciosas calles de Roma, mientras Cameron corre para encontrar a Iris en un juego de altas apuestas donde la confianza es peligrosa y el fracaso podría ser catastrófico.",
     "plataforma": "Otras",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "6/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9r62gw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9r62gw",
+    "descargas": []
   },
   {
     "titulo": "Five Nights At Freddy's 2",
     "imgURL": "https://pics.filmaffinity.com/five_nights_at_freddy_s_2-190185835-large.jpg",
     "descripcion": "Ha transcurrido un año desde la pesadilla sobrenatural en la pizzería de Freddy Fazbear. La historia de lo que ocurrió allí ha ido adquiriendo la talla de leyenda local, e incluso ha dado pie al primer “Faszfest”. El exguarda de seguridad Mike y la agente de policía Vanessa han ocultado la verdad a Abby, la hermana de 11 años de Mike, acerca del destino de sus amigos animatrónicos. Pero cuando Abby decide reconectar con Freddy, Bonnie, Chica y Foxy, desatará una serie de acontecimientos aterradores que revelarán oscuros secretos sobre el verdadero origen de Freddy’s, desencadenando un horror que llevaba décadas escondido y olvidado.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "5/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9t8v5w",
     "descargas": [
@@ -2907,7 +2931,7 @@
     "imgURL": "https://pics.filmaffinity.com/roofman-517086044-large.jpg",
     "descripcion": "La historia real de Jeffrey Manchester, un criminal que asaltó más de 60 McDonald's entrando por un agujero que cortaba en el techo en medio de la noche. Tras ser arrestado, se escapó de prisión y vivió escondido en una tienda de Toys R Us durante aproximadamente seis meses.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "12/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9p7c1o",
     "descargas": [
@@ -2923,7 +2947,7 @@
     "imgURL": "https://pics.filmaffinity.com/avatar_fire_and_ash-103982566-large.jpg",
     "descripcion": "Tercera entrega de la saga \"Avatar\". Presenta al Pueblo de las Cenizas, un clan Na'vi no tan pacífico que utilizará la violencia si lo necesita para conseguir sus objetivos, aunque sea contra otros clanes.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "18/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9r5tzm",
     "descargas": [
@@ -2939,8 +2963,9 @@
     "imgURL": "https://pics.filmaffinity.com/anaconda-872146680-large.jpg",
     "descripcion": "Doug y Griff son muy buenos amigos desde que eran niños y siempre han soñado con hacer un remake de su película favorita de todos los tiempos: el «clásico cinematográfico» Anaconda. Cuando una crisis de mediana edad les anima a lanzarse por fin a la aventura, se adentran en la selva amazónica para empezar a rodar. Pero las cosas se ponen serias cuando aparece una anaconda gigante de verdad, convirtiendo su caótico y cómico plató de rodaje en una situación mortal. ¿La película que se morían por hacer, podría ser la que les mate?",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "25/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9qpgbe"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qpgbe",
+    "descargas": []
   }
 ]
