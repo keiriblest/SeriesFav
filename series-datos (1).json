@@ -2301,19 +2301,11 @@
   {
     "titulo": "Stranger Things",
     "imgURL": "https://pics.filmaffinity.com/stranger_things_5-290686966-large.jpg",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
     "descripcion": "Hawkins sigue marcada por la apertura de los portales, y nuestros protagonistas comparten un único objetivo: encontrar a Vecna y acabar con él. Pero ha desaparecido; nadie sabe dónde está ni cuáles son sus planes. Para complicar aún más las cosas, el Gobierno ha puesto la ciudad en cuarentena militar y ha intensificado la búsqueda de Once, que se ve obligada a esconderse de nuevo. A medida que se acerca el aniversario de la desaparición de Will, también crece una inquietud conocida. La batalla final está a punto de empezar, y deberán enfrentarse a una oscuridad más poderosa y letal que nunca. Para acabar con esta pesadilla, deberán estar todos juntos, una última vez.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "27/11",
-    "temporadas": [
-      {
-        "numero": 1,
-        "img": "https://pics.filmaffinity.com/stranger_things-875025085-large.jpg",
-        "trailer": "https://www.dailymotion.com/embed/video/x58hp0x",
-        "descripcion": "Homenaje a los clásicos misterios sobrenaturales de los años 80, \"Stranger Things\" es la historia de un niño que desaparece en el pequeño pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su búsqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terroríficas y una niña muy, muy rara."
-      }
-    ],
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
     "descargas": [
       {
         "temporada": "T5",
