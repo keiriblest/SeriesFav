@@ -2301,11 +2301,19 @@
   {
     "titulo": "Stranger Things",
     "imgURL": "https://pics.filmaffinity.com/stranger_things_5-290686966-large.jpg",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
     "descripcion": "Hawkins sigue marcada por la apertura de los portales, y nuestros protagonistas comparten un único objetivo: encontrar a Vecna y acabar con él. Pero ha desaparecido; nadie sabe dónde está ni cuáles son sus planes. Para complicar aún más las cosas, el Gobierno ha puesto la ciudad en cuarentena militar y ha intensificado la búsqueda de Once, que se ve obligada a esconderse de nuevo. A medida que se acerca el aniversario de la desaparición de Will, también crece una inquietud conocida. La batalla final está a punto de empezar, y deberán enfrentarse a una oscuridad más poderosa y letal que nunca. Para acabar con esta pesadilla, deberán estar todos juntos, una última vez.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "27/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
+    "temporadas": [
+      {
+        "numero": 1,
+        "img": "https://pics.filmaffinity.com/stranger_things-875025085-large.jpg",
+        "trailer": "https://www.dailymotion.com/embed/video/x58hp0x",
+        "descripcion": "Homenaje a los clásicos misterios sobrenaturales de los años 80, \"Stranger Things\" es la historia de un niño que desaparece en el pequeño pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su búsqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terroríficas y una niña muy, muy rara."
+      }
+    ],
     "descargas": [
       {
         "temporada": "T5",
@@ -3037,6 +3045,36 @@
     "seccion": "proximas",
     "fecha": "22/1",
     "trailerURL": "https://www.dailymotion.com/video/x9uw264",
+    "descargas": []
+  },
+  {
+    "titulo": "The Pitt",
+    "imgURL": "https://pics.filmaffinity.com/the_pitt-163157908-large.jpg",
+    "descripcion": "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la política en el lugar de trabajo y la carga emocional de tratar a pacientes en estado crítico.",
+    "plataforma": "HBO Max",
+    "seccion": "proximas",
+    "fecha": "9/1",
+    "trailerURL": "https://www.dailymotion.com/video/x9vv80q",
+    "descargas": []
+  },
+  {
+    "titulo": "Primal",
+    "imgURL": "https://pics.filmaffinity.com/primal-100089917-large.jpg",
+    "descripcion": "Un cavernícola y un dinosaurio, ambos al borde de la extinción por diversos motivos, unen sus fuerzas en una peculiar alianza con el único propósito de sobrevivir en un mundo violento y hostil. Además de la serie, existe un largometraje de 80 minutos titulado \"Primal: Tales of Savagery\".",
+    "plataforma": "HBO Max",
+    "seccion": "proximas",
+    "fecha": "12/1",
+    "trailerURL": "",
+    "descargas": []
+  },
+  {
+    "titulo": "El caballero de los Siete Reinos",
+    "imgURL": "https://pics.filmaffinity.com/a_knight_of_the_seven_kingdoms_the_hedge_knight-848827233-large.jpg",
+    "descripcion": "Un siglo antes de los acontecimientos de \"Juego de Tronos\", dos héroes improbables vagaban por Poniente: un joven e ingenuo, pero valiente caballero, Ser Duncan el Alto, y su pequeño escudero, Egg. Ambientada en una época en la que el linaje Targaryen aún ostenta el Trono de Hierro y el recuerdo del último dragón aún no ha desaparecido de la memoria viva, grandes destinos, poderosos enemigos y peligrosas hazañas aguardan a estos improbables e incomparables amigos.",
+    "plataforma": "HBO Max",
+    "seccion": "proximas",
+    "fecha": "19/1",
+    "trailerURL": "https://www.dailymotion.com/video/x9v3fva",
     "descargas": []
   }
 ]
