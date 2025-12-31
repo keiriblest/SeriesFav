@@ -115,9 +115,15 @@
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
                     <span id="m-release-date" class="hidden font-medium text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300"></span>
                 </div>
-                <h2 id="m-title" class="text-2xl font-bold mt-1 mb-4">Título</h2>
-                <p id="m-desc" tabindex="0" class="text-gray-400 leading-relaxed text-xs md:text-sm max-h-[150px] overflow-y-auto pr-2 outline-none focus:text-gray-300 transition-colors"></p>
-                <div class="mt-6 flex flex-wrap gap-2">
+                <h2 id="m-title" class="text-2xl font-bold mt-1 mb-4 text-white">Título</h2>
+                <p id="m-desc" tabindex="0" class="text-gray-400 leading-relaxed text-xs md:text-sm max-h-[120px] overflow-y-auto pr-2 outline-none focus:text-gray-300 transition-colors"></p>
+                
+                <div id="m-season-selector" class="hidden mt-6">
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Temporadas</label>
+                    <div id="m-season-chips" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-2">
                     <button id="m-trailer-btn" class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:scale-105 transition flex items-center gap-2 text-xs">
                         <i class="fas fa-play"></i> Ver tráiler
                     </button>
@@ -220,8 +226,9 @@
         function esPelicula(item) {
             const tipo = (item.tipo || "").toLowerCase();
             const seccion = (item.seccion || "").toLowerCase();
-            const plataforma = (item.plataforma || "").toLowerCase();
-            return tipo === 'pelicula' || tipo === 'peli' || seccion === 'pelis' || plataforma === 'pelis';
+            const plat = (item.plataforma || "").toLowerCase();
+            // Detectar si es película por campo tipo, sección o plataforma "pelis"
+            return tipo === 'pelicula' || tipo === 'peli' || seccion === 'pelis' || plat === 'pelis' || plat === 'película' || plat === 'peliculas';
         }
 
         function getColor(item) {
@@ -265,13 +272,23 @@
             const query = document.getElementById('buscador').value.toLowerCase();
             const estadoSelect = document.getElementById('filtro-seccion').value;
             const plataformaFiltro = document.getElementById('filtro-plataforma').value;
+            
+            // Actualizar títulos
+            const mainTitle = document.getElementById('main-title');
+            const mainSubtitle = document.getElementById('main-subtitle');
+            if(seccionActual === 'series') { mainTitle.innerText = "Catálogo de Series"; mainSubtitle.innerText = "Explora tus series favoritas."; }
+            else if(seccionActual === 'peliculas') { mainTitle.innerText = "Películas"; mainSubtitle.innerText = "El mejor cine a un clic."; }
+            else { mainTitle.innerText = "Mi Lista"; mainSubtitle.innerText = "Tu contenido guardado."; }
+
             filtrados = catalogo.filter(s => {
                 const peli = esPelicula(s);
                 const matchQuery = s.titulo.toLowerCase().includes(query);
                 if (query.trim() !== "") return matchQuery;
+                
                 let matchSeccion = (seccionActual === 'series' && !peli) || (seccionActual === 'peliculas' && peli) || (seccionActual === 'favoritos' && favoritos.includes(s.titulo));
                 const matchEstado = !estadoSelect || s.seccion === estadoSelect;
                 let matchPlataforma = (seccionActual === 'peliculas' || !plataformaFiltro) ? true : (plataformaFiltro === "Otros" ? !principalesPlataformas.includes(s.plataforma.toLowerCase()) : s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase());
+                
                 return matchSeccion && matchEstado && matchPlataforma;
             });
             render(filtrados);
@@ -298,16 +315,62 @@
             volverAInfo();
             const isFav = favoritos.includes(s.titulo);
             const color = getColor(s);
+            
             const platEl = document.getElementById('m-platform');
-            platEl.innerText = s.plataforma; platEl.style.color = color;
+            platEl.innerText = s.plataforma; 
+            platEl.style.color = color;
+
             const dateEl = document.getElementById('m-release-date');
-            if (s.seccion === 'proximas' && s.fecha) { dateEl.innerText = `Estreno: ${s.fecha}`; dateEl.classList.remove('hidden'); } else dateEl.classList.add('hidden');
+            if (s.seccion === 'proximas' && s.fecha) { 
+                dateEl.innerText = `Estreno: ${s.fecha}`; 
+                dateEl.classList.remove('hidden'); 
+            } else {
+                dateEl.classList.add('hidden');
+            }
+
             document.getElementById('m-title').innerText = s.titulo;
             document.getElementById('m-desc').innerText = s.descripcion;
-            document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[85%] max-w-full rounded-xl shadow-lg object-contain">`;
+            document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[90%] max-w-full rounded-2xl shadow-2xl object-contain">`;
             
             document.getElementById('m-trailer-btn').onclick = () => reproducirTrailerJSON(s);
             
+            const seasonSelector = document.getElementById('m-season-selector');
+            const seasonChips = document.getElementById('m-season-chips');
+            seasonChips.innerHTML = '';
+
+            // Solo mostrar selector si NO es película
+            const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
+
+            if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
+                seasonSelector.classList.remove('hidden');
+                versionesMismaSerie.forEach(version => {
+                    let label = "";
+                    if (version.temporada && version.temporada.trim() !== "") {
+                        label = version.temporada;
+                    } 
+                    else if (version.descargas && version.descargas.length > 0) {
+                        label = version.descargas[0].temporada || "T1";
+                    } else {
+                        label = "T1";
+                    }
+
+                    const chip = document.createElement('button');
+                    const esLaActual = version.imgURL === s.imgURL && version.descripcion === s.descripcion;
+                    
+                    chip.className = `px-3 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
+                        esLaActual 
+                        ? 'bg-white text-black border-white scale-105 shadow-lg' 
+                        : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'
+                    }`;
+                    
+                    chip.innerText = label.startsWith('T') ? label : `T${label}`;
+                    chip.onclick = () => poblarModal(version);
+                    seasonChips.appendChild(chip);
+                });
+            } else {
+                seasonSelector.classList.add('hidden');
+            }
+
             const downloadBtn = document.getElementById('m-download-btn');
             if (s.descargas && Array.isArray(s.descargas) && s.descargas.length > 0) {
                 downloadBtn.classList.remove('hidden');
@@ -319,6 +382,7 @@
             const favBtn = document.getElementById('m-fav-toggle');
             favBtn.style.backgroundColor = isFav ? color : 'rgba(255,255,255,0.1)';
             favBtn.onclick = () => { toggleFavorito(null, s.titulo); poblarModal(s); };
+            
             document.getElementById('modal').classList.remove('hidden');
             document.getElementById('modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -331,11 +395,10 @@
             selector.classList.remove('hidden');
             selector.classList.add('flex');
 
-            // NUEVA LÓGICA: Verifica si es película o si tiene el campo temporada como "Pelis"
             const esPeliODescargaPeli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
 
             if (esPeliODescargaPeli) {
-                controls.innerHTML = `<p class="text-gray-400">Enlace directo disponible para la película.</p>`;
+                controls.innerHTML = `<p class="text-gray-400 text-sm">Esta película tiene un enlace directo de descarga.</p>`;
                 document.getElementById('dl-confirm-btn').onclick = () => {
                     const link = s.descargas[0].url;
                     if(link) window.open(link, '_blank');
@@ -345,13 +408,13 @@
                 const temps = [...new Set(s.descargas.map(d => d.temporada))].sort();
                 
                 let html = `<div>
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Selecciona Temporada</label>
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Temporada</label>
                     <select id="sel-temp" class="dl-select">
                         ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
                     </select>
                 </div>
                 <div id="cap-box">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Selecciona Capítulo</label>
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Capítulo</label>
                     <select id="sel-cap" class="dl-select"></select>
                 </div>`;
                 
@@ -394,10 +457,8 @@
             loader.classList.remove('hidden');
             videoTitleLabel.innerText = s.titulo;
 
-            const trailer = s.trailerURL;
-
-            if (trailer && trailer.trim() !== "") {
-                iframe.src = trailer;
+            if (s.trailerURL && s.trailerURL.trim() !== "") {
+                iframe.src = s.trailerURL;
                 iframe.classList.remove('hidden');
                 loader.classList.add('hidden');
             } else {
