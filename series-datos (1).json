@@ -56,10 +56,11 @@
   {
     "titulo": "Machos Alfa",
     "imgURL": "https://pics.filmaffinity.com/Machos_alfa_Serie_de_TV-396252076-large.jpg",
+    "temporada": "T3",
     "descripcion": "La abolición del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones están perdiendo su trono, privilegios e identidad. Años atrás habrían sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
-    "fecha": "9/1",
+    "seccion": "vistas",
+    "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8y7b1e",
     "descargas": []
   },
@@ -3012,6 +3013,7 @@
   {
     "titulo": "Los Bridgerton",
     "imgURL": "https://pics.filmaffinity.com/bridgerton_4-265573701-large.jpg",
+    "temporada": "T4",
     "descripcion": "La cuarta temporada de Los Bridgerton se centra en el bohemio segundo hijo, Benedict (Luke Thompson). A pesar de que sus hermanos mayor y menor están felizmente casados, Benedict se resiste a sentar la cabeza... hasta que conoce a una cautivadora Dama Plateada en el baile de máscaras de su madre.",
     "plataforma": "Netflix",
     "seccion": "proximas",
@@ -3053,6 +3055,7 @@
   {
     "titulo": "Primal",
     "imgURL": "https://pics.filmaffinity.com/primal-100089917-large.jpg",
+    "temporada": "T3",
     "descripcion": "Un cavernícola y un dinosaurio, ambos al borde de la extinción por diversos motivos, unen sus fuerzas en una peculiar alianza con el único propósito de sobrevivir en un mundo violento y hostil. Además de la serie, existe un largometraje de 80 minutos titulado \"Primal: Tales of Savagery\".",
     "plataforma": "HBO Max",
     "seccion": "proximas",
@@ -3068,6 +3071,17 @@
     "seccion": "proximas",
     "fecha": "19/1",
     "trailerURL": "https://www.dailymotion.com/video/x9v3fva",
+    "descargas": []
+  },
+  {
+    "titulo": "Machos Alfa",
+    "imgURL": "https://pics.filmaffinity.com/machos_alfa-862613051-large.jpg",
+    "temporada": "T4",
+    "descripcion": "La abolición del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones están perdiendo su trono, privilegios e identidad. Años atrás habrían sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "9/1",
+    "trailerURL": "https://www.dailymotion.com/video/x9vied8",
     "descargas": []
   }
 ]
