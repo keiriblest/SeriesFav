@@ -36,7 +36,8 @@
         #m-desc::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .dl-select { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: white; border-radius: 8px; padding: 10px; width: 100%; margin-top: 5px; outline: none; cursor: pointer; }
+        .dl-select { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: white; border-radius: 12px; padding: 12px; width: 100%; margin-top: 5px; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='gray'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; }
+        .dl-select:focus { border-color: #3b82f6; }
     </style>
 </head>
 <body class="flex">
@@ -109,7 +110,7 @@
         <button onclick="cerrarModal()" class="fixed top-8 right-8 text-3xl text-gray-400 hover:text-white transition z-[110] bg-black/20 w-12 h-12 rounded-full flex items-center justify-center border border-white/10 leading-none pb-1">&times;</button>
         
         <div id="modal-content-wrapper" class="bg-[#111] max-w-3xl w-full rounded-3xl overflow-hidden border border-white/10 grid md:grid-cols-[2fr_3fr] shadow-2xl relative">
-            <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[300px] md:h-auto"></div>
+            <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[300px] md:h-auto border-r border-white/5"></div>
             <div id="m-info-panel" class="p-8 relative flex flex-col justify-center">
                 <div class="flex items-center gap-3">
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
@@ -119,7 +120,7 @@
                 <p id="m-desc" tabindex="0" class="text-gray-400 leading-relaxed text-xs md:text-sm max-h-[120px] overflow-y-auto pr-2 outline-none focus:text-gray-300 transition-colors"></p>
                 
                 <div id="m-season-selector" class="hidden mt-6">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Temporadas</label>
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block tracking-widest">Temporadas</label>
                     <div id="m-season-chips" class="flex flex-wrap gap-2"></div>
                 </div>
 
@@ -137,13 +138,33 @@
             </div>
         </div>
 
-        <div id="download-selector" class="hidden bg-[#111] max-w-md w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold">Opciones de Descarga</h3>
-                <button onclick="cerrarSelectorDescarga()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+        <!-- MODAL DE DESCARGAS MEJORADO -->
+        <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
+            <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        <i class="fas fa-cloud-download-alt text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold leading-none">Descargar</h3>
+                        <p class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Elige tu episodio</p>
+                    </div>
+                </div>
+                <button onclick="cerrarSelectorDescarga()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
             </div>
-            <div id="dl-controls" class="space-y-4"></div>
-            <button id="dl-confirm-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">OK - IR AL LINK</button>
+            
+            <div id="dl-controls" class="space-y-5">
+                <!-- Se pobla dinámicamente -->
+            </div>
+
+            <button id="dl-confirm-btn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-900/20 flex items-center justify-center gap-3 group">
+                <span>IR AL ENLACE</span>
+                <i class="fas fa-external-link-alt text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+            
+            <p class="text-[9px] text-center text-gray-600 px-4 leading-tight">
+                El enlace se abrirá en una nueva pestaña externa.
+            </p>
         </div>
 
         <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4">
@@ -227,7 +248,6 @@
             const tipo = (item.tipo || "").toLowerCase();
             const seccion = (item.seccion || "").toLowerCase();
             const plat = (item.plataforma || "").toLowerCase();
-            // Detectar si es película por campo tipo, sección o plataforma "pelis"
             return tipo === 'pelicula' || tipo === 'peli' || seccion === 'pelis' || plat === 'pelis' || plat === 'película' || plat === 'peliculas';
         }
 
@@ -273,7 +293,6 @@
             const estadoSelect = document.getElementById('filtro-seccion').value;
             const plataformaFiltro = document.getElementById('filtro-plataforma').value;
             
-            // Actualizar títulos
             const mainTitle = document.getElementById('main-title');
             const mainSubtitle = document.getElementById('main-subtitle');
             if(seccionActual === 'series') { mainTitle.innerText = "Catálogo de Series"; mainSubtitle.innerText = "Explora tus series favoritas."; }
@@ -338,7 +357,6 @@
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
 
-            // Solo mostrar selector si NO es película
             const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
 
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
@@ -398,7 +416,14 @@
             const esPeliODescargaPeli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
 
             if (esPeliODescargaPeli) {
-                controls.innerHTML = `<p class="text-gray-400 text-sm">Esta película tiene un enlace directo de descarga.</p>`;
+                controls.innerHTML = `
+                    <div class="p-6 bg-blue-500/5 border border-blue-500/10 rounded-2xl flex flex-col items-center gap-4 text-center">
+                        <i class="fas fa-file-video text-3xl text-blue-500"></i>
+                        <div>
+                            <p class="font-bold text-sm">Película detectada</p>
+                            <p class="text-xs text-gray-500 mt-1">Listo para descargar el archivo directo.</p>
+                        </div>
+                    </div>`;
                 document.getElementById('dl-confirm-btn').onclick = () => {
                     const link = s.descargas[0].url;
                     if(link) window.open(link, '_blank');
@@ -407,15 +432,22 @@
             } else {
                 const temps = [...new Set(s.descargas.map(d => d.temporada))].sort();
                 
-                let html = `<div>
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Temporada</label>
-                    <select id="sel-temp" class="dl-select">
-                        ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
-                    </select>
-                </div>
-                <div id="cap-box">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Capítulo</label>
-                    <select id="sel-cap" class="dl-select"></select>
+                let html = `
+                <div class="space-y-4">
+                    <div class="group">
+                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
+                            <i class="fas fa-layer-group text-[9px]"></i> Temporada
+                        </label>
+                        <select id="sel-temp" class="dl-select">
+                            ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div id="cap-box" class="group">
+                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
+                            <i class="fas fa-hashtag text-[9px]"></i> Capítulo
+                        </label>
+                        <select id="sel-cap" class="dl-select"></select>
+                    </div>
                 </div>`;
                 
                 controls.innerHTML = html;
