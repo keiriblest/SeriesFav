@@ -2302,6 +2302,7 @@
   {
     "titulo": "Stranger Things",
     "imgURL": "https://pics.filmaffinity.com/stranger_things_5-290686966-large.jpg",
+    "temporada": "",
     "descripcion": "Hawkins sigue marcada por la apertura de los portales, y nuestros protagonistas comparten un único objetivo: encontrar a Vecna y acabar con él. Pero ha desaparecido; nadie sabe dónde está ni cuáles son sus planes. Para complicar aún más las cosas, el Gobierno ha puesto la ciudad en cuarentena militar y ha intensificado la búsqueda de Once, que se ve obligada a esconderse de nuevo. A medida que se acerca el aniversario de la desaparición de Will, también crece una inquietud conocida. La batalla final está a punto de empezar, y deberán enfrentarse a una oscuridad más poderosa y letal que nunca. Para acabar con esta pesadilla, deberán estar todos juntos, una última vez.",
     "plataforma": "Netflix",
     "seccion": "vistas",
@@ -2342,6 +2343,11 @@
         "temporada": "T5",
         "capitulo": "C7",
         "url": "https://drive.google.com/file/d/1qVk6MmbEnCVQBOiH0rP4PsL4xCiRHjy5/view"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1eo5eU9Rjil3bdeOZ3xfc8K6jGEWzJj5s/view"
       }
     ]
   },
@@ -2604,11 +2610,19 @@
   {
     "titulo": "Wicked: Parte II",
     "imgURL": "https://pics.filmaffinity.com/wicked_for_good-910127272-large.jpg",
+    "temporada": "",
     "descripcion": "El capítulo final de la historia jamás contada de las brujas de Oz comienza con Elphaba y Glinda distanciadas y viviendo las consecuencias de sus respectivas decisiones. Mientras la multitud alza su clamor contra la Bruja Malvada, ambas deberán unirse una vez más. Con su singular amistad convertida en el punto de inflexión de su futuro, tendrán que mirarse a los ojos con honestidad y compasión para afrontar su transformación personal y cambiar el destino de todo Oz.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "21/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg",
+    "descargas": [
+      {
+        "temporada": "Pelis",
+        "capitulo": "",
+        "url": "https://drive.google.com/file/d/14WPQArM5M2Wl7deNBR4-v6zsRe6dNMRL/view"
+      }
+    ]
   },
   {
     "titulo": "Núremberg",
