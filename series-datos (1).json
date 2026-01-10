@@ -2610,19 +2610,11 @@
   {
     "titulo": "Wicked: Parte II",
     "imgURL": "https://pics.filmaffinity.com/wicked_for_good-910127272-large.jpg",
-    "temporada": "",
     "descripcion": "El capítulo final de la historia jamás contada de las brujas de Oz comienza con Elphaba y Glinda distanciadas y viviendo las consecuencias de sus respectivas decisiones. Mientras la multitud alza su clamor contra la Bruja Malvada, ambas deberán unirse una vez más. Con su singular amistad convertida en el punto de inflexión de su futuro, tendrán que mirarse a los ojos con honestidad y compasión para afrontar su transformación personal y cambiar el destino de todo Oz.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "21/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg",
-    "descargas": [
-      {
-        "temporada": "Pelis",
-        "capitulo": "",
-        "url": "https://drive.google.com/file/d/14WPQArM5M2Wl7deNBR4-v6zsRe6dNMRL/view"
-      }
-    ]
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg"
   },
   {
     "titulo": "Núremberg",
@@ -3240,7 +3232,7 @@
     "titulo": "Hijack",
     "imgURL": "https://pics.filmaffinity.com/hijack-708620259-large.jpg",
     "temporada": "T2",
-    "descripcion": "",
+    "descripcion": "En la trepidante segunda temporada de «Hijack», un tren berlinés subterráneo y sus ocupantes se convierten en los centenares de rehenes que las autoridades tratan de salvar. Sam Nelson (Idris Elba) es testigo de todo como uno de los rehenes, en una situación en la que cualquier error podría desencadenar el desastre.",
     "plataforma": "Apple TV",
     "seccion": "proximas",
     "fecha": "14/1",
@@ -3300,6 +3292,17 @@
     "seccion": "proximas",
     "fecha": "23/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9rwx2i",
+    "descargas": []
+  },
+  {
+    "titulo": "Hijack",
+    "imgURL": "https://pics.filmaffinity.com/hijack-763698932-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Cuando el vuelo KA29 sufre un secuestro durante su trayecto de siete horas de Dubái a Londres, Sam Nelson, consumado negociador corporativo, intenta echar mano de su pericia profesional para intentar salvar a todos los pasajeros. Pero su estrategia de alto riesgo podría ser su ruina.",
+    "plataforma": "Apple TV",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/video/x8l8mmk",
     "descargas": []
   }
 ]
