@@ -1103,11 +1103,54 @@
   {
     "titulo": "Fallout",
     "imgURL": "https://pics.filmaffinity.com/Fallout_Serie_de_TV-905335408-large.jpg",
+    "temporada": "T1",
     "descripcion": "Basado en una de las sagas de videojuegos más importantes de todos los tiempos, es la historia de los que tienen y de los que no tienen en un mundo en el que prácticamente no queda nada que tener. 200 años después del apocalipsis, los apacibles habitantes de los refugios de lujo se ven obligados a regresar al infierno irradiado que dejaron sus antepasados y se sorprenden al descubrir que les espera un universo increíblemente complejo, alegremente extraño y muy violento.",
     "plataforma": "Prime",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8u0mja"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8u0mja",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1-tKNvxL9cpCSsCFD66_mrdsJJ0utsjgJ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1xaqsshLIRwEey4ga0xBwGtZtgMBR1pIZ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1vkRMMXlc7xDtrBC3FfKWnY9QyKi2YGx9/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1T_r6mT8N4EAKG65FjD13nUIyqOgug8H3/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1Yd697U--HYYwi_doXZ5p-O-_JiltajnR/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/19tryxtyB7rsIAP8sqyt-oZM5scDe74R8/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/13dCfkKVcKOnqetdQ3ZbRGbT82gUDcsVM/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1FkjVUZ2GfuDujh_LwXPnwwIcBxZuWSLI/view"
+      }
+    ]
   },
   {
     "titulo": "Cross",
@@ -2813,6 +2856,7 @@
   {
     "titulo": "Fallout",
     "imgURL": "https://pics.filmaffinity.com/fallout-801397409-large.jpg",
+    "temporada": "T2",
     "descripcion": "Basado en una de las sagas de videojuegos más importantes de todos los tiempos, es la historia de los que tienen y de los que no tienen en un mundo en el que prácticamente no queda nada que tener. 200 años después del apocalipsis, los apacibles habitantes de los refugios de lujo se ven obligados a regresar al infierno irradiado que dejaron sus antepasados y se sorprenden al descubrir que les espera un universo increíblemente complejo, alegremente extraño y muy violento.",
     "plataforma": "Prime",
     "seccion": "vistas",
@@ -2823,6 +2867,21 @@
         "temporada": "T2",
         "capitulo": "C1",
         "url": "https://drive.google.com/file/d/10IPz_a8PnwjNxSU1G4z8RTOjUBK3_yRB/view?pli=1"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1Y6blX7Zk_uexUmlfdHQNbQhkfhmN5xrD/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1te6DEyxVIm4NVp1RDZpOB-pWCB8bU3Pc/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1rfZrmpRRyOmK3B-NI9-vo8mz502L-vs-/view"
       }
     ]
   },
@@ -3302,7 +3361,7 @@
     "plataforma": "Apple TV",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/video/x8l8mmk",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8l8mmk",
     "descargas": []
   }
 ]
