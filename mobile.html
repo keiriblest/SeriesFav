@@ -563,10 +563,25 @@
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
-            const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
+            
+            // Obtener todas las versiones de la serie
+            let versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
             
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
+                
+                // Ordenación numérica de las temporadas (T1, T2, T3...)
+                versionesMismaSerie.sort((a, b) => {
+                    const labelA = a.temporada || (a.descargas && a.descargas[0] ? a.descargas[0].temporada : "T1");
+                    const labelB = b.temporada || (b.descargas && b.descargas[0] ? b.descargas[0].temporada : "T1");
+                    
+                    // Extraer solo los números de la cadena (T1 -> 1)
+                    const numA = parseInt(labelA.replace(/\D/g, '')) || 0;
+                    const numB = parseInt(labelB.replace(/\D/g, '')) || 0;
+                    
+                    return numA - numB;
+                });
+
                 versionesMismaSerie.forEach(version => {
                     let label = version.temporada || (version.descargas && version.descargas[0] ? version.descargas[0].temporada : "T1");
                     const chip = document.createElement('button');
