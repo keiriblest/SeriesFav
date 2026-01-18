@@ -1496,11 +1496,19 @@
   {
     "titulo": "Sketch",
     "imgURL": "https://pics.filmaffinity.com/sketch-704930118-large.jpg",
+    "temporada": "",
     "descripcion": "Cuando los peculiares dibujos de una niña cobran vida, dejando una estela de caos y polvo de lápices de colores, una familia en duelo tiene que unirse para luchar contra ellos.",
     "plataforma": "Pelis",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9n87ps"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9n87ps",
+    "descargas": [
+      {
+        "temporada": "Pelis",
+        "capitulo": "",
+        "url": "https://drive.google.com/file/d/1OPxhDO6Z9SFquJeqIz9BtgjwzcrE9hbS/view"
+      }
+    ]
   },
   {
     "titulo": "Strangers: Chapter 1",
@@ -3065,7 +3073,38 @@
     "seccion": "proximas",
     "fecha": "8/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vilk8",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1ix0BUaWjAuDJYAzF6dS2-8O-Vnrb43pg/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1dQK2fuEl08yyze2qlwxetrhvLbKeAK9s/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1BWux5djkale5CE3ePZAYMCpDwBqEAfdl/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/17uvCH4jJlr20S1vkxV_DFWlrhKVa3Wb8/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1vO5Z-xMOjslH8Jpw10-TBVXweQxhcSF1/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1agCpKysk6wOM7zPUs65Zi2rFxvEC7RcT/view"
+      }
+    ]
   },
   {
     "titulo": "Agatha Christie: Las Siete Esferas",
@@ -3098,7 +3137,13 @@
     "seccion": "proximas",
     "fecha": "16/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9qbdw8",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "Pelis",
+        "capitulo": "",
+        "url": "https://drive.google.com/file/d/1lmTo1ldUNjk4NWZCNHvWF-5WZxnn6VCf/view"
+      }
+    ]
   },
   {
     "titulo": "La princesa Kaguya del Cosmos",
