@@ -361,6 +361,21 @@
 
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
+                
+                // ORDENAR NUMÉRICAMENTE LAS TEMPORADAS (T1, T2, T3...)
+                versionesMismaSerie.sort((a, b) => {
+                    const getNum = (str) => {
+                        let label = "";
+                        if (str.temporada && str.temporada.trim() !== "") label = str.temporada;
+                        else if (str.descargas && str.descargas.length > 0) label = str.descargas[0].temporada || "T1";
+                        else label = "T1";
+                        // Extraer solo los números de la etiqueta (ej: "T12" -> 12)
+                        const num = parseInt(label.replace(/\D/g, ''));
+                        return isNaN(num) ? 0 : num;
+                    };
+                    return getNum(a) - getNum(b);
+                });
+
                 versionesMismaSerie.forEach(version => {
                     let label = "";
                     if (version.temporada && version.temporada.trim() !== "") {
@@ -430,7 +445,11 @@
                     cerrarSelectorDescarga();
                 };
             } else {
-                const temps = [...new Set(s.descargas.map(d => d.temporada))].sort();
+                const temps = [...new Set(s.descargas.map(d => d.temporada))].sort((a, b) => {
+                    const na = parseInt(a.replace(/\D/g, '')) || 0;
+                    const nb = parseInt(b.replace(/\D/g, '')) || 0;
+                    return na - nb;
+                });
                 
                 let html = `
                 <div class="space-y-4">
@@ -457,6 +476,12 @@
                 const actualizarCapitulos = () => {
                     const tempElegida = selTemp.value;
                     const caps = s.descargas.filter(d => d.temporada === tempElegida);
+                    // Ordenar capítulos numéricamente también
+                    caps.sort((a, b) => {
+                        const na = parseInt(a.capitulo.replace(/\D/g, '')) || 0;
+                        const nb = parseInt(b.capitulo.replace(/\D/g, '')) || 0;
+                        return na - nb;
+                    });
                     selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
                 };
 
