@@ -2978,12 +2978,54 @@
   {
     "titulo": "The Iris Affair",
     "imgURL": "https://pics.filmaffinity.com/the_iris_affair-978053357-large.jpg",
+    "temporada": "",
     "descripcion": "Cuando la enigmática genio Iris Nixon resuelve una serie de complejos rompecabezas en línea, es conducida a una plaza de Florencia donde conoce al carismático empresario Cameron Beck. Éste la invita a trabajar para él para desentrañar una poderosa tecnología de alto secreto. A Iris le pica la curiosidad y acepta. Pero cuando Iris descubre su peligroso potencial, roba el diario que contiene la secuencia de activación del dispositivo y desaparece. Lo que sigue es una persecución implacable, desde una remota cabaña en Cerdeña hasta las bulliciosas calles de Roma, mientras Cameron corre para encontrar a Iris en un juego de altas apuestas donde la confianza es peligrosa y el fracaso podría ser catastrófico.",
     "plataforma": "Otras",
     "seccion": "no-vistas",
     "fecha": "6/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9r62gw",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1PqwQWN0M2729TQOcWWC6mXWnoVv5NGjk/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1gv9QRyeRN3tj77YaHQlVviwEWZfFs0TL/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/17j7-Z-Imi0LnkYmMYWV0MsN8D0RdD3hJ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1W83VVFR4cED3g2KCbCg3RezvYX2-5VhW/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/16VIQCk_eRxH6BTU7o92Xg94W91af4LjA/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1ktgAD1aa4f9lbgBa5gz12N83LvNpmA8_/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1VV_jWW6vpAfOXm_IoUMDpUJfzn_UtvK_/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1-ovcfChPDt1N9onNwceBVIpikSoi-eTn/view"
+      }
+    ]
   },
   {
     "titulo": "Five Nights At Freddy's 2",
@@ -3062,7 +3104,33 @@
     "seccion": "proximas",
     "fecha": "2/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9w7uwi",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1jD8STs-s_CqbtTHR5YfavcUY8VjFgqzF/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1GCK4Fjr0kgefSf2rr_OxzlqEl17b2I1o/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1kxSomrhcT8ssos8Mcw5D7SlG6uQTvHV-/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1Adtv0yzPTC77ELpTUIIA8fd1F3Is8ci8/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1obvUAPukzb8bA4QI9y0SWeqMoMdWl27i/view"
+      }
+    ]
   },
   {
     "titulo": "El y Ella",
@@ -3191,7 +3259,7 @@
       {
         "temporada": "T1",
         "capitulo": "C1",
-        "url": "https://drive.google.com/file/d/1OFgKWfG6D9lw_cV4rUFnGZLwFIXdagV7/view"
+        "url": "https://drive.google.com/file/d/11C8chfrVah607LK0cMShjgRGPoWG6hUB/view"
       }
     ]
   },
