@@ -113,16 +113,28 @@
             transition: 0.3s; 
         }
 
+        /* Estilo Compartido para Elementos del Header */
+        .header-element-bg {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Promo Widget Mejorado */
         .promo-widget { 
             width: 100%; 
-            max-width: 260px; 
-            height: 80px; 
-            background: rgba(20, 20, 20, 0.8); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 12px; 
+            max-width: 240px; 
+            height: 64px; 
+            border-radius: 16px; 
             display: flex; 
             overflow: hidden; 
+        }
+        .promo-widget:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
@@ -232,21 +244,28 @@
     </nav>
 
     <main class="main-content flex-1 min-h-screen">
-        <header class="sticky top-0 z-40 px-6 lg:px-10 py-4 lg:py-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-gradient-to-b from-black to-transparent backdrop-blur-md lg:backdrop-blur-none">
-            <div class="flex items-center justify-between w-full md:w-auto">
-                <div class="lg:hidden flex items-center gap-2">
+        <!-- Header con Elementos Flotantes Estilizados -->
+        <header class="sticky top-0 z-40 px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-transparent">
+            <div class="flex items-center justify-between w-full md:w-auto gap-6">
+                <!-- Logo Mobile con Fondo -->
+                <div class="lg:hidden header-element-bg px-5 py-3 rounded-2xl flex items-center gap-3">
                     <i class="fas fa-play-circle text-2xl text-red-600"></i>
                     <span class="font-bold text-lg tracking-tight">SeriesFav</span>
                 </div>
-                <div id="promo-container" class="hidden md:flex flex-col items-start gap-2">
-                    <div id="promo-item" class="promo-widget"></div>
-                    <div id="promo-dots" class="flex gap-1.5 ml-2"></div>
+                
+                <!-- Mini Targetas Flotantes con Fondo -->
+                <div id="promo-container" class="hidden md:flex items-center gap-3">
+                    <div class="flex flex-col gap-1.5 items-center mr-1">
+                        <div id="promo-dots" class="flex flex-col gap-1"></div>
+                    </div>
+                    <div id="promo-item" class="promo-widget header-element-bg"></div>
                 </div>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-full px-4 py-2 flex items-center gap-3 w-full md:w-72 focus-within:bg-white/10 transition-all">
-                <i class="fas fa-search text-gray-500 text-sm"></i>
-                <input type="text" id="buscador" placeholder="Buscar contenido..." oninput="filtrar()" class="bg-transparent border-none outline-none text-sm w-full text-white">
+            <!-- Buscador Flotante -->
+            <div class="header-element-bg rounded-2xl px-5 py-3 flex items-center gap-4 w-full md:w-80 focus-within:border-white/30 focus-within:scale-[1.02] transition-all">
+                <i class="fas fa-search text-gray-400 text-sm"></i>
+                <input type="text" id="buscador" placeholder="Buscar en SeriesFav..." oninput="filtrar()" class="bg-transparent border-none outline-none text-sm w-full text-white placeholder-gray-500">
             </div>
         </header>
 
@@ -289,7 +308,7 @@
         </div>
     </main>
 
-    <!-- Modal Principal -->
+    <!-- Modales (Modal Principal, Descarga, Video) - Sin Cambios -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 lg:p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
         <button onclick="cerrarModal()" class="close-modal-btn"><span>&times;</span></button>
         
@@ -411,7 +430,7 @@
             for (let i = 0; i < MAX_DOTS; i++) {
                 const dot = document.createElement('div');
                 dot.id = `dot-${i}`;
-                dot.className = "w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300";
+                dot.className = "w-1 h-1 rounded-full bg-white/10 transition-all duration-300";
                 dotsContainer.appendChild(dot);
             }
         }
@@ -428,20 +447,28 @@
             const color = getColor(item);
             promoEl.innerHTML = `
                 <div class="promo-content flex w-full h-full cursor-pointer" onclick='abrirModalDesdeObjeto(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
-                    <img src="${item.imgURL}" class="w-14 h-full object-cover border-r border-white/10">
-                    <div class="p-2 flex flex-col justify-center flex-1">
-                        <span class="text-[8px] font-bold uppercase tracking-widest mb-0.5" style="color: ${color}">Próximamente</span>
-                        <h5 class="text-[11px] font-bold line-clamp-1">${item.titulo}</h5>
-                        <p class="text-[8px] text-gray-500 truncate">${item.plataforma}</p>
+                    <img src="${item.imgURL}" class="w-[50px] h-full object-cover">
+                    <div class="p-2.5 flex flex-col justify-center flex-1">
+                        <div class="flex items-center gap-1.5 mb-0.5">
+                            <span class="w-1 h-1 rounded-full" style="background: ${color}"></span>
+                            <span class="text-[8px] font-black uppercase tracking-widest opacity-80" style="color: ${color}">NEW RELEASE</span>
+                        </div>
+                        <h5 class="text-[11px] font-bold line-clamp-1 text-white/90 leading-tight">${item.titulo}</h5>
+                        <p class="text-[8px] text-gray-500 font-medium truncate">${item.plataforma}</p>
+                    </div>
+                    <div class="flex items-center pr-3">
+                         <i class="fas fa-chevron-right text-[8px] text-white/20"></i>
                     </div>
                 </div>`;
+            
             const activeDotIdx = promoIdx % MAX_DOTS;
             for (let i = 0; i < MAX_DOTS; i++) {
                 const dot = document.getElementById(`dot-${i}`);
                 if(dot) {
                     const isActive = i === activeDotIdx;
-                    dot.style.backgroundColor = isActive ? 'white' : 'rgba(255,255,255,0.2)';
-                    dot.style.width = isActive ? '10px' : '6px';
+                    dot.style.backgroundColor = isActive ? 'white' : 'rgba(255,255,255,0.1)';
+                    dot.style.height = isActive ? '8px' : '4px';
+                    dot.style.opacity = isActive ? '1' : '0.4';
                 }
             }
         }
@@ -564,21 +591,15 @@
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
             
-            // Obtener todas las versiones de la serie
             let versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
             
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
-                
-                // Ordenación numérica de las temporadas (T1, T2, T3...)
                 versionesMismaSerie.sort((a, b) => {
                     const labelA = a.temporada || (a.descargas && a.descargas[0] ? a.descargas[0].temporada : "T1");
                     const labelB = b.temporada || (b.descargas && b.descargas[0] ? b.descargas[0].temporada : "T1");
-                    
-                    // Extraer solo los números de la cadena (T1 -> 1)
                     const numA = parseInt(labelA.replace(/\D/g, '')) || 0;
                     const numB = parseInt(labelB.replace(/\D/g, '')) || 0;
-                    
                     return numA - numB;
                 });
 
