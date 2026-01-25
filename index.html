@@ -1,28 +1,67 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargando...</title>
     <style>
-        /* Estilo Minimalista */
-        body {
+        /* Estilo Minimalista y Oscuro */
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #ffffff;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #ffffff; /* Fondo blanco limpio */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #333;
         }
 
-        /* El Spinner (Anillo de carga) */
+        /* Lienzo para las partículas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Capa de luz azul reducida */
+        #cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(
+                300px circle at var(--x, 50%) var(--y, 50%), 
+                rgba(29, 78, 216, 0.15), 
+                transparent 80%
+            );
+            z-index: 1;
+            /* Suaviza el movimiento del brillo en táctiles */
+            transition: background 0.1s ease;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Spinner con el toque azul */
         .loader {
-            border: 2px solid #f3f3f3;
-            border-top: 2px solid #000000; /* Color negro minimalista */
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid #3b82f6;
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -40,12 +79,109 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 300;
+            margin: 0;
         }
     </style>
 
     <script>
+        let canvas, ctx;
+        let particles = [];
+        const pointer = { x: -500, y: -500 }; // Inicializado fuera de vista
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Reacción al puntero (mouse o touch)
+                const dx = pointer.x - this.x;
+                const dy = pointer.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 120) {
+                    this.x -= dx * 0.02;
+                    this.y -= dy * 0.02;
+                }
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            canvas = document.getElementById('particles-canvas');
+            ctx = canvas.getContext('2d');
+            resizeCanvas();
+
+            for (let i = 0; i < 80; i++) {
+                particles.push(new Particle());
+            }
+
+            animate();
+        }
+
+        function resizeCanvas() {
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        // Función unificada para actualizar posición de luz y partículas
+        function handleMove(e) {
+            const glow = document.getElementById('cursor-glow');
+            let clientX, clientY;
+
+            if (e.type.includes('touch')) {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+
+            glow.style.setProperty('--x', clientX + 'px');
+            glow.style.setProperty('--y', clientY + 'px');
+            pointer.x = clientX;
+            pointer.y = clientY;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        document.addEventListener('mousemove', handleMove);
+        document.addEventListener('touchstart', handleMove);
+        document.addEventListener('touchmove', handleMove);
+
         function redirect() {
-            // Un pequeño retraso de 800ms para que la animación se vea y no sea brusco
+            initParticles();
             setTimeout(function() {
                 var ancho = window.innerWidth;
                 var esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -55,15 +191,21 @@
                 } else {
                     window.location.replace("desktop.html");
                 }
-            }, 800); 
+            }, 1500); 
         }
+
         window.onload = redirect;
     </script>
 </head>
 <body>
 
-    <div class="loader"></div>
-    <p>Preparando experiencia</p>
+    <canvas id="particles-canvas"></canvas>
+    <div id="cursor-glow"></div>
+
+    <div class="content">
+        <div class="loader"></div>
+        <p>Preparando experiencia</p>
+    </div>
 
 </body>
 </html>
