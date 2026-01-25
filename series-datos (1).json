@@ -385,11 +385,54 @@
   {
     "titulo": "Respira",
     "imgURL": "https://pics.filmaffinity.com/respira-165509751-large.jpg",
+    "temporada": "",
     "descripcion": "Biel es uno de los residentes que lleva unos meses dejándose la piel en un hospital público. Cientos de guardias, miles de horas, que apenas le dejan tiempo para su vida, todo con tal de convertirse en el mejor doctor. Lo que no se imagina es que en el hospital va a estallar una huelga total, sin servicios mínimos. Los sanitarios se ven obligados a ello para tratar de concienciar a la población sobre su trabajo esencial y para protestar por todos los recortes intolerables que está sufriendo la sanidad pública. Pero Biel y los demás residentes no saben si secundar esa huelga que puede tener consecuencias fatales para los pacientes. Y desde ese conflicto iremos conociendo a unos y otros en su día a día. ¿Quiénes son esos chicos jóvenes que se desviven en el hospital asumiendo una responsabilidad excesiva, y quiénes son esos adultos dispuestos a perderlo todo con tal de luchar por lo que creen?",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x939m3k"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x939m3k",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1X7l_LfrbHAPJgL8pzj_cYmotYnZ6YMND/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1AShbCzEdWzZYPOqZvT5sGzuA76_uT9HS/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/15oTf5BiW6dTi-K6NT4py7vNpWKGrt003/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1AwIgDGZoU87-0DfceTTkSCS_m61cHZvu/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/15LkuDLPUGfWF1kKjsW7WmLxBAhWtCoK8/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1bwBsRJloBioCD2A51MN_-ITwwmBKXbZX/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1sWG01xAqR9FLBUuCS6hhhPPDhx7Dj4T5/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1eAR7upLmW4cQwlh9POOLF2YiVYpLvnJy/view"
+      }
+    ]
   },
   {
     "titulo": "Suburræterna",
@@ -903,6 +946,7 @@
   {
     "titulo": "The Last Frontier: Conspiración en Alaska",
     "imgURL": "https://pics.filmaffinity.com/the_last_frontier-810409526-large.jpg",
+    "temporada": "",
     "descripcion": "Cuando un avión que transporta presos se estrella en una remota zona salvaje de Alaska y docenas de reclusos violentos quedan libres, el único policía de la región debe proteger el pueblo que juró mantener a salvo.",
     "plataforma": "Apple TV",
     "seccion": "vistas",
@@ -913,6 +957,51 @@
         "temporada": "T1",
         "capitulo": "C1",
         "url": "https://drive.google.com/file/d/1Fv7rCwfxrOhIC5_iTNjXErLu37T8OvTN/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1eqp99RKMbcyzktTpY9sRaWR0w4o899K5/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1AB0154wT1tsY-CaX5CIFT0qGve4WxtAN/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1kV67e0AyCAqBJZ3Ht6rcRdyETb6DII_f/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1dthgzosCNUB2Q-yyra6FmC9NuvjHXRIJ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1zVC1XzJPZwKOjmraw7JBN0dV3EaN9r8V/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1mvgzFEb5_IHUDoaUJbGQpDYkUfO6CMIt/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1BAnZbQsckNTTrn9yqaOzFHlEsuvltrgd/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://drive.google.com/file/d/1T6K4NKZtPnFvzB4chTRuX44kSqv16YuD/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://drive.google.com/file/d/1jHss_YFkkBEfuf3Dkj4JJ_4OsSCtCLKa/view"
       }
     ]
   },
@@ -1826,11 +1915,34 @@
   {
     "titulo": "Il mostro",
     "imgURL": "https://pics.filmaffinity.com/il_mostro-655026177-large.jpg",
+    "temporada": "",
     "descripcion": "Serie sobre el Monstruo de Florencia, probablemente el asesino en serie más conocido y enigmático de la historia reciente de Italia.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9p9jd2"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9p9jd2",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1zPREfP3uP51lBGo-QfIibmA57yv2tzR1/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1qB7FuX9JFe7J1AnQFOogGfi4XspN22rZ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1JVuzUFTPjAz0P_FSeKspWaMpUWSl0QY7/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/10r2KVwjP21GTsu9frGAfhmT2pMj_hqcQ/view"
+      }
+    ]
   },
   {
     "titulo": "The Witcher",
@@ -1925,11 +2037,54 @@
   {
     "titulo": "Muerte en la familia Murdaugh",
     "imgURL": "https://pics.filmaffinity.com/murdaugh_death_in_the_family-654273153-large.jpg",
+    "temporada": "",
     "descripcion": "Maggie y Alex disfrutan de una lujosa vida de privilegios como miembros de una de las dinastías legales más poderosas de Carolina del Sur. Pero cuando su hijo Paul se ve involucrado en un accidente de barco mortal, la familia se enfrenta a una prueba como nunca se habían encontrado. A medida que salen a la luz detalles y surgen nuevos retos, las conexiones de la familia con varias muertes misteriosas plantean interrogantes que amenazan todo lo que Maggie y Alex aprecian.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9qoerm"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qoerm",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1lF_vJltJmzopkXxra_xfKbAnPdxAR4u5/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1ku3Dt95EjWQozEzq1Aoiw-MiVq3uchoV/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/104Fc43u60IrjlJRBEUDQrDrj9qZIj6UL/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1htP7i3jrNpsLMzwsamJDV6bIZjHyZF4X/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1zW_UmBD9zPLCYimEiTlgUJk-aK2_9tkO/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1FRm3QhS8HWbYZm_B1M9uUZPiefUbkTky/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/1WRKMDY1TqjPEr_lh56eg3xdU7deK1oX-/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1TIa4n2qFO3NSys6ZQuYYwprgu_F6h8JQ/view"
+      }
+    ]
   },
   {
     "titulo": "Star Wars: Visions. Volumen 3",
@@ -2067,11 +2222,44 @@
   {
     "titulo": "Lazarus",
     "imgURL": "https://pics.filmaffinity.com/lazarus-846874028-large.jpg",
+    "temporada": "",
     "descripcion": "Tras sufrir una pérdida personal, Lazarus comienza a tener experiencias perturbadoras que no pueden explicarse.",
     "plataforma": "Prime",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9sqrdk"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9sqrdk",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1jo0ytfufT74iaQpbcWKkfFomxjtmPbe6/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1bk5yU7HUfYqjz8wPV4aoiCOi5S8QJmZQ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1w7owSmvH5SzTt881vl0VXsWnO38UQMKe/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1kLSklvQopTGafG-r0TFjP_kl801-2rCd/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1fbv59GkhzGIPmTFjwOr7vi6GAFoHebJm/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1orxSwNOGvj4_5kfshzqpB44vccmugtQ9/view"
+      }
+    ]
   },
   {
     "titulo": "Hazbin Hotel: El hotel de las viejas glorias",
@@ -2308,29 +2496,138 @@
   {
     "titulo": "La bestia en mí",
     "imgURL": "https://pics.filmaffinity.com/the_beast_in_me-963357201-large.jpg",
+    "temporada": "",
     "descripcion": "Desde la trágica muerte de su hijo pequeño, la escritora de éxito Aggie Wiggs no es ni la sombra de lo que era: se ha apartado de la vida pública y es incapaz de escribir. Todo cambia cuando Nile Jarvis, un conocido y poderoso magnate inmobiliario que en su día fue el principal sospechoso de la desaparición de su mujer compra la casa de al lado. Entre el horror y la fascinación, Aggie se embarca en una búsqueda obsesiva de la verdad, persiguiendo los demonios de Jarvis mientras intenta escapar de los suyos, en un peligroso juego del ratón y el gato que podría acabar en tragedia.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "13/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmumq"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmumq",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1HxoHw3Kv6Hi6UIAuaCpnARMOeni99aow/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/13p31Wpxk_gvAw_2FU5FyUJKYLsyfVJhE/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1_qw9WsakeG0l3T_2o0CyMfTOXjRT37yW/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1TX3mHZI-QnLUjuQV1_O41i8kMuUzoX5w/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1VZK7RVBvgCaMQ9b0cD0wAqJzjk-GJL8c/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1oaE_MP07r4QazBnz6-RmQmX_cqwgnJAD/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/10br5ovxzkbTWC8cq8-Hhxq_rL7OMHuW0/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/12tjJZjS8t565N4Q-_v7sTw0M34lMPACK/view"
+      }
+    ]
   },
   {
     "titulo": "El Último Samurái en Pie",
     "imgURL": "https://pics.filmaffinity.com/ikusagami-115599159-large.jpg",
+    "temporada": "",
     "descripcion": "Samurais altamente cualificados se reúnen para participar en una peligrosa batalla real. Les atrae la oferta de 100.000 millones de yenes para el gran premio. Cada uno de los participantes recibe una etiqueta de madera.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "13/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9sqd56"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9sqd56",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1SC3C0IwX62e2mLiEdPMyeR9eyidAErOW/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1w2re4BYfPqcPOqO_D7j16x2POCjPtkcn/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1nG7pkDSBQdXcZaP9_LqUGm5BgGl2b13b/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1YYyf5dTtFgwg_T2CR-dD7vxgKGvO-msC/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1H5Kteatx9shKy5hImjrCdw620H9P_6ek/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1ANFj9RbD3GVtxdJPHQ80552OgqagNkza/view"
+      }
+    ]
   },
   {
     "titulo": "El Cuco de Cristal",
     "imgURL": "https://pics.filmaffinity.com/el_cuco_de_cristal-500015995-large.jpg",
+    "temporada": "",
     "descripcion": "Una joven residente de medicina sufre un infarto inesperado y recibe un trasplante de corazón que le devuelve la vida. Tras la operación, la madre del donante la invita a su pueblo para descubrir quién era su hijo. Pero lo que parecía un encuentro revelador pronto se convierte en una pesadilla llena de secretos. Al llegar, una misteriosa desaparición sacude a la comunidad el mismo día de su llegada. El pueblo oculta un pasado oscuro: un padre que nunca volvió, un caso sin resolver de hace veinte años y un hilo de intriga que conecta vidas marcadas por el dolor.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "14/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmut6"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tmut6",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1PC0b64lRP6TRALUuggqF3yVEup4JL033/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1L0kC2_hvZsK5xMXkwCHT7Oe-dU-ogy-B/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1o7_20afKbGsvIP1RKaSPnkRfE9BRjnhZ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1KgmHRTplQ7g2jY8lU0mswSqZr1HDmJA7/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1DToaf1PNVZUdtyl9yHGa105kqwBYc9Cc/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1puc6m-b9P0PBBmUOeYr-21ezy8zcER-H/view"
+      }
+    ]
   },
   {
     "titulo": "Un Hombre Infiltrado",
@@ -2727,12 +3024,34 @@
   {
     "titulo": "El Hombre Contra El Bebe",
     "imgURL": "https://pics.filmaffinity.com/man_vs_baby-985111369-large.jpg",
+    "temporada": "",
     "descripcion": "Tras una desastrosa experiencia al cuidar una mansión de alta tecnología obstaculizada por un inconveniente insecto, Trevor Bingley se encuentra ahora cuidando un lujoso ático en Londres, con una compañía que no había pedido.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "11/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tjng4",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1LKRfF3v1OjG2XvrK32tBMg8oXNR6-Iby/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1HE-70MFrIMFRDne8JhY5zJJxbPZ4ll_p/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/11vTqGowHVs3KfYs8hzzZ93HV9_UkBwhn/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1zdRLn3F13kzgNWbHdkcZ_EwrutWUgXtA/view"
+      }
+    ]
   },
   {
     "titulo": "Tomb Raider: La Leyenda de Lara Croft",
@@ -2798,12 +3117,54 @@
   {
     "titulo": "Innato",
     "imgURL": "https://pics.filmaffinity.com/innato-256004460-large.jpg",
+    "temporada": "",
     "descripcion": "Sara es una psicóloga que ha dejado atrás un traumático pasado como hija de Félix Garay, un asesino múltiple bautizado en su momento por la prensa como “el asesino del gasoil”. Hoy, la vida idílica que Sara ha construido, junto a su marido Aitor y su hijo adolescente Sebas, se tambalea cuando Félix es liberado de prisión, coincidiendo con una nueva ola de crímenes que parecen replicar los asesinatos perpetrados 25 años atrás. Tras haber ocultado su pasado a su familia durante años, Sara ahora debe colaborar con la policía para resolver los nuevos casos.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "23/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9u3uts",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/11_THVtBpexeZjjY1CD_DRQV1gP4CK0Sa/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1xoEV0ABUnpKDgu6y3F_scRRCmrUrnnkJ/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1LZyuC5ZWIx8BW8qnoIx9YmI9Jm2_FF3q/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1lNCzchwHsAT7AW6uhM_63zM_fxWvIO_L/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/16xiFKh_YdrijqXM1QYQw3I8wW0uewSrl/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/18O3CveBUnDStaXiPlrFy8nH_VDtjxFH3/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/14wUQ6Z3knmIzpatP9kPZ8rY8Ek9ixl0Z/view"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/15ATGqIGLK9X9LJJJqHE9WDwEPYQCrgPo/view"
+      }
+    ]
   },
   {
     "titulo": "Trol 2",
@@ -3259,7 +3620,7 @@
       {
         "temporada": "T1",
         "capitulo": "C1",
-        "url": "https://drive.google.com/file/d/11C8chfrVah607LK0cMShjgRGPoWG6hUB/view"
+        "url": "https://drive.google.com/file/d/1clAGCzv9ZGjrbQOQPkEvKwwHYJHxHEYY/view"
       }
     ]
   },
