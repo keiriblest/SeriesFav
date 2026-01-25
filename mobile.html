@@ -309,8 +309,11 @@
                 </div>
 
                 <div class="mt-8 flex flex-wrap gap-2">
+                    <button id="m-watch-btn" class="hidden w-full bg-red-600 text-white px-4 py-3 lg:py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center justify-center gap-2 text-xs mb-2">
+                        <i class="fas fa-play"></i> VER AHORA
+                    </button>
                     <button id="m-trailer-btn" class="flex-1 lg:flex-none bg-white text-black px-4 py-3 lg:py-2 rounded-lg font-bold hover:scale-105 transition flex items-center justify-center gap-2 text-xs">
-                        <i class="fas fa-play"></i> Tráiler
+                        <i class="fas fa-video"></i> Tráiler
                     </button>
                     <button id="m-download-btn" class="flex-1 lg:flex-none bg-blue-600 text-white px-4 py-3 lg:py-2 rounded-lg font-bold hover:bg-blue-700 transition flex items-center justify-center gap-2 text-xs">
                         <i class="fas fa-download"></i> Descargar
@@ -343,7 +346,7 @@
 
         <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4">
              <div class="video-container rounded-2xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
-                 <div id="video-loader" class="text-white text-sm">Cargando tráiler...</div>
+                 <div id="video-loader" class="text-white text-sm">Cargando...</div>
                  <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
              </div>
              <div class="flex justify-between items-center px-2">
@@ -560,6 +563,15 @@
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-full max-w-full rounded-xl shadow-2xl object-contain">`;
             document.getElementById('m-trailer-btn').onclick = () => reproducirTrailerJSON(s);
             
+            // Botón VER AHORA (verURL)
+            const watchBtn = document.getElementById('m-watch-btn');
+            if (s.verURL && s.verURL.trim() !== "") {
+                watchBtn.classList.remove('hidden');
+                watchBtn.onclick = () => reproducirContenidoJSON(s);
+            } else {
+                watchBtn.classList.add('hidden');
+            }
+
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
@@ -644,8 +656,24 @@
             const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
             videoPanel.classList.remove('hidden'); iframe.classList.add('hidden'); loader.classList.remove('hidden');
-            document.getElementById('video-title').innerText = s.titulo;
+            document.getElementById('video-title').innerText = s.titulo + " (Tráiler)";
             if (s.trailerURL && s.trailerURL.trim() !== "") { iframe.src = s.trailerURL; iframe.classList.remove('hidden'); loader.classList.add('hidden'); } else { loader.innerText = "Tráiler no disponible."; }
+        }
+
+        function reproducirContenidoJSON(s) {
+            document.getElementById('modal-content-wrapper').classList.add('hidden');
+            const videoPanel = document.getElementById('video-panel');
+            const iframe = document.getElementById('dailymotion-iframe');
+            const loader = document.getElementById('video-loader');
+            videoPanel.classList.remove('hidden'); iframe.classList.add('hidden'); loader.classList.remove('hidden');
+            document.getElementById('video-title').innerText = s.titulo;
+            if (s.verURL && s.verURL.trim() !== "") { 
+                iframe.src = s.verURL; 
+                iframe.classList.remove('hidden'); 
+                loader.classList.add('hidden'); 
+            } else { 
+                loader.innerText = "Contenido no disponible."; 
+            }
         }
 
         function volverAInfo() { document.getElementById('video-panel').classList.add('hidden'); document.getElementById('modal-content-wrapper').classList.remove('hidden'); document.getElementById('dailymotion-iframe').src = ""; }
