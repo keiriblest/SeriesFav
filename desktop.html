@@ -114,9 +114,12 @@
             <div id="m-info-panel" class="p-8 relative flex flex-col justify-center">
                 <div class="flex items-center gap-3">
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
-                    <span id="m-release-date" class="hidden font-medium text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300"></span>
+                    <span id="m-release-date" class="hidden font-bold text-[10px] px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-200 flex items-center gap-2">
+                        <i class="far fa-calendar-alt text-red-500"></i>
+                        <span id="m-date-text"></span>
+                    </span>
                 </div>
-                <h2 id="m-title" class="text-2xl font-bold mt-1 mb-4 text-white">Título</h2>
+                <h2 id="m-title" class="text-2xl font-bold mt-3 mb-4 text-white">Título</h2>
                 <p id="m-desc" tabindex="0" class="text-gray-400 leading-relaxed text-xs md:text-sm max-h-[120px] overflow-y-auto pr-2 outline-none focus:text-gray-300 transition-colors"></p>
                 
                 <div id="m-season-selector" class="hidden mt-6">
@@ -125,20 +128,22 @@
                 </div>
 
                 <div class="mt-8 flex flex-wrap gap-2">
-                    <button id="m-trailer-btn" class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:scale-105 transition flex items-center gap-2 text-xs">
-                        <i class="fas fa-play"></i> Ver tráiler
+                    <button id="m-watch-btn" class="hidden bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
+                        <i class="fas fa-tv"></i> Ver ahora
                     </button>
-                    <button id="m-download-btn" class="hidden bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition flex items-center gap-2 text-xs">
+                    <button id="m-trailer-btn" class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
+                        <i class="fas fa-play-circle"></i> Tráiler
+                    </button>
+                    <button id="m-download-btn" class="hidden bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
                         <i class="fas fa-download"></i> Descargar
                     </button>
-                    <button id="m-fav-toggle" class="bg-white/10 border border-white/10 text-white p-2 px-3.5 rounded-lg hover:bg-white/20 transition flex items-center gap-2 text-xs">
+                    <button id="m-fav-toggle" class="bg-white/10 border border-white/10 text-white p-2 px-3.5 rounded-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
                         <i class="fas fa-heart"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- MODAL DE DESCARGAS MEJORADO -->
         <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
@@ -153,9 +158,7 @@
                 <button onclick="cerrarSelectorDescarga()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
             </div>
             
-            <div id="dl-controls" class="space-y-5">
-                <!-- Se pobla dinámicamente -->
-            </div>
+            <div id="dl-controls" class="space-y-5"></div>
 
             <button id="dl-confirm-btn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-900/20 flex items-center justify-center gap-3 group">
                 <span>IR AL ENLACE</span>
@@ -169,7 +172,7 @@
 
         <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4">
              <div class="video-container rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
-                 <div id="video-loader" class="text-white text-sm">Cargando tráiler...</div>
+                 <div id="video-loader" class="text-white text-sm">Cargando...</div>
                  <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
              </div>
              <div class="flex justify-between items-center px-2">
@@ -340,18 +343,29 @@
             platEl.style.color = color;
 
             const dateEl = document.getElementById('m-release-date');
-            if (s.seccion === 'proximas' && s.fecha) { 
-                dateEl.innerText = `Estreno: ${s.fecha}`; 
+            const dateText = document.getElementById('m-date-text');
+            if (s.fecha && s.fecha.trim() !== "") { 
+                dateText.innerText = `Estreno: ${s.fecha}`; 
                 dateEl.classList.remove('hidden'); 
+                dateEl.classList.add('flex');
             } else {
                 dateEl.classList.add('hidden');
+                dateEl.classList.remove('flex');
             }
 
             document.getElementById('m-title').innerText = s.titulo;
             document.getElementById('m-desc').innerText = s.descripcion;
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[90%] max-w-full rounded-2xl shadow-2xl object-contain">`;
             
-            document.getElementById('m-trailer-btn').onclick = () => reproducirTrailerJSON(s);
+            const watchBtn = document.getElementById('m-watch-btn');
+            if (s.verURL && s.verURL.trim() !== "") {
+                watchBtn.classList.remove('hidden');
+                watchBtn.onclick = () => reproducirVideo(s.verURL, s.titulo);
+            } else {
+                watchBtn.classList.add('hidden');
+            }
+
+            document.getElementById('m-trailer-btn').onclick = () => reproducirVideo(s.trailerURL, s.titulo, true);
             
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
@@ -362,14 +376,12 @@
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
                 
-                // ORDENAR NUMÉRICAMENTE LAS TEMPORADAS (T1, T2, T3...)
                 versionesMismaSerie.sort((a, b) => {
                     const getNum = (str) => {
                         let label = "";
                         if (str.temporada && str.temporada.trim() !== "") label = str.temporada;
                         else if (str.descargas && str.descargas.length > 0) label = str.descargas[0].temporada || "T1";
                         else label = "T1";
-                        // Extraer solo los números de la etiqueta (ej: "T12" -> 12)
                         const num = parseInt(label.replace(/\D/g, ''));
                         return isNaN(num) ? 0 : num;
                     };
@@ -476,7 +488,6 @@
                 const actualizarCapitulos = () => {
                     const tempElegida = selTemp.value;
                     const caps = s.descargas.filter(d => d.temporada === tempElegida);
-                    // Ordenar capítulos numéricamente también
                     caps.sort((a, b) => {
                         const na = parseInt(a.capitulo.replace(/\D/g, '')) || 0;
                         const nb = parseInt(b.capitulo.replace(/\D/g, '')) || 0;
@@ -501,7 +512,7 @@
             document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
 
-        function reproducirTrailerJSON(s) {
+        function reproducirVideo(url, titulo, esTrailer = false) {
             const modalContent = document.getElementById('modal-content-wrapper');
             const videoPanel = document.getElementById('video-panel');
             const iframe = document.getElementById('dailymotion-iframe');
@@ -512,14 +523,15 @@
             videoPanel.classList.remove('hidden');
             iframe.classList.add('hidden');
             loader.classList.remove('hidden');
-            videoTitleLabel.innerText = s.titulo;
+            loader.innerText = esTrailer ? "Cargando tráiler..." : "Cargando vídeo...";
+            videoTitleLabel.innerText = titulo + (esTrailer ? " (Tráiler)" : "");
 
-            if (s.trailerURL && s.trailerURL.trim() !== "") {
-                iframe.src = s.trailerURL;
+            if (url && url.trim() !== "") {
+                iframe.src = url;
                 iframe.classList.remove('hidden');
                 loader.classList.add('hidden');
             } else {
-                loader.innerText = "No hay tráiler disponible.";
+                loader.innerText = "No disponible.";
             }
         }
 
