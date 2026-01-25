@@ -3584,7 +3584,13 @@
     "fecha": "22/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9uw264",
     "verURL": "https://goodstream.one/embed-bz50ihgi9xir.html",
-    "descargas": []
+    "descargas": [
+      {
+        "temporada": "Pelis",
+        "capitulo": "",
+        "url": "https://goodstream.one/d/bz50ihgi9xir_x"
+      }
+    ]
   },
   {
     "titulo": "The Pitt",
