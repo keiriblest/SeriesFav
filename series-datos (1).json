@@ -1035,11 +1035,20 @@
   {
     "titulo": "The Pitt",
     "imgURL": "https://pics.filmaffinity.com/The_Pitt_Serie_de_TV-462642330-large.jpg",
+    "temporada": "T1",
     "descripcion": "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la política en el lugar de trabajo y la carga emocional de tratar a pacientes en estado crítico.",
     "plataforma": "HBO Max",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9apwvc"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9apwvc",
+    "verURL": "",
+    "descargas": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1LTVkIZefBcZn29qTl8CReTq6gEy2yLSY/view"
+      }
+    ]
   },
   {
     "titulo": "Ninja Kamui",
