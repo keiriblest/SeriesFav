@@ -190,6 +190,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
+        let esNavegacionProximas = false; // Nueva bandera para controlar el contexto de navegación
         const MAX_DOTS = 5;
 
         async function init() {
@@ -228,7 +229,7 @@
             const promoEl = document.getElementById('promo-item');
             const color = getColor(item);
             promoEl.innerHTML = `
-                <div class="promo-content flex w-full h-full" onclick='abrirModalDesdeObjeto(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
+                <div class="promo-content flex w-full h-full" onclick='abrirModalDesdeMinitarjeta(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
                     <img src="${item.imgURL}" class="w-16 h-full object-cover border-r border-white/10">
                     <div class="p-3 flex flex-col justify-center flex-1">
                         <span class="text-[9px] font-bold uppercase tracking-widest mb-1" style="color: ${color}">Próximamente</span>
@@ -278,7 +279,7 @@
                 const isFav = favoritos.includes(item.titulo);
                 const color = getColor(item);
                 return `
-                <div class="poster-card" onclick="abrirModalPorIndice(${index})">
+                <div class="poster-card" onclick="abrirModalDesdeCatalogo(${index})">
                     <div class="fav-btn ${isFav ? 'active' : ''}" onclick="toggleFavorito(event, '${item.titulo.replace(/'/g, "\\'")}')">
                         <i class="fas fa-heart" ${isFav ? `style="color: ${color}"` : ''}></i>
                     </div>
@@ -327,10 +328,17 @@
             filtrar();
         }
 
-        function abrirModalDesdeObjeto(s) {
-            const idx = filtrados.findIndex(f => f.titulo === s.titulo);
-            if(idx !== -1) abrirModalPorIndice(idx);
-            else { serieActualIdx = -1; poblarModal(s); }
+        // Navegación desde el grid principal
+        function abrirModalDesdeCatalogo(idx) {
+            esNavegacionProximas = false;
+            abrirModalPorIndice(idx);
+        }
+
+        // Navegación desde las minitarjetas superiores (Próximamente)
+        function abrirModalDesdeMinitarjeta(s) {
+            esNavegacionProximas = true;
+            const idx = proximas.findIndex(p => p.titulo === s.titulo);
+            abrirModalPorIndice(idx);
         }
 
         function poblarModal(s) {
@@ -344,7 +352,8 @@
 
             const dateEl = document.getElementById('m-release-date');
             const dateText = document.getElementById('m-date-text');
-            if (s.fecha && s.fecha.trim() !== "") { 
+            
+            if (s.seccion === 'proximas' && s.fecha && s.fecha.trim() !== "") { 
                 dateText.innerText = `Estreno: ${s.fecha}`; 
                 dateEl.classList.remove('hidden'); 
                 dateEl.classList.add('flex');
@@ -542,10 +551,13 @@
         }
 
         function abrirModalPorIndice(idx) {
-            if(idx < 0) idx = filtrados.length - 1;
-            if(idx >= filtrados.length) idx = 0;
+            const listaReferencia = esNavegacionProximas ? proximas : filtrados;
+            
+            if(idx < 0) idx = listaReferencia.length - 1;
+            if(idx >= listaReferencia.length) idx = 0;
+            
             serieActualIdx = idx;
-            poblarModal(filtrados[idx]);
+            poblarModal(listaReferencia[idx]);
         }
 
         function cerrarModal() {
@@ -555,6 +567,7 @@
             document.body.style.overflow = 'auto';
             document.getElementById('dailymotion-iframe').src = "";
             serieActualIdx = -1;
+            esNavegacionProximas = false; // Resetear al cerrar
         }
 
         document.addEventListener('keydown', (e) => {
