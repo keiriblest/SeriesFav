@@ -3523,12 +3523,20 @@
   {
     "titulo": "Anaconda",
     "imgURL": "https://pics.filmaffinity.com/anaconda-872146680-large.jpg",
+    "temporada": "",
     "descripcion": "Doug y Griff son muy buenos amigos desde que eran niños y siempre han soñado con hacer un remake de su película favorita de todos los tiempos: el «clásico cinematográfico» Anaconda. Cuando una crisis de mediana edad les anima a lanzarse por fin a la aventura, se adentran en la selva amazónica para empezar a rodar. Pero las cosas se ponen serias cuando aparece una anaconda gigante de verdad, convirtiendo su caótico y cómico plató de rodaje en una situación mortal. ¿La película que se morían por hacer, podría ser la que les mate?",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "25/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9qpgbe",
-    "descargas": []
+    "verURL": [],
+    "descargas": [
+      {
+        "temporada": "Pelis",
+        "capitulo": "",
+        "url": "https://gofile.io/d/Q3HIGd"
+      }
+    ]
   },
   {
     "titulo": "En Fuga",
@@ -3712,7 +3720,7 @@
       {
         "temporada": "T1",
         "capitulo": "C1",
-        "url": "https://t.me/ECDL7S/2?embed=1"
+        "url": "https://t.me/ECDL7S/3"
       }
     ],
     "descargas": [
