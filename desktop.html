@@ -36,8 +36,7 @@
         #m-desc::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .dl-select { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: white; border-radius: 12px; padding: 12px; width: 100%; margin-top: 5px; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='gray'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; }
-        .dl-select:focus { border-color: #3b82f6; }
+        .dl-select, .watch-select { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: white; border-radius: 12px; padding: 12px; width: 100%; margin-top: 5px; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='gray'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; }
     </style>
 </head>
 <body class="flex">
@@ -109,6 +108,7 @@
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
         <button onclick="cerrarModal()" class="fixed top-8 right-8 text-3xl text-gray-400 hover:text-white transition z-[110] bg-black/20 w-12 h-12 rounded-full flex items-center justify-center border border-white/10 leading-none pb-1">&times;</button>
         
+        <!-- Contenido de Info -->
         <div id="modal-content-wrapper" class="bg-[#111] max-w-3xl w-full rounded-3xl overflow-hidden border border-white/10 grid md:grid-cols-[2fr_3fr] shadow-2xl relative">
             <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[300px] md:h-auto border-r border-white/5"></div>
             <div id="m-info-panel" class="p-8 relative flex flex-col justify-center">
@@ -144,15 +144,16 @@
             </div>
         </div>
 
+        <!-- Selector de Ver Ahora -->
         <div id="watch-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
-                        <i class="fas fa-play text-lg"></i>
+                    <div id="watch-type-icon" class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
+                        <i class="fas fa-tv text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold leading-none">Reproducir</h3>
-                        <p class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Elige tu episodio</p>
+                        <h3 id="watch-modal-title" class="text-lg font-bold leading-none">Cargando...</h3>
+                        <p id="watch-modal-subtitle" class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Por favor espera</p>
                     </div>
                 </div>
                 <button onclick="cerrarSelectorVer()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
@@ -162,10 +163,11 @@
 
             <button id="watch-confirm-btn" class="w-full bg-red-600 text-white font-bold py-4 rounded-2xl hover:bg-red-700 transition shadow-lg shadow-red-900/20 flex items-center justify-center gap-3 group">
                 <span>REPRODUCIR</span>
-                <i class="fas fa-play text-xs opacity-70 group-hover:scale-110 transition-transform"></i>
+                <i class="fas fa-play text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
             </button>
         </div>
 
+        <!-- Selector de Descargas -->
         <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
@@ -186,20 +188,17 @@
                 <span>IR AL ENLACE</span>
                 <i class="fas fa-external-link-alt text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
             </button>
-            
-            <p class="text-[9px] text-center text-gray-600 px-4 leading-tight">
-                El enlace se abrirá en una nueva pestaña externa.
-            </p>
         </div>
 
-        <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4">
+        <!-- Reproductor de Vídeo (Tamaño Mediano) -->
+        <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4 animate-[fadeIn_0.3s_ease]">
              <div class="video-container rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
                  <div id="video-loader" class="text-white text-sm">Cargando...</div>
                  <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
              </div>
-             <div class="flex justify-between items-center px-2">
-                 <h3 id="video-title" class="text-xl font-bold"></h3>
-                 <button onclick="volverAInfo()" class="text-xs bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition border border-white/10">
+             <div class="flex justify-between items-center px-4">
+                 <h3 id="video-title" class="text-xl font-bold truncate pr-4 text-white"></h3>
+                 <button onclick="volverAInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
                     <i class="fas fa-arrow-left mr-2"></i> Volver a info
                  </button>
              </div>
@@ -212,7 +211,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
-        let esNavegacionProximas = false; 
+        let esNavegacionProximas = false;
         const MAX_DOTS = 5;
 
         async function init() {
@@ -362,18 +361,19 @@
         }
 
         function poblarModal(s) {
+            if (!s) return;
             volverAInfo();
             const isFav = favoritos.includes(s.titulo);
             const color = getColor(s);
             
             const platEl = document.getElementById('m-platform');
-            platEl.innerText = s.plataforma; 
+            platEl.innerText = s.plataforma || 'Desconocida'; 
             platEl.style.color = color;
 
             const dateEl = document.getElementById('m-release-date');
             const dateText = document.getElementById('m-date-text');
             
-            if (s.seccion === 'proximas' && s.fecha && s.fecha.trim() !== "") { 
+            if (s.seccion === 'proximas' && s.fecha && typeof s.fecha === 'string' && s.fecha.trim() !== "") { 
                 dateText.innerText = `Estreno: ${s.fecha}`; 
                 dateEl.classList.remove('hidden'); 
                 dateEl.classList.add('flex');
@@ -383,25 +383,19 @@
             }
 
             document.getElementById('m-title').innerText = s.titulo;
-            document.getElementById('m-desc').innerText = s.descripcion;
+            document.getElementById('m-desc').innerText = s.descripcion || '';
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[90%] max-w-full rounded-2xl shadow-2xl object-contain">`;
             
             const watchBtn = document.getElementById('m-watch-btn');
-            if (s.verURL) {
+            
+            const hasVerURL = s.verURL && (
+                (typeof s.verURL === 'string' && s.verURL.trim() !== "") || 
+                (Array.isArray(s.verURL) && s.verURL.length > 0)
+            );
+
+            if (hasVerURL) {
                 watchBtn.classList.remove('hidden');
-                watchBtn.onclick = () => {
-                   // Comprobar si hay etiqueta 'Pelis' en verURL
-                   const tieneEtiquetaPelis = Array.isArray(s.verURL) && s.verURL.some(v => v.temporada === "Pelis");
-                   
-                   if (tieneEtiquetaPelis) {
-                       const link = s.verURL[0].url;
-                       reproducirVideo(link, s.titulo);
-                   } else if (Array.isArray(s.verURL) && s.verURL.length > 0) {
-                       mostrarSelectorVer(s);
-                   } else {
-                       reproducirVideo(s.verURL, s.titulo);
-                   }
-                };
+                watchBtn.onclick = () => mostrarSelectorVer(s);
             } else {
                 watchBtn.classList.add('hidden');
             }
@@ -416,40 +410,21 @@
 
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
-                
                 versionesMismaSerie.sort((a, b) => {
                     const getNum = (str) => {
-                        let label = "";
-                        if (str.temporada && str.temporada.trim() !== "") label = str.temporada;
-                        else if (str.descargas && str.descargas.length > 0) label = str.descargas[0].temporada || "T1";
-                        else label = "T1";
-                        const num = parseInt(label.replace(/\D/g, ''));
+                        let label = str.temporada || (str.descargas && str.descargas[0]?.temporada) || "T1";
+                        const num = parseInt(label.toString().replace(/\D/g, ''));
                         return isNaN(num) ? 0 : num;
                     };
                     return getNum(a) - getNum(b);
                 });
 
                 versionesMismaSerie.forEach(version => {
-                    let label = "";
-                    if (version.temporada && version.temporada.trim() !== "") {
-                        label = version.temporada;
-                    } 
-                    else if (version.descargas && version.descargas.length > 0) {
-                        label = version.descargas[0].temporada || "T1";
-                    } else {
-                        label = "T1";
-                    }
-
+                    let label = version.temporada || (version.descargas && version.descargas[0]?.temporada) || "T1";
                     const chip = document.createElement('button');
                     const esLaActual = version.imgURL === s.imgURL && version.descripcion === s.descripcion;
-                    
-                    chip.className = `px-3 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
-                        esLaActual 
-                        ? 'bg-white text-black border-white scale-105 shadow-lg' 
-                        : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'
-                    }`;
-                    
-                    chip.innerText = label.startsWith('T') ? label : `T${label}`;
+                    chip.className = `px-3 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${esLaActual ? 'bg-white text-black border-white scale-105 shadow-lg' : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'}`;
+                    chip.innerText = label.toString().startsWith('T') ? label : `T${label}`;
                     chip.onclick = () => poblarModal(version);
                     seasonChips.appendChild(chip);
                 });
@@ -478,57 +453,78 @@
             document.getElementById('modal-content-wrapper').classList.add('hidden');
             const selector = document.getElementById('watch-selector');
             const controls = document.getElementById('watch-controls');
+            const title = document.getElementById('watch-modal-title');
+            const subtitle = document.getElementById('watch-modal-subtitle');
+            const icon = document.getElementById('watch-type-icon');
+            
             selector.classList.remove('hidden');
             selector.classList.add('flex');
 
-            const temps = [...new Set(s.verURL.map(v => v.temporada))].sort((a, b) => {
-                const na = parseInt(a.replace(/\D/g, '')) || 0;
-                const nb = parseInt(b.replace(/\D/g, '')) || 0;
-                return na - nb;
-            });
-            
-            let html = `
-            <div class="space-y-4">
-                <div class="group">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
-                        <i class="fas fa-layer-group text-[9px]"></i> Temporada
-                    </label>
-                    <select id="sel-ver-temp" class="dl-select">
-                        ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
-                    </select>
-                </div>
-                <div id="ver-cap-box" class="group">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
-                        <i class="fas fa-hashtag text-[9px]"></i> Capítulo
-                    </label>
-                    <select id="sel-ver-cap" class="dl-select"></select>
-                </div>
-            </div>`;
-            
-            controls.innerHTML = html;
-            const selTemp = document.getElementById('sel-ver-temp');
-            const selCap = document.getElementById('sel-ver-cap');
+            const esSerieEpisodica = Array.isArray(s.verURL) && s.verURL.some(item => item.capitulo || item.temporada);
 
-            const actualizarCapitulos = () => {
-                const tempElegida = selTemp.value;
-                const caps = s.verURL.filter(v => v.temporada === tempElegida);
-                caps.sort((a, b) => {
-                    const na = parseInt(a.capitulo.replace(/\D/g, '')) || 0;
-                    const nb = parseInt(b.capitulo.replace(/\D/g, '')) || 0;
+            if (!esSerieEpisodica) {
+                title.innerText = "Ver Película";
+                subtitle.innerText = "Cine en Alta Definición";
+                icon.innerHTML = '<i class="fas fa-film text-lg"></i>';
+                controls.innerHTML = `
+                    <div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl text-center">
+                        <p class="font-bold text-sm text-gray-300">Presiona reproducir para comenzar</p>
+                    </div>`;
+                document.getElementById('watch-confirm-btn').onclick = () => {
+                    const finalUrl = Array.isArray(s.verURL) ? s.verURL[0] : s.verURL;
+                    reproducirVideo(finalUrl, s.titulo);
+                    document.getElementById('watch-selector').classList.add('hidden');
+                };
+            } else {
+                title.innerText = "Ver Serie";
+                subtitle.innerText = "Elige el episodio";
+                icon.innerHTML = '<i class="fas fa-tv text-lg"></i>';
+
+                const itemsVer = s.verURL;
+                const temps = [...new Set(itemsVer.map(d => d.temporada))].sort((a, b) => {
+                    const na = parseInt(a.toString().replace(/\D/g, '')) || 0;
+                    const nb = parseInt(b.toString().replace(/\D/g, '')) || 0;
                     return na - nb;
                 });
-                selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
-            };
+                
+                controls.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="group">
+                            <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Temporada</label>
+                            <select id="watch-sel-temp" class="watch-select">
+                                ${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Capítulo</label>
+                            <select id="watch-sel-cap" class="watch-select"></select>
+                        </div>
+                    </div>`;
+                
+                const selTemp = document.getElementById('watch-sel-temp');
+                const selCap = document.getElementById('watch-sel-cap');
 
-            selTemp.onchange = actualizarCapitulos;
-            actualizarCapitulos();
+                const actualizarCapitulos = () => {
+                    const tempElegida = selTemp.value;
+                    const caps = itemsVer.filter(d => d.temporada === tempElegida);
+                    caps.sort((a, b) => {
+                        const na = parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0;
+                        const nb = parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0;
+                        return na - nb;
+                    });
+                    selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.toString().startsWith('C') ? 'Capítulo ' + c.capitulo.toString().substring(1) : c.capitulo}</option>`).join('');
+                };
 
-            document.getElementById('watch-confirm-btn').onclick = () => {
-                const url = selCap.value;
-                const capLabel = selCap.options[selCap.selectedIndex].text;
-                if (url) reproducirVideo(url, `${s.titulo} - ${capLabel}`);
-                cerrarSelectorVer();
-            };
+                selTemp.onchange = actualizarCapitulos;
+                actualizarCapitulos();
+
+                document.getElementById('watch-confirm-btn').onclick = () => {
+                    const url = selCap.value;
+                    const capText = selCap.options[selCap.selectedIndex].text;
+                    reproducirVideo(url, `${s.titulo} - ${capText}`);
+                    document.getElementById('watch-selector').classList.add('hidden');
+                };
+            }
         }
 
         function cerrarSelectorVer() {
@@ -543,70 +539,29 @@
             selector.classList.remove('hidden');
             selector.classList.add('flex');
 
-            const esPeliODescargaPeli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
+            const peli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
 
-            if (esPeliODescargaPeli) {
-                controls.innerHTML = `
-                    <div class="p-6 bg-blue-500/5 border border-blue-500/10 rounded-2xl flex flex-col items-center gap-4 text-center">
-                        <i class="fas fa-file-video text-3xl text-blue-500"></i>
-                        <div>
-                            <p class="font-bold text-sm">Película detectada</p>
-                            <p class="text-xs text-gray-500 mt-1">Listo para descargar el archivo directo.</p>
-                        </div>
-                    </div>`;
+            if (peli) {
+                controls.innerHTML = `<div class="p-6 bg-blue-500/5 border border-blue-500/10 rounded-2xl text-center"><p class="font-bold text-sm">Película lista para descarga</p></div>`;
                 document.getElementById('dl-confirm-btn').onclick = () => {
                     const link = s.descargas[0].url;
                     if(link) window.open(link, '_blank');
                     cerrarSelectorDescarga();
                 };
             } else {
-                const temps = [...new Set(s.descargas.map(d => d.temporada))].sort((a, b) => {
-                    const na = parseInt(a.replace(/\D/g, '')) || 0;
-                    const nb = parseInt(b.replace(/\D/g, '')) || 0;
-                    return na - nb;
-                });
-                
-                let html = `
-                <div class="space-y-4">
-                    <div class="group">
-                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
-                            <i class="fas fa-layer-group text-[9px]"></i> Temporada
-                        </label>
-                        <select id="sel-temp" class="dl-select">
-                            ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
-                        </select>
-                    </div>
-                    <div id="cap-box" class="group">
-                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
-                            <i class="fas fa-hashtag text-[9px]"></i> Capítulo
-                        </label>
+                const temps = [...new Set(s.descargas.map(d => d.temporada))].sort((a, b) => (parseInt(a.toString().replace(/\D/g, '')) || 0) - (parseInt(b.toString().replace(/\D/g, '')) || 0));
+                controls.innerHTML = `
+                    <div class="space-y-4">
+                        <select id="sel-temp" class="dl-select">${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}</select>
                         <select id="sel-cap" class="dl-select"></select>
-                    </div>
-                </div>`;
-                
-                controls.innerHTML = html;
-                const selTemp = document.getElementById('sel-temp');
-                const selCap = document.getElementById('sel-cap');
-
-                const actualizarCapitulos = () => {
-                    const tempElegida = selTemp.value;
-                    const caps = s.descargas.filter(d => d.temporada === tempElegida);
-                    caps.sort((a, b) => {
-                        const na = parseInt(a.capitulo.replace(/\D/g, '')) || 0;
-                        const nb = parseInt(b.capitulo.replace(/\D/g, '')) || 0;
-                        return na - nb;
-                    });
-                    selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
+                    </div>`;
+                const selTemp = document.getElementById('sel-temp'), selCap = document.getElementById('sel-cap');
+                const actualizar = () => {
+                    const caps = s.descargas.filter(d => d.temporada === selTemp.value).sort((a, b) => (parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0) - (parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0));
+                    selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.toString().startsWith('C') ? 'Capítulo ' + c.capitulo.toString().substring(1) : c.capitulo}</option>`).join('');
                 };
-
-                selTemp.onchange = actualizarCapitulos;
-                actualizarCapitulos();
-
-                document.getElementById('dl-confirm-btn').onclick = () => {
-                    const url = selCap.value;
-                    if (url) window.open(url, '_blank');
-                    cerrarSelectorDescarga();
-                };
+                selTemp.onchange = actualizar; actualizar();
+                document.getElementById('dl-confirm-btn').onclick = () => { if(selCap.value) window.open(selCap.value, '_blank'); cerrarSelectorDescarga(); };
             }
         }
 
@@ -620,16 +575,15 @@
             const videoPanel = document.getElementById('video-panel');
             const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
-            const videoTitleLabel = document.getElementById('video-title');
-
+            
             modalContent.classList.add('hidden');
             videoPanel.classList.remove('hidden');
             iframe.classList.add('hidden');
             loader.classList.remove('hidden');
-            loader.innerText = esTrailer ? "Cargando tráiler..." : "Cargando vídeo...";
-            videoTitleLabel.innerText = titulo + (esTrailer ? " (Tráiler)" : "");
+            loader.innerText = "Cargando...";
+            document.getElementById('video-title').innerText = titulo + (esTrailer ? " (Tráiler)" : "");
 
-            if (url && url.trim() !== "") {
+            if (url && typeof url === 'string' && url.trim() !== "") {
                 iframe.src = url;
                 iframe.classList.remove('hidden');
                 loader.classList.add('hidden');
@@ -645,13 +599,12 @@
         }
 
         function abrirModalPorIndice(idx) {
-            const listaReferencia = esNavegacionProximas ? proximas : filtrados;
-            
-            if(idx < 0) idx = listaReferencia.length - 1;
-            if(idx >= listaReferencia.length) idx = 0;
-            
+            const lista = esNavegacionProximas ? proximas : filtrados;
+            if(!lista || lista.length === 0) return;
+            if(idx < 0) idx = lista.length - 1;
+            if(idx >= lista.length) idx = 0;
             serieActualIdx = idx;
-            poblarModal(listaReferencia[idx]);
+            poblarModal(lista[idx]);
         }
 
         function cerrarModal() {
@@ -662,7 +615,7 @@
             document.body.style.overflow = 'auto';
             document.getElementById('dailymotion-iframe').src = "";
             serieActualIdx = -1;
-            esNavegacionProximas = false; 
+            esNavegacionProximas = false;
         }
 
         document.addEventListener('keydown', (e) => {
