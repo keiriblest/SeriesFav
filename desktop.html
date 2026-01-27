@@ -144,6 +144,28 @@
             </div>
         </div>
 
+        <div id="watch-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
+            <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
+                        <i class="fas fa-play text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold leading-none">Reproducir</h3>
+                        <p class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Elige tu episodio</p>
+                    </div>
+                </div>
+                <button onclick="cerrarSelectorVer()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
+            </div>
+            
+            <div id="watch-controls" class="space-y-5"></div>
+
+            <button id="watch-confirm-btn" class="w-full bg-red-600 text-white font-bold py-4 rounded-2xl hover:bg-red-700 transition shadow-lg shadow-red-900/20 flex items-center justify-center gap-3 group">
+                <span>REPRODUCIR</span>
+                <i class="fas fa-play text-xs opacity-70 group-hover:scale-110 transition-transform"></i>
+            </button>
+        </div>
+
         <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
@@ -190,7 +212,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
-        let esNavegacionProximas = false; // Nueva bandera para controlar el contexto de navegación
+        let esNavegacionProximas = false; 
         const MAX_DOTS = 5;
 
         async function init() {
@@ -328,13 +350,11 @@
             filtrar();
         }
 
-        // Navegación desde el grid principal
         function abrirModalDesdeCatalogo(idx) {
             esNavegacionProximas = false;
             abrirModalPorIndice(idx);
         }
 
-        // Navegación desde las minitarjetas superiores (Próximamente)
         function abrirModalDesdeMinitarjeta(s) {
             esNavegacionProximas = true;
             const idx = proximas.findIndex(p => p.titulo === s.titulo);
@@ -367,9 +387,21 @@
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[90%] max-w-full rounded-2xl shadow-2xl object-contain">`;
             
             const watchBtn = document.getElementById('m-watch-btn');
-            if (s.verURL && s.verURL.trim() !== "") {
+            if (s.verURL) {
                 watchBtn.classList.remove('hidden');
-                watchBtn.onclick = () => reproducirVideo(s.verURL, s.titulo);
+                watchBtn.onclick = () => {
+                   // Comprobar si hay etiqueta 'Pelis' en verURL
+                   const tieneEtiquetaPelis = Array.isArray(s.verURL) && s.verURL.some(v => v.temporada === "Pelis");
+                   
+                   if (tieneEtiquetaPelis) {
+                       const link = s.verURL[0].url;
+                       reproducirVideo(link, s.titulo);
+                   } else if (Array.isArray(s.verURL) && s.verURL.length > 0) {
+                       mostrarSelectorVer(s);
+                   } else {
+                       reproducirVideo(s.verURL, s.titulo);
+                   }
+                };
             } else {
                 watchBtn.classList.add('hidden');
             }
@@ -440,6 +472,68 @@
             document.getElementById('modal').classList.remove('hidden');
             document.getElementById('modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
+        }
+
+        function mostrarSelectorVer(s) {
+            document.getElementById('modal-content-wrapper').classList.add('hidden');
+            const selector = document.getElementById('watch-selector');
+            const controls = document.getElementById('watch-controls');
+            selector.classList.remove('hidden');
+            selector.classList.add('flex');
+
+            const temps = [...new Set(s.verURL.map(v => v.temporada))].sort((a, b) => {
+                const na = parseInt(a.replace(/\D/g, '')) || 0;
+                const nb = parseInt(b.replace(/\D/g, '')) || 0;
+                return na - nb;
+            });
+            
+            let html = `
+            <div class="space-y-4">
+                <div class="group">
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
+                        <i class="fas fa-layer-group text-[9px]"></i> Temporada
+                    </label>
+                    <select id="sel-ver-temp" class="dl-select">
+                        ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
+                    </select>
+                </div>
+                <div id="ver-cap-box" class="group">
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">
+                        <i class="fas fa-hashtag text-[9px]"></i> Capítulo
+                    </label>
+                    <select id="sel-ver-cap" class="dl-select"></select>
+                </div>
+            </div>`;
+            
+            controls.innerHTML = html;
+            const selTemp = document.getElementById('sel-ver-temp');
+            const selCap = document.getElementById('sel-ver-cap');
+
+            const actualizarCapitulos = () => {
+                const tempElegida = selTemp.value;
+                const caps = s.verURL.filter(v => v.temporada === tempElegida);
+                caps.sort((a, b) => {
+                    const na = parseInt(a.capitulo.replace(/\D/g, '')) || 0;
+                    const nb = parseInt(b.capitulo.replace(/\D/g, '')) || 0;
+                    return na - nb;
+                });
+                selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
+            };
+
+            selTemp.onchange = actualizarCapitulos;
+            actualizarCapitulos();
+
+            document.getElementById('watch-confirm-btn').onclick = () => {
+                const url = selCap.value;
+                const capLabel = selCap.options[selCap.selectedIndex].text;
+                if (url) reproducirVideo(url, `${s.titulo} - ${capLabel}`);
+                cerrarSelectorVer();
+            };
+        }
+
+        function cerrarSelectorVer() {
+            document.getElementById('watch-selector').classList.add('hidden');
+            document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
 
         function mostrarSelectorDescarga(s) {
@@ -564,10 +658,11 @@
             document.getElementById('modal').classList.add('hidden');
             document.getElementById('modal').classList.remove('flex');
             document.getElementById('download-selector').classList.add('hidden');
+            document.getElementById('watch-selector').classList.add('hidden');
             document.body.style.overflow = 'auto';
             document.getElementById('dailymotion-iframe').src = "";
             serieActualIdx = -1;
-            esNavegacionProximas = false; // Resetear al cerrar
+            esNavegacionProximas = false; 
         }
 
         document.addEventListener('keydown', (e) => {
