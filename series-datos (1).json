@@ -3541,11 +3541,19 @@
   {
     "titulo": "En Fuga",
     "imgURL": "https://pics.filmaffinity.com/run_away-362435196-large.jpg",
+    "temporada": "",
     "descripcion": "Simon lo tenía todo: una esposa y unos hijos que le adoraban, un buen trabajo y una casa perfecta. Pero cuando su hija mayor, Paige, se escapó, su mundo se vino abajo. Al encontrarla desprotegida y enganchada a las drogas en un parque, cree tener por fin la oportunidad de recuperarla. Sin embargo, no está sola, y una acalorada discusión se transforma en una espiral de violencia inesperada. Tras perderla de nuevo, Simon se ve arrastrado a un peligroso submundo donde saldrán a la luz secretos familiares tan oscuros que podrían destrozarlo todo.",
     "plataforma": "Netflix",
     "seccion": "proximas",
     "fecha": "1/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9us8iw",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/video/embed/f16e57egde28.html"
+      }
+    ],
     "descargas": []
   },
   {
