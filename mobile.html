@@ -2,95 +2,79 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeriesFav - Stream Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SeriesFav - Stream Premium Mobile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         :root { 
             --bg-main: #0a0a0a; 
-            --sidebar-bg: rgba(10, 10, 10, 0.95); 
+            --sidebar-bg: rgba(15, 15, 15, 0.98); 
             --accent-default: #e50914; 
         }
+
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg-main); 
             color: #ffffff; 
-            overflow-x: hidden; 
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
-        
-        /* Sidebar Desktop */
+
+        /* Sidebar Desktop / Bottom Nav Mobile */
         .sidebar { 
             width: 80px; 
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
             background: var(--sidebar-bg); 
             backdrop-filter: blur(20px); 
             border-right: 1px solid rgba(255, 255, 255, 0.05); 
+            z-index: 100;
         }
+        
         @media (min-width: 1024px) {
             .sidebar:hover { width: 260px; }
+            .sidebar span, .sidebar .filter-group { opacity: 0; transition: opacity 0.3s ease; white-space: nowrap; display: none; }
             .sidebar:hover span, .sidebar:hover .filter-group { opacity: 1; display: block; }
         }
-        .sidebar span, .sidebar .filter-group { 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-            white-space: nowrap; 
-            display: none; 
-        }
 
-        /* Mobile Nav */
-        .mobile-nav {
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        @media (max-width: 1023px) {
+            .sidebar {
+                width: 100% !important;
+                height: 70px !important;
+                bottom: 0;
+                top: auto !important;
+                flex-direction: row !important;
+                padding: 0 !important;
+                border-right: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .sidebar .nav-container {
+                flex-direction: row !important;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                padding: 0 10px;
+            }
+            .nav-link {
+                flex-direction: column !important;
+                gap: 4px !important;
+                padding: 8px !important;
+            }
+            .nav-link span { display: block !important; font-size: 10px !important; opacity: 1 !important; }
+            .main-content { margin-left: 0 !important; padding-bottom: 80px; }
+            .sidebar .filter-group, .sidebar .logo-box { display: none !important; }
         }
 
         .nav-link { transition: all 0.3s; border-radius: 12px; cursor: pointer; }
         .nav-link:hover, .nav-link.active { background: rgba(255, 255, 255, 0.05); color: var(--accent-default); }
-        
-        /* Selectores */
-        .custom-select { 
-            background: #1a1a1a; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            color: #ffffff; 
-            font-size: 0.85rem; 
-            padding: 0.75rem; 
-            border-radius: 12px; 
-            width: 100%; 
-            outline: none; 
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(255,255,255,0.5)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1rem;
-            transition: border 0.3s;
-        }
-        .custom-select:focus { border-color: var(--accent-default); }
 
-        .main-content { margin-left: 0; padding-bottom: 80px; }
-        @media (min-width: 1024px) {
-            .main-content { margin-left: 80px; padding-bottom: 0; }
-        }
-
-        .poster-card { 
-            position: relative; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            aspect-ratio: 2/3; 
-            cursor: pointer; 
-            background: #1a1a1a; 
-        }
+        /* Card Styles */
+        .poster-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 2/3; cursor: pointer; background: #1a1a1a; }
         .poster-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .poster-overlay { 
-            position: absolute; 
-            inset: 0; 
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 60%); 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            padding: 0.75rem; 
-        }
+        .poster-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 0.75rem; }
+        
         @media (min-width: 1024px) {
             .poster-overlay { opacity: 0; transition: opacity 0.3s; }
             .poster-card:hover .poster-overlay { opacity: 1; }
@@ -98,97 +82,98 @@
         }
 
         .fav-btn { 
-            position: absolute; 
-            top: 0.5rem; 
-            right: 0.5rem; 
-            z-index: 20; 
-            background: rgba(0,0,0,0.5); 
-            backdrop-filter: blur(10px); 
-            width: 32px; 
-            height: 32px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: 0.3s; 
+            position: absolute; top: 0.5rem; right: 0.5rem; z-index: 20; 
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); 
+            width: 32px; height: 32px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            transition: 0.3s;
         }
 
-        .promo-widget { 
-            width: 100%; 
-            max-width: 260px; 
-            height: 80px; 
-            background: rgba(20, 20, 20, 0.8); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 12px; 
-            display: flex; 
-            overflow: hidden; 
+        /* Modal Adaptive */
+        #modal-content-wrapper {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+            #modal-content-wrapper { grid-template-columns: 1fr !important; }
+            #m-img { height: 250px !important; border-right: none !important; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         }
 
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        .close-modal-btn {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 42px;
-            height: 42px;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
+        /* Close Button Correction */
+        .modal-close-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-            font-size: 28px;
-            z-index: 110;
-            transition: all 0.2s;
-            cursor: pointer;
-            padding: 0;
             line-height: 0;
-        }
-        .close-modal-btn span {
-            display: block;
-            margin-top: -4px; 
-        }
-        @media (min-width: 1024px) {
-            .close-modal-btn { width: 52px; height: 52px; font-size: 36px; top: 2rem; right: 2rem; }
+            padding-bottom: 2px;
         }
 
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+        .promo-widget { 
+            width: 100%; max-width: 280px; height: 80px; 
+            background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; 
+            display: flex; overflow: hidden; cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Mobile Filters Drawer */
+        #mobile-filters {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-filters.active { transform: translateX(0); }
+
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; background: #000; width: 100%; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        .sidebar-select { 
+            background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); 
+            color: #ffffff; font-size: 0.9rem; padding: 0.8rem; border-radius: 12px; 
+            width: 100%; outline: none; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1rem;
+        }
+
+        /* Header "Floating" Style */
+        .floating-header-item {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
         }
     </style>
 </head>
 <body class="flex flex-col lg:flex-row">
-    
-    <!-- Sidebar Desktop -->
-    <aside class="sidebar fixed left-0 h-screen z-50 hidden lg:flex flex-col py-8 overflow-hidden">
-        <div class="flex items-center px-7 mb-12">
+
+    <!-- Sidebar / Bottom Nav -->
+    <aside class="sidebar fixed h-screen flex flex-col py-8 overflow-hidden">
+        <div class="logo-box flex items-center px-7 mb-12">
             <i class="fas fa-play-circle text-2xl text-red-600"></i>
             <span class="ml-4 font-bold text-xl tracking-tight">SeriesFav</span>
         </div>
-        <nav class="flex flex-col gap-2 w-full px-4">
-            <div onclick="cambiarSeccion('series')" id="btn-series-desktop" class="nav-link active flex items-center gap-4 p-3 text-white">
+        <nav class="nav-container flex flex-col gap-2 w-full px-4">
+            <div onclick="cambiarSeccion('series')" id="btn-series" class="nav-link active flex items-center gap-4 p-3 text-white">
                 <i class="fas fa-tv text-xl w-6 text-center"></i>
                 <span class="font-medium">Series</span>
             </div>
-            <div onclick="cambiarSeccion('peliculas')" id="btn-peliculas-desktop" class="nav-link flex items-center gap-4 p-3 text-gray-400">
+            <div onclick="cambiarSeccion('peliculas')" id="btn-peliculas" class="nav-link flex items-center gap-4 p-3 text-gray-400">
                 <i class="fas fa-film text-xl w-6 text-center"></i>
                 <span class="font-medium">Películas</span>
             </div>
-            <div onclick="cambiarSeccion('favoritos')" id="btn-favoritos-desktop" class="nav-link flex items-center gap-4 p-3 text-gray-400">
+            <div onclick="cambiarSeccion('favoritos')" id="btn-favoritos" class="nav-link flex items-center gap-4 p-3 text-gray-400">
                 <i class="fas fa-heart text-xl w-6 text-center"></i>
                 <span class="font-medium">Mi Lista</span>
             </div>
             
-            <div class="filter-group mt-6 space-y-4">
+            <!-- Filters for Desktop -->
+            <div class="filter-group mt-6 space-y-6">
                 <div class="px-2">
                     <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Estado</label>
-                    <select id="filtro-seccion-desktop" onchange="aplicarFiltroDesktop()" class="custom-select">
+                    <select id="filtro-seccion" onchange="filtrar()" class="sidebar-select">
                         <option value="">Todo</option>
                         <option value="vistas">Vistas</option>
                         <option value="no-vistas">Pendientes</option>
@@ -197,7 +182,7 @@
                 </div>
                 <div class="px-2">
                     <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Plataforma</label>
-                    <select id="filtro-plataforma-desktop" onchange="aplicarFiltroDesktop()" class="custom-select">
+                    <select id="filtro-plataforma" onchange="filtrar()" class="sidebar-select">
                         <option value="">Todas</option>
                         <option value="Netflix">Netflix</option>
                         <option value="Disney Plus">Disney Plus</option>
@@ -211,63 +196,61 @@
         </nav>
     </aside>
 
-    <!-- Mobile Nav Bar -->
-    <nav class="mobile-nav fixed bottom-0 left-0 right-0 h-16 z-50 lg:hidden flex justify-around items-center px-4">
-        <div onclick="cambiarSeccion('series')" id="btn-series-mobile" class="flex flex-col items-center gap-1 text-red-600 transition-all">
-            <i class="fas fa-tv text-lg"></i>
-            <span class="text-[10px] font-bold">Series</span>
-        </div>
-        <div onclick="cambiarSeccion('peliculas')" id="btn-peliculas-mobile" class="flex flex-col items-center gap-1 text-gray-500">
-            <i class="fas fa-film text-lg"></i>
-            <span class="text-[10px] font-bold">Cine</span>
-        </div>
-        <div onclick="cambiarSeccion('favoritos')" id="btn-favoritos-mobile" class="flex flex-col items-center gap-1 text-gray-500">
-            <i class="fas fa-heart text-lg"></i>
-            <span class="text-[10px] font-bold">Mi Lista</span>
-        </div>
-        <div onclick="toggleMobileFilters()" class="flex flex-col items-center gap-1 text-gray-500">
-            <i class="fas fa-sliders-h text-lg"></i>
-            <span class="text-[10px] font-bold">Filtros</span>
-        </div>
-    </nav>
-
-    <main class="main-content flex-1 min-h-screen">
-        <header class="sticky top-0 z-40 px-6 lg:px-10 py-4 lg:py-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-gradient-to-b from-black to-transparent backdrop-blur-md lg:backdrop-blur-none">
-            <div class="flex items-center justify-between w-full md:w-auto">
-                <div class="lg:hidden flex items-center gap-2">
-                    <i class="fas fa-play-circle text-2xl text-red-600"></i>
-                    <span class="font-bold text-lg tracking-tight">SeriesFav</span>
-                </div>
-                <div id="promo-container" class="hidden md:flex flex-col items-start gap-2">
-                    <div id="promo-item" class="promo-widget"></div>
-                    <div id="promo-dots" class="flex gap-1.5 ml-2"></div>
-                </div>
+    <!-- Content Area -->
+    <main class="main-content flex-1 lg:ml-[80px] min-h-screen">
+        <!-- Header sin fondo principal, solo items flotantes -->
+        <header class="sticky top-0 z-40 px-6 lg:px-10 py-4 lg:py-6 flex flex-col sm:flex-row gap-4 justify-between items-center bg-transparent pointer-events-none">
+            <div id="promo-container" class="hidden md:flex flex-col items-start gap-2 pointer-events-auto">
+                <div id="promo-item" class="promo-widget"></div>
+                <div id="promo-dots" class="flex gap-1.5 ml-2"></div>
             </div>
-
-            <div class="bg-white/5 border border-white/10 rounded-full px-4 py-2 flex items-center gap-3 w-full md:w-72 focus-within:bg-white/10 transition-all">
-                <i class="fas fa-search text-gray-500 text-sm"></i>
-                <input type="text" id="buscador" placeholder="Buscar contenido..." oninput="filtrar()" class="bg-transparent border-none outline-none text-sm w-full text-white">
+            
+            <div class="flex items-center gap-3 w-full sm:w-auto pointer-events-auto">
+                <div class="flex-1 floating-header-item rounded-full px-4 py-2 flex items-center gap-3 sm:w-72 focus-within:ring-2 focus-within:ring-red-600/50 transition-all">
+                    <i class="fas fa-search text-gray-500 text-sm"></i>
+                    <input type="text" id="buscador" placeholder="Buscar..." oninput="filtrar()" class="bg-transparent border-none outline-none text-sm w-full text-white py-1">
+                </div>
+                <!-- Filter Toggle for Mobile -->
+                <button onclick="toggleMobileFilters()" class="lg:hidden floating-header-item p-2.5 rounded-full text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
             </div>
         </header>
 
-        <!-- Filters Overlay Mobile -->
-        <div id="mobile-filters" class="hidden lg:hidden fixed inset-0 bg-black/95 z-[60] p-8 flex flex-col gap-6 items-center justify-center">
-             <button onclick="toggleMobileFilters()" class="close-modal-btn"><span>&times;</span></button>
-             <h3 class="text-xl font-bold mb-4">Filtros</h3>
-             <div class="w-full space-y-6 max-w-sm">
-                 <div>
-                    <label class="text-xs uppercase text-gray-400 font-bold mb-2 block">Estado</label>
-                    <select id="filtro-seccion-mobile" class="custom-select">
-                        <option value="">Cualquier estado</option>
+        <div class="px-6 lg:px-10 pb-24">
+            <div class="mb-8 mt-4">
+                <h1 id="main-title" class="text-2xl lg:text-3xl font-bold tracking-tight text-white">Catálogo de Series</h1>
+                <p id="main-subtitle" class="text-gray-500 text-sm mt-1">Explora tus series favoritas.</p>
+            </div>
+            
+            <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 lg:gap-8">
+                <!-- Data here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Filters Drawer -->
+    <div id="mobile-filters" class="fixed inset-0 z-[110] hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleMobileFilters()"></div>
+        <div class="absolute right-0 top-0 h-full w-80 bg-[#111] p-8 shadow-2xl border-l border-white/10">
+            <div class="flex justify-between items-center mb-10">
+                <h3 class="font-bold text-xl">Filtros</h3>
+                <button onclick="toggleMobileFilters()" class="text-2xl">&times;</button>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-3 block">Estado de visualización</label>
+                    <select id="filtro-seccion-mob" onchange="syncFilters('estado')" class="sidebar-select">
+                        <option value="">Todo</option>
                         <option value="vistas">Vistas</option>
                         <option value="no-vistas">Pendientes</option>
                         <option value="proximas">Próximamente</option>
                     </select>
                 </div>
                 <div>
-                    <label class="text-xs uppercase text-gray-400 font-bold mb-2 block">Plataforma</label>
-                    <select id="filtro-plataforma-mobile" class="custom-select">
-                        <option value="">Todas las plataformas</option>
+                    <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-3 block">Plataformas de Stream</label>
+                    <select id="filtro-plataforma-mob" onchange="syncFilters('plataforma')" class="sidebar-select">
+                        <option value="">Todas</option>
                         <option value="Netflix">Netflix</option>
                         <option value="Disney Plus">Disney Plus</option>
                         <option value="Apple TV">Apple TV</option>
@@ -276,103 +259,96 @@
                         <option value="Otros">Otras</option>
                     </select>
                 </div>
-             </div>
-             <button onclick="aplicarFiltrosMoviles()" class="mt-8 bg-white text-black font-bold px-12 py-4 rounded-xl shadow-xl active:scale-95 transition-all">APLICAR</button>
-        </div>
-
-        <div class="px-6 lg:px-10 pb-24 lg:pb-20">
-            <div class="mb-8 lg:mb-10">
-                <h1 id="main-title" class="text-2xl lg:text-3xl font-bold tracking-tight">Catálogo de Series</h1>
-                <p id="main-subtitle" class="text-gray-500 mt-1 text-sm lg:text-base">Explora tus series favoritas en un solo lugar.</p>
+                <button onclick="toggleMobileFilters()" class="w-full bg-red-600 text-white font-bold py-4 rounded-xl mt-10">Aplicar Filtros</button>
             </div>
-            <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 lg:gap-8"></div>
         </div>
-    </main>
+    </div>
 
-    <!-- Modal Principal -->
-    <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 lg:p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
-        <button onclick="cerrarModal()" class="close-modal-btn"><span>&times;</span></button>
+    <!-- Main Modal -->
+    <div id="modal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4 lg:p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
+        <!-- Botón Cerrar -->
+        <button onclick="cerrarModal()" class="modal-close-btn fixed top-6 right-6 lg:top-8 lg:right-8 text-3xl text-gray-400 hover:text-white transition z-[160] bg-black/40 w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/10">&times;</button>
         
-        <div id="modal-content-wrapper" class="bg-[#111] max-w-3xl w-full rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10 flex flex-col md:grid md:grid-cols-[2fr_3fr] shadow-2xl relative">
-            <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[240px] md:h-auto"></div>
-            <div id="m-info-panel" class="p-6 lg:p-8 relative flex flex-col justify-center">
-                <div class="flex items-center gap-3">
+        <div id="modal-content-wrapper" class="bg-[#111] max-w-4xl w-full rounded-3xl overflow-hidden border border-white/10 grid grid-cols-1 md:grid-cols-[1.8fr_3fr] shadow-2xl relative">
+            <div id="m-img" class="p-4 bg-[#0c0c0c] flex items-center justify-center h-[200px] md:h-auto border-r border-white/5"></div>
+            <div id="m-info-panel" class="p-6 lg:p-10 relative flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-2">
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
-                    <span id="m-release-date" class="hidden font-medium text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300"></span>
+                    <span id="m-release-date" class="hidden font-bold text-[10px] px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-200 items-center gap-2">
+                        <i class="far fa-calendar-alt text-red-500"></i>
+                        <span id="m-date-text"></span>
+                    </span>
                 </div>
-                <h2 id="m-title" class="text-xl lg:text-2xl font-bold mt-1 mb-3 lg:mb-4 text-white">Título</h2>
-                <p id="m-desc" class="text-gray-400 leading-relaxed text-xs md:text-sm max-h-[120px] overflow-y-auto pr-2 outline-none"></p>
+                <h2 id="m-title" class="text-2xl lg:text-3xl font-bold mb-4 text-white">Título</h2>
+                <p id="m-desc" class="text-gray-400 leading-relaxed text-sm lg:text-base max-h-[150px] overflow-y-auto pr-2 mb-6"></p>
                 
-                <div id="m-season-selector" class="hidden mt-6">
-                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Temporadas</label>
+                <div id="m-season-selector" class="hidden mb-6">
+                    <label class="text-[10px] uppercase text-gray-500 font-bold mb-3 block tracking-widest">Temporadas</label>
                     <div id="m-season-chips" class="flex flex-wrap gap-2"></div>
                 </div>
 
-                <div class="mt-8 flex flex-wrap gap-2">
-                    <button id="m-watch-btn" class="hidden w-full bg-red-600 text-white px-4 py-3 lg:py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center justify-center gap-2 text-xs mb-2">
-                        <i class="fas fa-play"></i> VER AHORA
+                <div class="flex flex-wrap gap-3">
+                    <button id="m-watch-btn" class="hidden bg-red-600 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 text-sm flex-1 sm:flex-none justify-center">
+                        <i class="fas fa-tv"></i> Ver
                     </button>
-                    <button id="m-trailer-btn" class="flex-1 lg:flex-none bg-white text-black px-4 py-3 lg:py-2 rounded-lg font-bold hover:scale-105 transition flex items-center justify-center gap-2 text-xs">
-                        <i class="fas fa-video"></i> Tráiler
+                    <button id="m-trailer-btn" class="bg-white text-black px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 text-sm flex-1 sm:flex-none justify-center">
+                        <i class="fas fa-play-circle"></i> Tráiler
                     </button>
-                    <button id="m-download-btn" class="flex-1 lg:flex-none bg-blue-600 text-white px-4 py-3 lg:py-2 rounded-lg font-bold hover:bg-blue-700 transition flex items-center justify-center gap-2 text-xs">
+                    <button id="m-download-btn" class="hidden bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 text-sm flex-1 sm:flex-none justify-center">
                         <i class="fas fa-download"></i> Descargar
                     </button>
-                    <button id="m-fav-toggle" class="bg-white/10 border border-white/10 text-white p-3 lg:p-2 px-4 rounded-lg hover:bg-white/20 transition flex items-center gap-2 text-xs">
+                    <button id="m-fav-toggle" class="bg-white/10 border border-white/10 text-white p-3 px-5 rounded-xl hover:bg-white/20 transition-all flex items-center justify-center">
                         <i class="fas fa-heart"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Selector de Ver (Series/Pelis) -->
-        <div id="watch-selector" class="hidden bg-[#111] max-w-sm w-full rounded-2xl p-6 lg:p-8 border border-white/10 shadow-2xl flex-col gap-6">
+        <!-- Selection Modals -->
+        <div id="watch-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-red-600/20 flex items-center justify-center">
-                        <i class="fas fa-play text-red-500 text-sm"></i>
+                    <div id="watch-type-icon" class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
+                        <i class="fas fa-tv"></i>
                     </div>
-                    <h3 class="text-lg font-bold">Reproducir</h3>
+                    <div>
+                        <h3 id="watch-modal-title" class="font-bold text-white">Cargando...</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Elige opción</p>
+                    </div>
                 </div>
-                <button onclick="cerrarSelectorVer()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                <button onclick="cerrarSelectorVer()" class="text-gray-500 hover:text-white text-xl">&times;</button>
             </div>
-            <div id="watch-controls" class="space-y-5"></div>
-            <div class="pt-4 space-y-3">
-                <button id="watch-confirm-btn" class="w-full bg-red-600 text-white font-bold py-3.5 rounded-xl hover:bg-red-700 transition shadow-lg shadow-red-900/20 flex items-center justify-center gap-2">
-                    REPRODUCIR <i class="fas fa-play text-[10px]"></i>
-                </button>
-                <button onclick="cerrarSelectorVer()" class="w-full text-gray-500 text-xs font-medium py-2">Cancelar</button>
-            </div>
+            <div id="watch-controls" class="space-y-4"></div>
+            <button id="watch-confirm-btn" class="w-full bg-red-600 text-white font-bold py-4 rounded-2xl hover:bg-red-700 transition">REPRODUCIR</button>
         </div>
 
-        <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-2xl p-6 lg:p-8 border border-white/10 shadow-2xl flex-col gap-6">
-            <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative">
+             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-blue-600/20 flex items-center justify-center">
-                        <i class="fas fa-download text-blue-500 text-sm"></i>
+                    <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        <i class="fas fa-cloud-download-alt"></i>
                     </div>
-                    <h3 class="text-lg font-bold">Descargar</h3>
+                    <div>
+                        <h3 class="font-bold text-white">Descargar</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Selecciona archivo</p>
+                    </div>
                 </div>
-                <button onclick="cerrarSelectorDescarga()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                <button onclick="cerrarSelectorDescarga()" class="text-gray-500 hover:text-white text-xl">&times;</button>
             </div>
-            <div id="dl-controls" class="space-y-5"></div>
-            <div class="pt-4 space-y-3">
-                <button id="dl-confirm-btn" class="w-full bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2">
-                    IR AL ENLACE <i class="fas fa-external-link-alt text-[10px]"></i>
-                </button>
-                <button onclick="cerrarSelectorDescarga()" class="w-full text-gray-500 text-xs font-medium py-2">Cancelar</button>
-            </div>
+            <div id="dl-controls" class="space-y-4"></div>
+            <button id="dl-confirm-btn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition">IR AL ENLACE</button>
         </div>
 
-        <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4">
-             <div class="video-container rounded-2xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
-                 <div id="video-loader" class="text-white text-sm">Cargando...</div>
+        <!-- Video Player Panel -->
+        <div id="video-panel" class="hidden w-full max-w-5xl flex flex-col gap-4">
+             <div class="video-container rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
+                 <div id="video-loader" class="text-white text-sm">Preparando...</div>
                  <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
              </div>
-             <div class="flex justify-between items-center px-2">
-                 <h3 id="video-title" class="text-lg lg:text-xl font-bold truncate pr-4"></h3>
-                 <button onclick="volverAInfo()" class="shrink-0 text-[10px] bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition border border-white/10">
-                    <i class="fas fa-arrow-left mr-2"></i> Volver
+             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2 gap-4">
+                 <h3 id="video-title" class="text-lg lg:text-xl font-bold text-white truncate max-w-full"></h3>
+                 <button onclick="volverAInfo()" class="text-xs bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full transition border border-white/10 w-full sm:w-auto">
+                    <i class="fas fa-arrow-left mr-2"></i> Volver a info
                  </button>
              </div>
         </div>
@@ -384,9 +360,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
-        const MAX_DOTS = 5;
-
-        let filtrosGlobales = { estado: "", plataforma: "" };
+        let esNavegacionProximas = false;
 
         async function init() {
             try {
@@ -394,8 +368,7 @@
                 catalogo = await res.json();
                 proximas = catalogo.filter(s => s.seccion === 'proximas');
                 if(proximas.length > 0) {
-                    const promoC = document.getElementById('promo-container');
-                    if(promoC) promoC.classList.remove('hidden');
+                    document.getElementById('promo-container').classList.remove('hidden');
                     createPromoDots();
                     startPromoCycle();
                 }
@@ -403,35 +376,25 @@
             } catch (e) { console.error("Error cargando el catálogo:", e); }
         }
 
-        function aplicarFiltroDesktop() {
-            filtrosGlobales.estado = document.getElementById('filtro-seccion-desktop').value;
-            filtrosGlobales.plataforma = document.getElementById('filtro-plataforma-desktop').value;
-            filtrar();
-        }
-
         function toggleMobileFilters() {
             const el = document.getElementById('mobile-filters');
             el.classList.toggle('hidden');
-            el.classList.toggle('flex');
-            
-            if(el.classList.contains('flex')) {
-                document.getElementById('filtro-seccion-mobile').value = filtrosGlobales.estado;
-                document.getElementById('filtro-plataforma-mobile').value = filtrosGlobales.plataforma;
-            }
+            setTimeout(() => el.classList.toggle('active'), 10);
         }
 
-        function aplicarFiltrosMoviles() {
-            filtrosGlobales.estado = document.getElementById('filtro-seccion-mobile').value;
-            filtrosGlobales.plataforma = document.getElementById('filtro-plataforma-mobile').value;
-            toggleMobileFilters();
+        function syncFilters(type) {
+            if(type === 'estado') {
+                document.getElementById('filtro-seccion').value = document.getElementById('filtro-seccion-mob').value;
+            } else {
+                document.getElementById('filtro-plataforma').value = document.getElementById('filtro-plataforma-mob').value;
+            }
             filtrar();
         }
 
         function createPromoDots() {
             const dotsContainer = document.getElementById('promo-dots');
-            if(!dotsContainer) return;
             dotsContainer.innerHTML = "";
-            for (let i = 0; i < MAX_DOTS; i++) {
+            for (let i = 0; i < Math.min(proximas.length, 5); i++) {
                 const dot = document.createElement('div');
                 dot.id = `dot-${i}`;
                 dot.className = "w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300";
@@ -450,21 +413,22 @@
             const promoEl = document.getElementById('promo-item');
             const color = getColor(item);
             promoEl.innerHTML = `
-                <div class="promo-content flex w-full h-full cursor-pointer" onclick='abrirModalDesdeObjeto(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
-                    <img src="${item.imgURL}" class="w-14 h-full object-cover border-r border-white/10">
-                    <div class="p-2 flex flex-col justify-center flex-1">
-                        <span class="text-[8px] font-bold uppercase tracking-widest mb-0.5" style="color: ${color}">Próximamente</span>
-                        <h5 class="text-[11px] font-bold line-clamp-1">${item.titulo}</h5>
-                        <p class="text-[8px] text-gray-500 truncate">${item.plataforma}</p>
+                <div class="promo-content flex w-full h-full" onclick='abrirModalDesdeMinitarjeta(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
+                    <img src="${item.imgURL}" class="w-16 h-full object-cover border-r border-white/10">
+                    <div class="p-3 flex flex-col justify-center flex-1">
+                        <span class="text-[8px] font-bold uppercase tracking-widest mb-1" style="color: ${color}">Próximamente</span>
+                        <h5 class="text-xs font-bold line-clamp-1">${item.titulo}</h5>
+                        <p class="text-[9px] text-gray-500 mt-0.5 truncate">${item.plataforma}</p>
                     </div>
                 </div>`;
-            const activeDotIdx = promoIdx % MAX_DOTS;
-            for (let i = 0; i < MAX_DOTS; i++) {
+            
+            const dots = 5;
+            for (let i = 0; i < dots; i++) {
                 const dot = document.getElementById(`dot-${i}`);
                 if(dot) {
-                    const isActive = i === activeDotIdx;
+                    const isActive = i === (promoIdx % dots);
                     dot.style.backgroundColor = isActive ? 'white' : 'rgba(255,255,255,0.2)';
-                    dot.style.width = isActive ? '10px' : '6px';
+                    dot.style.width = isActive ? '12px' : '6px';
                 }
             }
         }
@@ -493,20 +457,20 @@
         function render(data) {
             const grid = document.getElementById('grid');
             if (data.length === 0) {
-                grid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600">Nada que mostrar con estos filtros.</div>`;
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600">No se encontró contenido.</div>`;
                 return;
             }
             grid.innerHTML = data.map((item, index) => {
                 const isFav = favoritos.includes(item.titulo);
                 const color = getColor(item);
                 return `
-                <div class="poster-card" onclick="abrirModalPorIndice(${index})">
+                <div class="poster-card" onclick="abrirModalDesdeCatalogo(${index})">
                     <div class="fav-btn" onclick="toggleFavorito(event, '${item.titulo.replace(/'/g, "\\'")}')">
-                        <i class="fas fa-heart" style="color: ${isFav ? color : 'rgba(255,255,255,0.4)'}"></i>
+                        <i class="fas fa-heart ${isFav ? 'text-red-600' : 'text-white/40'}"></i>
                     </div>
-                    <img src="${item.imgURL}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=No+Imagen'" loading="lazy">
+                    <img src="${item.imgURL}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=No+Img'" loading="lazy">
                     <div class="poster-overlay">
-                        <span class="text-[9px] font-black uppercase tracking-widest" style="color: ${color}">${item.plataforma}</span>
+                        <span class="text-[9px] font-black uppercase tracking-widest mb-1" style="color: ${color}">${item.plataforma}</span>
                         <h4 class="text-xs font-bold truncate">${item.titulo}</h4>
                     </div>
                 </div>`;
@@ -515,32 +479,24 @@
 
         function filtrar() {
             const query = document.getElementById('buscador').value.toLowerCase();
-            const estadoGlobal = filtrosGlobales.estado;
-            const plataformaFiltro = filtrosGlobales.plataforma;
+            const estadoSelect = document.getElementById('filtro-seccion').value;
+            const plataformaFiltro = document.getElementById('filtro-plataforma').value;
             
             const mainTitle = document.getElementById('main-title');
             const mainSubtitle = document.getElementById('main-subtitle');
             
-            if(seccionActual === 'series') { mainTitle.innerText = "Catálogo de Series"; mainSubtitle.innerText = "Explora tus series favoritas."; }
-            else if(seccionActual === 'peliculas') { mainTitle.innerText = "Películas"; mainSubtitle.innerText = "El mejor cine a un clic."; }
-            else { mainTitle.innerText = "Mi Lista"; mainSubtitle.innerText = "Tu contenido guardado."; }
+            if(seccionActual === 'series') { mainTitle.innerText = "Series"; mainSubtitle.innerText = "Todas tus series en un lugar."; }
+            else if(seccionActual === 'peliculas') { mainTitle.innerText = "Películas"; mainSubtitle.innerText = "El mejor cine disponible."; }
+            else { mainTitle.innerText = "Mi Lista"; mainSubtitle.innerText = "Tu selección personalizada."; }
 
             filtrados = catalogo.filter(s => {
                 const peli = esPelicula(s);
                 const matchQuery = s.titulo.toLowerCase().includes(query);
                 if (query.trim() !== "") return matchQuery;
                 
-                let matchSeccion = (seccionActual === 'series' && !peli) || 
-                                   (seccionActual === 'peliculas' && peli) || 
-                                   (seccionActual === 'favoritos' && favoritos.includes(s.titulo));
-
-                const matchEstado = !estadoGlobal || s.seccion === estadoGlobal;
-
-                let matchPlataforma = true;
-                if (seccionActual === 'series') {
-                    matchPlataforma = !plataformaFiltro || 
-                                     (plataformaFiltro === "Otros" ? !principalesPlataformas.includes(s.plataforma.toLowerCase()) : s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase());
-                }
+                let matchSeccion = (seccionActual === 'series' && !peli) || (seccionActual === 'peliculas' && peli) || (seccionActual === 'favoritos' && favoritos.includes(s.titulo));
+                const matchEstado = !estadoSelect || s.seccion === estadoSelect;
+                let matchPlataforma = (seccionActual === 'peliculas' || !plataformaFiltro) ? true : (plataformaFiltro === "Otros" ? !principalesPlataformas.includes(s.plataforma.toLowerCase()) : s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase());
                 
                 return matchSeccion && matchEstado && matchPlataforma;
             });
@@ -550,83 +506,93 @@
         function cambiarSeccion(nuevaSeccion) {
             seccionActual = nuevaSeccion;
             ['series', 'peliculas', 'favoritos'].forEach(l => {
-                const d = document.getElementById(`btn-${l}-desktop`);
-                const m = document.getElementById(`btn-${l}-mobile`);
-                if (l === nuevaSeccion) {
-                    if(d) d.classList.add('active', 'text-white');
-                    if(m) { m.classList.add('text-red-600'); m.classList.remove('text-gray-500'); }
-                } else {
-                    if(d) d.classList.remove('active', 'text-white');
-                    if(m) { m.classList.remove('text-red-600'); m.classList.add('text-gray-500'); }
-                }
+                const el = document.getElementById(`btn-${l}`);
+                if (l === nuevaSeccion) el.classList.add('active', 'text-white');
+                else el.classList.remove('active', 'text-white');
             });
             filtrar();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function abrirModalDesdeObjeto(s) {
-            const idx = filtrados.findIndex(f => f.titulo === s.titulo);
-            if(idx !== -1) abrirModalPorIndice(idx);
-            else { serieActualIdx = -1; poblarModal(s); }
+        function abrirModalDesdeCatalogo(idx) {
+            esNavegacionProximas = false;
+            abrirModalPorIndice(idx);
+        }
+
+        function abrirModalDesdeMinitarjeta(s) {
+            esNavegacionProximas = true;
+            const idx = proximas.findIndex(p => p.titulo === s.titulo);
+            abrirModalPorIndice(idx);
         }
 
         function poblarModal(s) {
+            if (!s) return;
             volverAInfo();
             const isFav = favoritos.includes(s.titulo);
             const color = getColor(s);
-            const platEl = document.getElementById('m-platform');
-            platEl.innerText = s.plataforma; 
-            platEl.style.color = color;
-            const dateEl = document.getElementById('m-release-date');
-            if (s.seccion === 'proximas' && s.fecha) { dateEl.innerText = `Estreno: ${s.fecha}`; dateEl.classList.remove('hidden'); } else { dateEl.classList.add('hidden'); }
-            document.getElementById('m-title').innerText = s.titulo;
-            document.getElementById('m-desc').innerText = s.descripcion;
-            document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-full max-w-full rounded-xl shadow-2xl object-contain">`;
-            document.getElementById('m-trailer-btn').onclick = () => reproducirTrailerJSON(s);
             
-            // Botón VER AHORA (Aparece si existe verURL sea peli o serie)
+            const platEl = document.getElementById('m-platform');
+            platEl.innerText = s.plataforma || 'Varios'; 
+            platEl.style.color = color;
+
+            const dateEl = document.getElementById('m-release-date');
+            if (s.seccion === 'proximas' && s.fecha) { 
+                document.getElementById('m-date-text').innerText = s.fecha; 
+                dateEl.classList.remove('hidden'); 
+                dateEl.classList.add('flex');
+            } else {
+                dateEl.classList.add('hidden');
+            }
+
+            document.getElementById('m-title').innerText = s.titulo;
+            document.getElementById('m-desc').innerText = s.descripcion || 'Sin descripción disponible.';
+            document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-full max-w-full rounded-xl shadow-2xl object-contain">`;
+            
+            // Ver Ahora
             const watchBtn = document.getElementById('m-watch-btn');
-            if (s.verURL && (Array.isArray(s.verURL) ? s.verURL.length > 0 : s.verURL.trim() !== "")) {
+            if (s.verURL) {
                 watchBtn.classList.remove('hidden');
                 watchBtn.onclick = () => mostrarSelectorVer(s);
             } else {
                 watchBtn.classList.add('hidden');
             }
 
+            // Trailer
+            document.getElementById('m-trailer-btn').onclick = () => reproducirVideo(s.trailerURL, s.titulo, true);
+            
+            // Temporadas
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
-            
-            let versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
-            
+            const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
+
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
-                versionesMismaSerie.sort((a, b) => {
-                    const labelA = a.temporada || (a.descargas && a.descargas[0] ? a.descargas[0].temporada : "T1");
-                    const labelB = b.temporada || (b.descargas && b.descargas[0] ? b.descargas[0].temporada : "T1");
-                    const numA = parseInt(labelA.replace(/\D/g, '')) || 0;
-                    const numB = parseInt(labelB.replace(/\D/g, '')) || 0;
-                    return numA - numB;
-                });
-
                 versionesMismaSerie.forEach(version => {
-                    let label = version.temporada || (version.descargas && version.descargas[0] ? version.descargas[0].temporada : "T1");
+                    let label = version.temporada || "T1";
                     const chip = document.createElement('button');
                     const esLaActual = version.imgURL === s.imgURL && version.descripcion === s.descripcion;
-                    chip.className = `px-3 py-2 rounded-lg text-[10px] font-bold border transition-all ${esLaActual ? 'bg-white text-black border-white' : 'bg-white/5 text-gray-400 border-white/5'}`;
-                    chip.innerText = label.startsWith('T') ? label : `T${label}`;
+                    chip.className = `px-4 py-2 rounded-lg text-xs font-bold border transition-all ${esLaActual ? 'bg-white text-black border-white' : 'bg-white/5 text-gray-400 border-white/5'}`;
+                    chip.innerText = label.toString().startsWith('T') ? label : `T${label}`;
                     chip.onclick = () => poblarModal(version);
                     seasonChips.appendChild(chip);
                 });
-            } else { seasonSelector.classList.add('hidden'); }
-            
+            } else {
+                seasonSelector.classList.add('hidden');
+            }
+
+            // Descargas
             const downloadBtn = document.getElementById('m-download-btn');
             if (s.descargas && s.descargas.length > 0) {
                 downloadBtn.classList.remove('hidden');
                 downloadBtn.onclick = () => mostrarSelectorDescarga(s);
-            } else { downloadBtn.classList.add('hidden'); }
-            
+            } else {
+                downloadBtn.classList.add('hidden');
+            }
+
+            // Favorito
             const favBtn = document.getElementById('m-fav-toggle');
-            favBtn.style.backgroundColor = isFav ? color : 'rgba(255,255,255,0.1)';
+            favBtn.style.color = isFav ? color : 'white';
             favBtn.onclick = () => { toggleFavorito(null, s.titulo); poblarModal(s); };
             
             document.getElementById('modal').classList.remove('hidden');
@@ -634,126 +600,124 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Lógica para el botón VER AHORA con detección de T (Temporada) y C (Capítulo)
         function mostrarSelectorVer(s) {
             document.getElementById('modal-content-wrapper').classList.add('hidden');
             const selector = document.getElementById('watch-selector');
             const controls = document.getElementById('watch-controls');
-            const confirmBtn = document.getElementById('watch-confirm-btn');
-            selector.classList.remove('hidden'); selector.classList.add('flex');
-            
-            // Analizar si verURL es un array de objetos o un string directo (película)
-            const esLista = Array.isArray(s.verURL);
-            
-            if (!esLista) {
-                // Es una película (URL directa)
-                controls.innerHTML = `
-                    <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
-                        <i class="fas fa-check-circle text-green-500 text-3xl mb-3"></i>
-                        <p class="text-white font-medium">¡Su película está lista!</p>
-                        <p class="text-gray-500 text-[10px] mt-1">Haz clic abajo para comenzar la reproducción.</p>
-                    </div>`;
-                confirmBtn.onclick = () => { reproducirDirecto(s.verURL, s.titulo); cerrarSelectorVer(); };
-            } else {
-                // Es una serie (lista de episodios/temporadas)
-                const temps = [...new Set(s.verURL.map(v => v.temporada))].sort();
-                
-                controls.innerHTML = `
-                    <div>
-                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Seleccionar Temporada</label>
-                        <select id="sel-ver-temp" class="custom-select">
-                            ${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Seleccionar Episodio</label>
-                        <select id="sel-ver-cap" class="custom-select"></select>
-                    </div>`;
-                
-                const selTemp = document.getElementById('sel-ver-temp');
-                const selCap = document.getElementById('sel-ver-cap');
-                
-                const actualizarEpisodios = () => {
-                    const tempElegida = selTemp.value;
-                    const eps = s.verURL.filter(v => v.temporada === tempElegida);
-                    selCap.innerHTML = eps.map(e => `<option value="${e.url}">${e.capitulo.startsWith('C') ? 'Capítulo ' + e.capitulo.substring(1) : e.capitulo}</option>`).join('');
+            selector.classList.remove('hidden');
+            selector.classList.add('flex');
+
+            const esSerie = Array.isArray(s.verURL);
+
+            if (!esSerie) {
+                document.getElementById('watch-modal-title').innerText = "Ver Contenido";
+                controls.innerHTML = `<div class="p-6 bg-red-500/5 rounded-2xl text-center text-sm font-bold">Pulse para reproducir</div>`;
+                document.getElementById('watch-confirm-btn').onclick = () => {
+                    reproducirVideo(s.verURL, s.titulo);
+                    document.getElementById('watch-selector').classList.add('hidden');
                 };
+            } else {
+                document.getElementById('watch-modal-title').innerText = "Elige Episodio";
+                const temps = [...new Set(s.verURL.map(d => d.temporada))];
+                controls.innerHTML = `
+                    <select id="watch-sel-temp" class="sidebar-select">
+                        ${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}
+                    </select>
+                    <select id="watch-sel-cap" class="sidebar-select"></select>`;
                 
-                selTemp.onchange = actualizarEpisodios;
-                actualizarEpisodios();
-                
-                confirmBtn.onclick = () => {
-                    const url = selCap.value;
-                    const labelCap = selCap.options[selCap.selectedIndex].text;
-                    if (url) reproducirDirecto(url, `${s.titulo} - ${labelCap}`);
-                    cerrarSelectorVer();
+                const selT = document.getElementById('watch-sel-temp'), selC = document.getElementById('watch-sel-cap');
+                const update = () => {
+                    const caps = s.verURL.filter(d => d.temporada === selT.value);
+                    selC.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.toString().startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
+                };
+                selT.onchange = update; update();
+                document.getElementById('watch-confirm-btn').onclick = () => {
+                    reproducirVideo(selC.value, `${s.titulo} - ${selC.options[selC.selectedIndex].text}`);
+                    document.getElementById('watch-selector').classList.add('hidden');
                 };
             }
         }
 
-        function reproducirDirecto(url, titulo) {
-            const videoPanel = document.getElementById('video-panel');
-            const iframe = document.getElementById('dailymotion-iframe');
-            const loader = document.getElementById('video-loader');
-            videoPanel.classList.remove('hidden'); iframe.classList.add('hidden'); loader.classList.remove('hidden');
-            document.getElementById('video-title').innerText = titulo;
-            iframe.src = url; 
-            iframe.classList.remove('hidden'); 
-            loader.classList.add('hidden');
+        function cerrarSelectorVer() {
+            document.getElementById('watch-selector').classList.add('hidden');
+            document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
-
-        function cerrarSelectorVer() { document.getElementById('watch-selector').classList.add('hidden'); document.getElementById('modal-content-wrapper').classList.remove('hidden'); }
 
         function mostrarSelectorDescarga(s) {
             document.getElementById('modal-content-wrapper').classList.add('hidden');
             const selector = document.getElementById('download-selector');
             const controls = document.getElementById('dl-controls');
-            selector.classList.remove('hidden'); selector.classList.add('flex');
-            const esPeliODescargaPeli = esPelicula(s) || (s.descargas && s.descargas.some(d => d.temporada === "Pelis"));
-            
-            if (esPeliODescargaPeli) {
-                controls.innerHTML = `<div class="bg-white/5 p-4 rounded-xl border border-white/5"><p class="text-gray-400 text-xs text-center">Disponible para descarga directa.</p></div>`;
-                document.getElementById('dl-confirm-btn').onclick = () => {
-                    const link = s.descargas[0].url; if(link) window.open(link, '_blank'); cerrarSelectorDescarga();
-                };
+            selector.classList.remove('hidden');
+            selector.classList.add('flex');
+
+            const peli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
+            if (peli) {
+                controls.innerHTML = `<div class="p-6 bg-blue-500/5 rounded-2xl text-center text-sm font-bold">Película lista</div>`;
+                document.getElementById('dl-confirm-btn').onclick = () => { window.open(s.descargas[0].url, '_blank'); cerrarSelectorDescarga(); };
             } else {
-                const temps = [...new Set(s.descargas.map(d => d.temporada))].sort();
-                controls.innerHTML = `<div><label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Temporada</label><select id="sel-temp" class="custom-select">${temps.map(t => `<option value="${t}">${t.startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}</select></div><div id="cap-box"><label class="text-[10px] uppercase text-gray-500 font-bold mb-2 block">Capítulo</label><select id="sel-cap" class="custom-select"></select></div>`;
-                const selTemp = document.getElementById('sel-temp');
-                const selCap = document.getElementById('sel-cap');
-                const actualizarCapitulos = () => {
-                    const tempElegida = selTemp.value;
-                    const caps = s.descargas.filter(d => d.temporada === tempElegida);
-                    selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
+                const temps = [...new Set(s.descargas.map(d => d.temporada))];
+                controls.innerHTML = `
+                    <select id="sel-temp" class="sidebar-select">${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.substring(1) : t}</option>`).join('')}</select>
+                    <select id="sel-cap" class="sidebar-select"></select>`;
+                const selT = document.getElementById('sel-temp'), selC = document.getElementById('sel-cap');
+                const update = () => {
+                    const caps = s.descargas.filter(d => d.temporada === selT.value);
+                    selC.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.toString().startsWith('C') ? 'Capítulo ' + c.capitulo.substring(1) : c.capitulo}</option>`).join('');
                 };
-                selTemp.onchange = actualizarCapitulos;
-                actualizarCapitulos();
-                document.getElementById('dl-confirm-btn').onclick = () => { const url = selCap.value; if (url) window.open(url, '_blank'); cerrarSelectorDescarga(); };
+                selT.onchange = update; update();
+                document.getElementById('dl-confirm-btn').onclick = () => { if(selC.value) window.open(selC.value, '_blank'); cerrarSelectorDescarga(); };
             }
         }
 
-        function cerrarSelectorDescarga() { document.getElementById('download-selector').classList.add('hidden'); document.getElementById('modal-content-wrapper').classList.remove('hidden'); }
+        function cerrarSelectorDescarga() {
+            document.getElementById('download-selector').classList.add('hidden');
+            document.getElementById('modal-content-wrapper').classList.remove('hidden');
+        }
 
-        function reproducirTrailerJSON(s) {
-            document.getElementById('modal-content-wrapper').classList.add('hidden');
+        function reproducirVideo(url, titulo, esTrailer = false) {
+            const modalContent = document.getElementById('modal-content-wrapper');
             const videoPanel = document.getElementById('video-panel');
             const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
-            videoPanel.classList.remove('hidden'); iframe.classList.add('hidden'); loader.classList.remove('hidden');
-            document.getElementById('video-title').innerText = s.titulo + " (Tráiler)";
-            if (s.trailerURL && s.trailerURL.trim() !== "") { iframe.src = s.trailerURL; iframe.classList.remove('hidden'); loader.classList.add('hidden'); } else { loader.innerText = "Tráiler no disponible."; }
+            
+            modalContent.classList.add('hidden');
+            videoPanel.classList.remove('hidden');
+            iframe.classList.add('hidden');
+            loader.classList.remove('hidden');
+            document.getElementById('video-title').innerText = titulo + (esTrailer ? " (Tráiler)" : "");
+
+            if (url) {
+                iframe.src = url;
+                iframe.classList.remove('hidden');
+                loader.classList.add('hidden');
+            } else {
+                loader.innerText = "No disponible actualmente.";
+            }
         }
 
-        function volverAInfo() { document.getElementById('video-panel').classList.add('hidden'); document.getElementById('modal-content-wrapper').classList.remove('hidden'); document.getElementById('dailymotion-iframe').src = ""; }
-        function abrirModalPorIndice(idx) { if(idx < 0) idx = filtrados.length - 1; if(idx >= filtrados.length) idx = 0; serieActualIdx = idx; poblarModal(filtrados[idx]); }
-        function cerrarModal() { 
-            document.getElementById('modal').classList.add('hidden'); 
-            document.getElementById('modal').classList.remove('flex'); 
-            document.getElementById('download-selector').classList.add('hidden'); 
-            document.getElementById('watch-selector').classList.add('hidden'); 
-            document.body.style.overflow = 'auto'; 
-            document.getElementById('dailymotion-iframe').src = ""; 
-            serieActualIdx = -1; 
+        function volverAInfo() {
+            document.getElementById('video-panel').classList.add('hidden');
+            document.getElementById('modal-content-wrapper').classList.remove('hidden');
+            document.getElementById('dailymotion-iframe').src = "";
+        }
+
+        function abrirModalPorIndice(idx) {
+            const lista = esNavegacionProximas ? proximas : filtrados;
+            if(!lista || lista.length === 0) return;
+            if(idx < 0) idx = lista.length - 1;
+            if(idx >= lista.length) idx = 0;
+            serieActualIdx = idx;
+            poblarModal(lista[idx]);
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+            document.getElementById('download-selector').classList.add('hidden');
+            document.getElementById('watch-selector').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('dailymotion-iframe').src = "";
+            serieActualIdx = -1;
         }
 
         init();
