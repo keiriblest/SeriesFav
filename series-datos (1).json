@@ -485,11 +485,30 @@
   {
     "titulo": "Rey Lobo",
     "imgURL": "https://pics.filmaffinity.com/wolf_king-531761730-large.jpg",
+    "temporada": "",
     "descripcion": "Drew Ferran alcanza la mayoría de edad y descubre que es el último de una larga estirpe de Hombres Lobo.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x95s4k4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x95s4k4",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://voe.sx/e/25nemhouibut"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://voe.sx/embed/25nemhouibut"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://mega.nz/embed/5RUyXIxZ#SXlcoarL1y8qndJkr_T_bvHq1J399orgqo8Ewd_YGEE.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Las Maldiciones",
