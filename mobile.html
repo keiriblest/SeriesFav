@@ -550,7 +550,10 @@
             
             // Ver Ahora
             const watchBtn = document.getElementById('m-watch-btn');
-            if (s.verURL) {
+            // Verificación robusta: debe existir y tener contenido (string no vacío o array con elementos)
+            const tieneContenido = s.verURL && s.verURL.length > 0;
+
+            if (tieneContenido) {
                 watchBtn.classList.remove('hidden');
                 watchBtn.onclick = () => mostrarSelectorVer(s);
             } else {
