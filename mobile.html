@@ -724,6 +724,55 @@
         }
 
         init();
-    </script>
+    
+        // Lógica de Swipe Táctil para la imagen del modal
+        (function() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            function handleSwipe() {
+                const threshold = 60; // Sensibilidad del deslizamiento
+                const diffX = touchEndX - touchStartX;
+
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX < 0) {
+                        // Deslizar a la izquierda -> Siguiente
+                        if (typeof abrirModalPorIndice === 'function') {
+                            abrirModalPorIndice(serieActualIdx + 1);
+                        }
+                    } else {
+                        // Deslizar a la derecha -> Anterior
+                        if (typeof abrirModalPorIndice === 'function') {
+                            abrirModalPorIndice(serieActualIdx - 1);
+                        }
+                    }
+                }
+            }
+
+            function setupSwipe() {
+                const container = document.getElementById('m-img');
+                if (container) {
+                    container.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].clientX;
+                    }, { passive: true });
+
+                    container.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].clientX;
+                        handleSwipe();
+                    }, { passive: true });
+
+                    // Prevenir que el swipe interfiera con el scroll vertical si se desea, 
+                    // aunque en el modal suele ser pantalla completa.
+                }
+            }
+
+            // Ejecutar cuando el DOM esté listo
+            if (document.readyState === 'complete') {
+                setupSwipe();
+            } else {
+                window.addEventListener('load', setupSwipe);
+            }
+        })();
+</script>
 </body>
 </html>
