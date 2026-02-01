@@ -1096,7 +1096,83 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9apwvc",
-    "verURL": "",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-e8x21qlm4u9q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-gcoen30nn2nh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-xcdneotkheuh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-h18kfgb5c4t1.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-sewtyi8sy7l3.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-rd2adzdz3lnh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-59gs2li1k80s.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-rtvuty0d0v9u.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-65m3z803ewsv.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-k0uq9n0dpibc.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://goodstream.one/embed-k1kvfm3yf84r.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://goodstream.one/embed-ailtd9c59wz7.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://goodstream.one/embed-8d7qgewf5q7d.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C14",
+        "url": "https://goodstream.one/embed-38u83606ihem.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C15",
+        "url": "https://goodstream.one/embed-52bdq08k760d.html"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -1292,11 +1368,54 @@
   {
     "titulo": "It: Bienvenidos a Derry",
     "imgURL": "https://pics.filmaffinity.com/it_welcome_to_derry-327973676-large.jpg",
+    "temporada": "",
     "descripcion": "Precuela de las películas de \"IT\" basadas en las novelas de Stephen King. Comienza en la década de 1960, en la época previa a los acontecimientos de la película de 2017, y cuenta los orígenes del payaso Pennywise.",
     "plataforma": "HBO Max",
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9r20tw",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-tvgfbgz14evl.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-yotbmi391yp5.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-gp5yjz99l32y.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-xjbhtcyt5crl.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-k80xo2oumalz.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-tzx4cuhwtkka.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-h3duvitrdvsb.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-2b6cgjs92j7j.html"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -1464,11 +1583,55 @@
   {
     "titulo": "Cross",
     "imgURL": "https://pics.filmaffinity.com/Cross_Serie_de_TV-139324483-large.jpg",
+    "temporada": "",
     "descripcion": "Alex Cross es un detective y psicólogo forense, capaz de indagar en las mentes de los asesinos y sus víctimas, para intentar identificar y capturar a los culpables. Serie basada en las novelas de James Paterson.",
     "plataforma": "Prime",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x96a32e"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x96a32e",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-tvpqiogb000o.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-nnsk6mxdmjw0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-ey8vadf8be26.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-psurhdjlfcjh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-wd6562pqfaez.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-jmiw2164j863.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-xba8a1idq5xp.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-225qiomkt6b1.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "CITADEL: Diana",
@@ -2363,11 +2526,55 @@
   {
     "titulo": "El misterio de Cemetery Road",
     "imgURL": "https://pics.filmaffinity.com/down_cemetery_road-471265061-large.jpg",
+    "temporada": "",
     "descripcion": "Cuando una casa explosiona en un tranquilo barrio de Oxford y una niña desaparece, la vecina Sarah Tucker se obsesiona con encontrarla y solicita la ayuda de la investigadora privada Zoë Boehm. Zoë y Sarah se encuentran de repente con una compleja conspiración que revela que las personas que durante mucho tiempo se creyeron muertas todavía están entre los vivos, mientras que los vivos se unen rápidamente a los muertos.",
     "plataforma": "Apple TV",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9s5nwe"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9s5nwe",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-44jbbtsmi58i.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-taxww34ar3hx.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-mk0ekwxa3149.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-nux7uhxsa0is.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-fgbna7p2kfau.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-s99mufi4kskt.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-lt2kfs2nzmvt.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-jfnkcivcbztz.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Succecion",
@@ -4077,6 +4284,11 @@
         "temporada": "T2",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-o6d2jq3u9mrb.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-guyofje5zcne.html"
       }
     ],
     "descargas": []
