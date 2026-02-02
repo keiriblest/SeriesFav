@@ -2289,11 +2289,14 @@
   {
     "titulo": "La diplomática",
     "imgURL": "https://pics.filmaffinity.com/the_diplomat-800685611-large.jpg",
+    "temporada": "",
     "descripcion": "En medio de una crisis internacional, Kate Wyler, una diplomática de carrera, aterriza como nueva embajadora norteamericana en Londres, un puesto de alto perfil político para el que no estaba preparada, con implicaciones tectónicas para su matrimonio y su futuro profesional.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8jsr2m"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8jsr2m",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Il mostro",
@@ -4864,7 +4867,7 @@
     "plataforma": "Prime",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/video/embed/x7yoddu",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7yoddu",
     "verURL": [
       {
         "temporada": "T1",
