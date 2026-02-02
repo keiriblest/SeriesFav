@@ -548,9 +548,7 @@
             document.getElementById('m-desc').innerText = s.descripcion || 'Sin descripción disponible.';
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-full max-w-full rounded-xl shadow-2xl object-contain">`;
             
-            // Ver Ahora
             const watchBtn = document.getElementById('m-watch-btn');
-            // Verificación robusta: debe existir y tener contenido (string no vacío o array con elementos)
             const tieneContenido = s.verURL && s.verURL.length > 0;
 
             if (tieneContenido) {
@@ -560,16 +558,26 @@
                 watchBtn.classList.add('hidden');
             }
 
-            // Trailer
             document.getElementById('m-trailer-btn').onclick = () => reproducirVideo(s.trailerURL, s.titulo, true);
             
-            // Temporadas
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
-            const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
+            
+            // Lógica para obtener versiones y ordenarlas numéricamente
+            let versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
 
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
+                // ORDENAR NUMÉRICAMENTE POR TEMPORADA
+                versionesMismaSerie.sort((a, b) => {
+                    const getNum = (str) => {
+                        if (!str) return 0;
+                        const num = str.toString().replace(/\D/g, '');
+                        return num ? parseInt(num, 10) : 0;
+                    };
+                    return getNum(a.temporada) - getNum(b.temporada);
+                });
+
                 seasonSelector.classList.remove('hidden');
                 versionesMismaSerie.forEach(version => {
                     let label = version.temporada || "T1";
@@ -584,7 +592,6 @@
                 seasonSelector.classList.add('hidden');
             }
 
-            // Descargas
             const downloadBtn = document.getElementById('m-download-btn');
             if (s.descargas && s.descargas.length > 0) {
                 downloadBtn.classList.remove('hidden');
@@ -593,7 +600,6 @@
                 downloadBtn.classList.add('hidden');
             }
 
-            // Favorito
             const favBtn = document.getElementById('m-fav-toggle');
             favBtn.style.color = isFav ? color : 'white';
             favBtn.onclick = () => { toggleFavorito(null, s.titulo); poblarModal(s); };
@@ -736,12 +742,10 @@
 
                 if (Math.abs(diffX) > threshold) {
                     if (diffX < 0) {
-                        // Deslizar a la izquierda -> Siguiente
                         if (typeof abrirModalPorIndice === 'function') {
                             abrirModalPorIndice(serieActualIdx + 1);
                         }
                     } else {
-                        // Deslizar a la derecha -> Anterior
                         if (typeof abrirModalPorIndice === 'function') {
                             abrirModalPorIndice(serieActualIdx - 1);
                         }
@@ -760,13 +764,9 @@
                         touchEndX = e.changedTouches[0].clientX;
                         handleSwipe();
                     }, { passive: true });
-
-                    // Prevenir que el swipe interfiera con el scroll vertical si se desea, 
-                    // aunque en el modal suele ser pantalla completa.
                 }
             }
 
-            // Ejecutar cuando el DOM esté listo
             if (document.readyState === 'complete') {
                 setupSwipe();
             } else {
