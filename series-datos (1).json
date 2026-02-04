@@ -2023,11 +2023,65 @@
   {
     "titulo": "Jackal",
     "imgURL": "https://pics.filmaffinity.com/Chacal_Serie_de_TV-156253143-large.jpg",
+    "temporada": "",
     "descripcion": "El Chacal, un escurridizo y solitario asesino sin rival, se gana la vida trabajando para el mejor postor. Sin embargo, tras su último asesinato, su camino se cruza con el de una tenaz agente de inteligencia británica del MI6, que empieza a seguirle la pista en una incansable persecución a través de Europa, dejando un rastro de destrucción a su paso.",
     "plataforma": "Otras",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x971hqu"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x971hqu",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-7yqwz428h3rc.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-y2q566tgyh9q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-wvd5bwtqh3z0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-vstvnyu7zqy0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-yc8rua4bq1hh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-mrcr9yy0qiy7.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-29syhtptzfof.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-0e198xcqpn0e.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-2e70vuvvy0nc.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-7dwredc40ocv.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Fallout",
@@ -4707,6 +4761,11 @@
         "temporada": "T2",
         "capitulo": "C7",
         "url": "https://goodstream.one/embed-fvwf9lsjejc5.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-eontur6mh6ad.html"
       }
     ],
     "descargas": [
@@ -5652,6 +5711,11 @@
         "temporada": "T2",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-trw79p2c4dkc.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-gmh3rvvq964c.html"
       }
     ],
     "descargas": []
