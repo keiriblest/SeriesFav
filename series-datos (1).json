@@ -80,13 +80,16 @@
     "trailerURL": "https://www.dailymotion.com/embed/video/x9dh2ke"
   },
   {
-    "titulo": "El agente nocturno",
+    "titulo": "El Agente Nocturno",
     "imgURL": "https://pics.filmaffinity.com/El_agente_nocturno_Serie_de_TV-308367960-large.jpg",
+    "temporada": "T1",
     "descripcion": "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la política en el lugar de trabajo y la carga emocional de tratar a pacientes en estado crítico.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8js8dp"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8js8dp",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Sakamoto Days",
@@ -136,13 +139,16 @@
     "trailerURL": "https://www.dailymotion.com/embed/video/x973fa4"
   },
   {
-    "titulo": "El abogado del Lincoln",
-    "imgURL": "https://pics.filmaffinity.com/the_lincoln_lawyer-712454950-large.jpg",
+    "titulo": "El Abogado del Lincoln",
+    "imgURL": "https://pics.filmaffinity.com/the_lincoln_lawyer-858663394-large.jpg",
+    "temporada": "T1",
     "descripcion": "El abogado de Los Ángeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su práctica jurídica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas más vendidas de Michael Connelly.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8aryzs"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8aryzs",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "The Umbrella Academy",
@@ -2180,7 +2186,7 @@
   {
     "titulo": "Cross",
     "imgURL": "https://pics.filmaffinity.com/Cross_Serie_de_TV-139324483-large.jpg",
-    "temporada": "",
+    "temporada": "T1",
     "descripcion": "Alex Cross es un detective y psicólogo forense, capaz de indagar en las mentes de los asesinos y sus víctimas, para intentar identificar y capturar a los culpables. Serie basada en las novelas de James Paterson.",
     "plataforma": "Prime",
     "seccion": "vistas",
@@ -3402,11 +3408,14 @@
   {
     "titulo": "El Maravillosamente Extraño Mundo de Gumball",
     "imgURL": "https://pics.filmaffinity.com/the_wonderfully_weird_world_of_gumball-628968183-large.jpg",
+    "temporada": "T1",
     "descripcion": "En Elmore, la realidad se tuerce y la vida familiar se vuelve extraña. Gumball arrastra a Darwin, Anaïs y a todo el pueblo a vivir aventuras: desde luchar contra la malvada comida rápida hasta enfrentarse a una IA que está colada por su madre. La serie es tan alocada que necesitaba un nuevo nombre.",
     "plataforma": "HBO Max",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9ka1ai"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9ka1ai",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Jefes de Estado",
@@ -5084,7 +5093,7 @@
     "temporada": "",
     "descripcion": "Simon lo tenía todo: una esposa y unos hijos que le adoraban, un buen trabajo y una casa perfecta. Pero cuando su hija mayor, Paige, se escapó, su mundo se vino abajo. Al encontrarla desprotegida y enganchada a las drogas en un parque, cree tener por fin la oportunidad de recuperarla. Sin embargo, no está sola, y una acalorada discusión se transforma en una espiral de violencia inesperada. Tras perderla de nuevo, Simon se ve arrastrado a un peligroso submundo donde saldrán a la luz secretos familiares tan oscuros que podrían destrozarlo todo.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "vistas",
     "fecha": "1/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9us8iw",
     "verURL": [
@@ -5137,7 +5146,7 @@
     "temporada": "",
     "descripcion": "Cuando el adolescente Silas aparece muerto en una granja de la península de Bjäre, a la inspectora Dani (Krista Kosonen) —siempre a la defensiva, peculiar y excepcionalmente brillante— le asignan como compañero a Malik (Mohammed Nour Oklah), un recién graduado, para llevar el caso. La investigación lleva a Dani y Malik hasta un reducto patriarcal en la Escania rural, y pronto se ven en el centro de una oscura disputa familiar que se remonta a generaciones. Dani, que tenía un vínculo personal con la víctima, se ve cada vez más absorbida por la investigación y por las familias implicadas. El patriarca Elis (Peter Gantman) le da a Dani un ultimátum para resolver el caso antes de tomar la justicia por su mano.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "2/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9w7uwi",
     "verURL": [
@@ -5201,7 +5210,7 @@
     "temporada": "",
     "descripcion": "Anna, afincada en la sofocante Atlanta, vive recluida y cada vez se aleja más de sus amigos y de su carrera como presentadora de las noticias. Pero cuando se entera, por casualidad, de un asesinato en Dahlonega, el tranquilo pueblo donde creció, Anna recobra su vitalidad y se sumerge en el caso en busca de respuestas. Al detective Jack Harper le sorprende su implicación y la convierte en un objetivo de su propia investigación. Toda historia tiene dos versiones: la de él (‘HIS’) y la de ella (‘HERS’), lo que significa que siempre hay alguien que miente.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "8/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vilk8",
     "verURL": [
@@ -5275,7 +5284,7 @@
     "temporada": "",
     "descripcion": "Miniserie de 3 episodios. Inglaterra, 1925. En una lujosa fiesta en una casa de campo, una broma parece haber salido terriblemente —y mortalmente— mal. La tarea de resolver el misterio recaerá en la menos esperada de las detectives: la vivaz e inquisitiva Lady Eileen “Bundle” Brent, quien deberá desentrañar una escalofriante conspiración que cambiará su vida y pondrá al descubierto los secretos más oscuros de la alta sociedad inglesa.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "15/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9t7oli",
     "verURL": [
@@ -5303,9 +5312,10 @@
     "temporada": "T4",
     "descripcion": "La cuarta temporada de Los Bridgerton se centra en el bohemio segundo hijo, Benedict (Luke Thompson). A pesar de que sus hermanos mayor y menor están felizmente casados, Benedict se resiste a sentar la cabeza... hasta que conoce a una cautivadora Dama Plateada en el baile de máscaras de su madre.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "29/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9wfzd4",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5314,10 +5324,16 @@
     "temporada": "",
     "descripcion": "La confianza de un grupo de policías de Miami comienza a resquebrajarse después de descubrir millones de dólares en efectivo en un escondite abandonado. A medida que fuerzas externas se enteran del tamaño de la incautación, todo se pone en duda, incluso en quién pueden confiar.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "16/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9qbdw8",
-    "verURL": "https://goodstream.one/embed-u0hj24t840zy.html",
+    "verURL": [
+      {
+        "temporada": "",
+        "capitulo": "",
+        "url": "https://goodstream.one/embed-u0hj24t840zy.html"
+      }
+    ],
     "descargas": [
       {
         "temporada": "Pelis",
@@ -5332,10 +5348,16 @@
     "temporada": "",
     "descripcion": "Inspirada en El cuento del cortador de bambú, la película reimagina el cuento popular más antiguo de Japón con un toque moderno al integrar música, fantasía y animación contemporánea.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "22/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9uw264",
-    "verURL": "https://goodstream.one/embed-bz50ihgi9xir.html",
+    "verURL": [
+      {
+        "temporada": "",
+        "capitulo": "",
+        "url": "https://goodstream.one/embed-bz50ihgi9xir.html"
+      }
+    ],
     "descargas": [
       {
         "temporada": "Pelis",
@@ -5350,7 +5372,7 @@
     "temporada": "T2",
     "descripcion": "La vida cotidiana de los profesionales de la salud en un hospital de Pittsburgh hacen malabarismos con las crisis personales, la política en el lugar de trabajo y la carga emocional de tratar a pacientes en estado crítico.",
     "plataforma": "HBO Max",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "9/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vv80q",
     "verURL": [
@@ -5383,9 +5405,10 @@
     "temporada": "T3",
     "descripcion": "Un cavernícola y un dinosaurio, ambos al borde de la extinción por diversos motivos, unen sus fuerzas en una peculiar alianza con el único propósito de sobrevivir en un mundo violento y hostil. Además de la serie, existe un largometraje de 80 minutos titulado \"Primal: Tales of Savagery\".",
     "plataforma": "HBO Max",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "12/1",
     "trailerURL": "",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5394,7 +5417,7 @@
     "temporada": "",
     "descripcion": "Un siglo antes de los acontecimientos de \"Juego de Tronos\", dos héroes improbables vagaban por Poniente: un joven e ingenuo, pero valiente caballero, Ser Duncan el Alto, y su pequeño escudero, Egg. Ambientada en una época en la que el linaje Targaryen aún ostenta el Trono de Hierro y el recuerdo del último dragón aún no ha desaparecido de la memoria viva, grandes destinos, poderosos enemigos y peligrosas hazañas aguardan a estos improbables e incomparables amigos.",
     "plataforma": "HBO Max",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "19/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9v3fva",
     "verURL": [
@@ -5433,9 +5456,10 @@
     "temporada": "T4",
     "descripcion": "La abolición del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones están perdiendo su trono, privilegios e identidad. Años atrás habrían sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
     "plataforma": "Netflix",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "9/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vied8",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5444,9 +5468,10 @@
     "temporada": "",
     "descripcion": "Yun Bom, después de sufrir un desengaño sentimental en Seúl, se traslada a la pequeña ciudad de Sinsu para empezar de nuevo como profesora. Aunque al principio se muestra distante y fría, poco a poco va abriendo su corazón tras conocer a Seon Jae Gyu.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "5/1",
     "trailerURL": "",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5455,9 +5480,10 @@
     "temporada": "",
     "descripcion": "Creado en un laboratorio de ciencias biológicas, Charlie es un híbrido mitad humano, mitad chimpancé, conocido como \"Humanzee.\" Criado por sus padres adoptivos humanos, Charlie tiene ahora 15 años y está comenzando la escuela secundaria. Allí conoce a Lucy, una chica solitaria e inteligente que se convierte en su primera amiga. Sin embargo, su vida \"normal\" se ve destrozada cuando los extremistas por los derechos de los animales que liberaron a su madre del laboratorio hace quince años resurgen como terroristas, decididos a secuestrar a Charlie a cualquier precio.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "6/1",
     "trailerURL": "https://www.youtube.com/embed/watch?v=zRann2zoXx0",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5466,7 +5492,7 @@
     "temporada": "T2",
     "descripcion": "Basada en la novela homónima de John Le Carré publicada en 1993. El ex soldado británico Jonathan Pine (Tom Hiddleston) es reclutado por la agente Burr (Olivia Colman), de los servicios de inteligencia, para infiltrarse en la red de un traficante de armas internacional liderada por Richard Onslow Roper (Hugh Laurie). Para ello Pine se acercará al circulo mas cercano de Onslow, compuesto por su novia Jed (Elizabeth Debicki) y su socio Corcoran (Tom Hollander).",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "11/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9viu8w",
     "verURL": [
@@ -5520,7 +5546,7 @@
     "temporada": "",
     "descripcion": "Un día laboral típico en una empresa de fondos de inversión se ve alterado cuando una banda de ladrones violentos irrumpe y obliga a la oficinista Zara (Sophie Turner) y a su mejor amigo, Luke (Archie Madekwe), a cumplir sus exigencias. ¿Pero quién robaría miles de millones de libras de las pensiones de gente normal y por qué? El inspector jefe Rhys (Jacob Fortune-Lloyd) tiene como objetivo descubrirlo, pero debe mantener a raya sus propios problemas económicos (es ludópata) mientras lidia con los planes secretos e intereses contrapuestos que se esconden en el centro de este crimen de gran envergadura.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "21/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9wa7t6",
     "verURL": [
@@ -5563,7 +5589,7 @@
     "temporada": "",
     "descripcion": "Una epidemia de insomnio sume a Estocolmo en el caos. Un primer ministro gestiona la crisis mientras protege a su hijo, una enfermera lucha por salvar a su pareja infectada y una adolescente protege a su vecino en medio de la propagación de la enfermedad.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "30/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9yulqy",
     "verURL": [],
@@ -5575,9 +5601,10 @@
     "temporada": "",
     "descripcion": "Basada en el relato de George R. R. Martin. Una reina (Amara Okereke), desesperada por encontrar la felicidad en el amor, envía a la poderosa bruja Gray Alys (Milla Jovovich) a las Tierras Perdidas, en busca de un poder mágico que permite a una persona transformarse en un hombre lobo. Con el misterioso cazador Boyce (Dave Bautista), que la apoya en la lucha contra criaturas oscuras y despiadadas, Gray deambula por un mundo inquietante y peligroso. Pero solo ella sabe que, cada deseo que se concede, tiene consecuencias inimaginables.",
     "plataforma": "Prime",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "16/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9crlhy",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5629,9 +5656,10 @@
     "temporada": "T3",
     "descripcion": "Una relación tumultuosa pero embriagadora a lo largo de 8 años. Lucy Albright (Grace Van Patten) y Stephen DeMarco (Jackson White) se conocen en la universidad, justo en esa edad formativa en la que las elecciones aparentemente mundanas conducen a consecuencias irrevocables. Aunque su relación comienza como cualquier romance típico del campus, rápidamente caen en un enredo adictivo que alterará permanentemente no solo sus vidas, sino también las vidas de todos los que los rodean.",
     "plataforma": "Disney Plus",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "13/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9wckwi",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5640,7 +5668,7 @@
     "temporada": "",
     "descripcion": "Los socios Drew y Kara investigan la enfermedad de transmisión sexual \"la belleza\", que causa efectos estéticos, pero que resulta letal.",
     "plataforma": "Disney Plus",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "21/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9w7tzy",
     "verURL": [
@@ -5663,6 +5691,11 @@
         "temporada": "T1",
         "capitulo": "C4",
         "url": "https://goodstream.one/embed-fk9u0cr567xh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-3h44yc2q6q9q.html"
       }
     ],
     "descargas": []
@@ -5673,7 +5706,7 @@
     "temporada": "",
     "descripcion": "El actor de Hollywood Simon Williams se sumerge en el mundo de los superhéroes a medida que obtiene sus propios poderes y se convierte en el nuevo superhéroe Wonder Man.",
     "plataforma": "Disney Plus",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "27/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9s1td6",
     "verURL": [
@@ -5737,7 +5770,7 @@
     "temporada": "T2",
     "descripcion": "En la trepidante segunda temporada de «Hijack», un tren berlinés subterráneo y sus ocupantes se convierten en los centenares de rehenes que las autoridades tratan de salvar. Sam Nelson (Idris Elba) es testigo de todo como uno de los rehenes, en una situación en la que cualquier error podría desencadenar el desastre.",
     "plataforma": "Apple TV",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "14/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vt0qm",
     "verURL": [
@@ -5770,9 +5803,10 @@
     "temporada": "T3",
     "descripcion": "immy trata de asimilar la muerte de su esposa mientras ejerce de padre, amigo y terapeuta. Decide cambiar su forma de ser con la gente y volverse una persona completamente honesta, sin ningún tipo de filtro. ¿Podrá sanarse a sí mismo ayudando a los demás? ¿Le servirá para retomar su camino en la vida?",
     "plataforma": "Apple TV",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "28/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9wsbpq",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5781,9 +5815,10 @@
     "temporada": "",
     "descripcion": "Una joven (Sydney Sweeney), con un pasado complicado comienza a trabajar como asistenta en la lujosa casa de los Winchester. A medida que se adentra en la vida de la familia, descubrirá secretos oscuros que pondrán en peligro su seguridad, pero quizá ya sea demasiado tarde... Adaptación de la novela de Freida McFadden.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "1/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9qng5y",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5792,9 +5827,10 @@
     "temporada": "",
     "descripcion": "Ambientada en el Tokio actual, sigue a un actor estadounidense que lucha por encontrar un propósito en la vida hasta que consigue un trabajo inusual: trabajar para una agencia japonesa de \"familias de alquiler\", interpretando papeles de suplente para desconocidos. A medida que se sumerge en el mundo de sus clientes, comienza a establecer vínculos genuinos que difuminan las líneas entre la actuación y la realidad. Al enfrentarse a las complejidades morales de su trabajo, redescubre el propósito, la pertenencia y la tranquila belleza de las relaciones humanas.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "9/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9oegk6",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5803,9 +5839,10 @@
     "temporada": "",
     "descripcion": "El Dr. Kelson (Ralph Fiennes) se ve envuelto en una nueva y sorprendente relación, cuyas consecuencias podrían cambiar el mundo tal y como lo conocen, y el encuentro de Spike (Alfie Williams) con Jimmy Crystal (Jack O'Connell) se convierte en una pesadilla de la que no puede escapar. En el mundo de The Bone Temple, los infectados ya no son la mayor amenaza para la supervivencia: la inhumanidad de los supervivientes puede ser aún más extraña y aterradora.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "16/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9pwh1q",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5814,9 +5851,10 @@
     "temporada": "",
     "descripcion": "En un futuro próximo, un detective (Chris Pratt) es acusado de asesinar a su esposa. Tiene 90 minutos para demostrar su inocencia ante la Jueza de la I.A. avanzada (Rebecca Ferguson), a la que él mismo defendió en su día, antes de que esta decida su destino.",
     "plataforma": "Pelis",
-    "seccion": "proximas",
+    "seccion": "no-vistas",
     "fecha": "23/1",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9rwx2i",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -6234,8 +6272,8 @@
     "temporada": "T2",
     "descripcion": "En una serena comunidad habitada por algunas de las personas más prominentes del mundo, la tranquilidad estalla cuando se produce un espeluznante asesinato y se desencadena una investigación de alto riesgo. Xavier Collins, jefe del Servicio Secreto de la Casa Blanca, es rápidamente investigado por la muerte del presidente, al que descubre junto a su cama.",
     "plataforma": "Disney Plus",
-    "seccion": "no-vistas",
-    "fecha": "",
+    "seccion": "proximas",
+    "fecha": "23/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vlgb8",
     "verURL": [],
     "descargas": []
@@ -6475,6 +6513,365 @@
         "url": "https://goodstream.one/embed-kb07rad8el2l.html"
       }
     ],
+    "descargas": []
+  },
+  {
+    "titulo": "Lo Último Que Me Dijo",
+    "imgURL": "https://pics.filmaffinity.com/the_last_thing_he_told_me-581775357-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Una mujer debe forjar una relación con su hijastra adolescente para encontrar a su marido, que ha desaparecido misteriosamente. Basada en la novela de misterio de Laura Dave, publicada en 2021 y que se convirtió instantáneamente en el número uno en ventas del New York Times durante 48 semanas.",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8iyrk0",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-poibqw1b6li4.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-ydn9k86mpaum.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-nz2eh784rf7o.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-5xg2aan8nulg.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-7x9ohuerf8w0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-8nbtp6ad9f5c.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-qm7bpjn7yibs.html"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Lo Último Que Me Dijo",
+    "imgURL": "https://pics.filmaffinity.com/the_last_thing_he_told_me-909302744-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Una mujer debe forjar una relación con su hijastra adolescente para encontrar a su marido, que ha desaparecido misteriosamente. Basada en la novela de misterio de Laura Dave, publicada en 2021 y que se convirtió instantáneamente en el número uno en ventas del New York Times durante 48 semanas.",
+    "plataforma": "Apple TV",
+    "seccion": "proximas",
+    "fecha": "20/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9y79cw",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Monarch",
+    "imgURL": "https://pics.filmaffinity.com/monarch_legacy_of_monsters-224107723-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Tras sobrevivir al ataque de Godzilla en San Francisco, un espeluznante secreto vuelve a sobrecoger a Cate. En medio de amenazas monstruosas, se embarca en una aventura por todo el mundo para descubrir la verdad sobre su familia y la misteriosa organización conocida como Monarca.",
+    "plataforma": "Apple TV",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8pldj1",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Monarch",
+    "imgURL": "https://pics.filmaffinity.com/monarch_legacy_of_monsters-378629651-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Tras sobrevivir al ataque de Godzilla en San Francisco, un espeluznante secreto vuelve a sobrecoger a Cate. En medio de amenazas monstruosas, se embarca en una aventura por todo el mundo para descubrir la verdad sobre su familia y la misteriosa organización conocida como Monarca.",
+    "plataforma": "Apple TV",
+    "seccion": "proximas",
+    "fecha": "27/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9z7um0",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Cross",
+    "imgURL": "https://pics.filmaffinity.com/cross-156064794-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Alex Cross es un detective y psicólogo forense, capaz de indagar en las mentes de los asesinos y sus víctimas, para intentar identificar y capturar a los culpables. Serie basada en las novelas de James Paterson.",
+    "plataforma": "Prime",
+    "seccion": "proximas",
+    "fecha": "11/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9xg02y",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "56 Días",
+    "imgURL": "https://pics.filmaffinity.com/56_days-228779372-large.jpg",
+    "temporada": "",
+    "descripcion": "Tras conocerse por casualidad en un supermercado, Oliver y Ciara se enamoran rápida y peligrosamente. 56 días después, los investigadores de homicidios llegan al apartamento de Oliver y encuentran un cuerpo sin identificar, brutalmente asesinado y descompuesto intencionadamente. ¿La mató él? ¿Lo mató ella? Basada en la novela de Catherine Ryan Howard \"Obsesión\".",
+    "plataforma": "Prime",
+    "seccion": "proximas",
+    "fecha": "18/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9y85li",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "The Copenhagen Test",
+    "imgURL": "https://pics.filmaffinity.com/the_copenhagen_test-998201440-large.jpg",
+    "temporada": "",
+    "descripcion": "Un analista de inteligencia se da cuenta de que su cerebro ha sido pirateado, lo que permite a unos hackers desconocidos acceder a todo lo que ve y oye. Atrapado entre la agencia y los hackers, decide actuar con normalidad para intentar descubrir a los culpables.",
+    "plataforma": "Otras",
+    "seccion": "proximas",
+    "fecha": "2/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9v9wum",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-rifh0qf7szs5.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-x0mnct7akhk5.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-8eckxpoqic1b.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-nennz6t8rfsf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-aa7eqeszidfi.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-o6wsuczk50lz.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-22106q9c2e04.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-ylzd2o21uc80.html"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Wylde Pak",
+    "imgURL": "https://pics.filmaffinity.com/wylde_pak-372164753-large.jpg",
+    "temporada": "",
+    "descripcion": "Los hermanastros Jack y Lily se adaptan a vivir juntos mientras ayudan en el negocio de mascotas de su familia. Exploran la cultura, la identidad y la nueva dinámica familiar con el apoyo de sus padres y su abuela.",
+    "plataforma": "Otras",
+    "seccion": "proximas",
+    "fecha": "14/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9yew94",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-9z13ro9i0niq.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-rzumh78nbwcw.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-fda033zqmm5q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-owqebbfykcdd.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-jv35nwczw86u.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-vrw6fpk2vmrs.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-hje2nxdsaxh7.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-y657z1mdk349.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-37s44bulvp1h.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-3637txps6lkx.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://goodstream.one/embed-autu3m64dswh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://goodstream.one/embed-iudwxnhoieoh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://goodstream.one/embed-yciq89zyomri.html"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Girl Taken",
+    "imgURL": "https://pics.filmaffinity.com/girl_taken-653578890-large.jpg",
+    "temporada": "",
+    "descripcion": "La vida de dos hermanas cambia para siempre cuando Lily es secuestrada por su profesor. Después de años de cautiverio, escapa, pero la libertad le trae nuevas luchas al descubrir que todo ha cambiado. Su familia debe recuperarse mientras su captor sigue en libertad.",
+    "plataforma": "Otras",
+    "seccion": "proximas",
+    "fecha": "26/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9wgvsi",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Maravillosamente Extraño Mundo de Gumball",
+    "imgURL": "https://pics.filmaffinity.com/the_wonderfully_weird_world_of_gumball-320820794-large.jpg",
+    "temporada": "T2",
+    "descripcion": "En Elmore, la realidad se tuerce y la vida familiar se vuelve extraña. Gumball arrastra a Darwin, Anaïs y a todo el pueblo a vivir aventuras: desde luchar contra la malvada comida rápida hasta enfrentarse a una IA que está colada por su madre. La serie es tan alocada que necesitaba un nuevo nombre.",
+    "plataforma": "HBO Max",
+    "seccion": "proximas",
+    "fecha": "2/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9z1g98",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Abogado del Lincoln",
+    "imgURL": "https://pics.filmaffinity.com/the_lincoln_lawyer-844907855-large.jpg",
+    "temporada": "T2",
+    "descripcion": "El abogado de Los Ángeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su práctica jurídica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas más vendidas de Michael Connelly.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8lsi8s",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Abogado del Lincoln",
+    "imgURL": "https://pics.filmaffinity.com/the_lincoln_lawyer-672675415-large.jpg",
+    "temporada": "T3",
+    "descripcion": "El abogado de Los Ángeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su práctica jurídica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas más vendidas de Michael Connelly.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x965gra",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Abogado del Lincoln",
+    "imgURL": "https://pics.filmaffinity.com/the_lincoln_lawyer-556128047-large.jpg",
+    "temporada": "T4",
+    "descripcion": "El abogado de Los Ángeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su práctica jurídica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas más vendidas de Michael Connelly.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "5/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9xrg6c",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Unfamiliar",
+    "imgURL": "https://pics.filmaffinity.com/unfamiliar-352724765-large.jpg",
+    "temporada": "",
+    "descripcion": "Cuando el pasado alcanza a dos exespías, su mayor desafío no son las persecuciones en coche, ni los tiroteos, ni las peleas: es decirse la verdad.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "5/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9yap48",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Agente Nocturno",
+    "imgURL": "https://pics.filmaffinity.com/the_night_agent-343532436-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Un agente del FBI de perfil bajo, Peter Sutherland, trabaja en el sótano de la Casa Blanca pendiente de un teléfono que nunca suena... hasta la noche en que lo hace, lo que impulsa a una conspiración que le lleva hasta la Oficina Oval.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9bcxq0",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "El Agente Nocturno",
+    "imgURL": "https://pics.filmaffinity.com/the_night_agent-383851507-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Un agente del FBI de perfil bajo, Peter Sutherland, trabaja en el sótano de la Casa Blanca pendiente de un teléfono que nunca suena... hasta la noche en que lo hace, lo que impulsa a una conspiración que le lleva hasta la Oficina Oval.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "19/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9y7y68",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "La ley de Las Vegas",
+    "imgURL": "https://pics.filmaffinity.com/strip_law-503974769-large.jpg",
+    "temporada": "",
+    "descripcion": "El estirado abogado Lincoln Gumb es demasiado soso para ganar juicios en Las Vegas… hasta que se asocia con Sheila Flambé, una maga local y hedonista que aporta brillo y desparpajo a los casos más disparatados de la ciudad.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "20/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9yjohe",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Baki-Dou: El Samurái Invencible",
+    "imgURL": "https://pics.filmaffinity.com/baki_do-774627105-large.jpg",
+    "temporada": "",
+    "descripcion": "Secuela de \"Baki Hanma\" (2021). Baki y los luchadores más fuertes del Estadio clandestino se enfrentan a una amenaza de proporciones históricas: el resucitado Musashi Miyamoto, el samurái más famoso de Japón.",
+    "plataforma": "Netflix",
+    "seccion": "proximas",
+    "fecha": "26/2",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9zaley",
+    "verURL": [],
     "descargas": []
   }
 ]
