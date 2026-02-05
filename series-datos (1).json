@@ -4139,7 +4139,48 @@
     "seccion": "vistas",
     "fecha": "27/11",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9t5bhk",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T5",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-siad8kufz2c7.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-rlapi8pwqgqm.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-zaxwy41eebut.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-c0b8hxiu9rvm.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-amvmm40dw5o9.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-q81p7jdpqnhg.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-3qumagghfshj.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-t6qf5t5ovl78.html"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T5",
