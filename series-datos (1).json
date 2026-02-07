@@ -2010,12 +2010,56 @@
   },
   {
     "titulo": "Reacher",
-    "imgURL": "https://pics.filmaffinity.com/Reacher_Serie_de_TV-132974734-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/reacher-862138051-large.jpg",
+    "temporada": "T1",
     "descripcion": "Cuando lo arrestan por un asesinato que no cometió, el oficial retirado de la policía militar Jack Reacher se ve envuelto en una conspiración letal de policías corruptos, empresarios turbios y políticos intrigantes. Solo con su ingenio, debe descubrir qué está sucediendo en Margrave, Georgia. La primera temporada de \"Reacher\" se basa en la exitosa novela \"Zona peligrosa\" de Lee Child.",
     "plataforma": "Prime",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x860qed"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x860qed",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-x7ggwuf6k3aw.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-107h7g1iorkb.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-c33xg10ew2zb.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-dxm34e7gwaqf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-d0rc3w16p412.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-nv4gxowh2nad.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-w4glqnckndno.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-bgwr52u49iw7.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Invincible",
@@ -7145,6 +7189,112 @@
         "temporada": "T2",
         "capitulo": "C8",
         "url": "https://goodstream.one/embed-c74or03qeaat.html"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Reacher",
+    "imgURL": "https://pics.filmaffinity.com/reacher-819050748-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Cuando lo arrestan por un asesinato que no cometió, el oficial retirado de la policía militar Jack Reacher se ve envuelto en una conspiración letal de policías corruptos, empresarios turbios y políticos intrigantes. Solo con su ingenio, debe descubrir qué está sucediendo en Margrave, Georgia. La primera temporada de \"Reacher\" se basa en la exitosa novela \"Zona peligrosa\" de Lee Child.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8pfi2v",
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-vup8jhw3m535.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-71a8a8r1353e.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-vrwjthxl48bw.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-89957zqsywlp.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-3qbmx4gv6fo8.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-crtdvwfw7pjx.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-il8jyjhu174y.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-wmyyl22wn7mc.html"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Reacher",
+    "imgURL": "https://pics.filmaffinity.com/reacher-970128318-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Cuando lo arrestan por un asesinato que no cometió, el oficial retirado de la policía militar Jack Reacher se ve envuelto en una conspiración letal de policías corruptos, empresarios turbios y políticos intrigantes. Solo con su ingenio, debe descubrir qué está sucediendo en Margrave, Georgia. La primera temporada de \"Reacher\" se basa en la exitosa novela \"Zona peligrosa\" de Lee Child.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9c0dls",
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-jxpzkq536tso.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-b2kblxc2my4f.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-zk90jlyesqk2.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-ift1rzrpwb8g.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-b7c2tz0f83q8.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-4lyaz30bmqa1.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-c81cij66swwr.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-uqb2jj2ukwkh.html"
       }
     ],
     "descargas": []
