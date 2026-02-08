@@ -490,16 +490,35 @@
             else { mainTitle.innerText = "Mi Lista"; mainSubtitle.innerText = "Tu selección personalizada."; }
 
             filtrados = catalogo.filter(s => {
-                const peli = esPelicula(s);
-                const matchQuery = s.titulo.toLowerCase().includes(query);
-                if (query.trim() !== "") return matchQuery;
-                
-                let matchSeccion = (seccionActual === 'series' && !peli) || (seccionActual === 'peliculas' && peli) || (seccionActual === 'favoritos' && favoritos.includes(s.titulo));
-                const matchEstado = !estadoSelect || s.seccion === estadoSelect;
-                let matchPlataforma = (seccionActual === 'peliculas' || !plataformaFiltro) ? true : (plataformaFiltro === "Otros" ? !principalesPlataformas.includes(s.plataforma.toLowerCase()) : s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase());
-                
-                return matchSeccion && matchEstado && matchPlataforma;
-            });
+        const peli = esPelicula(s);
+        const matchQuery = s.titulo.toLowerCase().includes(query);
+
+        // Nueva lógica: Ocultar duplicados de T2 o superior (excepto en Próximamente)
+        const tempStr = (s.temporada || "").toUpperCase();
+        const numTemp = parseInt(tempStr.replace('T', ''));
+        const esTemporadaAlta = tempStr.startsWith('T') && !isNaN(numTemp) && numTemp >= 2;
+        const esProximamente = s.seccion === 'proximas';
+
+        if (esTemporadaAlta && !esProximamente) {
+            return false;
+        }
+
+        let matchSeccion = false;
+        if (seccionActual === 'series') matchSeccion = !peli;
+        else if (seccionActual === 'peliculas') matchSeccion = peli;
+        else if (seccionActual === 'favoritos') matchSeccion = favoritos.includes(s.titulo);
+
+        const matchEstado = !estadoSelect || s.seccion === estadoSelect;
+
+        let matchPlataforma = true;
+        if (seccionActual !== 'peliculas') {
+            if (plataformaFiltro === 'Todas' || !plataformaFiltro) matchPlataforma = true;
+            else if (plataformaFiltro === 'Otros') matchPlataforma = !principalesPlataformas.includes(s.plataforma.toLowerCase());
+            else matchPlataforma = s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase();
+        }
+
+        return matchQuery && matchSeccion && matchEstado && matchPlataforma;
+    });
             render(filtrados);
         }
 
