@@ -1,5 +1,13 @@
 [
-  "googlesyndication", "doubleclick", "popads", "propellerads", 
-  "favicon.ico", "analytics", "clisrv", "realsrv", "exoclick",
-  "adservice", "adsystem", "popunder", "trafficjunky", "mshcdn"
+  "||googlesyndication.com^",
+  "||popads.net^",
+  "||propellerads.com^",
+  "||exoclick.com^",
+  "||adservice.google.com^",
+  "||goodstream.xyz/ads/*",
+  "||doodstream.com/ad/*",
+  "||mshcdn.com^",
+  "##.overlay",
+  "##.ad-container",
+  "##div[style*='z-index: 2147483647']"
 ]
