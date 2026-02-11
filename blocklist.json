@@ -1,13 +1,81 @@
-[
-  "||googlesyndication.com^",
-  "||popads.net^",
-  "||propellerads.com^",
-  "||exoclick.com^",
-  "||adservice.google.com^",
-  "||goodstream.xyz/ads/*",
-  "||doodstream.com/ad/*",
-  "||mshcdn.com^",
-  "##.overlay",
-  "##.ad-container",
-  "##div[style*='z-index: 2147483647']"
-]
+{
+  "version": "1.0.0",
+  "lastUpdate": "2026-02-11",
+  "filters": {
+    "domains": [
+      "doubleclick.net",
+      "googlesyndication.com",
+      "googleadservices.com",
+      "google-analytics.com",
+      "googletagmanager.com",
+      "facebook.com/tr",
+      "connect.facebook.net",
+      "adservice.google.com",
+      "pagead2.googlesyndication.com",
+      "tpc.googlesyndication.com",
+      "outbrain.com",
+      "taboola.com",
+      "advertising.com",
+      "adsystem.com",
+      "adnxs.com",
+      "criteo.com",
+      "pubmatic.com"
+    ],
+    "urlPatterns": [
+      "/ads/*",
+      "/advert/*",
+      "/banner/*",
+      "/sponsored/*",
+      "*/ad.js",
+      "*/ads.js",
+      "*/adframe*",
+      "*/favicon.ico",
+      "*/pixel.gif",
+      "*/tracking.js",
+      "*/analytics.js"
+    ],
+    "selectors": {
+      "css": [
+        ".ad",
+        ".ads",
+        ".banner",
+        ".banners",
+        ".advert",
+        ".advertisement",
+        ".sponsored",
+        ".widget-ads",
+        ".ad-unit",
+        ".ad-container",
+        ".ad-wrapper",
+        "ins.adsbygoogle",
+        "[class*='advertisement']",
+        "[id*='advertisement']",
+        "[class*='google_ads']",
+        "[id*='google_ads']",
+        "[id*='adunit']",
+        "[class*='adsbygoogle']"
+      ],
+      "elements": [
+        "link[rel='icon']",
+        "link[rel='shortcut icon']",
+        "iframe[src*='ads']",
+        "iframe[src*='doubleclick']",
+        "iframe[src*='google']"
+      ]
+    },
+    "blockResources": {
+      "images": [
+        "favicon.ico",
+        "pixel.gif",
+        "1x1.gif",
+        "spacer.gif"
+      ],
+      "scripts": [
+        "ad.js",
+        "ads.js",
+        "adframe.js",
+        "advertising.js"
+      ]
+    }
+  }
+}
