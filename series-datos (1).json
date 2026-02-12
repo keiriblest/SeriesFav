@@ -6048,6 +6048,11 @@
         "temporada": "T1",
         "capitulo": "C5",
         "url": "https://goodstream.one/embed-3h44yc2q6q9q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-hrvb5oz098ca.html"
       }
     ],
     "descargas": []
@@ -6970,6 +6975,16 @@
         "temporada": "T2",
         "capitulo": "C1",
         "url": "https://goodstream.one/embed-mgc1fvisx2fz.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-m82cw13cziow.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-4t0advxt4brf.html"
       }
     ],
     "descargas": []
@@ -7568,7 +7583,48 @@
     "seccion": "proximas",
     "fecha": "12/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9yjoam",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-b40m9jto3fry.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-gmurkng8kp0z.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-k0o5fwtb1vva.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-aohkdbaxjflk.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-n939u1n9quwy.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-bx83zmu8tdiv.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-liqxmwlzftob.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-9kxuwrwswb0i.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -7933,6 +7989,66 @@
         "url": "https://goodstream.one/embed-at5jlivoynpl.html"
       }
     ],
+    "descargas": []
+  },
+  {
+    "titulo": "Machos Alfa",
+    "imgURL": "https://pics.filmaffinity.com/machos_alfa-374278897-large.jpg",
+    "temporada": "T1",
+    "descripcion": "La abolición del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones están perdiendo su trono, privilegios e identidad. Años atrás habrían sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8g9nsr",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Machos Alfa",
+    "imgURL": "https://pics.filmaffinity.com/machos_alfa-813939202-large.jpg",
+    "temporada": "T2",
+    "descripcion": "La abolición del patriarcado se acerca. En plena crisis de la masculinidad, cuatro amigos cuarentones están perdiendo su trono, privilegios e identidad. Años atrás habrían sido machos alfa al mando de sus relaciones, su trabajo y su vida... pero les ha tocado vivir en la era de la igualdad, en una sociedad con nuevas reglas que los golpea exponiendo su patetismo.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8rjj70",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Stranger Things",
+    "imgURL": "https://pics.filmaffinity.com/stranger_things_2-372518070-large.jpg",
+    "temporada": "T2",
+    "descripcion": "La segunda temporada de 'Stranger Things' arranca un año después de la primera, durante Halloween, en Hawkins (Indiana). El joven Will Byers está otra vez con sus amigos tras su abducción por la dimensión paralela un año atrás, pero en el colegio las cosas no le van del todo bien, y sigue teniendo pesadillas. Por su parte no se sabe nada de Once, aunque Mike intenta contactar con ella por radio todos los días. Extraños fenómenos indican además que algo tenebroso sigue acechando a Hawkins.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x64enud",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Stranger Things",
+    "imgURL": "https://pics.filmaffinity.com/stranger_things_3-150349350-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Es 1985 en Hawkins, Indiana, y el verano se está calentando. Fuera de la escuela, hay un nuevo centro comercial en la ciudad, y el grupo de Hawkins está en la cúspide de la edad adulta. El romance florece y complica la dinámica del grupo, y tendrán que encontrar la manera de crecer sin separarse. Mientras tanto, el peligro se avecina. Cuando la ciudad está amenazada por enemigos viejos y nuevos. Once y sus amigos recuerdan que el mal nunca termina; evoluciona. Ahora tendrán que unirse para sobrevivir, y recuerdar que la amistad siempre es más fuerte que el miedo.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x74jkee",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Stranger Things",
+    "imgURL": "https://pics.filmaffinity.com/stranger_things_4-530118338-large.jpg",
+    "temporada": "T4",
+    "descripcion": "La historia se retoma seis meses después de la batalla en el centro comercial Starcourt, que trajo terror y destrucción a Hawkins. Luchando contra las secuelas, nuestro grupo de amigos está separado por primera vez y tiene que afrontar las complejidades del instituto, lo que no les pone las cosas nada fáciles. En este momento, el más vulnerable de todos, surge una nueva y terrorífica amenaza sobrenatural que representa un nuevo y horrible misterio que, si consiguen resolver, podría poner fin a los horrores del Upside Down.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x89xfyq",
+    "verURL": [],
     "descargas": []
   }
 ]
