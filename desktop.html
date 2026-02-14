@@ -108,7 +108,6 @@
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
         <button onclick="cerrarModal()" class="fixed top-8 right-8 text-3xl text-gray-400 hover:text-white transition z-[110] bg-black/20 w-12 h-12 rounded-full flex items-center justify-center border border-white/10 leading-none pb-1">&times;</button>
         
-        <!-- Contenido de Info -->
         <div id="modal-content-wrapper" class="bg-[#111] max-w-3xl w-full rounded-3xl overflow-hidden border border-white/10 grid md:grid-cols-[2fr_3fr] shadow-2xl relative">
             <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[300px] md:h-auto border-r border-white/5"></div>
             <div id="m-info-panel" class="p-8 relative flex flex-col justify-center">
@@ -144,7 +143,6 @@
             </div>
         </div>
 
-        <!-- Selector de Ver Ahora -->
         <div id="watch-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
@@ -167,7 +165,6 @@
             </button>
         </div>
 
-        <!-- Selector de Descargas -->
         <div id="download-selector" class="hidden bg-[#111] max-w-sm w-full rounded-3xl p-8 border border-white/10 shadow-2xl flex-col gap-6 relative animate-[fadeIn_0.3s_ease]">
             <div class="flex items-center justify-between border-b border-white/5 pb-4">
                 <div class="flex items-center gap-3">
@@ -190,11 +187,10 @@
             </button>
         </div>
 
-        <!-- Reproductor de Vídeo (Tamaño Mediano) -->
         <div id="video-panel" class="hidden w-full max-w-4xl flex flex-col gap-4 animate-[fadeIn_0.3s_ease]">
              <div class="video-container rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-black flex items-center justify-center">
                  <div id="video-loader" class="text-white text-sm">Cargando...</div>
-                 <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                 <iframe id="dailymotion-iframe" class="hidden" src="" frameborder="0" allow="autoplay; fullscreen *; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
              </div>
              <div class="flex justify-between items-center px-4">
                  <h3 id="video-title" class="text-xl font-bold truncate pr-4 text-white"></h3>
@@ -314,57 +310,46 @@
         }
 
         function filtrar() {
-    const query = document.getElementById('buscador').value.toLowerCase();
-    const estadoSelect = document.getElementById('filtro-seccion').value;
-    const plataformaFiltro = document.getElementById('filtro-plataforma').value;
+            const query = document.getElementById('buscador').value.toLowerCase();
+            const estadoSelect = document.getElementById('filtro-seccion').value;
+            const plataformaFiltro = document.getElementById('filtro-plataforma').value;
+            const mainTitle = document.getElementById('main-title');
+            const mainSubtitle = document.getElementById('main-subtitle');
 
-    const mainTitle = document.getElementById('main-title');
-    const mainSubtitle = document.getElementById('main-subtitle');
+            if (seccionActual === 'series') {
+                mainTitle.innerText = "Catálogo de Series";
+                mainSubtitle.innerText = "Explora tus series favoritas.";
+            } else if (seccionActual === 'peliculas') {
+                mainTitle.innerText = "Películas";
+                mainSubtitle.innerText = "El mejor cine a un clic.";
+            } else {
+                mainTitle.innerText = "Mi Lista";
+                mainSubtitle.innerText = "Tu contenido guardado.";
+            }
 
-    if (seccionActual === 'series') {
-        mainTitle.innerText = "Catálogo de Series";
-        mainSubtitle.innerText = "Explora tus series favoritas.";
-    } else if (seccionActual === 'peliculas') {
-        mainTitle.innerText = "Películas";
-        mainSubtitle.innerText = "El mejor cine a un clic.";
-    } else {
-        mainTitle.innerText = "Mi Lista";
-        mainSubtitle.innerText = "Tu contenido guardado.";
-    }
-
-    filtrados = catalogo.filter(s => {
-        const peli = esPelicula(s);
-        const matchQuery = s.titulo.toLowerCase().includes(query);
-
-        // Lógica: Ocultar T2 o superior a menos que sea sección "proximas"
-        const tempStr = (s.temporada || "").toUpperCase();
-        const numTemp = parseInt(tempStr.replace('T', ''));
-        const esTemporadaAlta = tempStr.startsWith('T') && !isNaN(numTemp) && numTemp >= 2;
-        const esProximamente = s.seccion === 'proximas';
-
-        if (esTemporadaAlta && !esProximamente) {
-            return false;
+            filtrados = catalogo.filter(s => {
+                const peli = esPelicula(s);
+                const matchQuery = s.titulo.toLowerCase().includes(query);
+                const tempStr = (s.temporada || "").toUpperCase();
+                const numTemp = parseInt(tempStr.replace('T', ''));
+                const esTemporadaAlta = tempStr.startsWith('T') && !isNaN(numTemp) && numTemp >= 2;
+                const esProximamente = s.seccion === 'proximas';
+                if (esTemporadaAlta && !esProximamente) return false;
+                let matchSeccion = false;
+                if (seccionActual === 'series') matchSeccion = !peli;
+                else if (seccionActual === 'peliculas') matchSeccion = peli;
+                else if (seccionActual === 'favoritos') matchSeccion = favoritos.includes(s.titulo);
+                const matchEstado = !estadoSelect || s.seccion === estadoSelect;
+                let matchPlataforma = true;
+                if (seccionActual !== 'peliculas') {
+                    if (plataformaFiltro === 'Todas' || !plataformaFiltro) matchPlataforma = true;
+                    else if (plataformaFiltro === 'Otros') matchPlataforma = !principalesPlataformas.includes(s.plataforma.toLowerCase());
+                    else matchPlataforma = s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase();
+                }
+                return matchQuery && matchSeccion && matchEstado && matchPlataforma;
+            });
+            render(filtrados);
         }
-
-        let matchSeccion = false;
-        if (seccionActual === 'series') matchSeccion = !peli;
-        else if (seccionActual === 'peliculas') matchSeccion = peli;
-        else if (seccionActual === 'favoritos') matchSeccion = favoritos.includes(s.titulo);
-
-        const matchEstado = !estadoSelect || s.seccion === estadoSelect;
-
-        let matchPlataforma = true;
-        if (seccionActual !== 'peliculas') {
-            if (plataformaFiltro === 'Todas' || !plataformaFiltro) matchPlataforma = true;
-            else if (plataformaFiltro === 'Otros') matchPlataforma = !principalesPlataformas.includes(s.plataforma.toLowerCase());
-            else matchPlataforma = s.plataforma.toLowerCase() === plataformaFiltro.toLowerCase();
-        }
-
-        return matchQuery && matchSeccion && matchEstado && matchPlataforma;
-    });
-
-    render(filtrados);
-}
 
         function cambiarSeccion(nuevaSeccion) {
             seccionActual = nuevaSeccion;
@@ -393,14 +378,11 @@
             volverAInfo();
             const isFav = favoritos.includes(s.titulo);
             const color = getColor(s);
-            
             const platEl = document.getElementById('m-platform');
             platEl.innerText = s.plataforma || 'Desconocida'; 
             platEl.style.color = color;
-
             const dateEl = document.getElementById('m-release-date');
             const dateText = document.getElementById('m-date-text');
-            
             if (s.seccion === 'proximas' && s.fecha && typeof s.fecha === 'string' && s.fecha.trim() !== "") { 
                 dateText.innerText = `Estreno: ${s.fecha}`; 
                 dateEl.classList.remove('hidden'); 
@@ -409,33 +391,22 @@
                 dateEl.classList.add('hidden');
                 dateEl.classList.remove('flex');
             }
-
             document.getElementById('m-title').innerText = s.titulo;
             document.getElementById('m-desc').innerText = s.descripcion || '';
             document.getElementById('m-img').innerHTML = `<img src="${s.imgURL}" class="max-h-[90%] max-w-full rounded-2xl shadow-2xl object-contain">`;
-            
             const watchBtn = document.getElementById('m-watch-btn');
-            
-            const hasVerURL = s.verURL && (
-                (typeof s.verURL === 'string' && s.verURL.trim() !== "") || 
-                (Array.isArray(s.verURL) && s.verURL.length > 0)
-            );
-
+            const hasVerURL = s.verURL && ((typeof s.verURL === 'string' && s.verURL.trim() !== "") || (Array.isArray(s.verURL) && s.verURL.length > 0));
             if (hasVerURL) {
                 watchBtn.classList.remove('hidden');
                 watchBtn.onclick = () => mostrarSelectorVer(s);
             } else {
                 watchBtn.classList.add('hidden');
             }
-
             document.getElementById('m-trailer-btn').onclick = () => reproducirVideo(s.trailerURL, s.titulo, true);
-            
             const seasonSelector = document.getElementById('m-season-selector');
             const seasonChips = document.getElementById('m-season-chips');
             seasonChips.innerHTML = '';
-
             const versionesMismaSerie = catalogo.filter(item => item.titulo === s.titulo && !esPelicula(item));
-
             if (versionesMismaSerie.length > 1 && !esPelicula(s)) {
                 seasonSelector.classList.remove('hidden');
                 versionesMismaSerie.sort((a, b) => {
@@ -446,7 +417,6 @@
                     };
                     return getNum(a) - getNum(b);
                 });
-
                 versionesMismaSerie.forEach(version => {
                     let label = version.temporada || (version.descargas && version.descargas[0]?.temporada) || "T1";
                     const chip = document.createElement('button');
@@ -459,7 +429,6 @@
             } else {
                 seasonSelector.classList.add('hidden');
             }
-
             const downloadBtn = document.getElementById('m-download-btn');
             if (s.descargas && Array.isArray(s.descargas) && s.descargas.length > 0) {
                 downloadBtn.classList.remove('hidden');
@@ -467,11 +436,9 @@
             } else {
                 downloadBtn.classList.add('hidden');
             }
-
             const favBtn = document.getElementById('m-fav-toggle');
             favBtn.style.backgroundColor = isFav ? color : 'rgba(255,255,255,0.1)';
             favBtn.onclick = () => { toggleFavorito(null, s.titulo); poblarModal(s); };
-            
             document.getElementById('modal').classList.remove('hidden');
             document.getElementById('modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -484,20 +451,14 @@
             const title = document.getElementById('watch-modal-title');
             const subtitle = document.getElementById('watch-modal-subtitle');
             const icon = document.getElementById('watch-type-icon');
-            
             selector.classList.remove('hidden');
             selector.classList.add('flex');
-
             const esSerieEpisodica = Array.isArray(s.verURL) && s.verURL.some(item => item.capitulo || item.temporada);
-
             if (!esSerieEpisodica) {
                 title.innerText = "Ver Película";
                 subtitle.innerText = "Cine en Alta Definición";
                 icon.innerHTML = '<i class="fas fa-film text-lg"></i>';
-                controls.innerHTML = `
-                    <div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl text-center">
-                        <p class="font-bold text-sm text-gray-300">Presiona reproducir para comenzar</p>
-                    </div>`;
+                controls.innerHTML = `<div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl text-center"><p class="font-bold text-sm text-gray-300">Presiona reproducir para comenzar</p></div>`;
                 document.getElementById('watch-confirm-btn').onclick = () => {
                     const finalUrl = Array.isArray(s.verURL) ? s.verURL[0] : s.verURL;
                     reproducirVideo(finalUrl, s.titulo);
@@ -507,45 +468,16 @@
                 title.innerText = "Ver Serie";
                 subtitle.innerText = "Elige el episodio";
                 icon.innerHTML = '<i class="fas fa-tv text-lg"></i>';
-
                 const itemsVer = s.verURL;
-                const temps = [...new Set(itemsVer.map(d => d.temporada))].sort((a, b) => {
-                    const na = parseInt(a.toString().replace(/\D/g, '')) || 0;
-                    const nb = parseInt(b.toString().replace(/\D/g, '')) || 0;
-                    return na - nb;
-                });
-                
-                controls.innerHTML = `
-                    <div class="space-y-4">
-                        <div class="group">
-                            <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Temporada</label>
-                            <select id="watch-sel-temp" class="watch-select">
-                                ${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="group">
-                            <label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Capítulo</label>
-                            <select id="watch-sel-cap" class="watch-select"></select>
-                        </div>
-                    </div>`;
-                
-                const selTemp = document.getElementById('watch-sel-temp');
-                const selCap = document.getElementById('watch-sel-cap');
-
+                const temps = [...new Set(itemsVer.map(d => d.temporada))].sort((a, b) => (parseInt(a.toString().replace(/\D/g, '')) || 0) - (parseInt(b.toString().replace(/\D/g, '')) || 0));
+                controls.innerHTML = `<div class="space-y-4"><div class="group"><label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Temporada</label><select id="watch-sel-temp" class="watch-select">${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}</select></div><div class="group"><label class="text-[10px] uppercase text-gray-500 font-bold mb-2 flex items-center gap-2 px-1">Capítulo</label><select id="watch-sel-cap" class="watch-select"></select></div></div>`;
+                const selTemp = document.getElementById('watch-sel-temp'), selCap = document.getElementById('watch-sel-cap');
                 const actualizarCapitulos = () => {
-                    const tempElegida = selTemp.value;
-                    const caps = itemsVer.filter(d => d.temporada === tempElegida);
-                    caps.sort((a, b) => {
-                        const na = parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0;
-                        const nb = parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0;
-                        return na - nb;
-                    });
+                    const caps = itemsVer.filter(d => d.temporada === selTemp.value).sort((a, b) => (parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0) - (parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0));
                     selCap.innerHTML = caps.map(c => `<option value="${c.url}">${c.capitulo.toString().startsWith('C') ? 'Capítulo ' + c.capitulo.toString().substring(1) : c.capitulo}</option>`).join('');
                 };
-
                 selTemp.onchange = actualizarCapitulos;
                 actualizarCapitulos();
-
                 document.getElementById('watch-confirm-btn').onclick = () => {
                     const url = selCap.value;
                     const capText = selCap.options[selCap.selectedIndex].text;
@@ -566,9 +498,7 @@
             const controls = document.getElementById('dl-controls');
             selector.classList.remove('hidden');
             selector.classList.add('flex');
-
             const peli = esPelicula(s) || s.descargas.some(d => d.temporada === "Pelis");
-
             if (peli) {
                 controls.innerHTML = `<div class="p-6 bg-blue-500/5 border border-blue-500/10 rounded-2xl text-center"><p class="font-bold text-sm">Película lista para descarga</p></div>`;
                 document.getElementById('dl-confirm-btn').onclick = () => {
@@ -578,11 +508,7 @@
                 };
             } else {
                 const temps = [...new Set(s.descargas.map(d => d.temporada))].sort((a, b) => (parseInt(a.toString().replace(/\D/g, '')) || 0) - (parseInt(b.toString().replace(/\D/g, '')) || 0));
-                controls.innerHTML = `
-                    <div class="space-y-4">
-                        <select id="sel-temp" class="dl-select">${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}</select>
-                        <select id="sel-cap" class="dl-select"></select>
-                    </div>`;
+                controls.innerHTML = `<div class="space-y-4"><select id="sel-temp" class="dl-select">${temps.map(t => `<option value="${t}">${t.toString().startsWith('T') ? 'Temporada ' + t.toString().substring(1) : t}</option>`).join('')}</select><select id="sel-cap" class="dl-select"></select></div>`;
                 const selTemp = document.getElementById('sel-temp'), selCap = document.getElementById('sel-cap');
                 const actualizar = () => {
                     const caps = s.descargas.filter(d => d.temporada === selTemp.value).sort((a, b) => (parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0) - (parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0));
@@ -603,14 +529,12 @@
             const videoPanel = document.getElementById('video-panel');
             const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
-            
             modalContent.classList.add('hidden');
             videoPanel.classList.remove('hidden');
             iframe.classList.add('hidden');
             loader.classList.remove('hidden');
             loader.innerText = "Cargando...";
             document.getElementById('video-title').innerText = titulo + (esTrailer ? " (Tráiler)" : "");
-
             if (url && typeof url === 'string' && url.trim() !== "") {
                 iframe.src = url;
                 iframe.classList.remove('hidden');
@@ -653,7 +577,6 @@
                 if (e.key === 'Escape') cerrarModal();
             }
         });
-
         init();
     </script>
 </body>
