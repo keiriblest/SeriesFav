@@ -4871,11 +4871,15 @@
   {
     "titulo": "Predator: Badlands",
     "imgURL": "https://pics.filmaffinity.com/predator_badlands-767428270-large.jpg",
+    "temporada": "",
     "descripcion": "Un joven Predator marginado de su clan encuentra un improbable aliado en su viaje en busca del adversario definitivo.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "7/11",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9boerg",
+    "verURL": [
+      "https://voe.sx/e/7zb5zf1ejrsw"
+    ],
     "descargas": [
       {
         "temporada": "Pelis",
