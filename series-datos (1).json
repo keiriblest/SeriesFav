@@ -893,12 +893,15 @@
   },
   {
     "titulo": "Andor",
-    "imgURL": "https://pics.filmaffinity.com/Andor_Serie_de_TV-324362036-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/andor-984090662-large.jpg",
+    "temporada": "T1",
     "descripcion": "Ambientada cinco años antes de los eventos de la película Rogue One,​ la serie sigue al espía Cassian Andor durante los años de formación de la Alianza Rebelde.​ La serie muestra la transformación de Andor, un ladrón que se convierte en revolucionario y finalmente se une a la Rebelión contra el Imperio Galáctico.",
     "plataforma": "Disney Plus",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8dmg4i"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8dmg4i",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Tu amigo y vecino Spiderman",
@@ -1154,11 +1157,13 @@
   {
     "titulo": "Severance",
     "imgURL": "https://m.media-amazon.com/images/I/71ex5dOVfWL._UF894,1000_QL80_.jpg",
+    "temporada": "T1",
     "descripcion": "Mark Scout lidera un equipo en Lumon Industries, cuyos empleados se han sometido a un procedimiento de despido, que implica la división quirúrgica de sus recuerdos entre el trabajo y la vida personal.",
     "plataforma": "Apple TV",
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x87z7jr",
+    "verURL": [],
     "descargas": [
       {
         "temporada": "T1",
@@ -1204,56 +1209,6 @@
         "temporada": "T1",
         "capitulo": "C9",
         "url": "https://drive.google.com/file/d/1BQ8QFpHcObXHsJysx2F40dEq5VIifUZV/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C1",
-        "url": "https://drive.google.com/file/d/1548Q-b1MGtQEeGAeKcjDDDj3GjvzmRVU/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C2",
-        "url": "https://drive.google.com/file/d/1Q8a-KQJTDelfAB3owkiTb9IQlIcM9D8n/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C3",
-        "url": "https://drive.google.com/file/d/1iHnDHiT8quhPSjt351Ma9nA9CEWmTayX/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C4",
-        "url": "https://drive.google.com/file/d/1HNYuBEo6j5PuYxX0x9-dXYgsrDzKvUAi/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C5",
-        "url": "https://drive.google.com/file/d/1vnAXrPIwpOSPJCtsSU74Ht_Amk_r0ekd/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C6",
-        "url": "https://drive.google.com/file/d/1vnLrxKwRCN7Cxb5dArCadbZhTIC9PITH/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C7",
-        "url": "https://drive.google.com/file/d/17tlOFQRmdihLmK-t1XJXZM1UuzTu5TET/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C8",
-        "url": "https://drive.google.com/file/d/1YzcvGA6HcFrS_o_y8Zy8XDb2fwuEYKdd/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C9",
-        "url": "https://drive.google.com/file/d/1ZiRvPWdRE3rX7clJbH4eB7UL1kG72PYk/view"
-      },
-      {
-        "temporada": "T2",
-        "capitulo": "C10",
-        "url": "https://drive.google.com/file/d/1R4Sd_WeQDQVu8PtuhBpuDZZXdn0Zp6TK/view"
       }
     ]
   },
@@ -1901,12 +1856,15 @@
   },
   {
     "titulo": "Peacemaker",
-    "imgURL": "https://pics.filmaffinity.com/peacemaker-936340754-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/peacemaker-873876592-large.jpg",
+    "temporada": "T1",
     "descripcion": "Tras lo ocurrido en “El escuadrón suicida” de James Gunn de 2021 continuamos la historia del personaje de John Cena, un hombre fascinante y arrogante que cree en la paz a cualquier precio, sin importar a cuánta gente tenga que matar para conseguirla.",
     "plataforma": "HBO Max",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x86ihkw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x86ihkw",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Task",
@@ -2158,12 +2116,15 @@
   },
   {
     "titulo": "Invincible",
-    "imgURL": "https://pics.filmaffinity.com/Invencible_Serie_de_TV-966285668-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/invincible-636366029-large.jpg",
+    "temporada": "T1",
     "descripcion": "Cuando Mark Grayson hereda superpoderes con 17 años, se convierte en uno de los superhéroes más grandes de la Tierra, junto con su padre. Todos sus sueños anhelados desde que era niño se hacen realidad... hasta que sucede algo que lo cambia todo.",
     "plataforma": "Prime",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8x3qb6"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8x3qb6",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Jackal",
@@ -2535,12 +2496,15 @@
   },
   {
     "titulo": "Memento Mori",
-    "imgURL": "https://pics.filmaffinity.com/memento_mori-475580569-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/memento_mori-598869046-large.jpg",
+    "temporada": "T1",
     "descripcion": "Thriller policíaco que explora la relación entre un asesino (Yon González) y el policía (Francisco Ortiz) que le persigue en un duelo a vida o muerte, ayudado por el peculiar Carapocha (Juan Echanove)... Adaptación de la primera entrega de la trilogía \"Versos, canciones y trocitos de carne\" escrita por César Pérez Gellida.",
     "plataforma": "Prime",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8oimm8"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8oimm8",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "The Runarounds",
@@ -4545,12 +4509,15 @@
   },
   {
     "titulo": "WondLa",
-    "imgURL": "https://pics.filmaffinity.com/wondla-124008191-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/wondla-150515539-large.jpg",
+    "temporada": "T1",
     "descripcion": "Obligada a salir de su santuario subterráneo a la superficie terrestre, Eva descubre un mundo que no se parece en nada a lo que esperaba. Mientras viaja por terrenos peligrosos y civilizaciones desconocidas, Eva busca la respuesta a la pregunta más crucial de todas... ¿Es ella la última humana?",
     "plataforma": "Apple TV",
     "seccion": "no-vistas",
-    "fecha": "26/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9imhie"
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8zlth0",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "I Love LA",
@@ -8274,6 +8241,189 @@
         "url": "https://goodstream.one/embed-y316rzojkffx.html"
       }
     ],
+    "descargas": []
+  },
+  {
+    "titulo": "Peacemaker",
+    "imgURL": "https://pics.filmaffinity.com/peacemaker-533167617-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Tras lo ocurrido en “El escuadrón suicida” de James Gunn de 2021 continuamos la historia del personaje de John Cena, un hombre fascinante y arrogante que cree en la paz a cualquier precio, sin importar a cuánta gente tenga que matar para conseguirla.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9npq4g",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Severance",
+    "imgURL": "https://pics.filmaffinity.com/severance-462105884-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Mark Scout dirige un equipo en Lumon Industries, cuyos empleados se han sometido a un procedimiento quirúrgico que separa sus recuerdos entre su ámbito laboral y su vida personal. Este atrevido experimento de \"equilibrio entre el trabajo y la vida personal\" se pone en tela de juicio cuando Mark se encuentra en el centro de un misterio que le obligará a confrontar la verdadera naturaleza de su trabajo... y de sí mismo.",
+    "plataforma": "Apple TV",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9cig7u",
+    "verURL": [],
+    "descargas": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://drive.google.com/file/d/1548Q-b1MGtQEeGAeKcjDDDj3GjvzmRVU/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://drive.google.com/file/d/1Q8a-KQJTDelfAB3owkiTb9IQlIcM9D8n/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://drive.google.com/file/d/1iHnDHiT8quhPSjt351Ma9nA9CEWmTayX/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://drive.google.com/file/d/1HNYuBEo6j5PuYxX0x9-dXYgsrDzKvUAi/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://drive.google.com/file/d/1vnAXrPIwpOSPJCtsSU74Ht_Amk_r0ekd/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://drive.google.com/file/d/1vnLrxKwRCN7Cxb5dArCadbZhTIC9PITH/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://drive.google.com/file/d/17tlOFQRmdihLmK-t1XJXZM1UuzTu5TET/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://drive.google.com/file/d/1YzcvGA6HcFrS_o_y8Zy8XDb2fwuEYKdd/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://drive.google.com/file/d/1ZiRvPWdRE3rX7clJbH4eB7UL1kG72PYk/view"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://drive.google.com/file/d/1R4Sd_WeQDQVu8PtuhBpuDZZXdn0Zp6TK/view"
+      }
+    ]
+  },
+  {
+    "titulo": "Invincible",
+    "imgURL": "https://pics.filmaffinity.com/invincible-253390708-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Cuando Mark Grayson hereda superpoderes con 17 años, se convierte en uno de los superhéroes más grandes de la Tierra, junto con su padre. Todos sus sueños anhelados desde que era niño se hacen realidad... hasta que sucede algo que lo cambia todo.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8ouxrh",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Invincible",
+    "imgURL": "https://pics.filmaffinity.com/invincible-129629536-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Cuando Mark Grayson hereda superpoderes con 17 años, se convierte en uno de los superhéroes más grandes de la Tierra, junto con su padre. Todos sus sueños anhelados desde que era niño se hacen realidad... hasta que sucede algo que lo cambia todo.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9ahwru",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Andor",
+    "imgURL": "https://pics.filmaffinity.com/andor-324362036-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Ambientada cinco años antes de los eventos de la película Rogue One,​ la serie sigue al espía Cassian Andor durante los años de formación de la Alianza Rebelde.​ La serie muestra la transformación de Andor, un ladrón que se convierte en revolucionario y finalmente se une a la Rebelión contra el Imperio Galáctico.",
+    "plataforma": "Disney Plus",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9f3ntw",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "WondLa",
+    "imgURL": "https://pics.filmaffinity.com/wondla-124008191-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Obligada a salir de su santuario subterráneo a la superficie terrestre, Eva descubre un mundo que no se parece en nada a lo que esperaba. Mientras viaja por terrenos peligrosos y civilizaciones desconocidas, Eva busca la respuesta a la pregunta más crucial de todas... ¿Es ella la última humana?",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9hxta6",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "WondLa",
+    "imgURL": "https://pics.filmaffinity.com/wondla-247431864-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Obligada a salir de su santuario subterráneo a la superficie terrestre, Eva descubre un mundo que no se parece en nada a lo que esperaba. Mientras viaja por terrenos peligrosos y civilizaciones desconocidas, Eva busca la respuesta a la pregunta más crucial de todas... ¿Es ella la última humana?",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9tpccg",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Memento Mori",
+    "imgURL": "https://pics.filmaffinity.com/memento_mori-639103506-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Thriller policíaco que explora la relación entre un asesino (Yon González) y el policía (Francisco Ortiz) que le persigue en un duelo a vida o muerte, ayudado por el peculiar Carapocha (Juan Echanove)... Adaptación de la primera entrega de la trilogía \"Versos, canciones y trocitos de carne\" escrita por César Pérez Gellida.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9ii40e",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Memento Mori",
+    "imgURL": "https://pics.filmaffinity.com/memento_mori-475580569-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Thriller policíaco que explora la relación entre un asesino (Yon González) y el policía (Francisco Ortiz) que le persigue en un duelo a vida o muerte, ayudado por el peculiar Carapocha (Juan Echanove)... Adaptación de la primera entrega de la trilogía \"Versos, canciones y trocitos de carne\" escrita por César Pérez Gellida.",
+    "plataforma": "Prime",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9n10ms",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Tell Me Lies",
+    "imgURL": "https://pics.filmaffinity.com/tell_me_lies-651862245-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Una relación tumultuosa pero embriagadora a lo largo de 8 años. Lucy Albright (Grace Van Patten) y Stephen DeMarco (Jackson White) se conocen en la universidad, justo en esa edad formativa en la que las elecciones aparentemente mundanas conducen a consecuencias irrevocables. Aunque su relación comienza como cualquier romance típico del campus, rápidamente caen en un enredo adictivo que alterará permanentemente no solo sus vidas, sino también las vidas de todos los que los rodean.",
+    "plataforma": "Disney Plus",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8cviz6",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Tell Me Lies",
+    "imgURL": "https://fr.web.img4.acsta.net/r_1920_1080/img/7f/cb/7fcb741d56dfa5d54b3b955b6c774541.jpg",
+    "temporada": "T2",
+    "descripcion": "Una relación tumultuosa pero embriagadora a lo largo de 8 años. Lucy Albright (Grace Van Patten) y Stephen DeMarco (Jackson White) se conocen en la universidad, justo en esa edad formativa en la que las elecciones aparentemente mundanas conducen a consecuencias irrevocables. Aunque su relación comienza como cualquier romance típico del campus, rápidamente caen en un enredo adictivo que alterará permanentemente no solo sus vidas, sino también las vidas de todos los que los rodean.",
+    "plataforma": "Disney Plus",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "",
+    "verURL": [],
     "descargas": []
   }
 ]
