@@ -3030,7 +3030,7 @@
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7ts0gw",
     "verURL": [
-      "https://voe.sx/e/vgvp7qazz2sv"
+      "https://voe.sx/e/j9rpasamqojz"
     ],
     "descargas": [
       {
@@ -3123,11 +3123,15 @@
   {
     "titulo": "Jurassic World El Renacer",
     "imgURL": "https://pics.filmaffinity.com/jurassic_world_rebirth-254962281-large.jpg",
+    "temporada": "",
     "descripcion": "Jurassic World Dominion, en la Tierra quedan pocos dinosaurios que viven en regiones ecuatoriales donde el clima se parece al de antaño. Las tres criaturas más grandes de esta biosfera tropical tienen en su ADN la clave para fabricar un medicamento que aportará grandes beneficios medicinales a la raza humana. Zora Bennett, una experta en operaciones encubiertas, es contratada para dirigir a un equipo de especialistas cuya misión es conseguir el material genético, pero los miembros de la operación acaban en una isla prohibida donde se ubicó hace años un centro de investigación secreto del Parque Jurásico. Allí, en un lugar poblado por dinosaurios de numerosas especies, se enfrentarán a un descubrimiento tan sorprendente como siniestro que lleva décadas escondido.",
     "plataforma": "Pelis",
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/ideo/x9ju9dw",
+    "verURL": [
+      "https://bysedikamoum.com/e/90opjhxe38id"
+    ],
     "descargas": [
       {
         "temporada": "Pelis",
@@ -5485,11 +5489,15 @@
   {
     "titulo": "Sisu 2",
     "imgURL": "https://pics.filmaffinity.com/sisu_2-601152489-large.jpg",
+    "temporada": "",
     "descripcion": "De vuelta a la casa donde su familia fue brutalmente asesinada durante la guerra, \"el hombre que se niega a morir\" la desmantela, la carga en un camión y está decidido a reconstruirla en algún lugar seguro en su honor. Cuando el comandante del Ejército Rojo que mató a su familia regresa decidido a terminar el trabajo, se inicia una lucha a muerte.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "21/11",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9th7eu",
+    "verURL": [
+      "https://voe.sx/e/umgdtjhqxldz"
+    ],
     "descargas": [
       {
         "temporada": "Pelis",
@@ -7900,6 +7908,11 @@
         "temporada": "T2",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-4t0advxt4brf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-d18az3396z02.html"
       }
     ],
     "descargas": []
@@ -7913,7 +7926,48 @@
     "seccion": "proximas",
     "fecha": "18/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9y85li",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-2crstmgpvita.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-ts827qhzdzbp.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-yo65lfwok3ey.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-w84s0ngb9lvh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-unnmmqrrd5qf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-veluiq2rzjl0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-lcd473h73r2p.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-m7z4c13vla38.html"
+      }
+    ],
     "descargas": []
   },
   {
