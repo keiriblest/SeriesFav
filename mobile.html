@@ -349,6 +349,10 @@
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
         let esNavegacionProximas = false;
 
+        // Variables para detección de swipe
+        let touchstartX = 0;
+        let touchendX = 0;
+
         async function init() {
             try {
                 const res = await fetch(URL_JSON);
@@ -359,8 +363,34 @@
                     createPromoDots();
                     startPromoCycle();
                 }
+                setupSwipeDetection();
                 filtrar();
             } catch (e) { console.error("Error cargando el catálogo:", e); }
+        }
+
+        function setupSwipeDetection() {
+            const modalImg = document.getElementById('m-img');
+            
+            modalImg.addEventListener('touchstart', e => {
+                touchstartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+
+            modalImg.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+        }
+
+        function handleSwipe() {
+            const threshold = 50; // Mínimo de píxeles para considerar el gesto
+            if (touchendX < touchstartX - threshold) {
+                // Swipe Izquierda -> Siguiente
+                abrirModalPorIndice(serieActualIdx + 1);
+            }
+            if (touchendX > touchstartX + threshold) {
+                // Swipe Derecha -> Anterior
+                abrirModalPorIndice(serieActualIdx - 1);
+            }
         }
 
         function toggleMobileFilters() {
