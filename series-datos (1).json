@@ -2864,7 +2864,38 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8oimm8",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-m7yh34ykp50x.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-c4nze2bmegc9.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-2nkwoz5uwvgt.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-a8v4jrbjtnqt.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-pzebgmvxvw2b.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-i9pcpiwr08dw.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -3731,12 +3762,15 @@
   },
   {
     "titulo": "The Witcher",
-    "imgURL": "https://pics.filmaffinity.com/the_witcher-656476452-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/the_witcher-330642357-large.jpg",
+    "temporada": "T1",
     "descripcion": "Geralt de Rivia, un cazador de monstruos mutante, viaja en pos de su destino por un mundo turbulento en el que, a menudo, los humanos son peores que las bestias. Adaptación a la televisión de la saga literaria de Andrzej Sapkowski, que dio a su vez origen a una trilogía de prestigiosos videojuegos.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7s5rvy"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7s5rvy",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Star Wars: The Clone Wars",
@@ -3891,12 +3925,15 @@
   },
   {
     "titulo": "Invasión",
-    "imgURL": "https://pics.filmaffinity.com/invasion-356318520-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/invasion-578472363-large.jpg",
+    "temporada": "T1",
     "descripcion": "La llegada de una especie alienígena a la Tierra pone en peligro a toda la humanidad. Sigue los acontecimientos a través de la perspectiva de cinco personas que, desde diferentes lugares del mundo, se esfuerzan por dar sentido al caos que las rodea.",
     "plataforma": "Apple TV",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x85b707"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x85b707",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "El Gran Guerrero",
@@ -4201,11 +4238,14 @@
   {
     "titulo": "Hazbin Hotel: El hotel de las viejas glorias",
     "imgURL": "https://pics.filmaffinity.com/hazbin_hotel-352787477-large.jpg",
+    "temporada": "T1",
     "descripcion": "En un intento por encontrar una alternativa no violenta para reducir la superpoblación del infierno, la hija de Lucifer abre un hotel de rehabilitación que ofrece a un grupo de demonios inadaptados una oportunidad de redención.",
     "plataforma": "Prime",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8qjpzd"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8qjpzd",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Como Entrenar a tu dragón",
@@ -5572,12 +5612,14 @@
   },
   {
     "titulo": "Emily In Paris",
-    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-798819903-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-895260750-large.jpg",
+    "temporada": "T5",
     "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "18/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9uz9zq",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -5777,13 +5819,15 @@
     ]
   },
   {
-    "titulo": "Atasco 3",
+    "titulo": "Atasco",
     "imgURL": "https://pics.filmaffinity.com/atasco_3-336104197-large.jpg",
-    "descripcion": "Tercera temporada de \"Atasco\". Llegará con seis nuevos episodios a finales de año en Prime Video.",
+    "temporada": "T3",
+    "descripcion": "¿Qué hay más navideño que un gran atasco? Una abuela rebelde, un profesor tiquismiquis, una modelo vengativa, un rockero dado por muerto… La noche del 22 de diciembre ocurren aventuras sorprendentes, cómicas y emotivas sobre el asfalto.",
     "plataforma": "Prime",
     "seccion": "no-vistas",
     "fecha": "22/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9jubxq",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -6662,6 +6706,11 @@
         "temporada": "T3",
         "capitulo": "C7",
         "url": "https://goodstream.one/embed-oh3p52274smj.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-e1otvd743hy3.html"
       }
     ],
     "descargas": []
@@ -6819,7 +6868,7 @@
     "plataforma": "Apple TV",
     "seccion": "no-vistas",
     "fecha": "28/1",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9wsbpq",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9wxy5k",
     "verURL": [],
     "descargas": []
   },
@@ -9305,7 +9354,33 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9ii40e",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-fqlcqu5aj3w9.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-sqmc7nedf70l.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-nydeiaq5iayl.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-oxl7igmdf9w7.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-i8ti4ksvx5je.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -9720,6 +9795,174 @@
         "url": "https://cubeembed.rpmvid.com/#6chnd"
       }
     ],
+    "descargas": []
+  },
+  {
+    "titulo": "Invasión",
+    "imgURL": "https://pics.filmaffinity.com/invasion-356318520-large.jpg",
+    "temporada": "T2",
+    "descripcion": "La llegada de una especie alienígena a la Tierra pone en peligro a toda la humanidad. Sigue los acontecimientos a través de la perspectiva de cinco personas que, desde diferentes lugares del mundo, se esfuerzan por dar sentido al caos que las rodea.",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8msq0p",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Invasión",
+    "imgURL": "https://pics.filmaffinity.com/invasion-101883624-large.jpg",
+    "temporada": "T3",
+    "descripcion": "La llegada de una especie alienígena a la Tierra pone en peligro a toda la humanidad. Sigue los acontecimientos a través de la perspectiva de cinco personas que, desde diferentes lugares del mundo, se esfuerzan por dar sentido al caos que las rodea.",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9obah2",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "The Witcher",
+    "imgURL": "https://pics.filmaffinity.com/the_witcher-797994397-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Geralt de Rivia, un cazador de monstruos mutante, viaja en pos de su destino por un mundo turbulento en el que, a menudo, los humanos son peores que las bestias. Adaptación a la televisión de la saga literaria de Andrzej Sapkowski, que dio a su vez origen a una trilogía de prestigiosos videojuegos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x856dk4",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "The Witcher",
+    "imgURL": "https://pics.filmaffinity.com/the_witcher-737807462-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Geralt de Rivia, un cazador de monstruos mutante, viaja en pos de su destino por un mundo turbulento en el que, a menudo, los humanos son peores que las bestias. Adaptación a la televisión de la saga literaria de Andrzej Sapkowski, que dio a su vez origen a una trilogía de prestigiosos videojuegos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8lmphv",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "The Witcher",
+    "imgURL": "https://pics.filmaffinity.com/the_witcher-656476452-large.jpg",
+    "temporada": "T4",
+    "descripcion": "Geralt de Rivia, un cazador de monstruos mutante, viaja en pos de su destino por un mundo turbulento en el que, a menudo, los humanos son peores que las bestias. Adaptación a la televisión de la saga literaria de Andrzej Sapkowski, que dio a su vez origen a una trilogía de prestigiosos videojuegos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rsv7s",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Atasco",
+    "imgURL": "https://pics.filmaffinity.com/atasco-386372183-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Un gran atasco generador de un gran caos interrumpe los planes de miles de ciudadanos a las afueras de Madrid. Esta situación cotidiana será el punto de partida para tramas inesperadas, cómicas y emotivas.",
+    "plataforma": "Prime",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8xot8i",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Atasco",
+    "imgURL": "https://pics.filmaffinity.com/atasco_2-175706548-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Con seis nuevos episodios, la segunda temporada de ‘Atasco’ nos lleva de nuevo a un kilométrico embotellamiento, esta vez provocado por un camión que pierde su carga en la autopista. Este incidente interrumpe las vidas de miles de ciudadanos: una reportera novata, un malhechor compadecido de un perro abandonado, un extraño viaje en blablacar, unas reclusas huyendo de la cárcel, una famosa escapando de paparazzis, etc. El asfalto sigue siendo el escenario de nuevas aventuras sorprendentes, cómicas y emotivas.",
+    "plataforma": "Prime",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9iu7n2",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Terapia sin Filtro",
+    "imgURL": "https://pics.filmaffinity.com/shrinking-632676818-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Jimmy trata de asimilar la muerte de su esposa mientras ejerce de padre, amigo y terapeuta. Decide cambiar su forma de ser con la gente y volverse una persona completamente honesta, sin ningún tipo de filtro. ¿Podrá sanarse a sí mismo ayudando a los demás? ¿Le servirá para retomar su camino en la vida?",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8hd9k7",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Terapia sin Filtro",
+    "imgURL": "https://pics.filmaffinity.com/shrinking-575134963-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Jimmy trata de asimilar la muerte de su esposa mientras ejerce de padre, amigo y terapeuta. Decide cambiar su forma de ser con la gente y volverse una persona completamente honesta, sin ningún tipo de filtro. ¿Podrá sanarse a sí mismo ayudando a los demás? ¿Le servirá para retomar su camino en la vida?",
+    "plataforma": "Apple TV",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9aha5y",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Hazbin Hotel: El hotel de las viejas glorias",
+    "imgURL": "https://pics.filmaffinity.com/hazbin_hotel-668275153-large.jpg",
+    "temporada": "T2",
+    "descripcion": "En un intento por encontrar una alternativa no violenta para reducir la superpoblación del infierno, la hija de Lucifer abre un hotel de rehabilitación que ofrece a un grupo de demonios inadaptados una oportunidad de redención.",
+    "plataforma": "Prime",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rrk90",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Emily In Paris",
+    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-681440493-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7w8x9d",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Emily In Paris",
+    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-617069204-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x85o848",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Emily In Paris",
+    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-563673508-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8fya0q",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Emily In Paris",
+    "imgURL": "https://pics.filmaffinity.com/emily_in_paris-765190125-large.jpg",
+    "temporada": "T4",
+    "descripcion": "Tras aceptar el trabajo de sus sueños en París, la joven Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8xwc9q",
+    "verURL": [],
     "descargas": []
   }
 ]
