@@ -5529,11 +5529,16 @@
   {
     "titulo": "Wicked: Parte II",
     "imgURL": "https://pics.filmaffinity.com/wicked_for_good-910127272-large.jpg",
+    "temporada": "",
     "descripcion": "El capítulo final de la historia jamás contada de las brujas de Oz comienza con Elphaba y Glinda distanciadas y viviendo las consecuencias de sus respectivas decisiones. Mientras la multitud alza su clamor contra la Bruja Malvada, ambas deberán unirse una vez más. Con su singular amistad convertida en el punto de inflexión de su futuro, tendrán que mirarse a los ojos con honestidad y compasión para afrontar su transformación personal y cambiar el destino de todo Oz.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "21/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rhpgg",
+    "verURL": [
+      "https://voe.sx/e/zmj4gvatj4qa"
+    ],
+    "descargas": []
   },
   {
     "titulo": "Núremberg",
@@ -6946,6 +6951,11 @@
         "temporada": "T1",
         "capitulo": "C6",
         "url": "https://goodstream.one/embed-hrvb5oz098ca.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-qduzl6ydv3h2.html"
       }
     ],
     "descargas": []
