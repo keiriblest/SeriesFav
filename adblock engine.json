@@ -1,0 +1,46 @@
+(function() {
+    const cleanContent = () => {
+        // 1. Bloqueo de Popups por software
+        if (window.open) {
+            window.open = function() { return { focus: function() {}, close: function() {} }; };
+        }
+
+        // 2. Limpieza de capas invisibles (Anti-Clickjack)
+        // Busca elementos con z-index muy alto que suelen tapar el botón de Play
+        document.querySelectorAll('div, ins, span').forEach(el => {
+            const style = window.getComputedStyle(el);
+            const zIndex = parseInt(style.zIndex);
+            
+            if (zIndex > 100 || style.position === 'fixed') {
+                // Si el elemento cubre más del 50% de la pantalla, es probablemente un anuncio invisible
+                if (el.offsetWidth >= window.innerWidth * 0.5) {
+                    el.remove();
+                }
+            }
+        });
+
+        // 3. Forzar modo Sandbox en Iframes externos (Voe, Streamwish, etc)
+        document.querySelectorAll('iframe').forEach(iframe => {
+            if (!iframe.src.includes('github.io')) {
+                // allow-presentation permite ver el video, pero bloqueamos popups y descargas
+                if (!iframe.hasAttribute('sandbox')) {
+                    iframe.setAttribute('sandbox', 'allow-forms allow-scripts allow-same-origin allow-presentation');
+                }
+            }
+        });
+
+        // 4. Eliminar scripts de Ad Networks conocidos que se inyectan dinámicamente
+        document.querySelectorAll('script').forEach(script => {
+            if (script.src.includes('adsterra') || script.src.includes('popads')) {
+                script.remove();
+            }
+        });
+    };
+
+    // Ejecución inmediata y bucle de vigilancia cada segundo
+    cleanContent();
+    setInterval(cleanContent, 1000);
+
+    // Notificación en consola para depuración
+    console.log("🚀 AdBlock Engine Activo y Sincronizado");
+})();

@@ -1,0 +1,18 @@
+{
+  "favicon": "https://keiriblest.github.io/SeriesFav/favicon.ico",
+  "blackList": [
+    "adsterra.com", "popads.net", "onclickads.net", "exoclick.com", 
+    "shorte.st", "doubleclick.net", "pemsrv.com", "fastads.io", 
+    "clknrt.com", "mobiads.com", "adsbygoogle.com", "juicyads.com", 
+    "propellerads.com", "yieldmo.com", "popcash.net", "bet365.com",
+    "1xbet.com", "vidoza.net/ad", "voe.sx/ad", "streamwish.com/ad",
+    "yandex.ru", "mail.ru", "ptpimg.me", "monetag.com", "hi-it.org",
+    "losslessspeed.com", "thebrighttag.com", "creativetm.com",
+    "aj1559.online", "df88.biz", "fastclk.com", "onclickperformance.com",
+    "adnxs.com", "t.co", "bit.ly", "ouo.io", "rebrand.ly", "mellowads.com",
+    "ad-maven.com", "popmymads.com", "ero-advertising.com"
+  ],
+  "blockedKeywords": [
+    "ads", "banner", "popunder", "layer", "overlay", "tracker", "click", "promo", "prebid"
+  ]
+}
