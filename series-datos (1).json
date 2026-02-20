@@ -6592,6 +6592,11 @@
         "temporada": "T2",
         "capitulo": "C6",
         "url": "https://goodstream.one/embed-e2u7wo5iq21q.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-joh7qko7gopv.html"
       }
     ],
     "descargas": []
@@ -6678,7 +6683,68 @@
     "seccion": "no-vistas",
     "fecha": "5/1",
     "trailerURL": "",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-xf4e8mpwsa8w.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-kdcd7s888j8n.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-1c8xjh4k5kzu.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-xhg21ihm5pox.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-wko3dlkqq6le.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-e33ysvvw8c0b.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-7tetdlo7146y.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-i77shnxhuvk0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-rhix712ri7cu.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-3n96d5ctzy1q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://goodstream.one/embed-sx725eo8r8n9.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://goodstream.one/embed-5qy0fcaq3k3h.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -7867,7 +7933,13 @@
     "seccion": "proximas",
     "fecha": "20/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9y79cw",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-ed32bp9kheqg.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -8293,7 +8365,58 @@
     "seccion": "proximas",
     "fecha": "20/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9yjohe",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-4f7fe9blwza9.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-v71b28z3tkpc.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-xhblsxm2livr.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-n3w9siqoatdf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-mozwhgrran87.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-pv0dayj6o8uw.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-r5h9mjjjgvzz.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-jf318dxj3gw7.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-9h7l4y6x1qcr.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-3cii1ni9iidg.html"
+      }
+    ],
     "descargas": []
   },
   {
