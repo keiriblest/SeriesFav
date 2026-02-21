@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 :root{--bg:#0a0a0a;--acc:#e50914;}
 *{box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hidden;cursor:none;user-select:none;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hidden;cursor:none;user-select:none;}#buscador{cursor:text;user-select:text;}#vid-controls,#vid-controls *{cursor:pointer;}
 #app{display:flex;height:100vh;width:100vw;overflow:hidden;position:relative;}
 #left-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
 #topbar{flex-shrink:0;z-index:10;display:flex;align-items:center;gap:1rem;padding:1rem 1.8rem;background:linear-gradient(to bottom,rgba(0,0,0,0.98) 80%,transparent);}
@@ -220,7 +220,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
     <div id="vid-controls">
       <div id="vid-title-el"></div>
       <div id="vid-btn-bar">
-        <button id="vid-fs-btn" class="vid-ctrl-btn red-btn"><i class="fas fa-expand"></i> Pantalla completa</button>
+        <button id="vid-play-btn" class="vid-ctrl-btn red-btn"><i class="fas fa-play"></i> Reproducir</button>
         <button id="vid-settings-btn" class="vid-ctrl-btn"><i class="fas fa-cog"></i> Ajustes</button>
         <button id="vid-back-btn" class="vid-ctrl-btn"><i class="fas fa-arrow-left"></i> Volver</button>
       </div>
@@ -257,7 +257,7 @@ let vmSpeed='1';
 // ══════════ FOCUS ENGINE ══════════
 let zone='grid',zIdx=0,prevZone='grid',prevZIdx=0;
 const ZONE_DEF={
-  top:()=>[document.getElementById('top-section-btn')].filter(Boolean),
+  top:()=>[document.getElementById('top-section-btn'),document.getElementById('buscador')].filter(Boolean),
   filter:()=>[document.getElementById('btn-estado'),document.getElementById('btn-plat')].filter(Boolean),
   grid:()=>[...document.querySelectorAll('.pcard')],
   promo:()=>[document.getElementById('promo-widget')].filter(Boolean),
@@ -282,7 +282,7 @@ const ZONE_DEF={
     r.push(document.getElementById('dl-close-btn'));
     return r.filter(Boolean);
   },
-  video:()=>[document.getElementById('vid-fs-btn'),document.getElementById('vid-settings-btn'),document.getElementById('vid-back-btn')].filter(Boolean),
+  video:()=>[document.getElementById('vid-play-btn'),document.getElementById('vid-settings-btn'),document.getElementById('vid-back-btn')].filter(Boolean),
   'vid-settings':()=>[...document.querySelectorAll('.vsetting-item')],
   picker:()=>[...document.querySelectorAll('.picker-item')]
 };
@@ -624,11 +624,16 @@ function showVidControls(){
   vidCtrlTimer=setTimeout(()=>{if(!vidSettingsOpen)document.getElementById('vid-controls').classList.add('hidden-ctrl');},4000);
 }
 
-// Pantalla completa — el autoplay ya va en la URL
-document.getElementById('vid-fs-btn').onclick=()=>{
-  const vp=document.getElementById('video-panel');
-  const rfs=vp.requestFullscreen||vp.webkitRequestFullscreen||vp.mozRequestFullScreen||vp.msRequestFullscreen;
-  if(rfs)rfs.call(vp);
+// Botón reproducir — enfoca el iframe y manda play al reproductor embebido
+document.getElementById('vid-play-btn').onclick=()=>{
+  showVidControls();
+  const fr=document.getElementById('vid-frame');
+  if(fr&&fr.focus)fr.focus();
+  try{
+    if(currentVidType==='youtube'){sendMsg({event:'command',func:'playVideo',args:[]});}
+    else if(currentVidType==='dailymotion'){sendMsg({command:'play'});}
+    else if(currentVidType==='vimeo'){sendMsg({method:'play'});}
+  }catch(_){}
 };
 
 // ══ AJUSTES DEL REPRODUCTOR (según tipo detectado) ══
