@@ -147,7 +147,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8aryzs",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-s9fyuav9b5p0.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-q4rve16uc2px.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-dd9zqgbl91q3.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-yv2rc5949kcs.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://voe.sx/e/bqdanofh8swf"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-bk9opfysixyx.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-avs6tmjjoujo.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://voe.sx/e/aq1lyjox1qyp"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://voe.sx/e/xmfmai9mruit"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-q6uqa99jgeqo.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -8262,7 +8313,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8lsi8s",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://voe.sx/e/fubqqbt1z5tg"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://voe.sx/e/zlboaazewlmd"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://voe.sx/e/yodzmk524lhr"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://voe.sx/e/vm4wia2mxaj6"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://voe.sx/e/skbcbr8ouurg"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://voe.sx/e/oywuegu3af4l"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://voe.sx/e/geki6lxvh9hg"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://voe.sx/e/fe4ty9gdqn3a"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://voe.sx/e/zeuhqo1lrmau"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://voe.sx/e/b45hminvpokj"
+      }
+    ],
     "descargas": []
   },
   {
