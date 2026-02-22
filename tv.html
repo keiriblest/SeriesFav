@@ -103,20 +103,27 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 .vsetting-item.tv-focused .vs-val{color:var(--acc);}
 .vs-type-badge{font-size:0.58rem;padding:0.15rem 0.5rem;border-radius:50px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-left:0.5rem;vertical-align:middle;}
 
-/* HINT */
-#hint{position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(0,0,0,0.9);border-top:1px solid rgba(255,255,255,0.05);padding:0.45rem 2rem;font-size:0.7rem;color:#6b7280;display:flex;gap:1.6rem;justify-content:center;}
-#hint span{display:flex;align-items:center;gap:0.3rem;}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* CURSOR VIRTUAL */
+#v-cursor{
+  position:fixed;
+  width:24px;height:24px;
+  background:rgba(229,9,20,0.88);
+  border:2.5px solid #fff;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  display:none;
+  transform:scale(1);
+  transition:transform 0.12s ease;
+  box-shadow:0 0 14px rgba(0,0,0,0.9),0 0 5px rgba(229,9,20,0.7);
+  margin-left:-12px;margin-top:-12px; /* centrar */
+}
 </style>
 </head>
 <body>
-<div id="hint">
-  <span><i class="fas fa-arrows-alt"></i> Navegar</span>
-  <span><i class="fas fa-circle" style="font-size:0.5rem;"></i> OK</span>
-  <span>Esc · Volver</span>
-  <span id="hint-settings" style="display:none;"><i class="fas fa-cog"></i> Botón ajustes · Panel</span>
-</div>
-
 <!-- PROMO WIDGET -->
 <div id="promo-widget" style="display:none;" onclick="onPromoClick()">
   <div id="promo-inner">
@@ -249,7 +256,7 @@ let dlTempSel=null,dlCapSel=null;
 let vidCtrlTimer=null,vidSettingsOpen=false;
 let promoIdx=0,promoTimer=null;
 // Video state
-let currentVidUrl='',currentVidType='unknown';
+let currentVidUrl='',currentVidType='unknown',vidPlaying=false;
 let ytQuality='default',ytSubs='0',ytSpeed='1';
 let dmQuality='720',dmSubs='0';
 let vmSpeed='1';
@@ -598,7 +605,13 @@ function playVideo(url,titulo,isTrailer=false){
   ld.style.display='flex';
   ld.innerHTML='<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size:2.5rem;margin-bottom:1rem;display:block;color:var(--acc);"></i><span style="color:#9ca3af;font-size:0.9rem;">Cargando reproductor...</span></div>';
   document.getElementById('vid-title-el').innerText=titulo+(isTrailer?' (Tráiler)':'');
-  document.getElementById('hint-settings').style.display='flex';
+  
+  vidPlaying=true;
+  // Resetear cursor virtual al centro
+  window.vCurX=window.innerWidth/2;
+  window.vCurY=window.innerHeight/2;
+  const vcInit=document.getElementById('v-cursor');
+  if(vcInit){vcInit.style.display='none';vcInit.style.left=window.vCurX+'px';vcInit.style.top=window.vCurY+'px';}
   vidSettingsOpen=false;
   document.getElementById('vid-settings').classList.remove('show');
   // Reset ajustes
@@ -749,8 +762,9 @@ function closeVideo(){
   document.getElementById('vid-frame').src='';
   vidSettingsOpen=false;
   document.getElementById('vid-settings').classList.remove('show');
-  document.getElementById('hint-settings').style.display='none';
   clearTimeout(vidCtrlTimer);
+  const vcClose=document.getElementById('v-cursor');
+  if(vcClose)vcClose.style.display='none';
   if(itemIdx>=0){showModal();setTimeout(()=>setZone('modal-info',0),80);}
   else setTimeout(()=>setZone('grid',0),80);
 }
@@ -776,36 +790,82 @@ document.addEventListener('keydown',e=>{
 
   // VIDEO
   if(videoOpen){
-    // Botón ajustes del mando (varias teclas posibles según TV)
-    if(['Settings','MediaSettings','ContextMenu','F9','ColorF2Green','Green','Info','MediaPlay'].includes(key)){
-      e.preventDefault();toggleVidSettings();return;
-    }
+    const vc=document.getElementById('v-cursor');
+    if(typeof window.vCurX==='undefined'){window.vCurX=window.innerWidth/2;window.vCurY=window.innerHeight/2;}
+
+    // Botón Atrás → volver al modal, nunca salir de la app
     if(key==='Escape'||key==='Backspace'||key==='GoBack'){
       e.preventDefault();
       if(vidSettingsOpen){toggleVidSettings();return;}
+      vc.style.display='none';
       closeVideo();return;
     }
-    if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Enter',' '].includes(key)){
+
+    // Botón ajustes del mando
+    if(['Settings','MediaSettings','ContextMenu','F9','ColorF2Green','Green','Info'].includes(key)){
+      e.preventDefault();toggleVidSettings();return;
+    }
+
+    // Panel de ajustes abierto → navegar con flechas dentro de él
+    if(vidSettingsOpen){
       e.preventDefault();
-      showVidControls();
-      if(vidSettingsOpen){
-        const items=getItems('vid-settings');
-        if(key==='ArrowDown')applyFocus('vid-settings',Math.min(zIdx+1,items.length-1));
-        else if(key==='ArrowUp')applyFocus('vid-settings',Math.max(zIdx-1,0));
-        else if(key==='Enter'||key===' ')items[zIdx]?.click();
-        else if(key==='ArrowLeft'){document.getElementById('vid-settings').classList.remove('show');vidSettingsOpen=false;setTimeout(()=>setZone('video',1),60);}
-        return;
-      }
-      const items=getItems('video');
-      if(key==='ArrowLeft')applyFocus('video',Math.max(zIdx-1,0));
-      else if(key==='ArrowRight')applyFocus('video',Math.min(zIdx+1,items.length-1));
-      else if(key==='ArrowUp'||key==='ArrowDown'){
-        if(vidSettingsOpen&&key==='ArrowUp'){document.getElementById('vid-settings').classList.remove('show');vidSettingsOpen=false;}
-        else if(key==='ArrowDown'&&!vidSettingsOpen&&zone==='video'&&zIdx===1){toggleVidSettings();return;}
-      }
+      const items=getItems('vid-settings');
+      if(key==='ArrowDown')applyFocus('vid-settings',Math.min(zIdx+1,items.length-1));
+      else if(key==='ArrowUp')applyFocus('vid-settings',Math.max(zIdx-1,0));
       else if(key==='Enter'||key===' ')items[zIdx]?.click();
+      else if(key==='ArrowLeft'){document.getElementById('vid-settings').classList.remove('show');vidSettingsOpen=false;setTimeout(()=>setZone('video',1),60);}
       return;
     }
+
+    // Flechas → mover cursor virtual
+    if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(key)){
+      e.preventDefault();
+      showVidControls();
+      vc.style.display='block';
+      const step=30;
+      if(key==='ArrowUp')    window.vCurY-=step;
+      if(key==='ArrowDown')  window.vCurY+=step;
+      if(key==='ArrowLeft')  window.vCurX-=step;
+      if(key==='ArrowRight') window.vCurX+=step;
+      window.vCurX=Math.max(0,Math.min(window.innerWidth,window.vCurX));
+      window.vCurY=Math.max(0,Math.min(window.innerHeight,window.vCurY));
+      vc.style.left=window.vCurX+'px';
+      vc.style.top=window.vCurY+'px';
+      return;
+    }
+
+    // Enter / OK → interactuar
+    if(key==='Enter'||key===' '){
+      e.preventDefault();
+      const el=document.elementFromPoint(window.vCurX,window.vCurY);
+      if(!el){return;}
+
+      // Si el cursor está sobre el iframe → toggle play/pause via postMessage
+      if(el.id==='vid-frame'||el.closest?.('#vid-area')===document.getElementById('vid-area')&&el.tagName==='IFRAME'){
+        vidPlaying=!vidPlaying;
+        if(vidPlaying){
+          if(currentVidType==='youtube')sendMsg({event:'command',func:'playVideo',args:[]});
+          else if(currentVidType==='dailymotion')sendMsg({command:'play'});
+          else if(currentVidType==='vimeo')sendMsg({method:'play'});
+        }else{
+          if(currentVidType==='youtube')sendMsg({event:'command',func:'pauseVideo',args:[]});
+          else if(currentVidType==='dailymotion')sendMsg({command:'pause'});
+          else if(currentVidType==='vimeo')sendMsg({method:'pause'});
+        }
+        // Icono visual de play/pause sobre el cursor
+        vc.innerHTML=vidPlaying?'&#9654;':'&#10074;&#10074;';
+        vc.style.transform='scale(1.5)';
+        setTimeout(()=>{vc.style.transform='scale(1)';vc.innerHTML='';},500);
+        return;
+      }
+
+      // Si el cursor está sobre un botón u otro elemento del DOM → click normal
+      el.click();
+      vc.style.transform='scale(0.7)';
+      setTimeout(()=>{vc.style.transform='scale(1)';},120);
+      return;
+    }
+
     return;
   }
 
@@ -858,5 +918,6 @@ document.addEventListener('keydown',e=>{
 
 init();
 </script>
+<div id="v-cursor"></div>
 </body>
 </html>
