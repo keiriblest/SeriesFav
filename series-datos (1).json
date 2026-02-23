@@ -888,11 +888,55 @@
   {
     "titulo": "Ripley",
     "imgURL": "https://pics.filmaffinity.com/ripley-423947230-large.jpg",
+    "temporada": "",
     "descripcion": "Un millonario contrata al estafador Tom Ripley para que viaje a Italia e inste a su hedonista hijo a regresar a casa. La aceptación del trabajo por parte de Tom hace que éste se vea rodeado de riqueza, lujos y privilegios, haciéndose pasar por quien no es. Pero para conservar la vida que tanto desea, Tom tendrá que tejer una red de mentiras. Adaptación de la serie de novelas de Patricia Highsmith.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8tukpo"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8tukpo",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://audinifer.com/e/n01r0no661vq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://masukestin.com/e/3qhj9q32ajy6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://audinifer.com/e/nbd9ev7ythep"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://audinifer.com/e/c8fw0du6moju"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://vibuxer.com/e/d8ybdh1he84m"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://vibuxer.com/e/13sfu76a2xfq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://vibuxer.com/e/hm1z8qadiy8g"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hanerix.com/e/pro0586864x2"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Rey Lobo",
