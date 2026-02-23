@@ -73,11 +73,45 @@
   {
     "titulo": "Cassandra",
     "imgURL": "https://pics.filmaffinity.com/Cassandra_Serie_de_TV-180059494-large.jpg",
+    "temporada": "",
     "descripcion": "La casa inteligente más antigua de Alemania despierta después de décadas a su ayudante IA, Cassandra, cuando una nueva familia se muda a ella. Cassandra, decidida a no volver a ser abandonada, manipula los acontecimientos utilizando los recursos de la casa para convertirse en parte de la familia.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9dh2ke"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9dh2ke",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://voe.sx/e/zakwd7lts97d"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://voe.sx/e/ekdtnrweowvv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://voe.sx/e/opaszpyoihsm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://voe.sx/e/7e32ajcyueom"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://voe.sx/e/id2fcurcstwj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://voe.sx/e/gs50c8sl9o4b"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "El Agente Nocturno",
@@ -8058,7 +8092,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8pldj1",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://voe.sx/e/mttvfl04gcuk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://voe.sx/e/u4pgflqyquzk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://voe.sx/e/smaznt788wpj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://voe.sx/e/5lzyqrwdvzzh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://voe.sx/e/e3alav5wx3or"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://voe.sx/e/exhwa48bhssu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://voe.sx/e/ozj20jm2lb5o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://voe.sx/e/gsjofybmjpv4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://voe.sx/e/x7adspnhwz1t"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://voe.sx/e/lhcoz9clasoy"
+      }
+    ],
     "descargas": []
   },
   {
