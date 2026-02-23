@@ -7777,7 +7777,23 @@
     "seccion": "proximas",
     "fecha": "23/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9vlgb8",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-n73n0jjkd3y8.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-mhvbup54ueh1.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-1i2nobc2mtzz.html"
+      }
+    ],
     "descargas": []
   },
   {
