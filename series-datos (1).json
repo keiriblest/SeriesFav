@@ -2899,11 +2899,55 @@
   {
     "titulo": "Teacup",
     "imgURL": "https://pics.filmaffinity.com/teacup-824971681-large.jpg",
+    "temporada": "",
     "descripcion": "Un variopinto grupo de personas de la Georgia rural deben unirse ante una misteriosa amenaza para sobrevivir. A medida que van descubriendo la verdad sobre varios sucesos inexplicables, deberán hacer frente a problemas del pasado y resentimientos mutuos, viéndose forzados a aceptar la dura realidad y unirse por el bien de su localidad, o todos ellos acabarán aniquilados.",
     "plataforma": "Otras",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x964c2e"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x964c2e",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://masukestin.com/e/uzsn3dvn9hc8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://bysedikamoum.com/e/1rzfakxvnf6o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://voe.sx/e/wlplejksdnph"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://voe.sx/e/112tq17zvr0s"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://voe.sx/e/hz0t1lap3z7y"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://voe.sx/e/vab1esbvt6wa"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://voe.sx/e/ndtmvjvkdv86"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://voe.sx/e/lasxva2zq976"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Bel Air",
