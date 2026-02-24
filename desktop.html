@@ -194,9 +194,17 @@
              </div>
              <div class="flex justify-between items-center px-4">
                  <h3 id="video-title" class="text-xl font-bold truncate pr-4 text-white"></h3>
-                 <button onclick="volverAInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
-                    <i class="fas fa-arrow-left mr-2"></i> Volver a info
-                 </button>
+                 <div class="flex items-center gap-2">
+                     <button id="btn-cap-prev" onclick="irCapAnterior()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         <i class="fas fa-step-backward mr-2"></i> Cap. Anterior
+                     </button>
+                     <button onclick="volverAInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         <i class="fas fa-arrow-left mr-2"></i> Volver a info
+                     </button>
+                     <button id="btn-cap-next" onclick="irCapSiguiente()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         Cap. Siguiente <i class="fas fa-step-forward ml-2"></i>
+                     </button>
+                 </div>
              </div>
         </div>
     </div>
@@ -207,6 +215,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
+        let capActualIdx = -1, capListaActual = [];
         let esNavegacionProximas = false;
         const MAX_DOTS = 5;
 
@@ -481,13 +490,50 @@
                 document.getElementById('watch-confirm-btn').onclick = () => {
                     const url = selCap.value;
                     const capText = selCap.options[selCap.selectedIndex].text;
-                    reproducirVideo(url, `${s.titulo} - ${capText}`);
+                    const todosEps = itemsVer.slice().sort((a, b) => {
+                        const tA = parseInt(a.temporada.toString().replace(/\D/g, '')) || 0;
+                        const tB = parseInt(b.temporada.toString().replace(/\D/g, '')) || 0;
+                        if (tA !== tB) return tA - tB;
+                        return (parseInt(a.capitulo.toString().replace(/\D/g, '')) || 0) - (parseInt(b.capitulo.toString().replace(/\D/g, '')) || 0);
+                    });
+                    const capIdx = todosEps.findIndex(e => e.url === url);
+                    reproducirVideo(url, `${s.titulo} - ${capText}`, false, todosEps, capIdx);
                     document.getElementById('watch-selector').classList.add('hidden');
                 };
             }
         }
 
-        function cerrarSelectorVer() {
+        function actualizarBotonesCapitulo() {
+            const btnPrev = document.getElementById('btn-cap-prev');
+            const btnNext = document.getElementById('btn-cap-next');
+            if (capListaActual.length > 0 && capActualIdx >= 0) {
+                btnPrev.classList.toggle('hidden', capActualIdx <= 0);
+                btnNext.classList.toggle('hidden', capActualIdx >= capListaActual.length - 1);
+            } else {
+                btnPrev.classList.add('hidden');
+                btnNext.classList.add('hidden');
+            }
+        }
+
+        function irCapAnterior() {
+            if (capActualIdx > 0) {
+                const ep = capListaActual[capActualIdx - 1];
+                const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*$/, '').replace(/ - C\d.*$/, '');
+                const capText = ep.capitulo.toString().startsWith('C') ? 'Capítulo ' + ep.capitulo.toString().substring(1) : ep.capitulo;
+                reproducirVideo(ep.url, `${tituloBase} - ${capText}`, false, capListaActual, capActualIdx - 1);
+            }
+        }
+
+        function irCapSiguiente() {
+            if (capActualIdx < capListaActual.length - 1) {
+                const ep = capListaActual[capActualIdx + 1];
+                const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*$/, '').replace(/ - C\d.*$/, '');
+                const capText = ep.capitulo.toString().startsWith('C') ? 'Capítulo ' + ep.capitulo.toString().substring(1) : ep.capitulo;
+                reproducirVideo(ep.url, `${tituloBase} - ${capText}`, false, capListaActual, capActualIdx + 1);
+            }
+        }
+
+                function cerrarSelectorVer() {
             document.getElementById('watch-selector').classList.add('hidden');
             document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
@@ -524,7 +570,9 @@
             document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
 
-        function reproducirVideo(url, titulo, esTrailer = false) {
+        function reproducirVideo(url, titulo, esTrailer = false, capLista = [], capIdx = -1) {
+            capListaActual = capLista;
+            capActualIdx = capIdx;
             const modalContent = document.getElementById('modal-content-wrapper');
             const videoPanel = document.getElementById('video-panel');
             const iframe = document.getElementById('dailymotion-iframe');
@@ -542,6 +590,7 @@
             } else {
                 loader.innerText = "No disponible.";
             }
+            actualizarBotonesCapitulo();
         }
 
         function volverAInfo() {
@@ -568,6 +617,8 @@
             document.getElementById('dailymotion-iframe').src = "";
             serieActualIdx = -1;
             esNavegacionProximas = false;
+            capActualIdx = -1;
+            capListaActual = [];
         }
 
         document.addEventListener('keydown', (e) => {
