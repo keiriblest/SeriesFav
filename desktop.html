@@ -81,6 +81,11 @@
                     </select>
                 </div>
             </div>
+            <a id="btn-download-wrapper" href="https://github.com/keiriblest/SeriesFav/releases" target="_blank"
+               class="nav-link flex items-center gap-4 p-3 text-gray-400 hover:text-red-500 transition-colors mt-2">
+                <i class="fas fa-download text-xl w-6 text-center"></i>
+                <span class="font-medium">Descargar</span>
+            </a>
         </nav>
     </aside>
 
@@ -533,7 +538,7 @@
             }
         }
 
-                function cerrarSelectorVer() {
+        function cerrarSelectorVer() {
             document.getElementById('watch-selector').classList.add('hidden');
             document.getElementById('modal-content-wrapper').classList.remove('hidden');
         }
@@ -629,6 +634,12 @@
             }
         });
         init();
+    </script>
+    <script>
+        if (navigator.userAgent.includes('Electron')) {
+            const el = document.getElementById('btn-download-wrapper');
+            if (el) el.style.display = 'none';
+        }
     </script>
 </body>
 </html>
