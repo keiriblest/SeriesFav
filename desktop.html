@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        :root { --bg-main: #0a0a0a; --sidebar-bg: rgba(10, 10, 10, 0.95); --accent-default: #e50914; }
+        :root { --bg-main: #000000; --sidebar-bg: rgba(10, 10, 10, 0.95); --accent-default: #e50914; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-main); color: #ffffff; overflow-x: hidden; }
         .sidebar { width: 80px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: var(--sidebar-bg); backdrop-filter: blur(20px); border-right: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 10px 0 30px rgba(0,0,0,0.5); }
         .sidebar:hover { width: 260px; }
@@ -37,9 +37,31 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .dl-select, .watch-select { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: white; border-radius: 12px; padding: 12px; width: 100%; margin-top: 5px; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='gray'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; }
+
+        /* --- FONDO MITOSYS: NEGRO + ROJO --- */
+        #mitosys {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: #000;
+        }
+
+        /* Capa de mezcla para suavizar el rojo sobre el negro */
+        body:before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="flex">
+    <canvas id="mitosys"></canvas>
     <aside class="sidebar fixed h-screen z-50 flex flex-col py-8 overflow-hidden">
         <div class="flex items-center px-7 mb-12">
             <i class="fas fa-play-circle text-2xl text-red-600"></i>
@@ -641,5 +663,88 @@
             if (el) el.style.display = 'none';
         }
     </script>
+
+    <script>
+        /*--------------------------------------------------
+          MOTOR MITOSYS: BLACK & RED INTERACTIVE
+        --------------------------------------------------*/
+        const canvas = document.getElementById('mitosys');
+        const ctx = canvas.getContext('2d');
+        let winW = canvas.width = window.innerWidth;
+        let winH = canvas.height = window.innerHeight;
+        let balls = [];
+        const maxBalls = 10; 
+
+        let mouse = { x: -1000, y: -1000 };
+
+        class Ball {
+            constructor() {
+                this.r = 150 + Math.random() * 250;
+                this.x = Math.random() * winW;
+                this.y = Math.random() * winH;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.color = Math.random() > 0.5 ? '150, 0, 0' : '80, 0, 0';
+            }
+
+            draw() {
+                let gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+                gradient.addColorStop(0, `rgba(${this.color}, 0.3)`); 
+                gradient.addColorStop(0.5, `rgba(${this.color}, 0.1)`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');  
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < -this.r) this.x = winW + this.r;
+                if (this.x > winW + this.r) this.x = -this.r;
+                if (this.y < -this.r) this.y = winH + this.r;
+                if (this.y > winH + this.r) this.y = -this.r;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 450) {
+                    this.x -= dx * 0.015;
+                    this.y -= dy * 0.015;
+                }
+            }
+        }
+
+        function initMitosys() {
+            winW = canvas.width = window.innerWidth;
+            winH = canvas.height = window.innerHeight;
+            balls = [];
+            for (let i = 0; i < maxBalls; i++) balls.push(new Ball());
+        }
+
+        function animateMitosys() {
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, winW, winH);
+            balls.forEach(ball => {
+                ball.update();
+                ball.draw();
+            });
+            requestAnimationFrame(animateMitosys);
+        }
+
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('resize', initMitosys);
+        initMitosys();
+        animateMitosys();
+    </script>
+
 </body>
 </html>
