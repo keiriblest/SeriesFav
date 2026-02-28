@@ -1,60 +1,62 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selecciona tu experiencia</title>
     <style>
+        /* --- ESTILO BASE Y FONDO --- */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             overflow: hidden;
-            background-color: #0a0a0a;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #000;
+            font-family: 'Montserrat', -apple-system, sans-serif;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #particles-canvas {
+        /* Capa de mezcla de color (Rojo Carmesí) */
+        body:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: hard-light;
+            background: linear-gradient(45deg, #600000, #b41414);
+            pointer-events: none;
+        }
+
+        /* Hemos eliminado el body:after que contenía el texto */
+
+        canvas#mitosys {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 0;
-            pointer-events: none;
         }
 
-        /* Brillo de cursor más intenso */
-        #cursor-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: radial-gradient(
-                250px circle at var(--x, 50%) var(--y, 50%), 
-                rgba(255, 0, 0, 0.25), 
-                transparent 80%
-            );
-            z-index: 1;
-            transition: background 0.1s ease;
-        }
-
+        /* --- INTERFAZ DE USUARIO --- */
         .container {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             text-align: center;
         }
 
         .selection-box {
             display: flex;
             gap: 40px;
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .option {
@@ -62,178 +64,82 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: all 0.3s ease;
-            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            padding: 25px;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             width: 130px;
         }
 
-        /* Hover con rojo vivo y sombra de luz */
         .option:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 0, 0, 0.05);
-            border-color: #ff0000;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-        }
-
-        .option:hover svg {
-            fill: #ff0000;
-            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+            transform: translateY(-8px);
+            background: rgba(180, 20, 20, 0.1);
+            border-color: rgba(230, 26, 26, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .option svg {
-            width: 50px;
-            height: 50px;
-            fill: #ffffff;
+            width: 45px;
+            height: 45px;
+            fill: rgba(255, 255, 255, 0.8);
             margin-bottom: 15px;
-            transition: all 0.3s ease;
+            transition: fill 0.4s ease;
+        }
+
+        .option:hover svg {
+            fill: #e61a1a;
         }
 
         .option p {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
         }
 
+        /* --- LOADER --- */
         .loader-content {
             display: none;
             flex-direction: column;
             align-items: center;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.8s ease;
         }
 
-        /* Cargador con brillo neón */
         .loader {
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-top: 2px solid #ff0000;
+            border-top: 2px solid #e61a1a;
             border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            animation: spin 0.8s linear infinite;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
             margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
         .hidden { display: none !important; }
         .visible { display: flex !important; opacity: 1 !important; }
         
-        p.loading-text {
-            font-size: 14px;
-            letter-spacing: 2px;
+        .loading-text {
+            font-size: 13px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            font-weight: 400;
-            color: #ff0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        @media (max-width: 575px) {
+            .selection-box { gap: 20px; }
         }
     </style>
-
-    <script>
-        let canvas, ctx;
-        let particles = [];
-        const pointer = { x: -500, y: -500 };
-
-        class Particle {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.7;
-                this.speedY = (Math.random() - 0.5) * 0.7;
-                this.opacity = Math.random() * 0.8 + 0.2;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                const dx = pointer.x - this.x;
-                const dy = pointer.y - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 130) {
-                    this.x -= dx * 0.03;
-                    this.y -= dy * 0.03;
-                }
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-            }
-            draw() {
-                // Partículas con un ligero resplandor
-                ctx.shadowBlur = 5;
-                ctx.shadowColor = "#ff0000";
-                ctx.fillStyle = `rgba(255, 0, 0, ${this.opacity})`;
-                ctx.beginPath(); 
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
-                ctx.fill();
-                ctx.shadowBlur = 0; // Reset para no afectar rendimiento
-            }
-        }
-
-        function initParticles() {
-            canvas = document.getElementById('particles-canvas');
-            ctx = canvas.getContext('2d');
-            resizeCanvas();
-            for (let i = 0; i < 90; i++) particles.push(new Particle());
-            animate();
-        }
-
-        function resizeCanvas() {
-            if (canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
-
-        function handleMove(e) {
-            const glow = document.getElementById('cursor-glow');
-            let clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-            let clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-            glow.style.setProperty('--x', clientX + 'px');
-            glow.style.setProperty('--y', clientY + 'px');
-            pointer.x = clientX; pointer.y = clientY;
-        }
-
-        function selectExperience(type) {
-            const selection = document.getElementById('selection-box');
-            const loader = document.getElementById('loader-content');
-            selection.style.opacity = '0';
-            selection.style.transform = 'scale(0.9)';
-            
-            setTimeout(() => {
-                selection.classList.add('hidden');
-                loader.classList.add('visible');
-            }, 400);
-
-            setTimeout(() => {
-                window.location.replace(type === 'mobile' ? "mobile.html" : "desktop.html");
-            }, 2200);
-        }
-
-        window.onload = () => {
-            initParticles();
-            window.addEventListener('resize', resizeCanvas);
-            document.addEventListener('mousemove', handleMove);
-            document.addEventListener('touchstart', handleMove);
-            document.addEventListener('touchmove', handleMove);
-        };
-    </script>
 </head>
 <body>
 
-    <canvas id="particles-canvas"></canvas>
-    <div id="cursor-glow"></div>
+    <canvas id="mitosys"></canvas>
 
     <div class="container">
         <div id="selection-box" class="selection-box">
@@ -249,9 +155,112 @@
 
         <div id="loader-content" class="loader-content">
             <div class="loader"></div>
-            <p class="loading-text">Preparando Experiencia</p>
+            <p class="loading-text">Preparando experiencia</p>
         </div>
     </div>
 
+    <script>
+        let canvas = document.getElementById('mitosys'),
+            ctx = canvas.getContext('2d'),
+            winW = canvas.width = window.innerWidth,
+            winH = canvas.height = window.innerHeight,
+            Balls = [],
+            maxBalls = 8;
+
+        let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+        class Ball {
+            constructor() {
+                this.r = 150 + Math.random() * 150;
+                this.pos = { x: Math.random() * winW, y: Math.random() * winH };
+                this.direction = { x: -0.5 + Math.random(), y: -0.5 + Math.random() };
+                this.activePos = { x: this.pos.x, y: this.pos.y };
+            }
+
+            draw() {
+                let gradient = ctx.createRadialGradient(
+                    this.activePos.x - this.r/3, 
+                    this.activePos.y - this.r/7, 
+                    0, 
+                    this.activePos.x, 
+                    this.activePos.y, 
+                    this.r
+                );
+                gradient.addColorStop(0, '#fff');
+                gradient.addColorStop(0.95, '#000');
+                
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.activePos.x, this.activePos.y, this.r, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+            
+            update() {
+                this.activePos.x += this.direction.x;
+                this.activePos.y += this.direction.y;
+                
+                if (this.activePos.x < 0 || this.activePos.x > winW) this.direction.x *= -1;
+                if (this.activePos.y < 0 || this.activePos.y > winH) this.direction.y *= -1;
+
+                let dx = mouse.x - this.activePos.x;
+                let dy = mouse.y - this.activePos.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 300) {
+                    this.activePos.x -= dx * 0.01;
+                    this.activePos.y -= dy * 0.01;
+                }
+            }
+        }
+
+        const init = () => {
+            winW = canvas.width = window.innerWidth;
+            winH = canvas.height = window.innerHeight;
+            ctx.globalCompositeOperation = "lighten";
+            Balls = [];
+            for (let i = 0; i < maxBalls; i++) {
+                Balls.push(new Ball());
+            }
+        }
+
+        const animate = () => {
+            ctx.clearRect(0, 0, winW, winH);
+            Balls.forEach(ball => {
+                ball.update();
+                ball.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        const getMouse = (e) => {
+            mouse.x = e.clientX || (e.touches ? e.touches[0].pageX : window.innerWidth/2);
+            mouse.y = e.clientY || (e.touches ? e.touches[0].pageY : window.innerHeight/2);
+        };
+
+        ['mousemove', 'touchstart', 'touchmove'].forEach(e => {
+            window.addEventListener(e, getMouse);
+        });
+
+        window.addEventListener('resize', init);
+
+        function selectExperience(type) {
+            const selection = document.getElementById('selection-box');
+            const loader = document.getElementById('loader-content');
+            
+            selection.style.opacity = '0';
+            selection.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                selection.classList.add('hidden');
+                loader.classList.add('visible');
+            }, 600);
+
+            setTimeout(() => {
+                window.location.replace(type === 'mobile' ? "mobile.html" : "desktop.html");
+            }, 2200);
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 </html>
