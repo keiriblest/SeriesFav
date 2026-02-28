@@ -1,9 +1,8 @@
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargando...</title>
+    <title>Selecciona tu experiencia</title>
     <style>
         /* Estilo Minimalista y Oscuro */
         body, html {
@@ -20,7 +19,6 @@
             align-items: center;
         }
 
-        /* Lienzo para las partículas */
         #particles-canvas {
             position: fixed;
             top: 0;
@@ -31,7 +29,6 @@
             pointer-events: none;
         }
 
-        /* Capa de luz azul reducida */
         #cursor-glow {
             position: fixed;
             top: 0;
@@ -41,27 +38,71 @@
             pointer-events: none;
             background: radial-gradient(
                 300px circle at var(--x, 50%) var(--y, 50%), 
-                rgba(29, 78, 216, 0.15), 
+                rgba(220, 38, 38, 0.15), /* Rojo suave */
                 transparent 80%
             );
             z-index: 1;
-            /* Suaviza el movimiento del brillo en táctiles */
             transition: background 0.1s ease;
         }
 
-        .content {
+        .container {
             position: relative;
             z-index: 2;
             text-align: center;
+        }
+
+        /* --- Estilos de Selección --- */
+        .selection-box {
+            display: flex;
+            gap: 40px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .option {
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 120px;
         }
 
-        /* Spinner con el toque azul */
+        .option:hover {
+            transform: translateY(-10px);
+            background: rgba(220, 38, 38, 0.1); /* Hover rojo */
+            border-color: #ef4444; /* Borde rojo */
+        }
+
+        .option svg {
+            width: 50px;
+            height: 50px;
+            fill: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .option p {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* --- Estilos de Carga --- */
+        .loader-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
         .loader {
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-top: 2px solid #3b82f6;
+            border-top: 2px solid #ef4444; /* Spinner rojo */
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -74,25 +115,24 @@
             100% { transform: rotate(360deg); }
         }
 
-        p {
+        .hidden { display: none !important; }
+        .visible { display: flex !important; opacity: 1 !important; }
+        
+        p.loading-text {
             font-size: 14px;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 300;
-            margin: 0;
         }
     </style>
 
     <script>
         let canvas, ctx;
         let particles = [];
-        const pointer = { x: -500, y: -500 }; // Inicializado fuera de vista
+        const pointer = { x: -500, y: -500 };
 
         class Particle {
-            constructor() {
-                this.reset();
-            }
-
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
@@ -101,12 +141,9 @@
                 this.speedY = (Math.random() - 0.5) * 0.5;
                 this.opacity = Math.random() * 0.5 + 0.2;
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
-                // Reacción al puntero (mouse o touch)
                 const dx = pointer.x - this.x;
                 const dy = pointer.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
@@ -114,17 +151,11 @@
                     this.x -= dx * 0.02;
                     this.y -= dy * 0.02;
                 }
-
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                    this.reset();
-                }
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
             }
-
             draw() {
-                ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.fillStyle = `rgba(239, 68, 68, ${this.opacity})`; /* Partículas rojas */
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
             }
         }
 
@@ -132,11 +163,7 @@
             canvas = document.getElementById('particles-canvas');
             ctx = canvas.getContext('2d');
             resizeCanvas();
-
-            for (let i = 0; i < 80; i++) {
-                particles.push(new Particle());
-            }
-
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
             animate();
         }
 
@@ -149,52 +176,37 @@
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
 
-        // Función unificada para actualizar posición de luz y partículas
         function handleMove(e) {
             const glow = document.getElementById('cursor-glow');
-            let clientX, clientY;
-
-            if (e.type.includes('touch')) {
-                clientX = e.touches[0].clientX;
-                clientY = e.touches[0].clientY;
-            } else {
-                clientX = e.clientX;
-                clientY = e.clientY;
-            }
-
+            let clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            let clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
             glow.style.setProperty('--x', clientX + 'px');
             glow.style.setProperty('--y', clientY + 'px');
-            pointer.x = clientX;
-            pointer.y = clientY;
+            pointer.x = clientX; pointer.y = clientY;
         }
 
-        window.addEventListener('resize', resizeCanvas);
-        document.addEventListener('mousemove', handleMove);
-        document.addEventListener('touchstart', handleMove);
-        document.addEventListener('touchmove', handleMove);
+        function selectExperience(type) {
+            const selection = document.getElementById('selection-box');
+            const loader = document.getElementById('loader-content');
+            selection.classList.add('hidden');
+            loader.classList.add('visible');
 
-        function redirect() {
+            setTimeout(() => {
+                window.location.replace(type === 'mobile' ? "mobile.html" : "desktop.html");
+            }, 1800);
+        }
+
+        window.onload = () => {
             initParticles();
-            setTimeout(function() {
-                var ancho = window.innerWidth;
-                var esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-                if (esMovil || ancho <= 768) {
-                    window.location.replace("mobile.html");
-                } else {
-                    window.location.replace("desktop.html");
-                }
-            }, 1500); 
-        }
-
-        window.onload = redirect;
+            window.addEventListener('resize', resizeCanvas);
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('touchstart', handleMove);
+            document.addEventListener('touchmove', handleMove);
+        };
     </script>
 </head>
 <body>
@@ -202,9 +214,22 @@
     <canvas id="particles-canvas"></canvas>
     <div id="cursor-glow"></div>
 
-    <div class="content">
-        <div class="loader"></div>
-        <p>Preparando experiencia</p>
+    <div class="container">
+        <div id="selection-box" class="selection-box">
+            <div class="option" onclick="selectExperience('desktop')">
+                <svg viewBox="0 0 24 24"><path d="M20,18H4V6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H9V22H15V20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg>
+                <p>Escritorio</p>
+            </div>
+            <div class="option" onclick="selectExperience('mobile')">
+                <svg viewBox="0 0 24 24"><path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.1 5.9,23 7,23H17C18.1,23 19,22.1 19,21V3C19,1.89 18.1,1 17,1Z" /></svg>
+                <p>Móvil</p>
+            </div>
+        </div>
+
+        <div id="loader-content" class="loader-content">
+            <div class="loader"></div>
+            <p class="loading-text">Preparando experiencia</p>
+        </div>
     </div>
 
 </body>
