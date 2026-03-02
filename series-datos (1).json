@@ -7969,6 +7969,11 @@
         "temporada": "T2",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-1i2nobc2mtzz.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-vl5r3446j0np.html"
       }
     ],
     "descargas": []
@@ -11970,7 +11975,13 @@
     "seccion": "proximas",
     "fecha": "2/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9ysv9k",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-m1daxd69wwq8.html"
+      }
+    ],
     "descargas": []
   },
   {
