@@ -3805,11 +3805,65 @@
   {
     "titulo": "Revival",
     "imgURL": "https://pics.filmaffinity.com/revival-195453599-large.jpg",
+    "temporada": "",
     "descripcion": "Un día extraordinario en Wisconsin, difuntos se levantan de sus tumbas, pero aparecen y actúan sin cambios. A la agente y madre soltera Dana Cypress resolver un caso de asesinato en el que todos, vivos o muertos vivientes, son sospechosos",
     "plataforma": "Otras",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9rpph4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9rpph4",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/j0lp41ytx1dd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/dq8x10icv3s1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/mxjqnfn29nsf"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/7n3wkc42f7sp"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/kp4gu3xsfpvc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/gt6rtdsgde6j"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/yw1z9ag5x6ms"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/atm3egdbutyt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/ciew8ygmgin6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/mj6ry2q04uss"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Los Gringos Hunters",
@@ -8358,7 +8412,13 @@
     "seccion": "no-vistas",
     "fecha": "27/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9z7um0",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://masukestin.com/e/gxu8bg0d54lv"
+      }
+    ],
     "descargas": []
   },
   {
@@ -8592,7 +8652,38 @@
     "seccion": "no-vistas",
     "fecha": "26/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9wgvsi",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-y8pij35mdo7y.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-txa3ze9t5bdb.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-c75g2pwvod7x.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-711icn22dmio.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-4g09w9osok0u.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-u0jmp884xeke.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -11891,7 +11982,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8mp9nt",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-vutxu9g7cet4.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-2j7hayp2xwfs.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-zszs7ljcj1ar.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-xmlrio47qxtj.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-dmrofvcvz0b5.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-4gjc8wyntfpz.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-qxwl5obhut21.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-j3wjb0p87s1f.html"
+      }
+    ],
     "descargas": []
   },
   {
