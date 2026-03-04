@@ -6767,7 +6767,13 @@
     "seccion": "proximas",
     "fecha": "4/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9td00c",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-cuvpcqh9tpf6.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -7857,6 +7863,11 @@
         "temporada": "T3",
         "capitulo": "C5",
         "url": "https://goodstream.one/embed-vcmfl7gcduav.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-ijh38dn43q7t.html"
       }
     ],
     "descargas": []
@@ -12468,7 +12479,48 @@
     "seccion": "proximas",
     "fecha": "4/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9zbqyo",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-p4qvarkasuzm.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-2ff0amcuulj6.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-61oh1g4qdy7l.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-9yjuidywdz4t.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-26uqlnmgkl6a.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-rke8lxrfrcpe.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-p20k0fiiy99a.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-km5kzej2eojp.html"
+      }
+    ],
     "descargas": []
   },
   {
@@ -12516,7 +12568,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8leoj6",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-2gdqd0p1wggr.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-96tl9sw25i6h.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-rdqx9oqet5fh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-w9otcj746p8w.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-mjr1jyebuo2y.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-ly77g9p3arqv.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-q1vnrmapnbvd.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-etjelxo8xuya.html"
+      }
+    ],
     "descargas": []
   },
   {
