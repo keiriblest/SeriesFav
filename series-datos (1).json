@@ -12604,7 +12604,28 @@
     "seccion": "proximas",
     "fecha": "6/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9zbsik",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-c85qv748rf89.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-exqetlkvyy1u.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-11jnp9ob7lob.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-112anq8olr4n.html"
+      }
+    ],
     "descargas": []
   },
   {
