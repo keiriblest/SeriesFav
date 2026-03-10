@@ -199,11 +199,65 @@
   {
     "titulo": "Cyberpunk Edgerunners",
     "imgURL": "https://pics.filmaffinity.com/Cyberpunk_Edgerunners_Miniserie_de_TV-911681623-large.jpg",
+    "temporada": "",
     "descripcion": "Narra la historia de un chico que malvive en las calles de una ciudad futurista obsesionada con la tecnología y la modificación corporal. Con todo en su contra, opta por buscarse la vida convirtiéndose en un ‘edgerunner’, un mercenario proscrito’. Serie de animación basada en el videojuego \"Cyberpunk 2077\".",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8csvut"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8csvut",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/lr0b5wdfrjc6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/exf3s2gz2zgz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/sc9awy75xkhc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/rj11iwflt3go"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/5ukr0p29sg1o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/t5omio2v5sdq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/52209mwyn1tf"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/b4l3nv8sgbdz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/k0rb73zfwhvz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/8qskyqqy23es"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Arcane League of Legends",
@@ -12564,7 +12618,48 @@
     "seccion": "proximas",
     "fecha": "10/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9znbls",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-loqujqhebq68.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-dzbiugv77hl1.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-xder48p3wzao.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-pkjv7jpy3wn5.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-mqorxw4r0mxf.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-k890ofjyjggm.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-n1pqd83wtk2q.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-cdtg5cvwrgvy.html"
+      }
+    ],
     "descargas": []
   },
   {
