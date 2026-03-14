@@ -6814,7 +6814,7 @@
   },
   {
     "titulo": "Furtivo",
-    "imgURL": "https://pics.filmaffinity.com/traques-876879204-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/traques-181187658-large.jpg",
     "temporada": "",
     "descripcion": "Franck y sus amigos de toda la vida cazan juntos todos los fines de semana, pero un domingo, se topan con otro grupo de cazadores que empieza a perseguirlos sin explicación alguna. Basada en la novela \"Shoot\" de Douglas Fairbairn",
     "plataforma": "Apple TV",
@@ -7301,6 +7301,11 @@
         "temporada": "T2",
         "capitulo": "C9",
         "url": "https://goodstream.one/embed-ey5qz5pybchc.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-ggwmx2t0gw9i.html"
       }
     ],
     "descargas": []
@@ -8768,6 +8773,11 @@
         "temporada": "T2",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-m86ugrvynbxv.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-d86rhkq60xea.html"
       }
     ],
     "descargas": []
@@ -12681,7 +12691,38 @@
     "seccion": "proximas",
     "fecha": "13/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9ztflg",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-nea77c0r7bb5.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-9b50s7fio87r.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-5s2mppe9w0hf.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-fcblw1ecbtfz.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-3vf431bbz8v6.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-odbv3z6xj0yg.html"
+      }
+    ],
     "descargas": []
   },
   {
