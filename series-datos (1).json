@@ -12951,13 +12951,44 @@
   {
     "titulo": "Day One",
     "imgURL": "https://pics.filmaffinity.com/day_one-480476434-large.jpg",
-    "temporada": "",
+    "temporada": "1",
     "descripcion": "Ulises Albet (Álex González) era un prodigio de la informática que abandonó Barcelona y el mundo tecnológico tras el fallecimiento de su hermana pequeña. Diez años después, una misteriosa llamada de su antiguo socio y mejor amigo, Samuel Barrera (Asier Etxeandia), le obliga a regresar durante la celebración del Mobile World Congress. Samuel le advierte de que el mundo está en peligro, lo que llevará a Ulises a enfrentarse a su pasado, a los avances tecnológicos y a la pregunta fundamental: ¿Hasta dónde podemos llegar sin perder aquello que nos hace humanos?",
     "plataforma": "Prime",
     "seccion": "proximas",
     "fecha": "13/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/xa0pxra",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-qrhusqnevnrr.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-h9swxhvwbyk9.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-c9a12jodrw8z.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-glqpqn054vwh.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-986u6r3dl9av.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-gyo4yt2slh7n.html"
+      }
+    ],
     "descargas": []
   },
   {
