@@ -6215,11 +6215,16 @@
   {
     "titulo": "Núremberg",
     "imgURL": "https://pics.filmaffinity.com/nuremberg-979422889-large.jpg",
+    "temporada": "",
     "descripcion": "Tras el fin de la II Guerra Mundial, con ocasión de los cruciales juicios de Nuremberg de los Aliados contra el derrotado régimen nazi, el psiquiatra estadounidense Douglas Kelley, encargado de determinar si los prisioneros oficiales nazis son aptos para ser juzgados por sus crímenes de guerra, se ve inmerso en una compleja batalla de ingenio con Hermann Göring, mano derecha de Hitler. Basada en el libro \"El nazi y el psiquiatra\" de Jack El-Hai.",
     "plataforma": "Pelis",
     "seccion": "no-vistas",
     "fecha": "28/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9quqye"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9quqye",
+    "verURL": [
+      "https://hglink.to/e/aq81v03baa74"
+    ],
+    "descargas": []
   },
   {
     "titulo": "Resident Alien",
@@ -10134,7 +10139,9 @@
     "seccion": "no-vistas",
     "fecha": "13/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tregm",
-    "verURL": [],
+    "verURL": [
+      "https://hglink.to/e/hq65xmgisry9"
+    ],
     "descargas": []
   },
   {
@@ -10184,7 +10191,9 @@
     "seccion": "no-vistas",
     "fecha": "20/2",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9xmajy",
-    "verURL": [],
+    "verURL": [
+      "https://hglink.to/e/jr7sh4c7rdxk"
+    ],
     "descargas": []
   },
   {
@@ -13277,7 +13286,9 @@
     "seccion": "proximas",
     "fecha": "27/3",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9x43ne",
-    "verURL": [],
+    "verURL": [
+      "https://hglink.to/e/fkwr7rvma9jp"
+    ],
     "descargas": []
   }
 ]
