@@ -46,12 +46,28 @@
             <span class="ml-4 font-bold text-xl tracking-tight">SeriesFav</span>
         </div>
         <nav class="flex flex-col gap-2 w-full px-4">
-            <div onclick="cambiarSeccion('series')" id="btn-series" class="nav-link active flex items-center gap-4 p-3 text-white">
-                <i class="fas fa-tv text-xl w-6 text-center"></i>
+            <div onclick="cambiarSeccion('series')" id="btn-series" onmouseenter="animateSeries()" class="nav-link active flex items-center gap-4 p-3 text-white">
+                <svg id="svg-series" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg" style="min-width:22px;overflow:visible">
+  <rect height="15" rx="2" width="22" x="1" y="2"/>
+  <path id="svg-series-base" d="M8 21h0"/>
+  <circle id="svg-series-d0" cx="7"  cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-series-d1" cx="10" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-series-d2" cx="13" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-series-d3" cx="16" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+</svg>
                 <span class="font-medium">Series</span>
             </div>
-            <div onclick="cambiarSeccion('peliculas')" id="btn-peliculas" class="nav-link flex items-center gap-4 p-3 text-gray-400">
-                <i class="fas fa-film text-xl w-6 text-center"></i>
+            <div onclick="cambiarSeccion('peliculas')" id="btn-peliculas" onmouseenter="animateClap()" class="nav-link flex items-center gap-4 p-3 text-gray-400">
+                <svg id="svg-clap" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg" style="min-width:22px;overflow:visible">
+  <g id="svg-clap-outer">
+    <g id="svg-clap-top">
+      <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/>
+      <path d="m6.2 5.3 3.1 3.9"/>
+      <path d="m12.4 3.4 3.1 4"/>
+    </g>
+    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+  </g>
+</svg>
                 <span class="font-medium">Películas</span>
             </div>
             <div onclick="cambiarSeccion('favoritos')" id="btn-favoritos" class="nav-link flex items-center gap-4 p-3 text-gray-400">
@@ -81,9 +97,15 @@
                     </select>
                 </div>
             </div>
-            <a id="btn-download-wrapper" href="https://github.com/keiriblest/SeriesFav/releases" target="_blank"
+            <a id="btn-download-wrapper" onmouseenter="animateSidebarDl()" onmouseleave="animateSidebarDlStop()" href="https://github.com/keiriblest/SeriesFav/releases" target="_blank"
                class="nav-link flex items-center gap-4 p-3 text-gray-400 hover:text-red-500 transition-colors mt-2">
-                <i class="fas fa-download text-xl w-6 text-center"></i>
+                <svg id="svg-sidebar-dl" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg" style="min-width:22px;overflow:visible">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+  <g id="svg-sidebar-dl-arrow">
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" x2="12" y1="15" y2="3"/>
+  </g>
+</svg>
                 <span class="font-medium">Descargar</span>
             </a>
         </nav>
@@ -101,7 +123,15 @@
                     <input type="text" id="buscador" placeholder="Buscar contenido..." oninput="filtrar()" class="bg-transparent border-none outline-none text-sm w-full text-white">
                 </div>
                 <button id="btn-sort" onclick="toggleOrden()" title="Ordenar alfabéticamente" class="bg-white/5 border border-white/10 rounded-full w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all relative group">
-                    <i class="fas fa-sort-alpha-down text-sm"></i>
+                    <svg id="sort-svg" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+            <path d="m3 16 4 4 4-4"/>
+            <path d="M7 20V4"/>
+            <g id="sort-svg-top">
+              <path d="M20 8h-5"/>
+              <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/>
+            </g>
+            <path id="sort-svg-bot" d="M15 14h5l-5 6h5"/>
+          </svg>
                     <span id="sort-label" class="hidden absolute -bottom-7 left-1/2 -translate-x-1/2 text-[10px] whitespace-nowrap bg-black/80 text-white px-2 py-1 rounded-md pointer-events-none">A → Z</span>
                 </button>
             </div>
@@ -117,15 +147,31 @@
     </main>
 
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-black/95 backdrop-blur-xl" onclick="if(event.target === this) cerrarModal()">
-        <button onclick="cerrarModal()" class="fixed top-8 right-8 text-3xl text-gray-400 hover:text-white transition z-[110] bg-black/20 w-12 h-12 rounded-full flex items-center justify-center border border-white/10 leading-none pb-1">&times;</button>
+        <button onclick="cerrarModal()" onmouseenter="animateClose()" class="fixed top-8 right-8 text-3xl text-gray-400 hover:text-white transition z-[110] bg-black/20 w-12 h-12 rounded-full flex items-center justify-center border border-white/10 leading-none pb-1">
+  <svg id="svg-close" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+    <path id="svg-close-l1" d="M18 6 6 18"/>
+    <path id="svg-close-l2" d="m6 6 12 12"/>
+  </svg>
+</button>
         
         <div id="modal-content-wrapper" class="bg-[#111] max-w-3xl w-full rounded-3xl overflow-hidden border border-white/10 grid md:grid-cols-[2fr_3fr] shadow-2xl relative">
             <div id="m-img" class="p-6 bg-[#0c0c0c] flex items-center justify-center h-[300px] md:h-auto border-r border-white/5"></div>
             <div id="m-info-panel" class="p-8 relative flex flex-col justify-center">
                 <div class="flex items-center gap-3">
                     <span id="m-platform" class="font-bold text-[10px] uppercase tracking-widest">Plataforma</span>
-                    <span id="m-release-date" class="hidden font-bold text-[10px] px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-200 flex items-center gap-2">
-                        <i class="far fa-calendar-alt text-red-500"></i>
+                    <span id="m-release-date" onmouseenter="animateCalendar()" class="hidden font-bold text-[10px] px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-200 flex items-center gap-2">
+                        <svg id="svg-calendar" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;color:#ef4444">
+  <path d="M8 2v4"/>
+  <path d="M16 2v4"/>
+  <rect height="18" rx="2" width="18" x="3" y="4"/>
+  <path d="M3 10h18"/>
+  <circle id="svg-cal-d0" cx="8"  cy="14" r="1" fill="currentColor" stroke="none"/>
+  <circle id="svg-cal-d1" cx="12" cy="14" r="1" fill="currentColor" stroke="none"/>
+  <circle id="svg-cal-d2" cx="16" cy="14" r="1" fill="currentColor" stroke="none"/>
+  <circle id="svg-cal-d3" cx="8"  cy="18" r="1" fill="currentColor" stroke="none"/>
+  <circle id="svg-cal-d4" cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+  <circle id="svg-cal-d5" cx="16" cy="18" r="1" fill="currentColor" stroke="none"/>
+</svg>
                         <span id="m-date-text"></span>
                     </span>
                 </div>
@@ -138,14 +184,30 @@
                 </div>
 
                 <div class="mt-8 flex flex-wrap gap-2">
-                    <button id="m-watch-btn" class="hidden bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
-                        <i class="fas fa-tv"></i> Ver ahora
+                    <button id="m-watch-btn" onmouseenter="animateWatch()" class="hidden bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
+                        <svg id="svg-watch" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;overflow:visible">
+  <rect height="15" rx="2" width="22" x="1" y="2"/>
+  <path id="svg-watch-base" d="M8 21h0" stroke-linecap="round"/>
+  <circle id="svg-watch-d0" cx="7"  cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-watch-d1" cx="10" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-watch-d2" cx="13" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+  <circle id="svg-watch-d3" cx="16" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
+</svg> Ver ahora
                     </button>
-                    <button id="m-trailer-btn" class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
-                        <i class="fas fa-play-circle"></i> Tráiler
+                    <button id="m-trailer-btn" onmouseenter="animateTrailer()" class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
+                        <svg id="svg-trailer-play" fill="none" height="18" stroke="none" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle">
+  <circle cx="12" cy="12" r="10" fill="black" stroke="#333" stroke-width="1.5"/>
+  <polygon id="svg-trailer-poly" points="10 8 18 12 10 16 10 8" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> Tráiler
                     </button>
-                    <button id="m-download-btn" class="hidden bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
-                        <i class="fas fa-download"></i> Descargar
+                    <button id="m-download-btn" onmouseenter="animateDownload()" onmouseleave="animateDownloadStop()" class="hidden bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
+                        <svg id="svg-download" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;overflow:visible">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+  <g id="svg-dl-arrow">
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" x2="12" y1="15" y2="3"/>
+  </g>
+</svg> Descargar
                     </button>
                     <button id="m-fav-toggle" class="bg-white/10 border border-white/10 text-white p-2 px-3.5 rounded-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
                         <i class="fas fa-heart"></i>
@@ -165,7 +227,12 @@
                         <p id="watch-modal-subtitle" class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Por favor espera</p>
                     </div>
                 </div>
-                <button onclick="cerrarSelectorVer()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
+                <button onclick="cerrarSelectorVer()" class="text-gray-500 hover:text-white transition text-xl">
+  <svg id="svg-close" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+    <path id="svg-close-l1" d="M18 6 6 18"/>
+    <path id="svg-close-l2" d="m6 6 12 12"/>
+  </svg>
+</button>
             </div>
             
             <div id="watch-controls" class="space-y-5"></div>
@@ -187,7 +254,12 @@
                         <p class="text-[10px] text-gray-500 uppercase mt-1 tracking-wider">Elige tu episodio</p>
                     </div>
                 </div>
-                <button onclick="cerrarSelectorDescarga()" class="text-gray-500 hover:text-white transition text-xl">&times;</button>
+                <button onclick="cerrarSelectorDescarga()" class="text-gray-500 hover:text-white transition text-xl">
+  <svg id="svg-close" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+    <path id="svg-close-l1" d="M18 6 6 18"/>
+    <path id="svg-close-l2" d="m6 6 12 12"/>
+  </svg>
+</button>
             </div>
             
             <div id="dl-controls" class="space-y-5"></div>
@@ -206,14 +278,23 @@
              <div class="flex justify-between items-center px-4">
                  <h3 id="video-title" class="text-xl font-bold truncate pr-4 text-white"></h3>
                  <div class="flex items-center gap-2">
-                     <button id="btn-cap-prev" onclick="irCapAnterior()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
-                         <i class="fas fa-step-backward mr-2"></i> Cap. Anterior
+                     <button id="btn-cap-prev" onclick="irCapAnterior()" onmouseenter="animateCapPrev()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         <svg id="svg-cap-prev" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-right:6px;overflow:visible">
+  <path id="svg-prev-dash" d="M19 15V9"/>
+  <path id="svg-prev-arrow" d="M15 15h-3v4l-7-7 7-7v4h3v6z"/>
+</svg> Cap. Anterior
                      </button>
-                     <button onclick="volverAInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
-                         <i class="fas fa-arrow-left mr-2"></i> Volver a info
+                     <button onclick="volverAInfo()" onmouseenter="animateVolverInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         <svg id="svg-volver" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-right:6px;overflow:visible">
+  <path id="svg-volver-arrow" d="m12 19-7-7 7-7"/>
+  <path id="svg-volver-line" d="M19 12H5"/>
+</svg> Volver a info
                      </button>
-                     <button id="btn-cap-next" onclick="irCapSiguiente()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
-                         Cap. Siguiente <i class="fas fa-step-forward ml-2"></i>
+                     <button id="btn-cap-next" onclick="irCapSiguiente()" onmouseenter="animateCapNext()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
+                         Cap. Siguiente <svg id="svg-cap-next" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-left:6px;overflow:visible">
+  <path id="svg-next-dash" d="M5 9v6"/>
+  <path id="svg-next-arrow" d="M9 9h3V5l7 7-7 7v-4H9V9z"/>
+</svg>
                      </button>
                  </div>
              </div>
@@ -679,6 +760,7 @@
         }
 
         function irCapAnterior() {
+            animateCapPrev();
             if (capActualIdx > 0) {
                 const ep = capListaActual[capActualIdx - 1];
                 const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*/,'').replace(/ - C.*/,'');
@@ -688,6 +770,7 @@
         }
 
         function irCapSiguiente() {
+            animateCapNext();
             if (capActualIdx < capListaActual.length - 1) {
                 const ep = capListaActual[capActualIdx + 1];
                 const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*/,'').replace(/ - C.*/,'');
@@ -696,20 +779,34 @@
             }
         }
 
+        function animateSortIcon(active) {
+            const top = document.getElementById('sort-svg-top');
+            const bot = document.getElementById('sort-svg-bot');
+            if (!top || !bot) return;
+            // Reset
+            top.style.transition = 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)';
+            bot.style.transition = 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)';
+            if (active) {
+                top.style.transform = 'translateY(10px)';
+                bot.style.transform = 'translateY(-10px)';
+            } else {
+                top.style.transform = 'translateY(0)';
+                bot.style.transform = 'translateY(0)';
+            }
+        }
+
         function toggleOrden() {
             ordenAlfabetico = !ordenAlfabetico;
             const btn = document.getElementById('btn-sort');
             const label = document.getElementById('sort-label');
-            const icon = btn.querySelector('i');
+            animateSortIcon(ordenAlfabetico);
             if (ordenAlfabetico) {
-                icon.className = 'fas fa-sort-alpha-down text-sm';
                 btn.style.color = 'white';
                 btn.style.borderColor = 'rgba(255,255,255,0.4)';
                 label.innerText = 'A → Z';
                 label.classList.remove('hidden');
                 setTimeout(() => label.classList.add('hidden'), 1500);
             } else {
-                icon.className = 'fas fa-sort-alpha-down text-sm';
                 btn.style.color = '';
                 btn.style.borderColor = '';
                 label.innerText = 'Original';
@@ -719,6 +816,228 @@
             filtrar();
         }
 
+
+        function animateCapNext() {
+            const dash = document.getElementById('svg-next-dash');
+            const arrow = document.getElementById('svg-next-arrow');
+            if (!dash || !arrow) return;
+            const ease = 'cubic-bezier(0.4,0,0.2,1)';
+            dash.style.transition = 'none'; arrow.style.transition = 'none';
+            dash.style.transform = 'translateX(0)'; arrow.style.transform = 'translateX(0)';
+            requestAnimationFrame(() => {
+                dash.style.transition = `transform 0.2s ${ease}`; 
+                arrow.style.transition = `transform 0.2s ${ease}`;
+                dash.style.transform = 'translateX(1px)'; arrow.style.transform = 'translateX(3px)';
+                setTimeout(() => {
+                    dash.style.transform = 'translateX(0)'; arrow.style.transform = 'translateX(0)';
+                }, 200);
+            });
+        }
+
+        function animateCapPrev() {
+            const dash = document.getElementById('svg-prev-dash');
+            const arrow = document.getElementById('svg-prev-arrow');
+            if (!dash || !arrow) return;
+            const ease = 'cubic-bezier(0.4,0,0.2,1)';
+            dash.style.transition = 'none'; arrow.style.transition = 'none';
+            dash.style.transform = 'translateX(0)'; arrow.style.transform = 'translateX(0)';
+            requestAnimationFrame(() => {
+                dash.style.transition = `transform 0.2s ${ease}`;
+                arrow.style.transition = `transform 0.2s ${ease}`;
+                dash.style.transform = 'translateX(-1px)'; arrow.style.transform = 'translateX(-3px)';
+                setTimeout(() => {
+                    dash.style.transform = 'translateX(0)'; arrow.style.transform = 'translateX(0)';
+                }, 200);
+            });
+        }
+
+
+
+
+
+
+
+
+
+        function animateSeries() {
+            const dots = [0,1,2,3].map(i => document.getElementById('svg-series-d'+i));
+            const base = document.getElementById('svg-series-base');
+            if (!dots[0] || !base) return;
+
+            // Reset base line
+            base.setAttribute('d', 'M8 21h0');
+            dots.forEach(d => { d.style.opacity = '0'; });
+
+            // Show dots one by one
+            dots.forEach((dot, i) => {
+                setTimeout(() => {
+                    dot.style.transition = 'opacity 0.15s ease';
+                    dot.style.opacity = '1';
+                }, i * 100);
+            });
+
+            // After all dots visible, hide them and draw the line
+            setTimeout(() => {
+                dots.forEach(d => {
+                    d.style.transition = 'opacity 0.1s ease';
+                    d.style.opacity = '0';
+                });
+                const steps = ['M8 21h2','M8 21h4','M8 21h6','M8 21h8'];
+                steps.forEach((d, i) => {
+                    setTimeout(() => base.setAttribute('d', d), i * 50);
+                });
+            }, dots.length * 100 + 100);
+        }
+        function animateClap() {
+            const outer = document.getElementById('svg-clap-outer');
+            const top = document.getElementById('svg-clap-top');
+            if (!outer || !top) return;
+            // CLAP_VARIANTS: top rotates [0,-10,16,0] over 0.4s
+            // VARIANTS: outer rotates [-10,-10,0] over 0.8s
+            outer.style.transformOrigin = '4px 20px';
+            top.style.transformOrigin = '3px 11px';
+            const clapKf = [0, -10, 16, 0];
+            const clapTimes = [0, 120, 240, 400];
+            const outerKf = [-10, -10, 0];
+            const outerTimes = [0, 400, 800];
+            function interp(kf, times, elapsed) {
+                let i = 0;
+                while (i < times.length - 1 && elapsed > times[i+1]) i++;
+                const t0 = times[i], t1 = times[i+1] ?? times[i];
+                const prog = t1 > t0 ? Math.min((elapsed - t0)/(t1 - t0), 1) : 1;
+                return kf[i] + ((kf[i+1] ?? kf[i]) - kf[i]) * prog;
+            }
+            let start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                const e = ts - start;
+                const r1 = interp(outerKf, outerTimes, e);
+                const r2 = interp(clapKf, clapTimes, e);
+                outer.style.transform = `rotate(${r1}deg)`;
+                top.style.transform = `rotate(${r2}deg)`;
+                if (e < 800) requestAnimationFrame(step);
+                else { outer.style.transform = ''; top.style.transform = ''; }
+            }
+            requestAnimationFrame(step);
+        }
+        function animateClose() {
+            const l1 = document.getElementById('svg-close-l1');
+            const l2 = document.getElementById('svg-close-l2');
+            if (!l1 || !l2) return;
+            // Animate stroke-dashoffset to simulate pathLength 0->1
+            [l1, l2].forEach((el, i) => {
+                const len = el.getTotalLength ? el.getTotalLength() : 17;
+                el.style.strokeDasharray = len;
+                el.style.strokeDashoffset = len;
+                el.style.opacity = '0';
+                setTimeout(() => {
+                    el.style.transition = 'stroke-dashoffset 0.3s ease, opacity 0.3s ease';
+                    el.style.opacity = '1';
+                    el.style.strokeDashoffset = '0';
+                }, i * 200);
+            });
+        }
+        function animateWatch() {
+            const dots = [0,1,2,3].map(i => document.getElementById('svg-watch-d'+i));
+            const base = document.getElementById('svg-watch-base');
+            if (!base || !dots[0]) return;
+            base.setAttribute('d', 'M8 21h0');
+            dots.forEach(d => { d.style.opacity = '0'; });
+            dots.forEach((dot, i) => {
+                setTimeout(() => {
+                    dot.style.transition = 'opacity 0.15s ease';
+                    dot.style.opacity = '1';
+                }, i * 100);
+            });
+            setTimeout(() => {
+                dots.forEach(d => {
+                    d.style.transition = 'opacity 0.1s ease';
+                    d.style.opacity = '0';
+                });
+                ['M8 21h2','M8 21h4','M8 21h6','M8 21h8'].forEach((d, i) => {
+                    setTimeout(() => base.setAttribute('d', d), i * 50);
+                });
+            }, dots.length * 100 + 100);
+        }
+        function animateTrailer() {
+            const poly = document.getElementById('svg-trailer-poly');
+            if (!poly) return;
+            // Keyframes: x [0,-1,2,0], rotate [0,-10,0,0] over 0.5s
+            const times = [0, 100, 250, 500];
+            const xs = [0, -1, 2, 0];
+            const rots = [0, -10, 0, 0];
+            let start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                const elapsed = ts - start;
+                let i = 0;
+                while (i < times.length - 1 && elapsed > times[i + 1]) i++;
+                const t0 = times[i], t1 = times[i + 1] || times[i];
+                const prog = t1 > t0 ? Math.min((elapsed - t0) / (t1 - t0), 1) : 1;
+                const x = xs[i] + (((xs[i + 1] ?? xs[i]) - xs[i]) * prog);
+                const r = rots[i] + (((rots[i + 1] ?? rots[i]) - rots[i]) * prog);
+                poly.style.transform = `translateX(${x}px) rotate(${r}deg)`;
+                poly.style.transformOrigin = 'center';
+                if (elapsed < times[times.length - 1]) requestAnimationFrame(step);
+                else poly.style.transform = 'translateX(0) rotate(0deg)';
+            }
+            requestAnimationFrame(step);
+        }
+        function animateSidebarDl() {
+            const g = document.getElementById('svg-sidebar-dl-arrow');
+            if (!g) return;
+            g.style.transition = 'transform 0.15s cubic-bezier(0.34,1.56,0.64,1)';
+            g.style.transform = 'translateY(2px)';
+        }
+        function animateSidebarDlStop() {
+            const g = document.getElementById('svg-sidebar-dl-arrow');
+            if (!g) return;
+            g.style.transition = 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1)';
+            g.style.transform = 'translateY(0)';
+        }
+        function animateDownload() {
+            const g = document.getElementById('svg-dl-arrow');
+            if (!g) return;
+            g.style.transition = 'transform 0.15s cubic-bezier(0.34,1.56,0.64,1)';
+            g.style.transform = 'translateY(2px)';
+        }
+        function animateDownloadStop() {
+            const g = document.getElementById('svg-dl-arrow');
+            if (!g) return;
+            g.style.transition = 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1)';
+            g.style.transform = 'translateY(0)';
+        }
+        function animateCalendar() {
+            const dots = [0,1,2,3,4,5].map(i => document.getElementById('svg-cal-d'+i));
+            if (!dots[0]) return;
+            dots.forEach((dot, i) => {
+                if (!dot) return;
+                setTimeout(() => {
+                    dot.style.transition = 'opacity 0.2s ease';
+                    dot.style.opacity = '0.3';
+                    setTimeout(() => { dot.style.opacity = '1'; }, 200);
+                }, i * 100);
+            });
+        }
+        function animateVolverInfo() {
+            const arrow = document.getElementById('svg-volver-arrow');
+            const line = document.getElementById('svg-volver-line');
+            if (!arrow || !line) return;
+            const ease = 'cubic-bezier(0.4,0,0.2,1)';
+            // Reset
+            arrow.style.transition = 'none';
+            arrow.style.transform = 'translateX(0)';
+            requestAnimationFrame(() => {
+                arrow.style.transition = `transform 0.2s ${ease}`;
+                arrow.style.transform = 'translateX(3px)';
+                setTimeout(() => { arrow.style.transform = 'translateX(0)'; }, 200);
+            });
+            // Animate line shrink: d attribute animation via SMIL
+            line.style.transition = 'none';
+            // Use setAttribute for d animation manually via two steps
+            setTimeout(() => { line.setAttribute('d', 'M19 12H10'); }, 0);
+            setTimeout(() => { line.setAttribute('d', 'M19 12H5'); }, 200);
+        }
         function volverAInfo() {
             document.getElementById('video-panel').classList.add('hidden');
             document.getElementById('modal-content-wrapper').classList.remove('hidden');
