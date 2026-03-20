@@ -13130,7 +13130,38 @@
     "seccion": "proximas",
     "fecha": "20/3",
     "trailerURL": "",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-9x7w693zwarr.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-186u7ywg842w.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-f1v6nd152jw9.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-ynnpss37q132.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-bg5psn2zxxbw.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-qr1vcxczwwc8.html"
+      }
+    ],
     "descargas": []
   },
   {
