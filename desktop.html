@@ -675,7 +675,13 @@
                     const url = selCap.value;
                     const capText = selCap.options[selCap.selectedIndex].text;
                     const itemsVerFinal = selCap._itemsVerRef || itemsVer;
-                    const todosEps = itemsVerFinal.slice().sort((a, b) =>
+                    // Filtrar por temporada seleccionada para que la navegación no mezcle temporadas
+                    const selTempFinal = document.getElementById('watch-sel-temp');
+                    let epsFiltrados = itemsVerFinal;
+                    if (selTempFinal && selTempFinal.value) {
+                        epsFiltrados = itemsVerFinal.filter(d => d.temporada == selTempFinal.value);
+                    }
+                    const todosEps = epsFiltrados.slice().sort((a, b) =>
                         parseInt(a.capitulo.toString().replace(/\D/g, '') || 0) -
                         parseInt(b.capitulo.toString().replace(/\D/g, '') || 0)
                     );
@@ -729,17 +735,27 @@
             capActualIdx = capIdx;
             const modalContent = document.getElementById('modal-content-wrapper');
             const videoPanel = document.getElementById('video-panel');
-            const iframe = document.getElementById('dailymotion-iframe');
             const loader = document.getElementById('video-loader');
             modalContent.classList.add('hidden');
             videoPanel.classList.remove('hidden');
-            iframe.classList.add('hidden');
             loader.classList.remove('hidden');
             loader.innerText = "Cargando...";
             document.getElementById('video-title').innerText = titulo + (esTrailer ? " (Tráiler)" : "");
+            // Forzar recarga del iframe eliminándolo y recreándolo para que cambie el vídeo siempre
+            const oldIframe = document.getElementById('dailymotion-iframe');
+            const iframeParent = oldIframe.parentNode;
+            oldIframe.remove();
             if (url && typeof url === 'string' && url.trim() !== "") {
-                iframe.src = url;
-                iframe.classList.remove('hidden');
+                const newIframe = document.createElement('iframe');
+                newIframe.id = 'dailymotion-iframe';
+                newIframe.className = oldIframe.className.replace('hidden', '').trim();
+                newIframe.setAttribute('frameborder', '0');
+                newIframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+                newIframe.setAttribute('allowfullscreen', '');
+                newIframe.setAttribute('webkitallowfullscreen', '');
+                newIframe.setAttribute('mozallowfullscreen', '');
+                newIframe.src = url;
+                iframeParent.appendChild(newIframe);
                 loader.classList.add('hidden');
             } else {
                 loader.innerText = "No disponible.";
