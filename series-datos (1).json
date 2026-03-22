@@ -2,11 +2,65 @@
   {
     "titulo": "Pulso",
     "imgURL": "https://pics.filmaffinity.com/Pulso_Serie_de_TV-107075411-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un grupo de residentes de Urgencias lidia con sus problemas laborales y personales en el Maguire Medical Center, un hospital de Miami sacudido por una polémica acusación.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9h1tnm"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9h1tnm",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/191hgu2j0s08"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/gcn0xeamwccz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/8q3h6sq6kd2p"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/0qwsff5lu0kx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/280pq086p0o1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/suejkn01epdk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/osygedhk7bkc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/sqycblcyg2jd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/7zvtnvhcgcgc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/3dae7coudfil"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Devil May Cry",
@@ -64,11 +118,80 @@
   {
     "titulo": "Nicky Jam: El Ganador",
     "imgURL": "https://pics.filmaffinity.com/Nicky_Jam_El_ganador_Serie_de_TV-128726606-large.jpg",
+    "temporada": "T1",
     "descripcion": "Nicky Jam, estrella de reguetón, comparte su lucha para dejar las drogas y su camino al éxito internacional en esta dramatización de su vida.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7t1fn2"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7t1fn2",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/7tyjsd1xodr2"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/m4zc45ay6jlu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/sr0km57z7zao"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/f7ecrg55nsz9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/e84qmu77giwg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/nwzh4ulmz86i"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/aqiosy13inyu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/914yb653wnby"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/tcubuobi22d7"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/ygsct1em853e"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/dmf9f8krbxrv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/tnf5sbmrqkf2"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/5y17gbcy8hmj"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Cassandra",
@@ -271,11 +394,14 @@
   {
     "titulo": "Asalto al Banco Central",
     "imgURL": "https://pics.filmaffinity.com/Asalto_al_Banco_Central_Miniserie_de_TV-977152455-large.jpg",
+    "temporada": "T1",
     "descripcion": "Barcelona, 23 de mayo de 1981. Han pasado tres meses exactos desde el intento de golpe de estado en el congreso de los diputados cuando once hombres encapuchados entran en la sede del Banco Central de Barcelona. Lo que comienza como un espectacular atraco pronto se convierte en un verdadero desafío para la reciente democracia española. Los atracadores tienen más de 200 rehenes en el banco y amenazan con matarles si el gobierno no accede a liberar al coronel Tejero y a otros tres responsables del 23F.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x973fa4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x973fa4",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "El Abogado del Lincoln",
@@ -649,20 +775,108 @@
   {
     "titulo": "Gatillo",
     "imgURL": "https://pics.filmaffinity.com/teurigeo-982784814-large.jpg",
+    "temporada": "T1",
     "descripcion": "En Corea del Sur, donde la posesión de armas está prohibida, un audaz policía y un astuto traficante protagonizan un tenso duelo cuando el país se llena de armas ilegales.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9mn0wk"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9mn0wk",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/j8wjsc50oaw5"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/lhzto0ex27o6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/k0isopz7tv5d"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/3r12mtwg35ap"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/of7o2g3o1td0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/4d2n0qwbewod"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/kwa1082zctng"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/vpcwjj3sxo5u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/im6k4ovugkvk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/cb29fefqxr10"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Indomable",
     "imgURL": "https://pics.filmaffinity.com/untamed-270926498-large.jpg",
+    "temporada": "T1",
     "descripcion": "Kyle Turner (Eric Bana) es un agente especial que trabaja como investigador del Servicio de Parques Nacionales. Cuando se descubre un brutal asesinato en un lugar remoto del parque nacional de Yosemite, Turner se ve envuelto en una tensa investigación que indaga en los secretos ocultos del parque y le obliga a enfrentarse a los fantasmas de su propio pasado. Para resolver el caso, se une a Naya Vasquez (Lily Santiago), una joven guardabosques recientemente llegada de Los Ángeles. Juntos intentarán descubrir la verdad detrás del crimen. A medida que la investigación avanza, emergen secretos oscuros que pondrán a prueba su confianza mutua, su temple… y su propia supervivencia.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9mj8hu"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9mj8hu",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/5r26rmstb4a3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/9tbeafta684u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/k0wbosvqux0w"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/546hyqftbaku"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/l6jrtd5cw7h4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/m9afcnjil7zn"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Muertos S.L",
@@ -676,11 +890,40 @@
   {
     "titulo": "Rehén",
     "imgURL": "https://pics.filmaffinity.com/hostage-728734124-large.jpg",
+    "temporada": "T1",
     "descripcion": "Cuando secuestran al marido de la primera ministra británica y la presidenta de Francia empieza a recibir amenazas, ambas gobernantes se enfrentan a una decisión imposible.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9ni27w"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9ni27w",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/c65t8xlznjjd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/f7jpelpuxhi1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/z4picx4951jj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/gxty85hn80lo"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/6bv7wl0rfydt"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "El Club del Crimen del Jueves",
@@ -705,11 +948,30 @@
   {
     "titulo": "Dos Tumbas",
     "imgURL": "https://pics.filmaffinity.com/dos_tumbas-792128016-large.jpg",
+    "temporada": "T1",
     "descripcion": "Dos años después de la desaparición de Verónica y Marta, dos amigas de 16 años, se da por cerrado el caso por falta de pruebas y sospechosos. La abuela de una de las dos jóvenes, Isabel (Kiti Mánver), sin nada que perder, decide llevar a cabo una investigación al margen de la ley. Isabel hará todo lo que sea necesario para descubrir la verdad sobre lo que ocurrió aquella noche y lo que comienza como la búsqueda de un culpable pronto se convertirá en una historia de venganza.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9nppkw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9nppkw",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/31riqnu2yjke"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/ybzaxa3od3fu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/xo4b1t4aq7sy"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "The Old Guard 2",
@@ -737,11 +999,45 @@
   {
     "titulo": "Bodyguard",
     "imgURL": "https://pics.filmaffinity.com/bodyguard-436447392-large.jpg",
+    "temporada": "T1",
     "descripcion": "David Budd es un veterano de guerra que trabaja como especialista en protección para la Policía Metropolitana de Londres. Cuando se le asigna proteger a la ministra Julia Montague, cuya visión política apoya todo lo que él detesta, Budd se encuentra en una encrucijada entre su labor y sus creencias. Aunque él es responsable de su seguridad, quizá ella sea su mayor amenaza.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x889kzt"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x889kzt",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/zwlgrd8sb55c"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/xngvhsuaxnof"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/7dnc7cq0nyne"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/bze65634du6k"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/68e6qlkqsb4t"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/1th0m5sje3on"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Cursed",
@@ -1031,11 +1327,35 @@
   {
     "titulo": "El Rastro",
     "imgURL": "https://pics.filmaffinity.com/genombrottet-723676899-large.jpg",
+    "temporada": "T1",
     "descripcion": "Tras 16 años sin resolver un impactante doble homicidio en Linköping (Suecia), un detective se alía con un genealogista para encontrar al asesino antes de que se archive el caso.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9byhrw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9byhrw",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/bsbqy9v7v93b"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/bznqoux95ggt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/ir6ajc0e3z9f"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/m6lvgo1euhjl"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Castlevania Nocturno",
@@ -1049,11 +1369,45 @@
   {
     "titulo": "1992",
     "imgURL": "https://pics.filmaffinity.com/1992-689216468-large.jpg",
+    "temporada": "T1",
     "descripcion": "Tras la muerte de su marido en una explosión, una viuda afligida y un expolicía atormentado investigan una serie de asesinatos relacionados con la Expo 92 de Sevilla.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x997v8e"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x997v8e",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/4bm34x3eeycb"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/1pk47cnvv28b"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/qqihcpn3r699"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/odyemzo6hpvy"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/vjw0obkgrsrc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/6e1waqkumep0"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Black Rabbit",
@@ -1111,11 +1465,65 @@
   {
     "titulo": "Hotel Embrujado",
     "imgURL": "https://pics.filmaffinity.com/haunted_hotel-343312724-large.jpg",
+    "temporada": "T1",
     "descripcion": "Una madre soltera con dos hijos dirige un hotel embrujado, ayudada por el fantasma de su difunto hermano, que cree que pueden tener ideas ingeniosas a pesar de su estado etéreo.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9qjide"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qjide",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/xbvk9k3cnt9s"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/byoxj4mqdts3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/xhpldlxqoiti"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/ukqlond5bdjf"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/s5acpp04rbuh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/qnf4uzvsbcpu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/gl83jb15u91t"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/5o7ooub7nfl1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/qrvgmlgvea23"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/c4o79ueeoitz"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "El Refugio Atómico",
@@ -1173,38 +1581,219 @@
   {
     "titulo": "House of Guinness",
     "imgURL": "https://pics.filmaffinity.com/house_of_guinness-625329866-large.jpg",
+    "temporada": "T1",
     "descripcion": "'House of Guinness' sigue las secuelas de la muerte del magnate cervecero, Sir Benjamin Guinness, y el gran impacto de su testamento en el destino de sus cuatro hijos adultos: Arthur, Edward, Anne, Ben, y otros dublineses afectados por la expansión del imperio Guinness.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9pt2v4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9pt2v4",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/5yyoi8s0se2m"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/y7i2rpv23ivh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/ewiwoaxbe7tj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/hwqnisnt09xh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/2t0psuzxac8v"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/jl0pqoekus7v"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/twiv23o24ire"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/osd3rky6lqi0"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Incontrolables",
     "imgURL": "https://pics.filmaffinity.com/wayward-185414424-large.jpg",
+    "temporada": "T1",
     "descripcion": "Una policía de un pequeño pueblo sospecha que la escuela local para adolescentes con problemas y su carismática (pero peligrosa) fundadora no son lo que aparentan.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9plgnu"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9plgnu",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/l1grp4yz9s83"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/9p8hxctfou6i"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/fc6pvge05e5u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/q0jvcvb820bh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/arthykiuj7n4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/xc94d5783ukq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/onftqnedoig1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/g6aduid2q151"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Animal",
     "imgURL": "https://pics.filmaffinity.com/animal-360462038-large.jpg",
+    "temporada": "T1",
     "descripcion": "Antón (Luis Zahera), un veterinario rural gallego sin dinero, se ve obligado a aceptar un trabajo en una tienda-boutique para mascotas dirigida por su sobrina Uxía (Lucía Caraballo), y pasa de cuidar animales en el campo a vender caprichos para perros mimados. Tendrá que aprender a adaptarse y descubrirá que, en la familia y en el trabajo, no todo es siempre blanco o negro.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9q6obq"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9q6obq",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/zyjmb2u29r05"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/lderq3l6ma2f"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/x90tq7uvce04"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/e2anfebw1qwv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/tpgun1iz748d"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/46r6r3x8nug4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/rrwlguvz45iy"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/z8dusv163405"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/zejv6pv12icz"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Nero",
     "imgURL": "https://pics.filmaffinity.com/nero-224558229-large.jpg",
+    "temporada": "T1",
     "descripcion": "En la Francia de 1504, Néro (Pio Marmaï), un asesino frío y despiadado, se encuentra inesperadamente con Perla, la hija que abandonó al nacer. Perseguidos por fuerzas siniestras, ambos emprenden un viaje plagado de peligros acompañados por un grupo tan dispar como imprevisible. A lo largo del camino, Néro debe enfrentarse a sí mismo y decidir si se aferra a la venganza o se atreve a buscar la redención.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9q8ia8"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9q8ia8",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/fckky4ib1qmd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/fkf62ysc64oh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/rsgks4qtn5vu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/jzvs68k1mcqt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/tuya8nywa6w8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/fmutmr1puuwu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/u9ljexcu3o58"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/tbouwfeuukj0"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Lupin",
@@ -1232,11 +1821,55 @@
   {
     "titulo": "Splinter Cell: Deathwatch",
     "imgURL": "https://pics.filmaffinity.com/splinter_cell_deathwatch-609889126-large.jpg",
+    "temporada": "T1",
     "descripcion": "Adaptación de la saga de videojuegos del mismo nombre. En el sombrío mundo del espionaje, Sam Fisher es a la vez un rumor y una leyenda, y vuelve a la acción para ayudar a una nueva recluta a destapar una conspiración mundial.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9s364c"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9s364c",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/dbzettcf0ach"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/wowshoyi2c7i"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/b8sn9wa2thpv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/gvxvq8sumxu0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/pakgjthnajna"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/17xl4zvt6xqp"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/ri7hvx1cyl12"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/2fpimwvt6rct"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Star Wars Tales of the Underworld",
@@ -1712,11 +2345,65 @@
   {
     "titulo": "Silo",
     "imgURL": "https://pics.filmaffinity.com/Silo_Serie_de_TV-338930565-large.jpg",
+    "temporada": "T1",
     "descripcion": "En un futuro tóxico y en ruinas, existe una comunidad en un gigantesco silo subterráneo que se hunde a cientos de pisos de profundidad. Allí, la gente vive en una sociedad llena de normas que creen destinadas a protegerles.",
     "plataforma": "Apple TV",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8kdcc5"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8kdcc5",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/k6zugx5b5wtd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/s59f6mbgnsp1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/as9kwmvbyrn9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/jd4gj98uh0r9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/i8djsu7inmqt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/uag733mig5nm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/h4dwu0z8bji1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/4n7q0gs4dh4p"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/9xcxk02q54qq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/ivsto6rchag6"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Bad Monkey",
@@ -4367,11 +5054,75 @@
   {
     "titulo": "Los Gringos Hunters",
     "imgURL": "https://pics.filmaffinity.com/los_gringo_hunters-922075304-mmed.jpg",
+    "temporada": "T1",
     "descripcion": "Una unidad policial mexicana de élite rastrea y captura a criminales estadounidenses que cruzan la frontera para evadir la justicia, decididos a deportarlos de regreso a los Estados Unidos para que enfrenten las consecuencias de sus crímenes. La serie se basa en un artículo del Washington Post sobre este escuadrón.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9l7d0m"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9l7d0m",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/5k8nupwu975j"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/uwropxl6h14c"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/2iqjm7k95ajl"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/mdsynjt7ztfo"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/cpfosdsuwa2o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/w2slbuu73h0q"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/2mqv7y90ycai"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/rsbbjk3wccvb"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/65vpyx7u0bnv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/tm5ku5e2dqsk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/hua20w69rqjw"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/xfeh5eiav1ke"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Alice in Borderland",
@@ -4394,20 +5145,98 @@
   {
     "titulo": "Las Muertas",
     "imgURL": "https://pics.filmaffinity.com/las_muertas-665260649-large.jpg",
+    "temporada": "T1",
     "descripcion": "Basada en la aclamada novela de Jorge Ibargüengoitia, que ficciona el escalofriante caso de “Las Poquianchis”, 'Las muertas' narra el ascenso y la caída de las hermanas Arcángela y Serafina Baladro, quienes construyeron un imperio de burdeles en el México de los años 60, quedando marcadas en la historia como las asesinas seriales más despiadadas y temidas del país.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9p7axo"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9p7axo",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/fi8o9vyjd1ai"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/i8insrmi33nc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/7wvsqdyke9fq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/wpjdjol2bx5h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/rbb6nc0w1hss"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/rddn3cntn4uv"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "La Conserje Pokémon",
     "imgURL": "https://pics.filmaffinity.com/pokemon_concierge-795651350-large.jpg",
+    "temporada": "T1",
     "descripcion": "Este es el Pokémon Resort: un lugar tranquilo donde los Pokémon pueden descansar y divertirse. ¿A qué adorable huésped ayudará primero Haru, la nueva conserje?",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8pn267"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8pn267",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/q8ttvobk1qqt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/5yeewxdiskuk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/8sg2dcms0n21"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/y4yihht1w08r"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/q0p1raw2jqxk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/dzzzme8ivpor"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/x3oetqq1t5bu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/woy2r2fndb6w"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Merlina",
@@ -4483,11 +5312,80 @@
   {
     "titulo": "El genio y los dioses",
     "imgURL": "https://pics.filmaffinity.com/da_irueojiljini-479379919-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un excéntrico genio reaparece tras mil años de espera para hacer realidad los deseos de una juiciosa mujer. ¿Convertirá su monótona existencia en una vida llena de amor y fantasía?",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9qr2xy"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qr2xy",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/clcv71i29t6j"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/5lzxqg7u4869"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/1c8m1gvjhpbx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/b0k927bwkyog"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/qseooz2nf2h0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/v6uydvxhpxsv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/2v5ilowdctvz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/2kybvv12tao5"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/z29vq7wpb74u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/vxd18ak68juk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/9v0n64a0miyr"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/kx8kuln56xnq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/szv0d6yh0936"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Monstruo: La historia de Ed Gein",
@@ -4545,11 +5443,60 @@
   {
     "titulo": "Plan de Resurrección",
     "imgURL": "https://pics.filmaffinity.com/hui_hun_ji-903452280-large.jpg",
+    "temporada": "T1",
     "descripcion": "Dos madres destrozadas resucitan al cabecilla de una red de estafas para vengar a sus hijas, pero, a medida que la dolorosa verdad sale a la luz, la justicia les da esquinazo.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9pzils"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9pzils",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/29rz4psu28z3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/kwpa78dzq3z0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/xn3elge3oibw"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/97iehkxxrla3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/a1jtp1cw5qrx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/phjbyi58oddv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/9fq1ojskwlki"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/1tjo6hhe89vh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/j0g61muyvb56"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "La diplomática",
@@ -4566,12 +5513,34 @@
   {
     "titulo": "Il mostro",
     "imgURL": "https://pics.filmaffinity.com/il_mostro-655026177-large.jpg",
-    "temporada": "",
+    "temporada": "T1",
     "descripcion": "Serie sobre el Monstruo de Florencia, probablemente el asesino en serie más conocido y enigmático de la historia reciente de Italia.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9p9jd2",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/fpfxd9apnitm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/6s4s7hg6p0hc"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/0yev807stswr"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/q7e7fuq969ix"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -4660,11 +5629,45 @@
   {
     "titulo": "El clan Olimpia",
     "imgURL": "https://pics.filmaffinity.com/el_clan_olimpia-777591742-large.jpg",
+    "temporada": "T1",
     "descripcion": "La vida de Olimpia da un giro radical cuando a su marido le diagnostican un cáncer. Decidida a mantener a su familia a flote, comienza vendiendo hachís en su barrio. Pero como quiere llevar a su marido a una clínica en Estados Unidos, se adentra en el tráfico de cocaína para lograrlo. Junto a su socio, el “Moreno”, Olimpia asciende rápidamente en el mundo del narcotráfico, estableciendo vínculos con cárteles colombianos y la mafia napolitana. Sin embargo, su familia, de tradición merchera, jamás aceptaría que una mujer se dedicara a ese negocio. Obligada a ocultar su doble vida, Olimpia construye una red de mentiras para proteger su secreto. Todo se tambalea cuando su padre descubre la verdad. Entonces, se enfrenta a una decisión imposible: ¿seguir escalando en el mundo de la droga, aunque eso signifique ser rechazada por los suyos, o renunciar a todo y volver a ser ama de casa? Ella tiene claro que no está dispuesta a dar un paso atrás.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9lt2tu"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9lt2tu",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/p5ucpl4rjprb"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/nx71ghc0eect"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/l88sulwwqte1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/o4uf6wa6ub3a"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/nxc1sg8d9000"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/gg37xlov201m"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Adults",
@@ -4687,29 +5690,111 @@
   {
     "titulo": "Quebranto",
     "imgURL": "https://pics.filmaffinity.com/quebranto-229076144-large.jpg",
+    "temporada": "T1",
     "descripcion": "La serie cuenta la historia de una mujer atrapada en sus conflictos emocionales mientras enfrenta un entramado policial lleno de giros inesperados",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9ot9ik"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9ot9ik",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/6p7t01dacdli"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/x1s9sqlfeutj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/cwrjxm97cmsr"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/a5s0ozx6mv5a"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/bsb70yksgxj8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/6c06f0cnt3rk"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Los Ojos De Wakanda",
     "imgURL": "https://pics.filmaffinity.com/eyes_of_wakanda-570315107-large.jpg",
+    "temporada": "T1",
     "descripcion": "Sigue las aventuras de los valientes guerreros de Wakanda a lo largo de la historia.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9nzcuu"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9nzcuu",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/igfhxww9xu6a"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/ti6m5j0drjki"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/b2x2nbpbe52a"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/dfid49551xqp"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Marvel Zombies",
     "imgURL": "https://pics.filmaffinity.com/marvel_zombies-438245676-large.jpg",
+    "temporada": "T1",
     "descripcion": "La serie reinventa el Universo Marvel como una nueva generación de héroes que luchan contra un flagelo zombi en constante expansión.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9q1z6k"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9q1z6k",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/kssvmqv9r4dp"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/ix5mojt721in"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/lfbif50cvwpy"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/fom4zbagrk1k"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "LEGO Star Wars: Reconstruye la Galaxia - Piezas del Pasado",
@@ -4732,12 +5817,54 @@
   {
     "titulo": "Muerte en la familia Murdaugh",
     "imgURL": "https://pics.filmaffinity.com/murdaugh_death_in_the_family-654273153-large.jpg",
-    "temporada": "",
+    "temporada": "T1",
     "descripcion": "Maggie y Alex disfrutan de una lujosa vida de privilegios como miembros de una de las dinastías legales más poderosas de Carolina del Sur. Pero cuando su hijo Paul se ve involucrado en un accidente de barco mortal, la familia se enfrenta a una prueba como nunca se habían encontrado. A medida que salen a la luz detalles y surgen nuevos retos, las conexiones de la familia con varias muertes misteriosas plantean interrogantes que amenazan todo lo que Maggie y Alex aprecian.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9qoerm",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/20vajukq7rsm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/2tp6raa639yg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/6u0zhlmiqwka"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/d257oidjo7tv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/i2go4w2bm223"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/2n5bxhemko34"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/0y22v2n4nxx5"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/bhgoc65xygmx"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -5693,22 +6820,92 @@
   {
     "titulo": "Muerte por un Rayo",
     "imgURL": "https://pics.filmaffinity.com/death_by_lightning-772759229-large.jpg",
+    "temporada": "T1",
     "descripcion": "Miniserie de 4 episodios. Narra la historia real, más extraña que la ficción, del vigésimo presidente de Estados Unidos, James Garfield, y su admirador Charles Guiteau, que lo asesinó.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "6/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5i0a"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9t5i0a",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/sazwznub7tvu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/4vhf32xbada0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/7qebefir9dsq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/448qb4yuhbzb"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Los tipos malos: Malos comienzos",
     "imgURL": "https://pics.filmaffinity.com/the_bad_guys_breaking_in-968819241-large.jpg",
-    "temporada": "",
+    "temporada": "T1",
     "descripcion": "Como precuela de las exitosas películas, la serie de seis episodios sigue a Wolf y su equipo en sus primeros días como aspirantes a cerebros criminales, mucho antes de que se convirtieran en los delincuentes reformados favoritos del mundo. Decidido a encabezar la lista de \"Lo peor de lo peor\" de 6 News Nightly, Wolf empuja al equipo a realizar atracos más audaces, aunque, como se ha demostrado en las anteriores entregas de la franquicia, no son precisamente buenos siendo malos.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "6/11",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tea1a",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/81yvpqefxhq7"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/pa5krah9dq5f"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/fgyaq2poa3da"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/hx282ljbye10"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/bwcwy1m6s3rj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/u17m6jgmhuvz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/xbpqahobso91"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/xizn60t68xj8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/esufk2f7qzvk"
+      }
+    ],
     "descargas": []
   },
   {
@@ -5902,12 +7099,44 @@
   {
     "titulo": "El Cuco de Cristal",
     "imgURL": "https://pics.filmaffinity.com/el_cuco_de_cristal-500015995-large.jpg",
-    "temporada": "",
+    "temporada": "T1",
     "descripcion": "Una joven residente de medicina sufre un infarto inesperado y recibe un trasplante de corazón que le devuelve la vida. Tras la operación, la madre del donante la invita a su pueblo para descubrir quién era su hijo. Pero lo que parecía un encuentro revelador pronto se convierte en una pesadilla llena de secretos. Al llegar, una misteriosa desaparición sacude a la comunidad el mismo día de su llegada. El pueblo oculta un pasado oscuro: un padre que nunca volvió, un caso sin resolver de hace veinte años y un hilo de intriga que conecta vidas marcadas por el dolor.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "14/11",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tmut6",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/twdlle88mxou"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/j6nhwlkh27m6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/f7us4856xht1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/l03pw2k2gk5h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/2eofptz7c60c"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/3wcz09ghj5lu"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -6061,11 +7290,75 @@
   {
     "titulo": "The Manipulated",
     "imgURL": "https://pics.filmaffinity.com/jo_gak_do_si-128120295-large.jpg",
+    "temporada": "T1",
     "descripcion": "El apacible Tae Jung es encarcelado injustamente por un crimen atroz. Pronto descubre que un misterioso personaje llamado Yo Han orquestó su caída. Impulsado por la venganza, Tae Jung se dispone a hacer pagar a Yo Han.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "5/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9stc2m"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9stc2m",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/tzzg9xamsf1n"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/fevo7a01qlid"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/xl67nhlj8ymk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/t1v353eiwbj0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/0wafbxspd3nh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/41iy7u8kbmdm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/8mag35cqdjkg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/51rkdoc9uugz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/kmv62c8kkkl0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/yu81zqb4f43b"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/oyr4tji8biui"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/bcxcz88yi4sx"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Pluribus",
@@ -6854,11 +8147,49 @@
   {
     "titulo": "Los Abandonados",
     "imgURL": "https://pics.filmaffinity.com/the_abandons-631588627-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un grupo de familias diversas y atípicas viven plácidamente del trabajo de sus tierras pero su tranquilidad está a punto de ser perturbada. Una fuerza económica y gran de poder totalmente corrupta codicia ese territorio de por lo que se dispone a expulsar a esos clanes de su hogar. Pero entonces los hombres y mujeres implicados se ven obligados a perseguir su Destino Manifiesto y quizá no le guste el resultado. Reorganizados en una especie de tribu común estarán dispuestos a buscar justicia para recuperar sus casas y bienes, incluso aunque para ello actúen al margen de la ley.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "4/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9t97rs",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/5noszbzzw6du"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/hiwoduqv4kuq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/d88j0w9irne0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/nro18dlt5mnn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/icqajwn0v6fx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/sq9ib5v3mxm3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/zt95gxpnvqth"
+      }
+    ],
     "descargas": []
   },
   {
@@ -6938,11 +8269,44 @@
   {
     "titulo": "Ciudad de Sombras",
     "imgURL": "https://pics.filmaffinity.com/ciudad_de_sombras-714457722-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un macabro crimen ha ocurrido en La Pedrera - Casa Milà: un cuerpo quemado ha aparecido en la fachada del emblemático edificio de Gaudí. El inspector Milo Malart (Isak Férriz), hasta ahora suspendido por indisciplina en los Mossos, regresa a la actividad en la ciudad condal para, de la mano de la subinspectora Rebeca Garrido (Verónica Echegui), tratar de dar con el autor del crimen.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "12/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9tvn5c",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/9cvbkx9d29b9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/i48832mwy5wh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/q6582nd2n06h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/f2c7hydc3duk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/cve003xy8n6z"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/zh6v6qhcx1xl"
+      }
+    ],
     "descargas": [
       {
         "temporada": "T1",
@@ -7357,11 +8721,44 @@
   {
     "titulo": "Made in Korea",
     "imgURL": "https://pics.filmaffinity.com/made_in_korea-238210546-large.jpg",
+    "temporada": "T1",
     "descripcion": "Ambientada en la década de 1970, Baek Ki Tae es un hombre ambicioso, sediento de riqueza y poder. Jang Gun Young es un fiscal con instinto animal y una tenacidad temible. Ante un incidente importante, Jang Gun Young hace todo lo posible para detener a Baek Ki Tae. Las personas que los rodean incluyen a la cabildera Choi Yoo Ji, la investigadora Oh Ye Jin, Bae Geum Ji y el secretario en jefe Cheon Seok Joong.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "24/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9u6n38",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/pel29b30aydu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/0btle9mnd5lg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/prlyobgesm1r"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/1c202ndxulxz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/1lf1edkjufz0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/j1p1y23qr7e3"
+      }
+    ],
     "descargas": []
   },
   {
@@ -13753,13 +15150,59 @@
   {
     "titulo": "Daredevil Born Again",
     "imgURL": "https://pics.filmaffinity.com/daredevil_born_again-430671471-large.jpg",
-    "temporada": "1",
+    "temporada": "T1",
     "descripcion": "En \"Daredevil: Born Again\", Matt Murdock (Charlie Cox), un abogado ciego con habilidades superdesarrolladas lucha por la justicia desde su ajetreado bufete mientras el antiguo jefe mafioso Wilson Fisk (Vincent D'Onofrio) emprende una carrera política en Nueva York. Cuando sus identidades pasadas empiezan a salir a la luz, ambos se ven abocados a un enfrentamiento inevitable.",
     "plataforma": "Disney Plus",
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9cf6og",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/qsybclcnyhll"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/renznilw0rd6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/tvywgbwp258j"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/jngvlrswu2bj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/53olvidmb8dx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/3dx5n2d3o1wi"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/kfvif3r5uzwa"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/1iwkcz2084lk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/0w47xhfj9q75"
+      }
+    ],
     "descargas": []
   },
   {
@@ -20859,6 +22302,69 @@
         "temporada": "T6",
         "capitulo": "C17",
         "url": "https://cubeembed.rpmvid.com/#6klfp"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Silo",
+    "imgURL": "https://pics.filmaffinity.com/silo-949460453-large.jpg",
+    "temporada": "T2",
+    "descripcion": "En un futuro tóxico y en ruinas, existe una comunidad en un gigantesco silo subterráneo que se hunde a cientos de pisos de profundidad. Allí, la gente vive en una sociedad llena de normas que creen destinadas a protegerles.",
+    "plataforma": "Apple TV",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9976jq",
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/9jvgxdijbdo7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/zk6valnn344i"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/ifp72z8fscxn"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/dg4d58zrl8nk"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/8g0m55u46s8f"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/tp2s7v8hp6ex"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/667dqh96t4lk"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/c2tqhdm35te4"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/l0saq4poyx2z"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/o476k8vmf7px"
       }
     ],
     "descargas": []
