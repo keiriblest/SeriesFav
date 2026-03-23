@@ -317,6 +317,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8y7b1e",
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/3i7xvuolbl7b"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/3q78a4dk0o08"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/zfpipkywwunl"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/551pe5qezsgh"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/tfk35rwvt66q"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/4vt0np85cprr"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/18nwfvjbrcwi"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/facalnnp7z2s"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/ov7lp0soqn2h"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/owi3lig283lc"
+      }
+    ],
     "descargas": []
   },
   {
@@ -1249,11 +1301,60 @@
   {
     "titulo": "Caleidoscopio",
     "imgURL": "https://pics.filmaffinity.com/kaleidoscope-825215080-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un veterano ladrón y su banda montan un golpe épico para ganar 7.000 millones de dólares. Pero la traición, la avaricia y otras amenazas ponen en peligro sus planes.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8gb811"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8gb811",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/6scjvn11ugst"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/cu1saemdy5zu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/djhb3q0a4hkn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/9wbj7xfbaufk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/0yvngo6wct3m"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/vx85rkoru4l5"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/t9hnmuotdqtg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/hn5euojan9i8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/q56kb6i6xl3s"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "13 Reason Why",
@@ -1264,7 +1365,73 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7tvs7n",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/c30wmqmjr1cl"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/6nnonih8qqwm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/zs3oid7t3af8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/ka8fk7u57plx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/l5qovwby81xj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/cv5sdqcqj9pd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/uykekjwd2ia9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/06dadit9ejlh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/8u90p8jsms8d"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/rmx7n09j40tj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/0u3amjkxgyro"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/4epqrzzosvzn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/ppwqnov45oos"
+      }
+    ],
     "descargas": []
   },
   {
@@ -1329,17 +1496,77 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x95s4k4",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/gu78rqae2oxt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/bx3ceb38ujsd"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/dei7irsl1hy4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/f3p3g8mp3e97"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/7azksd7c0val"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/h6igs0jlvfi3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/2y0xrr1euc29"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/39kchi2dx3dw"
+      }
+    ],
     "descargas": []
   },
   {
     "titulo": "Las Maldiciones",
     "imgURL": "https://pics.filmaffinity.com/las_maldiciones-418511918-large.jpg",
+    "temporada": "T1",
     "descripcion": "En el norte argentino, la hija del gobernador es secuestrada por su hombre de confianza mientras se vota la sanción de una ley crucial de explotación del litio. A medida que se revelan las motivaciones del secuestrador, sale a la luz una trama secreta que empezó a gestarse hace 13 años y que desnuda la verdadera naturaleza del poder y las maldiciones de la filiación.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9p2h10"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9p2h10",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/dfkxle0hwihk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/fo43nyr665py"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/ls26q7zlq6a8"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "El Problema de los 3 Cuerpos",
@@ -1359,7 +1586,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7y4jlp",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/86dd1pzyu1mn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/yne135koiu4o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/0qk4ajq698cz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/03i1rdy084a3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/fa9tm35of3oq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/0u6z8bwtus1w"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/p63ifaex7h1w"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/tgczmaqjo28o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/471lzqptjmw2"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/e7hokk4awmrz"
+      }
+    ],
     "descargas": []
   },
   {
@@ -1404,7 +1682,48 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8nwbds",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/jl8n3zwffs2h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/vbsewhrhonly"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/mps5rrby8jga"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/1vk5eo1wblvr"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/l248b3utg89n"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/1chb8qx5kamg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/qfh9hi8es1g4"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/p9rt7yo33ahx"
+      }
+    ],
     "descargas": []
   },
   {
@@ -1845,7 +2164,33 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7xuanj",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/oa4lrwcgp5q5"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/bysb9yuz0tv6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/cyzv974lvks9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/lc45zep42qm0"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/c8zd7b2smr4b"
+      }
+    ],
     "descargas": []
   },
   {
@@ -5177,7 +5522,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7x4exr",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/yvs8zfd7hwkt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/k4xbz84n363b"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/qeh31od7msa3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/12h7amdsn7ev"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/419rdf6bb983"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/33llbpb2cy28"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/i3wmuywko87o"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/7rjlm04ad6io"
+      }
+    ],
     "descargas": []
   },
   {
@@ -8315,7 +8701,48 @@
     "seccion": "vistas",
     "fecha": "11/12",
     "trailerURL": "https://www.dailymotion.com/embed/video/x95xyru",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/li7aembwcu78"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/88al2r96tbho"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/3sg5jeq1mwvv"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/loi2v8ys4vs1"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/79gpyfra72b7"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/tth8zyr8cldn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/reu83potg1ly"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/wg9w7azm8oca"
+      }
+    ],
     "descargas": []
   },
   {
@@ -10481,6 +10908,11 @@
         "temporada": "T2",
         "capitulo": "C6",
         "url": "https://goodstream.one/embed-7oc1ibl09jik.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-z6rxc1gvundw.html"
       }
     ],
     "descargas": []
@@ -12478,7 +12910,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8g9nsr",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/pjp8kmys8mpq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/vbgxjkt2jgbz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/arcan22nxjad"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/6sr3k1io5a8q"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/9d4ar61idgiu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/kwd0gwbqm67g"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/wx1gznre4agn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/70k21i856chq"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/1ulkyd1abka2"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/xx5lzintfc5d"
+      }
+    ],
     "descargas": []
   },
   {
@@ -12490,7 +12973,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8rjj70",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/aulvtj9a8efw"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/fr1cd8dgr6em"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/1z5rzbwfu6rq"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/bho5gcmi9u3o"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/prob0nmb214a"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/3154w69vb0jv"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/4axkw2b0ulc3"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/gbh3qdxb761p"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/62agsc05l0px"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/7emmv3d6fw2i"
+      }
+    ],
     "descargas": []
   },
   {
@@ -14899,6 +15433,11 @@
         "temporada": "T1",
         "capitulo": "C3",
         "url": "https://goodstream.one/embed-0y3k4ojqsur6.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-hamhbn0b30qx.html"
       }
     ],
     "descargas": []
@@ -14922,6 +15461,11 @@
         "temporada": "T1",
         "capitulo": "C2",
         "url": "https://goodstream.one/embed-mk99mryz81tv.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-vu4i5t2s0nix.html"
       }
     ],
     "descargas": []
@@ -22430,7 +22974,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x91f0ns",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/qfe1thc97ahz"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/2op0stidfrjo"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/n26x2zqicjzn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/zoxpccx4e2zk"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/24chkzco765u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/np7qezxv8ebx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/kic2wjus984f"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/zygrk9q9bmsm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/srhixqrubb8e"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/hy6uocr95dif"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22442,7 +23037,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9u1684",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/4gdbahgs5syo"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/z0ybequzmzj4"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/7xiiuopfihan"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/dnb18m5masu9"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/p4j6lwhvzdts"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/u8k900hy6vr7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/6788ip4pnraj"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/tz62zvxbwzmb"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22490,7 +23126,33 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x817ost",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/sw2oit6wq7j7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/ckng85ddutdg"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/7w3k0u7as5uq"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/vlbxwa0ab5et"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/3lnrdxvdzbtx"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22502,7 +23164,43 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8ntncw",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/8qo6q3fm17eq"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/04qiu4ks6sdm"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/3s11oshayycr"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/mcvcdncn19qb"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/elf8exvi24in"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/xscgpafuhx53"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/7t2o6v08bb1r"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22514,7 +23212,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8g2iot",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/qerubsvohe1u"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/rq5lwwx538xy"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/0571j8oge7sj"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/bmwbyo0q7pra"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/a97dn3d1pzsi"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/kdc3nxrzbril"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/8gkc7hjhi4p6"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/fsup5p6r34p5"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22526,7 +23265,38 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9pip2i",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/pt3bh2fe6bc4"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/yiymt6kus1b2"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/eg1lo0axr4wu"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/bv6ftvgp4jnm"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/trsv9negb3ev"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/3nugwfcwtprm"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22538,7 +23308,48 @@
     "seccion": "no-vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9capr8",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/0j2s7icjb9v3"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/7mxxpna1jbcv"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/26xrqnas8m5h"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/qfrcsc96z8ro"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/og1yrcmhkvlm"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/yd5evnfrx4l1"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/xz62xsj2vz75"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/b2k0ffmk07ub"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22550,7 +23361,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7y4g4m",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/71nwstl46sxh"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/4vmrbzll1asj"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/icx1k5uz0a3y"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/lfo52qtgxjd4"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/ipj30kf0zljb"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/azn1ojd751di"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/3v5km3f5muh5"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/d55p90i0vf2t"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/bvcf2l589758"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/j2tu1s19t702"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22562,7 +23424,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7y4f94",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/al3end8c9dx3"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/by4a6zwekglt"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/1eq1p35nypdr"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/irbkcm50pip8"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/pqqpnizhhir1"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/2xom8zr0kpsw"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/lppj1izl5y6o"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/9ss1kdjcv4sv"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/sfapj7uzggsr"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/1c66d8n6fmy0"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22574,7 +23487,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x87g48b",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T4",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/nan2ahw5sy3b"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/0t8eucgf7la8"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/02mpctphohm0"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/nsruuzny0yqa"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/y2jq8sribfe9"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/tc0luekr4izd"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/48vvj3j0eaea"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/s2gjx43yu45p"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C9",
+        "url": "https://hanerix.com/e/fk053252hnum"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/r9dy8wp4wf13"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22586,7 +23550,58 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x8mxme8",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T5",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/tt7902mi329e"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/ntgh37a21imt"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/owxvl93dze6j"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/2asgrp3zlzts"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/zv3778e75xop"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/2gp12d372l9z"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/vpxnx1wv76sl"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/aaziyf74l0b2"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/jduu1exi95zs"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/anngoex7oe3w"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22598,7 +23613,48 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x9p2kg2",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/xvybqw928aip"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/bocwffxt2gsl"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/fqt5mx3vl964"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/7vjg1flsw1z0"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/r3spcswvvc2g"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/nd15hhupi4yz"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/hk8g8jdtny0e"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/d9wc26g6p3vr"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22610,7 +23666,73 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7tvrzz",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/ek9hpmn7cxpr"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/z6y26bij7so7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/o3r1kf6266nc"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/x05c5zh212m3"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/3bd9hm2qa6za"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/5cuhgvhpr9mi"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/ihk8tfioels7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/gexf4vmkxjy6"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/kdbslqexaamp"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/o0rtsvnjed5s"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/upg13szvn9pr"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/t4r9jro7zaue"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/jytj82y7fo2f"
+      }
+    ],
     "descargas": []
   },
   {
@@ -22622,7 +23744,73 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7tvsho",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/k4qpt28kqvcx"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/g8g1jhawvkqc"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/4tf5y4saqgli"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/9nk7505acsu3"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/yrcm8dg2p4hx"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/iht8bj2plfc8"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/jyc5ienbpgxf"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/p7st3hig5uub"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/3mi7f0v4sh8r"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/lmee6x9j6vlx"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/vu09cb2zgrjp"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/6l86uc9rguk2"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/tha229kcq6rl"
+      }
+    ],
     "descargas": []
   },
   {
