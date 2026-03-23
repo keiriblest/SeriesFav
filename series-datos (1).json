@@ -400,7 +400,33 @@
     "seccion": "vistas",
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x973fa4",
-    "verURL": [],
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/7zjjylcwt1vn"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/gmb1a6wehf7z"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/p2kxv6ebr20u"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/hs5f3wh5460w"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/a3es2r0difrp"
+      }
+    ],
     "descargas": []
   },
   {
@@ -746,11 +772,14 @@
   {
     "titulo": "El Gabinete de Curiosidades de Guillermo del Toro",
     "imgURL": "https://pics.filmaffinity.com/guillermo_del_toro_s_cabinet_of_curiosities-614447953-large.jpg",
+    "temporada": "",
     "descripcion": "El maestro del terror Guillermo del Toro presenta 8 cuentos de terror espeluznantes. Narran esta antología de historias macabras algunos de los creadores de terror más prestigiosos del momento, como son los directores de ‘Babadook’, ‘Splice: Experimento mortal’, ‘Mandy’ y muchas más.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8e3mtq"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8e3mtq",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Happy Gilmore 2",
@@ -1229,11 +1258,14 @@
   {
     "titulo": "13 Reason Why",
     "imgURL": "https://pics.filmaffinity.com/13_reasons_why-533301566-large.jpg",
+    "temporada": "T1",
     "descripcion": "El adolescente Clay Jensen vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker, una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7tvs7n"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7tvs7n",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Ripley",
@@ -1290,12 +1322,15 @@
   },
   {
     "titulo": "Rey Lobo",
-    "imgURL": "https://pics.filmaffinity.com/wolf_king-531761730-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/wolf_king-414554147-large.jpg",
+    "temporada": "T1",
     "descripcion": "Drew Ferran alcanza la mayoría de edad y descubre que es el último de una larga estirpe de Hombres Lobo.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x95s4k4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x95s4k4",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Las Maldiciones",
@@ -1318,11 +1353,14 @@
   {
     "titulo": "Desencanto",
     "imgURL": "https://pics.filmaffinity.com/disenchantment-512021992-large.jpg",
+    "temporada": "T1",
     "descripcion": "Narra las desventuras de Bean, una princesa aficionada a la bebida en el mundo medieval en ruinas de Dreamland. Ahí viaja acompañada por Elfo, su enérgico acompañante, y Luci, su demonio personal. En el camino, este trío disfuncional se encontrará con ogros, arpías, trolls, duendecillos, diabillos, morsas y muchos humanos tontos.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7y4jlp"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7y4jlp",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "El Rastro",
@@ -1359,12 +1397,15 @@
   },
   {
     "titulo": "Castlevania Nocturno",
-    "imgURL": "https://pics.filmaffinity.com/castlevania_nocturne-377651201-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/castlevania_nocturne-831551625-large.jpg",
+    "temporada": "T1",
     "descripcion": "Mientras la revolución arrasa Francia, Richter Belmont lucha para defender el legado de su familia e impedir el ascenso al poder de una vampira despiadada y ambiciosa.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x8nwbds"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8nwbds",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "1992",
@@ -1797,12 +1838,15 @@
   },
   {
     "titulo": "Lupin",
-    "imgURL": "https://pics.filmaffinity.com/arsene_lupin-188018990-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/arsene_lupin-996431568-large.jpg",
+    "temporada": "T1",
     "descripcion": "Assane Diop es un escurridizo ladrón de guante blanco y aficionado a las aventuras de Arsene Lupin que busca vengar la muerte de su padre a causa del poderoso patriarca de una rica familia. Años después de una trágica injusticia, Assane se propone ajustar cuentas -y una deuda- robando un collar de diamantes, pero las cosas no salen según lo previsto.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7xuanj"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7xuanj",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "La mujer del camarote",
@@ -5126,12 +5170,15 @@
   },
   {
     "titulo": "Alice in Borderland",
-    "imgURL": "https://pics.filmaffinity.com/imawa_no_kuni_no_arisu_3-521733309-large.jpg",
+    "imgURL": "https://pics.filmaffinity.com/alice_in_borderland-771299293-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un joven obsesionado con los videojuegos y dos amigos suyos se ven atrapados en una extraña versión de Tokio donde deberán competir en peligrosos juegos para sobrevivir.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7x4exr"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7x4exr",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "1670",
@@ -5499,9 +5546,9 @@
     "descargas": []
   },
   {
-    "titulo": "La diplomática",
-    "imgURL": "https://pics.filmaffinity.com/the_diplomat-800685611-large.jpg",
-    "temporada": "",
+    "titulo": "La Diplomática",
+    "imgURL": "https://pics.filmaffinity.com/the_diplomat-628469525-large.jpg",
+    "temporada": "T1",
     "descripcion": "En medio de una crisis internacional, Kate Wyler, una diplomática de carrera, aterriza como nueva embajadora norteamericana en Londres, un puesto de alto perfil político para el que no estaba preparada, con implicaciones tectónicas para su matrimonio y su futuro profesional.",
     "plataforma": "Netflix",
     "seccion": "no-vistas",
@@ -7173,11 +7220,14 @@
   {
     "titulo": "Un Hombre Infiltrado",
     "imgURL": "https://pics.filmaffinity.com/a_man_on_the_inside-897969406-large.jpg",
+    "temporada": "T1",
     "descripcion": "Un exprofesor recibe una nueva oportunidad en la vida cuando una detective privada lo contrata para una misión encubierta en una residencia de ancianos de San Francisco.",
     "plataforma": "Netflix",
     "seccion": "vistas",
     "fecha": "20/11",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9txgrw"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x98700y",
+    "verURL": [],
+    "descargas": []
   },
   {
     "titulo": "Sueños de Trenes",
@@ -8259,11 +8309,13 @@
   {
     "titulo": "Tomb Raider: La Leyenda de Lara Croft",
     "imgURL": "https://pics.filmaffinity.com/tomb_raider_the_legend_of_lara_croft-941097057-large.jpg",
+    "temporada": "T1",
     "descripcion": "Más de 25 años después de su primera aparición, Lara Croft sigue explorando misterios ancestrales y descubriendo verdades perdidas en destinos impresionantes y peligrosos.",
     "plataforma": "Netflix",
-    "seccion": "no-vistas",
+    "seccion": "vistas",
     "fecha": "11/12",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9u1684",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x95xyru",
+    "verURL": [],
     "descargas": []
   },
   {
@@ -22367,6 +22419,222 @@
         "url": "https://hglink.to/e/o476k8vmf7px"
       }
     ],
+    "descargas": []
+  },
+  {
+    "titulo": "Kite Man: Hell Yeah!",
+    "imgURL": "https://pics.filmaffinity.com/kite_man_hell_yeah-586162026-large.jpg",
+    "temporada": "T1",
+    "descripcion": "Kite Man y su nuevo socio, Golden Glider, trabajan como delincuentes para financiar su descabellada compra de Noonan's, el antro más sórdido de Gotham.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x91f0ns",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Tomb Raider: La Leyenda de Lara Croft",
+    "imgURL": "https://pics.filmaffinity.com/tomb_raider_the_legend_of_lara_croft-219215070-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Más de 25 años después de su primera aparición, Lara Croft sigue explorando misterios ancestrales y descubriendo verdades perdidas en destinos impresionantes y peligrosos.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9u1684",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Un Hombre Infiltrado",
+    "imgURL": "https://pics.filmaffinity.com/a_man_on_the_inside-418826085-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Un exprofesor recibe una nueva oportunidad en la vida cuando una detective privada lo contrata para una misión encubierta en una residencia de ancianos de San Francisco.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9txgrw",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "La Diplomática",
+    "imgURL": "https://pics.filmaffinity.com/the_diplomat-171557734-large.jpg",
+    "temporada": "T2",
+    "descripcion": "En medio de una crisis internacional, Kate Wyler, una diplomática de carrera, aterriza como nueva embajadora norteamericana en Londres, un puesto de alto perfil político para el que no estaba preparada, con implicaciones tectónicas para su matrimonio y su futuro profesional.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x96ziqc",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "La Diplomática",
+    "imgURL": "https://pics.filmaffinity.com/the_diplomat-800685611-large.jpg",
+    "temporada": "T3",
+    "descripcion": "En medio de una crisis internacional, Kate Wyler, una diplomática de carrera, aterriza como nueva embajadora norteamericana en Londres, un puesto de alto perfil político para el que no estaba preparada, con implicaciones tectónicas para su matrimonio y su futuro profesional.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9qs6ps",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Lupin",
+    "imgURL": "https://pics.filmaffinity.com/arsene_lupin-507298132-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Assane Diop es un escurridizo ladrón de guante blanco y aficionado a las aventuras de Arsene Lupin que busca vengar la muerte de su padre a causa del poderoso patriarca de una rica familia. Años después de una trágica injusticia, Assane se propone ajustar cuentas -y una deuda- robando un collar de diamantes, pero las cosas no salen según lo previsto.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x817ost",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Lupin",
+    "imgURL": "https://pics.filmaffinity.com/arsene_lupin-188018990-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Assane Diop es un escurridizo ladrón de guante blanco y aficionado a las aventuras de Arsene Lupin que busca vengar la muerte de su padre a causa del poderoso patriarca de una rica familia. Años después de una trágica injusticia, Assane se propone ajustar cuentas -y una deuda- robando un collar de diamantes, pero las cosas no salen según lo previsto.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8ntncw",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Alice in Borderland",
+    "imgURL": "https://pics.filmaffinity.com/imawa_no_kuni_no_arisu_2-135188541-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Arisu y los demás se enfrentan a juegos de una escala y dificultad que superan a los de la primera temporada. Solo faltan la Sota, la Reina y el Rey. ¿Lograrán reunir todas las cartas y volver al mundo real?",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8g2iot",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Alice in Borderland",
+    "imgURL": "https://pics.filmaffinity.com/imawa_no_kuni_no_arisu_3-521733309-large.jpg",
+    "temporada": "T3",
+    "descripcion": "De vuelta en el mundo real y sin recuerdos de Borderland, Arisu y Usagi conocen a Ryuji, un profesor obsesionado con las experiencias cercanas a la muerte.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9pip2i",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Castlevania Nocturno",
+    "imgURL": "https://pics.filmaffinity.com/castlevania_nocturne-377651201-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Mientras la revolución arrasa Francia, Richter Belmont lucha para defender el legado de su familia e impedir el ascenso al poder de una vampira despiadada y ambiciosa.",
+    "plataforma": "Netflix",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9capr8",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Desencanto",
+    "imgURL": "https://pics.filmaffinity.com/disenchantment-938210678-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Narra las desventuras de Bean, una princesa aficionada a la bebida en el mundo medieval en ruinas de Dreamland. Ahí viaja acompañada por Elfo, su enérgico acompañante, y Luci, su demonio personal. En el camino, este trío disfuncional se encontrará con ogros, arpías, trolls, duendecillos, diabillos, morsas y muchos humanos tontos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7y4g4m",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Desencanto",
+    "imgURL": "https://static.wikia.nocookie.net/disenchantment/images/a/a6/Temporada_3_poster_2.jpg/revision/latest?cb=20210116024718&path-prefix=es",
+    "temporada": "T3",
+    "descripcion": "Narra las desventuras de Bean, una princesa aficionada a la bebida en el mundo medieval en ruinas de Dreamland. Ahí viaja acompañada por Elfo, su enérgico acompañante, y Luci, su demonio personal. En el camino, este trío disfuncional se encontrará con ogros, arpías, trolls, duendecillos, diabillos, morsas y muchos humanos tontos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7y4f94",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Desencanto",
+    "imgURL": "https://pics.filmaffinity.com/disenchantment-736798159-large.jpg",
+    "temporada": "T4",
+    "descripcion": "Narra las desventuras de Bean, una princesa aficionada a la bebida en el mundo medieval en ruinas de Dreamland. Ahí viaja acompañada por Elfo, su enérgico acompañante, y Luci, su demonio personal. En el camino, este trío disfuncional se encontrará con ogros, arpías, trolls, duendecillos, diabillos, morsas y muchos humanos tontos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x87g48b",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Desencanto",
+    "imgURL": "https://pics.filmaffinity.com/disenchantment-722384644-large.jpg",
+    "temporada": "T5",
+    "descripcion": "Narra las desventuras de Bean, una princesa aficionada a la bebida en el mundo medieval en ruinas de Dreamland. Ahí viaja acompañada por Elfo, su enérgico acompañante, y Luci, su demonio personal. En el camino, este trío disfuncional se encontrará con ogros, arpías, trolls, duendecillos, diabillos, morsas y muchos humanos tontos.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8mxme8",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Rey Lobo",
+    "imgURL": "https://pics.filmaffinity.com/wolf_king-531761730-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Drew Ferran alcanza la mayoría de edad y descubre que es el último de una larga estirpe de Hombres Lobo.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9p2kg2",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "13 Reason Why",
+    "imgURL": "https://www.mubis.es/media/users/7286/204972/poster-oficial-de-la-segunda-temporada-de-por-trece-razones-original.jpg",
+    "temporada": "T2",
+    "descripcion": "El adolescente Clay Jensen vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker, una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7tvrzz",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "13 Reason Why",
+    "imgURL": "https://pics.filmaffinity.com/13_reasons_why_who_killed_bryce_walker-460674090-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Tras el suicidio de Hannah Baker (Temporadas 1-2), Bryce Walker (Justin Prentice) aparece muerto de manera sospechosa, por lo que la trama principal planteará interrogantes sobre el autor del trágico suceso, con el apoyo argumental de que cualquiera de los protagonistas podrían tener motivos para hacerlo.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7tvsho",
+    "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "13 Reason Why",
+    "imgURL": "https://pics.filmaffinity.com/13_reasons_why_the_final_season-392047409-large.jpg",
+    "temporada": "T4",
+    "descripcion": "Los estudiantes y profesores de la preparatoria Liberty se alistan para la graduación. Sin embargo, la despedida no estará libre de incidentes. La clase sénior se esforzará por mantener un secreto enterrado, aunque ello los pueda llevar a tomar decisiones arriesgadas que marcarán su vida para siempre. Temporada cuarta y final de la serie.",
+    "plataforma": "Netflix",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7u1e1r",
+    "verURL": [],
     "descargas": []
   }
 ]
