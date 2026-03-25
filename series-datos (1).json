@@ -3322,11 +3322,420 @@
   {
     "titulo": "Rick and Morty",
     "imgURL": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10376284_b_v13_ac.jpg",
-    "descripcion": "Una serie animada que sigue las hazañas de un súper científico y su no tan brillante nieto.",
+    "temporada": "",
+    "descripcion": "Comedia animada que narra las aventuras de un científico loco, Rick Sánchez, que regresa después de 20 años para vivir con su hija, su marido y sus hijos, Morty y Summer.",
     "plataforma": "HBO Max",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x9hbh8m"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x9hbh8m",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-rj10txzt84it.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-q9f5me908l4t.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-pida0fbngn5q.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-g5ge7mwpmyll.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-rk726edpt6ly.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-ls13h9udxdng.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-dyyz764s9eb1.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-xp763inr6hqo.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-251tx6rkl5g9.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-19djnlqkj7lk.html"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://goodstream.one/embed-p52ghq127j1m.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-vp4w20fajoky.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-g0olvp58u249.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-ojcblm3k2rh3.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-wp92lol16m6q.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-xwoxn58wyzj4.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-xktta5tethpl.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-1hmg5hn0ueu7.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-0se0jswh0b00.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-2k9n8x0831tq.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-cnvrz69gt5wt.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-dr8cqg5bzgsd.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-hknbuo1jvlal.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-f8q7whe0p38l.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-3u7envm680gz.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-toodlf2tadgs.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-n4j7eq903g4k.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-wh52hgsw06kq.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-fywabxq0ia80.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-ic9vqhgi3pv0.html"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-e49ui42oofn6.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-j0hmlifo8a6n.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-xeqapkg0f5jd.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-551y8gsjioz3.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-2kaeoymrzaaf.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-i7kgl9zg0gd3.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-zjunr10gggpc.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-o804pw36bcn7.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-thc6ud0f8dtj.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-7lb87c635axp.html"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-dvaxemohspxz.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-umrfqm79cw72.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-j799xj22ypej.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-nxx0sxxnnpnz.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-mgsrfp84i2n1.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-9fruvqigfa1j.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-zbxqnrz9sgpq.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-gho5p9djvgmy.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-1n13kjclw8hf.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-7eu7ui0aa8fw.html"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-z0rswgsl577q.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-fvcwq7m4d9an.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-i0wrjjr8opos.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-pfhnx52gpbh7.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-voi8s99lfsy2.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-jlhulj0qgyrm.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-obyyxyj5xaa5.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-bc8dh2nwwzul.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-5r8roq9yzze4.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-a8nzce2qk6b5.html"
+      },
+      {
+        "temporada": "T6",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-km5zlt6l9zak.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-3qgk6youulzo.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-jr67vo73awfr.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-khloo9zh3sno.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-vw70h33w8nzt.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-uuc0stecmqx4.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-y6hsuich32u4.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-ig652hqk55sv.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-f9w5nhefpjxr.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-txaewg5gp5hk.html"
+      },
+      {
+        "temporada": "T7",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-er3akl4cwk58.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C1",
+        "url": "https://goodstream.one/embed-lons6x4uj8vg.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C2",
+        "url": "https://goodstream.one/embed-nqtktcyqoshj.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C3",
+        "url": "https://goodstream.one/embed-rwxb69sfhfi6.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C4",
+        "url": "https://goodstream.one/embed-2ghjufg1skb3.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C5",
+        "url": "https://goodstream.one/embed-6bjw8f5cmmcp.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C6",
+        "url": "https://goodstream.one/embed-6mq9jxpar9ic.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C7",
+        "url": "https://goodstream.one/embed-l70ttc9srbz8.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C8",
+        "url": "https://goodstream.one/embed-tz4y3bt7illv.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C9",
+        "url": "https://goodstream.one/embed-lden10zf0yqz.html"
+      },
+      {
+        "temporada": "T8",
+        "capitulo": "C10",
+        "url": "https://goodstream.one/embed-samzhif2er15.html"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Efectos Secundarios",
@@ -3698,12 +4107,126 @@
   },
   {
     "titulo": "The Originals",
-    "imgURL": "https://pics.filmaffinity.com/the_originals-173026242-large.jpg",
+    "imgURL": "https://image.tmdb.org/t/p/original/keJOhJXGiLL54EW6QocbyvQGquA.jpg",
+    "temporada": "T1",
     "descripcion": "Se concentra sobre Klaus y los originales de \"Crónicas vampíricas\" (serie de TV de la cual es un spin-off). Klaus regresa a New Orleans y se reencuentra con su diabólico y antiguo protegido Marcel. En tanto, Camille, una estudiante de psicología, despierta el interés de Klaus.",
     "plataforma": "HBO Max",
     "seccion": "vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x62p2k4"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x62p2k4",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/eyoe08wy99g9"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/49yhncmms3ff"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/cguz28yo4dgg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/po20ignxti8h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/8o3ovrv1eie8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/xs492d24ho84"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/g7ofqpzxfr6b"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/9pntxfdy68vj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/o581bc2hhpdt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/rd5e1avb4prm"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/8ea9p4yfq50v"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/z1yuzkx4xjsu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/eru8jaxwzwhx"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C14",
+        "url": "https://hglink.to/e/8194x76kcbls"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C15",
+        "url": "https://hglink.to/e/l1k0j5llslj8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C16",
+        "url": "https://hglink.to/e/qa0htmg4p1hh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C17",
+        "url": "https://hglink.to/e/68e4jil18dxj"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C18",
+        "url": "https://hglink.to/e/oxszajpcxp5c"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C19",
+        "url": "https://hglink.to/e/de6dq97rac1h"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C20",
+        "url": "https://hglink.to/e/r4kmwh6fhtk8"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C21",
+        "url": "https://hglink.to/e/pe8pjdqgiu5t"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C22",
+        "url": "https://hglink.to/e/9fw8u7mws723"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Sinners",
@@ -6598,13 +7121,67 @@
     "descargas": []
   },
   {
-    "titulo": "Succecion",
-    "imgURL": "https://pics.filmaffinity.com/succession-557515294-large.jpg",
+    "titulo": "Succesion",
+    "imgURL": "https://pics.filmaffinity.com/succession-548295247-large.jpg",
+    "temporada": "T1",
     "descripcion": "Serie que sigue a la disfuncional familia del magnate Logan Roy y sus cuatro hijos, que controlan una de las empresas de medios de comunicación y entretenimiento más importantes del mundo. Los problemas llegan cuando se plantea quién será el sucesor del patriarca.",
     "plataforma": "HBO Max",
     "seccion": "no-vistas",
     "fecha": "",
-    "trailerURL": "https://www.dailymotion.com/embed/video/x7wfegb"
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7wfegb",
+    "verURL": [
+      {
+        "temporada": "T1",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/awojy6a2zsxt"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/c0w39lrqnq27"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/nc7r7w7cqw0y"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/ejkj5lmrlqp6"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/19z72973hyw3"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/b3b39bydn0vh"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/9e73jyi0f1yg"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/e2kauh8iqbcu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/66cgsl9sokdu"
+      },
+      {
+        "temporada": "T1",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/sdti7omzhynj"
+      }
+    ],
+    "descargas": []
   },
   {
     "titulo": "Furia",
@@ -24039,6 +24616,592 @@
     "fecha": "",
     "trailerURL": "https://www.dailymotion.com/embed/video/x7u1e1r",
     "verURL": [],
+    "descargas": []
+  },
+  {
+    "titulo": "Succesion",
+    "imgURL": "https://pics.filmaffinity.com/succession-338155899-large.jpg",
+    "temporada": "T2",
+    "descripcion": "Serie que sigue a la disfuncional familia del magnate Logan Roy y sus cuatro hijos, que controlan una de las empresas de medios de comunicación y entretenimiento más importantes del mundo. Los problemas llegan cuando se plantea quién será el sucesor del patriarca.",
+    "plataforma": "HBO Max",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x7wfes8",
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/c31s7pnftfse"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/cz7sh2t7bz0d"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/pokes2gs9faq"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/g8uolmyegopx"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/wxrkxhnma6z7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/9u5cdt8zipss"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/hc5rflz8b3nu"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/te4dnc5gdqnq"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/3eua5cla3822"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/yeqgauneiv0x"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Succesion",
+    "imgURL": "https://pics.filmaffinity.com/succession-724671131-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Serie que sigue a la disfuncional familia del magnate Logan Roy y sus cuatro hijos, que controlan una de las empresas de medios de comunicación y entretenimiento más importantes del mundo. Los problemas llegan cuando se plantea quién será el sucesor del patriarca.",
+    "plataforma": "HBO Max",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8493vx",
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/2r402owm07l6"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/hj8z9olcgs11"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/122gamyj7peu"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/r0bq8m6wesu2"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/z50ungx3otsw"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/6ol7vvl7u7h8"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/kpql23ozi7fw"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/xrgs0czqvqs0"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/gzhkt03rwyb8"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "Succesion",
+    "imgURL": "https://pics.filmaffinity.com/succession-557515294-large.jpg",
+    "temporada": "T4",
+    "descripcion": "Serie que sigue a la disfuncional familia del magnate Logan Roy y sus cuatro hijos, que controlan una de las empresas de medios de comunicación y entretenimiento más importantes del mundo. Los problemas llegan cuando se plantea quién será el sucesor del patriarca.",
+    "plataforma": "HBO Max",
+    "seccion": "no-vistas",
+    "fecha": "",
+    "trailerURL": "https://www.dailymotion.com/embed/video/x8jbbg1",
+    "verURL": [
+      {
+        "temporada": "T4",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/ftimao6l0hhj"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/fioe1wluw6mx"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/u3p2cqj03mff"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/0ipx8u7vprf9"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/3wo2zhbxg6hb"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/tezgh7m8s616"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/3tnpuc0yxezk"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/gj75c14jiuzh"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/s4b0kooj6kz6"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/xn86c49sj6ew"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "The Originals",
+    "imgURL": "https://m.media-amazon.com/images/I/81h0Sl+VPZL._AC_UF894,1000_QL80_.jpg",
+    "temporada": "T2",
+    "descripcion": "Se concentra sobre Klaus y los originales de \"Crónicas vampíricas\" (serie de TV de la cual es un spin-off). Klaus regresa a New Orleans y se reencuentra con su diabólico y antiguo protegido Marcel. En tanto, Camille, una estudiante de psicología, despierta el interés de Klaus.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "",
+    "verURL": [
+      {
+        "temporada": "T2",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/hyfqixtcp94z"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/chfejevpry8n"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/2zaoc91mtgc7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/rmoax84lumbl"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/6gtikh2xgcla"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/m8y6wnemk0n0"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/8id2xp46v54y"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/biw5xnrzz9xw"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/bj350icgosy7"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/0vsnk517447g"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/7dum2xaa8t3n"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/bnwu9waah8p5"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/svi9oo2cclom"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C14",
+        "url": "https://hglink.to/e/5gwqpd3zfm08"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C15",
+        "url": "https://hglink.to/e/5ctzkxhxhxck"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C16",
+        "url": "https://hglink.to/e/3qi9xwz0zyyj"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C17",
+        "url": "https://hglink.to/e/pidckkpghji8"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C18",
+        "url": "https://hglink.to/e/d897xjnnc63e"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C19",
+        "url": "https://hglink.to/e/l1n8uhby9mj6"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C20",
+        "url": "https://hglink.to/e/zhkffe58xayi"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C21",
+        "url": "https://uqload.is/embed-z36dq1jpt7fw.html"
+      },
+      {
+        "temporada": "T2",
+        "capitulo": "C22",
+        "url": "https://hglink.to/e/7tnaq82hxp3t"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "The Originals",
+    "imgURL": "https://pics.filmaffinity.com/the_originals-173026242-large.jpg",
+    "temporada": "T3",
+    "descripcion": "Se concentra sobre Klaus y los originales de \"Crónicas vampíricas\" (serie de TV de la cual es un spin-off). Klaus regresa a New Orleans y se reencuentra con su diabólico y antiguo protegido Marcel. En tanto, Camille, una estudiante de psicología, despierta el interés de Klaus.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "",
+    "verURL": [
+      {
+        "temporada": "T3",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/qpgd474hppdb"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/223ji1vognx9"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/q35mysjsutaa"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/nlzgpczxh3cj"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/c34tyroyw3s0"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/xvhll226eirf"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/s1vza3yb22xw"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/87mg0g3nzftp"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/zdtsbxq1s1yb"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/24yt5yolgj2b"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/f258v00hpikc"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/7m5c2wwlpy24"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/nptnhaa2rz59"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C14",
+        "url": "https://hglink.to/e/lb9anmhqms7v"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C15",
+        "url": "https://hglink.to/e/jrw51c9ipish"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C16",
+        "url": "https://hglink.to/e/fqgujwykhv6t"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C17",
+        "url": "https://hglink.to/e/19dgx54m4y2g"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C18",
+        "url": "https://hglink.to/e/z9ulk5pi1vy1"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C19",
+        "url": "https://hglink.to/e/dv3f6fprxtf7"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C20",
+        "url": "https://hglink.to/e/5d5oc3fl32uu"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C21",
+        "url": "https://hglink.to/e/zsnv0aod3ggr"
+      },
+      {
+        "temporada": "T3",
+        "capitulo": "C22",
+        "url": "https://hglink.to/e/62wesuz9evm2"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "The Originals",
+    "imgURL": "https://m.media-amazon.com/images/S/pv-target-images/a02692c48ceeb2b0504dde29f01748dc2e7e9aa822116e42eebbff1fdf89c416.jpg",
+    "temporada": "T4",
+    "descripcion": "Se concentra sobre Klaus y los originales de \"Crónicas vampíricas\" (serie de TV de la cual es un spin-off). Klaus regresa a New Orleans y se reencuentra con su diabólico y antiguo protegido Marcel. En tanto, Camille, una estudiante de psicología, despierta el interés de Klaus.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "",
+    "verURL": [
+      {
+        "temporada": "T4",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/cv4i9yafc8n9"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/bg8jn4kkkcrc"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/mgx015bhjikv"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/tjlidzwgq6xr"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/pcx0a27noxmy"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/nxavr10c7sg1"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/42vg9lf47gma"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/lk691vkhe5yc"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/mj1xt25p4i0o"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/shbvl5wsyvww"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/o86c9zeu4w81"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/cu8mm67cadd2"
+      },
+      {
+        "temporada": "T4",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/gw9ogjquv0br"
+      }
+    ],
+    "descargas": []
+  },
+  {
+    "titulo": "The Originals",
+    "imgURL": "https://media.themoviedb.org/t/p/w500/ejQXZ2XVw8SREaZ5WUKVmXwLQrr.jpg",
+    "temporada": "T5",
+    "descripcion": "Se concentra sobre Klaus y los originales de \"Crónicas vampíricas\" (serie de TV de la cual es un spin-off). Klaus regresa a New Orleans y se reencuentra con su diabólico y antiguo protegido Marcel. En tanto, Camille, una estudiante de psicología, despierta el interés de Klaus.",
+    "plataforma": "HBO Max",
+    "seccion": "vistas",
+    "fecha": "",
+    "trailerURL": "",
+    "verURL": [
+      {
+        "temporada": "T5",
+        "capitulo": "C1",
+        "url": "https://hglink.to/e/dhy06r2f8mvl"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C2",
+        "url": "https://hglink.to/e/vqaplgulyhv5"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C3",
+        "url": "https://hglink.to/e/umct13z897t8"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C4",
+        "url": "https://hglink.to/e/ptk8lv8pacw4"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C5",
+        "url": "https://hglink.to/e/ebjhaknlw1kq"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C6",
+        "url": "https://hglink.to/e/0holvade1d0k"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C7",
+        "url": "https://hglink.to/e/9g01bf5lskvf"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C8",
+        "url": "https://hglink.to/e/i7r3sqbgqy5j"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C9",
+        "url": "https://hglink.to/e/9yvks75r4z5j"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C10",
+        "url": "https://hglink.to/e/2d9sifw9dx31"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C11",
+        "url": "https://hglink.to/e/d186iv4p4kds"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C12",
+        "url": "https://hglink.to/e/6nv4r2fcihta"
+      },
+      {
+        "temporada": "T5",
+        "capitulo": "C13",
+        "url": "https://hglink.to/e/eswep2nr4uv0"
+      }
+    ],
     "descargas": []
   }
 ]
