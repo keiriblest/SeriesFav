@@ -16,7 +16,7 @@ Para disfrutar de SeriesFav sin ventanas emergentes (pop-ups) ni banners molesto
 
 Puedes usar nuestra app para PC que viene con todo instalado es solo descomprimir el archivo y abrir la app y listo.
 
-Configuración Paso a Paso:
+Configuración Paso a Paso (Navegador):
 1. Instalar uBlock Origin
 Es el bloqueador de contenido más eficiente del mercado.
 
@@ -25,11 +25,11 @@ Para neutralizar los scripts específicos que uBlock podría pasar por alto en c
 
 Descarga el repositorio de AdShield.
 
-Ve a chrome://extensions/ en tu navegador.
+1. Ve a chrome://extensions/ en tu navegador.
 
-Activa el "Modo de desarrollador" (Developer mode).
+2. Activa el "Modo de desarrollador" (Developer mode).
 
-Haz clic en "Cargar descomprimida" (Load unpacked) y selecciona la carpeta de la extensión.
+3. Haz clic en "Cargar descomprimida" (Load unpacked) y selecciona la carpeta de la extensión.
 
-3. Sinergia Total
+Sinergia Total
 Una vez activadas ambas, navega por SeriesFav. AdShield se encargará de los "anti-adblocks" de los reproductores, mientras uBlock limpia la interfaz general.
