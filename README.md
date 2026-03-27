@@ -1,10 +1,9 @@
-SeriesFav:
 SeriesFav es una plataforma diseñada para los amantes del streaming que buscan una experiencia fluida, organizada y, sobre todo, libre de interrupciones publicitarias agresivas.
 
 🚀 ¿Cómo funciona?
 La aplicación actúa como un centro de gestión y visualización de contenido. Se conecta a diversas fuentes de streaming para ofrecerte un catálogo actualizado, permitiéndote:
 
-Explorar Contenido: Buscador avanzado y categorización por géneros.
+Explorar Contenido: De distintas plataformas
 
 Gestión de Favoritos: Guarda tus series y películas para verlas después.
 
@@ -15,13 +14,11 @@ Sincronización: Diseñado para funcionar en conjunto con extensiones de segurid
 🛡️ Experiencia 100% Libre de Publicidad
 Para disfrutar de SeriesFav sin ventanas emergentes (pop-ups) ni banners molestos, recomendamos encarecidamente la combinación de uBlock Origin y nuestra extensión propia, AdShield.
 
+Puedes usar nuestra app para PC que viene con todo instalado es solo descomprimir el archivo y abrir la app y listo.
+
 Configuración Paso a Paso:
 1. Instalar uBlock Origin
 Es el bloqueador de contenido más eficiente del mercado.
-
-Descargar para Chrome/Edge
-
-Descargar para Firefox
 
 2. Instalar AdShield (Nuestra Extensión)
 Para neutralizar los scripts específicos que uBlock podría pasar por alto en ciertos servidores de video:
