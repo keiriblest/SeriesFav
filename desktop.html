@@ -49,7 +49,7 @@
             <div onclick="cambiarSeccion('series')" id="btn-series" onmouseenter="animateSeries()" class="nav-link active flex items-center gap-4 p-3 text-white">
                 <svg id="svg-series" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg" style="min-width:22px;overflow:visible">
   <rect height="15" rx="2" width="22" x="1" y="2"/>
-  <path id="svg-series-base" d="M8 21h0"/>
+  <path id="svg-series-base" d="M8 21h8"/>
   <circle id="svg-series-d0" cx="7"  cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
   <circle id="svg-series-d1" cx="10" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
   <circle id="svg-series-d2" cx="13" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
@@ -187,7 +187,7 @@
                     <button id="m-watch-btn" onmouseenter="animateWatch()" class="hidden bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-xs">
                         <svg id="svg-watch" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;overflow:visible">
   <rect height="15" rx="2" width="22" x="1" y="2"/>
-  <path id="svg-watch-base" d="M8 21h0" stroke-linecap="round"/>
+  <path id="svg-watch-base" d="M8 21h8" stroke-linecap="round"/>
   <circle id="svg-watch-d0" cx="7"  cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
   <circle id="svg-watch-d1" cx="10" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
   <circle id="svg-watch-d2" cx="13" cy="21" r="1" fill="currentColor" stroke="none" opacity="0"/>
@@ -282,7 +282,7 @@
                          <svg id="svg-cap-prev" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-right:6px;overflow:visible">
   <path id="svg-prev-dash" d="M19 15V9"/>
   <path id="svg-prev-arrow" d="M15 15h-3v4l-7-7 7-7v4h3v6z"/>
-</svg> Cap. Anterior
+</svg> <span id="btn-cap-prev-label">Cap. Anterior</span>
                      </button>
                      <button onclick="volverAInfo()" onmouseenter="animateVolverInfo()" class="whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
                          <svg id="svg-volver" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-right:6px;overflow:visible">
@@ -291,7 +291,7 @@
 </svg> Volver a info
                      </button>
                      <button id="btn-cap-next" onclick="irCapSiguiente()" onmouseenter="animateCapNext()" class="hidden whitespace-nowrap text-xs bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full transition border border-white/10">
-                         Cap. Siguiente <svg id="svg-cap-next" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-left:6px;overflow:visible">
+                         <span id="btn-cap-next-label">Cap. Siguiente</span> <svg id="svg-cap-next" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-left:6px;overflow:visible">
   <path id="svg-next-dash" d="M5 9v6"/>
   <path id="svg-next-arrow" d="M9 9h3V5l7 7-7 7v-4H9V9z"/>
 </svg>
@@ -307,7 +307,7 @@
         const principalesPlataformas = ['netflix', 'disney plus', 'apple tv', 'hbo max', 'prime'];
         let catalogo = [], filtrados = [], proximas = [], favoritos = JSON.parse(localStorage.getItem('fav_series')) || [];
         let seccionActual = 'series', serieActualIdx = -1, promoIdx = 0;
-        let capActualIdx = -1, capListaActual = [];
+        let capActualIdx = -1, capListaActual = [], tituloSerieActual = '';
         let ordenAlfabetico = false;
         let esNavegacionProximas = false;
         const MAX_DOTS = 5;
@@ -568,6 +568,7 @@
                 controls.innerHTML = `<div class="p-6 bg-red-500/5 border border-red-500/10 rounded-2xl text-center"><p class="font-bold text-sm text-gray-300">Presiona reproducir para comenzar</p></div>`;
                 document.getElementById('watch-confirm-btn').onclick = () => {
                     const finalUrl = Array.isArray(s.verURL) ? s.verURL[0] : s.verURL;
+                    tituloSerieActual = s.titulo;
                     reproducirVideo(finalUrl, s.titulo);
                     document.getElementById('watch-selector').classList.add('hidden');
                 };
@@ -673,14 +674,19 @@
 
                 document.getElementById('watch-confirm-btn').onclick = () => {
                     const url = selCap.value;
-                    const capText = selCap.options[selCap.selectedIndex].text;
                     const itemsVerFinal = selCap._itemsVerRef || itemsVer;
-                    const todosEps = itemsVerFinal.slice().sort((a, b) =>
-                        parseInt(a.capitulo.toString().replace(/\D/g, '') || 0) -
-                        parseInt(b.capitulo.toString().replace(/\D/g, '') || 0)
-                    );
+                    const todosEps = itemsVerFinal.slice().sort((a, b) => {
+                        const sA = parseInt((a.temporada||'0').toString().replace(/[^0-9]/g,'') || 0);
+                        const sB = parseInt((b.temporada||'0').toString().replace(/[^0-9]/g,'') || 0);
+                        if (sA !== sB) return sA - sB;
+                        return parseInt(a.capitulo.toString().replace(/[^0-9]/g,'') || 0) - parseInt(b.capitulo.toString().replace(/[^0-9]/g,'') || 0);
+                    });
                     const capIdx = todosEps.findIndex(e => e.url === url);
-                    reproducirVideo(url, `${s.titulo} - ${capText}`, false, todosEps, capIdx);
+                    const epSel = todosEps[capIdx] || {};
+                    const numSel = epSel.capitulo ? epSel.capitulo.toString().replace(/[^0-9]/g,'') : '';
+                    const capTextSel = numSel ? 'Cap\u00EDtulo ' + numSel : selCap.options[selCap.selectedIndex].text;
+                    tituloSerieActual = s.titulo;
+                    reproducirVideo(url, `${s.titulo} - ${capTextSel}`, false, todosEps, capIdx);
                     document.getElementById('watch-selector').classList.add('hidden');
                 };
             }
@@ -738,9 +744,10 @@
             loader.innerText = "Cargando...";
             document.getElementById('video-title').innerText = titulo + (esTrailer ? " (Tráiler)" : "");
             if (url && typeof url === 'string' && url.trim() !== "") {
-                iframe.src = url;
+                iframe.removeAttribute('src');
                 iframe.classList.remove('hidden');
                 loader.classList.add('hidden');
+                setTimeout(() => { iframe.src = url; }, 30);
             } else {
                 loader.innerText = "No disponible.";
             }
@@ -748,11 +755,24 @@
         }
 
         function actualizarBotonesCapitulo() {
-            const btnPrev = document.getElementById('btn-cap-prev');
-            const btnNext = document.getElementById('btn-cap-next');
+            const btnPrev      = document.getElementById('btn-cap-prev');
+            const btnNext      = document.getElementById('btn-cap-next');
+            const btnPrevLabel = document.getElementById('btn-cap-prev-label');
+            const btnNextLabel = document.getElementById('btn-cap-next-label');
             if (capListaActual.length > 0 && capActualIdx >= 0) {
-                btnPrev.classList.toggle('hidden', capActualIdx === 0);
-                btnNext.classList.toggle('hidden', capActualIdx === capListaActual.length - 1);
+                const hayAnterior  = capActualIdx > 0;
+                const haySiguiente = capActualIdx < capListaActual.length - 1;
+                btnPrev.classList.toggle('hidden', !hayAnterior);
+                btnNext.classList.toggle('hidden', !haySiguiente);
+                const tActual = (capListaActual[capActualIdx]?.temporada || '').toString().replace(/\s+/g,'').toUpperCase();
+                if (hayAnterior && btnPrevLabel) {
+                    const tP = (capListaActual[capActualIdx - 1]?.temporada || '').toString().replace(/\s+/g,'').toUpperCase();
+                    btnPrevLabel.innerText = (tActual && tP && tActual !== tP) ? 'Temporada anterior' : 'Cap. Anterior';
+                }
+                if (haySiguiente && btnNextLabel) {
+                    const tS = (capListaActual[capActualIdx + 1]?.temporada || '').toString().replace(/\s+/g,'').toUpperCase();
+                    btnNextLabel.innerText = (tActual && tS && tActual !== tS) ? 'Siguiente temporada' : 'Cap. Siguiente';
+                }
             } else {
                 btnPrev.classList.add('hidden');
                 btnNext.classList.add('hidden');
@@ -763,9 +783,10 @@
             animateCapPrev();
             if (capActualIdx > 0) {
                 const ep = capListaActual[capActualIdx - 1];
-                const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*/,'').replace(/ - C.*/,'');
-                const capText = ep.capitulo.toString().startsWith('C') ? 'Capítulo ' + ep.capitulo.toString().substring(1) : ep.capitulo;
-                reproducirVideo(ep.url, `${tituloBase} - ${capText}`, false, capListaActual, capActualIdx - 1);
+                const num = ep.capitulo.toString().replace(/[^0-9]/g, '');
+                const capText = 'Cap\u00EDtulo ' + (num || ep.capitulo);
+                const base = tituloSerieActual || document.getElementById('video-title').innerText.replace(/\s*-\s*Cap.*/i,'').trim();
+                reproducirVideo(ep.url, `${base} - ${capText}`, false, capListaActual, capActualIdx - 1);
             }
         }
 
@@ -773,9 +794,10 @@
             animateCapNext();
             if (capActualIdx < capListaActual.length - 1) {
                 const ep = capListaActual[capActualIdx + 1];
-                const tituloBase = document.getElementById('video-title').innerText.replace(/ - Capítulo.*/,'').replace(/ - C.*/,'');
-                const capText = ep.capitulo.toString().startsWith('C') ? 'Capítulo ' + ep.capitulo.toString().substring(1) : ep.capitulo;
-                reproducirVideo(ep.url, `${tituloBase} - ${capText}`, false, capListaActual, capActualIdx + 1);
+                const num = ep.capitulo.toString().replace(/[^0-9]/g, '');
+                const capText = 'Cap\u00EDtulo ' + (num || ep.capitulo);
+                const base = tituloSerieActual || document.getElementById('video-title').innerText.replace(/\s*-\s*Cap.*/i,'').trim();
+                reproducirVideo(ep.url, `${base} - ${capText}`, false, capListaActual, capActualIdx + 1);
             }
         }
 
