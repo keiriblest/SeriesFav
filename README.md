@@ -32,6 +32,13 @@
 4. Descomprime el archivo en la ubicación de tu preferencia.
 5. Ejecuta `SeriesFav.exe`.
 
+## 🛠️ Instalación para Desarrolladores
+Si deseas clonar el repositorio y trabajar en el código fuente:
+
+1. Clona el repositorio: `git clone https://github.com/keiriblest/SeriesFav.git`
+2. Instala las dependencias: `npm install`
+3. Ejecuta la aplicación: `npm start`
+
 ---
 
 ## 🌐 Configuración en Navegador (Web)
@@ -49,14 +56,16 @@ Si prefieres usar **SeriesFav** desde tu navegador, es necesario combinar nuestr
 > 3. Activa el **Modo de desarrollador** (esquina superior derecha).
 > 4. Haz clic en **Cargar descomprimida** y selecciona la carpeta de AdShield.
 
-*Nota: La sinergia entre ambos es fundamental. AdShield gestiona los bloqueos específicos del reproductor, mientras que uBlock Origin mantiene la interfaz general libre de banners.*
-
 ---
 
 ## 🛡️ ¿Por qué SeriesFav?
 Nuestra arquitectura permite que el usuario acceda a múltiples fuentes sin exponerse a los riesgos o la frustración de la publicidad agresiva. Al centralizar la gestión de seguridad a través de nuestra extensión y la aplicación nativa, garantizamos que el enfoque del usuario sea siempre el **contenido**.
 
+## ⚖️ Aviso Legal
+Este software es una herramienta de gestión personal. El autor no se hace responsable del uso que se le dé al software, ni de cualquier contenido al que el usuario acceda a través del mismo. El usuario es el único responsable de asegurar que el contenido que gestione cumple con las leyes de copyright aplicables en su región.
+
 ---
+
 <div align="center">
   <sub>Desarrollado con ❤️ para una experiencia de streaming superior</sub>
 </div>
