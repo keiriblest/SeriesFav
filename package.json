@@ -1,0 +1,37 @@
+{
+  "name": "seriesfav-pc",
+  "version": "1.4.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.seriesfav.app",
+    "productName": "SeriesFav",
+    "files": [
+      "main.js",
+      "icon.ico",
+      "adshield/**"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "target": ["nsis", "zip"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
+  "devDependencies": {
+    "electron": "^40.2.1",
+    "electron-builder": "^26.7.0"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.34.0",
+    "cross-fetch": "^4.1.0"
+  }
+}

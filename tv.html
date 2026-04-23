@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeriesFav - TV</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--bg:#0a0a0a;--acc:#e50914;}
+*{box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hidden;user-select:none;}#buscador{cursor:text;user-select:text;}#vid-controls,#vid-controls *{cursor:pointer;}
+#app{display:flex;height:100vh;width:100vw;overflow:hidden;position:relative;}
+#left-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+#topbar{flex-shrink:0;z-index:10;display:flex;align-items:center;gap:1rem;padding:clamp(0.8rem,1.2vh,1.4rem) clamp(1.2rem,2.8vw,3.5rem);background:linear-gradient(to bottom,rgba(0,0,0,0.98) 80%,transparent);}
+.top-btn{display:flex;align-items:center;gap:0.45rem;padding:0.55rem 1.1rem;border-radius:50px;font-size:0.84rem;font-weight:600;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:#bbb;cursor:pointer;outline:none;white-space:nowrap;transition:all 0.2s;}
+.top-btn.tv-focused{background:rgba(255,255,255,0.15);border-color:var(--acc);color:#fff;outline:3px solid var(--acc);outline-offset:2px;}
+.top-btn.active-sec{color:var(--acc);border-color:var(--acc);background:rgba(229,9,20,0.1);}
+#grid-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 clamp(1.2rem,2.8vw,3.5rem) 4rem;scroll-behavior:smooth;}
+#grid-scroll::-webkit-scrollbar{width:5px;}
+#grid-scroll::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:10px;}
+#filter-bar{display:flex;gap:0.8rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+.filter-btn{display:flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border-radius:50px;font-size:0.8rem;font-weight:600;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#9ca3af;cursor:pointer;outline:none;transition:all 0.2s;white-space:nowrap;}
+.filter-btn .val{color:#fff;font-weight:700;}
+.filter-btn.tv-focused{border-color:var(--acc);color:#fff;outline:3px solid var(--acc);outline-offset:2px;}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(155px,11vw,210px),1fr));gap:clamp(1rem,1.4vw,1.8rem);}
+.pcard{position:relative;border-radius:clamp(10px,0.9vw,16px);overflow:hidden;aspect-ratio:2/3;cursor:pointer;background:#1a1a1a;outline:none;transition:transform 0.2s;}
+.pcard.tv-focused{outline:4px solid var(--acc);outline-offset:3px;transform:scale(1.06);z-index:2;}
+.pcard.tv-focused .overlay{opacity:1;}
+.pcard img{width:100%;height:100%;object-fit:cover;display:block;}
+.overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;opacity:0;transition:opacity 0.2s;}
+.fav-dot{position:absolute;top:0.7rem;right:0.7rem;z-index:20;background:rgba(0,0,0,0.6);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;}
+.fav-dot.active i{color:var(--acc);}
+
+/* PROMO WIDGET */
+#promo-widget{position:fixed;top:1.2rem;right:1.8rem;z-index:40;width:260px;cursor:pointer;outline:none;}
+#promo-inner{background:rgba(14,14,14,0.92);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;display:flex;transition:all 0.3s;box-shadow:0 8px 32px rgba(0,0,0,0.6);}
+#promo-widget.tv-focused #promo-inner{border-color:var(--acc);outline:3px solid var(--acc);outline-offset:2px;transform:scale(1.03);}
+#promo-img{width:56px;flex-shrink:0;object-fit:cover;height:84px;display:block;}
+#promo-info{padding:0.75rem 0.9rem;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;}
+#promo-label{font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;}
+#promo-title{font-size:0.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#promo-plat{font-size:0.7rem;color:#6b7280;margin-top:0.15rem;}
+#promo-dots{display:flex;gap:4px;margin-top:0.5rem;justify-content:flex-end;padding-right:0.9rem;padding-bottom:0.5rem;}
+.pdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);transition:all 0.35s;}
+.pdot.active{background:#fff;width:14px;border-radius:3px;}
+
+/* MODAL */
+#modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:1.5rem;background:rgba(0,0,0,0.95);backdrop-filter:blur(20px);}
+#modal.show{display:flex;}
+#m-wrapper{background:#111;max-width:min(900px,88vw);width:100%;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);display:grid;grid-template-columns:2fr 3fr;box-shadow:0 30px 80px rgba(0,0,0,0.7);}
+#m-img{padding:1.75rem;background:#0c0c0c;display:flex;align-items:center;justify-content:center;min-height:340px;border-right:1px solid rgba(255,255,255,0.05);}
+#m-panel{padding:2.2rem;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
+#m-title{font-size:clamp(1.3rem,1.8vw,2rem);font-weight:700;margin:0.6rem 0 0.8rem;}
+#m-desc{color:#9ca3af;line-height:1.65;font-size:0.88rem;max-height:100px;overflow-y:auto;padding-right:4px;}
+#m-desc::-webkit-scrollbar{width:3px;}
+#m-desc::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);}
+#m-chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+.chip{padding:0.38rem 0.85rem;border-radius:9px;font-size:0.74rem;font-weight:700;border:none;cursor:pointer;outline:none;transition:all 0.2s;}
+.chip.tv-focused{outline:3px solid var(--acc);transform:scale(1.1);}
+.tv-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.62rem 1rem;border-radius:10px;font-weight:700;font-size:0.82rem;border:none;cursor:pointer;outline:none;transition:all 0.2s;}
+.tv-btn.tv-focused{outline:3px solid #fff;outline-offset:2px;transform:scale(1.07);}
+.sub-panel{background:#111;max-width:400px;width:100%;border-radius:24px;padding:2rem;border:1px solid rgba(255,255,255,0.1);box-shadow:0 30px 80px rgba(0,0,0,0.7);display:none;flex-direction:column;gap:1.2rem;animation:fadeUp 0.22s ease;}
+.sub-panel.show{display:flex;}
+.confirm-btn{width:100%;padding:0.95rem;border-radius:14px;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:center;gap:0.6rem;transition:all 0.2s;}
+.confirm-btn.tv-focused{outline:4px solid #fff;outline-offset:3px;transform:scale(1.02);}
+
+/* PICKER */
+#picker-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px);}
+#picker-overlay.show{display:flex;}
+#picker-box{background:#1c1c1c;border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:1.2rem;min-width:270px;max-width:340px;max-height:65vh;display:flex;flex-direction:column;gap:0.35rem;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.8);}
+#picker-box::-webkit-scrollbar{width:3px;}
+#picker-box::-webkit-scrollbar-thumb{background:#333;border-radius:10px;}
+#picker-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;font-weight:700;margin-bottom:0.4rem;padding:0 0.4rem;}
+.picker-item{padding:0.8rem 0.9rem;border-radius:10px;font-size:0.92rem;font-weight:500;cursor:pointer;outline:none;transition:all 0.15s;color:#d1d5db;border:2px solid transparent;}
+.picker-item.tv-focused{background:rgba(255,255,255,0.1);border-color:var(--acc);color:#fff;}
+.picker-item.selected{color:var(--acc);font-weight:700;}
+
+/* VIDEO PANEL */
+#video-panel{position:fixed;inset:0;z-index:150;background:#000;display:none;flex-direction:column;}
+#video-panel.show{display:flex;animation:fadeUp 0.22s ease;}
+#vid-area{flex:1;position:relative;overflow:hidden;}
+#vid-area iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+#vid-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;z-index:2;}
+#vid-controls{position:absolute;bottom:0;left:0;right:0;z-index:10;background:linear-gradient(to top,rgba(0,0,0,0.95) 0%,transparent 100%);padding:clamp(2rem,5vh,6rem) clamp(2rem,4.5vw,6rem) clamp(1.2rem,2vh,2.5rem);transition:opacity 0.4s;}
+#vid-controls.hidden-ctrl{opacity:0;pointer-events:none;}
+#vid-title-el{font-size:clamp(1.1rem,1.8vw,2.2rem);font-weight:700;margin-bottom:clamp(0.6rem,1.2vh,1.4rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#vid-btn-bar{display:none;}
+.vid-ctrl-btn{display:flex;align-items:center;gap:0.5rem;padding:clamp(0.6rem,1.1vh,1.1rem) clamp(1rem,1.8vw,2rem);border-radius:50px;font-size:clamp(0.82rem,1vw,1.05rem);font-weight:700;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.15);cursor:pointer;outline:none;transition:all 0.2s;white-space:nowrap;}
+.vid-ctrl-btn.tv-focused{outline:3px solid var(--acc);background:rgba(255,255,255,0.22);transform:scale(1.05);}
+.vid-ctrl-btn.red-btn{background:var(--acc);border-color:var(--acc);}
+.vid-ctrl-btn.red-btn.tv-focused{outline-color:#fff;}
+
+/* Settings panel video */
+#vid-settings{position:absolute;right:2rem;bottom:6.5rem;z-index:20;background:#161616;border:1px solid rgba(255,255,255,0.14);border-radius:18px;padding:0.8rem;width:290px;display:none;flex-direction:column;gap:0.2rem;box-shadow:0 16px 48px rgba(0,0,0,0.85);animation:fadeUp 0.18s ease;}
+#vid-settings.show{display:flex;}
+#vid-settings-title{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;font-weight:700;margin-bottom:0.3rem;padding:0.2rem 0.5rem;}
+.vsetting-item{display:flex;justify-content:space-between;align-items:center;padding:0.72rem 0.75rem;border-radius:10px;font-size:0.88rem;cursor:pointer;transition:all 0.15s;border:2px solid transparent;color:#d1d5db;}
+.vsetting-item.tv-focused{background:rgba(255,255,255,0.1);border-color:var(--acc);color:#fff;}
+.vsetting-item .vs-val{color:#9ca3af;font-size:0.78rem;}
+.vsetting-item.tv-focused .vs-val{color:var(--acc);}
+.vs-type-badge{font-size:0.58rem;padding:0.15rem 0.5rem;border-radius:50px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-left:0.5rem;vertical-align:middle;}
+
+
+
+/* OVERLAY DE CONTROL POR ZONAS */
+#vid-zone-overlay{position:absolute;inset:0;z-index:9;display:none;grid-template-columns:1fr 2fr 1fr;pointer-events:none;}
+#video-panel.show #vid-zone-overlay{display:grid;}
+.vzone{display:flex;align-items:center;justify-content:center;}
+
+/* Feedback visual al activar zona */
+#vid-feedback{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);
+  z-index:15;pointer-events:none;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(0,0,0,0.55);border:3px solid rgba(255,255,255,0.8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;color:#fff;
+  transition:transform 0.12s ease, opacity 0.3s ease;
+  opacity:0;
+}
+#vid-feedback.pop{transform:translate(-50%,-50%) scale(1);opacity:1;}
+
+/* Hint de teclas en esquina superior */
+#vid-hint{
+  position:absolute;top:1.2rem;right:1.4rem;z-index:12;
+  display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end;
+  opacity:0;transition:opacity 0.4s;pointer-events:none;
+}
+#vid-controls:not(.hidden-ctrl) #vid-hint{opacity:1;}
+.vhint-key{
+  background:rgba(0,0,0,0.65);border:1px solid rgba(255,255,255,0.25);
+  border-radius:7px;padding:0.25rem 0.55rem;font-size:0.7rem;font-weight:700;
+  color:rgba(255,255,255,0.75);white-space:nowrap;
+}
+.vhint-key span{color:#fff;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+
+</style>
+</head>
+<body>
+<!-- PROMO WIDGET -->
+<div id="promo-widget" style="display:none;" onclick="onPromoClick()">
+  <div id="promo-inner">
+    <img id="promo-img" src="" alt="">
+    <div id="promo-info">
+      <div id="promo-label"></div>
+      <div id="promo-title"></div>
+      <div id="promo-plat"></div>
+    </div>
+  </div>
+  <div id="promo-dots"></div>
+</div>
+
+<div id="app">
+  <div id="left-panel">
+    <div id="topbar">
+      <button id="top-section-btn" class="top-btn active-sec">
+        <i class="fas fa-tv"></i> <span>Series</span>
+        <i class="fas fa-chevron-down" style="font-size:0.6rem;opacity:0.55;"></i>
+      </button>
+      <div style="display:flex;align-items:center;gap:0.55rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:0.55rem 1.1rem;flex:1;max-width:300px;">
+        <i class="fas fa-search" style="color:#6b7280;font-size:0.8rem;flex-shrink:0;"></i>
+        <input type="text" id="buscador" placeholder="Buscar..." oninput="filtrar()" autocomplete="off" style="background:transparent;border:none;outline:none;color:#fff;font-size:0.88rem;width:100%;font-family:'Inter',sans-serif;">
+      </div>
+    </div>
+    <div id="grid-scroll">
+      <div style="margin-bottom:1.2rem;padding-top:0.2rem;">
+        <h1 id="main-title" style="font-size:clamp(1.5rem,2vw,2.5rem);font-weight:700;letter-spacing:-0.02em;"></h1>
+        <p id="main-subtitle" style="color:#6b7280;margin-top:0.15rem;font-size:0.9rem;"></p>
+      </div>
+      <div id="filter-bar">
+        <button id="btn-estado" class="filter-btn"><i class="fas fa-filter" style="font-size:0.68rem;"></i> Estado: <span class="val" id="lbl-estado">Todo</span></button>
+        <button id="btn-plat" class="filter-btn"><i class="fas fa-layer-group" style="font-size:0.68rem;"></i> Plataforma: <span class="val" id="lbl-plat">Todas</span></button>
+      </div>
+      <div id="grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+  <div id="m-wrapper">
+    <div id="m-img"></div>
+    <div id="m-panel">
+      <div style="display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;">
+        <span id="m-platform" style="font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;"></span>
+        <span id="m-date-badge" style="display:none;font-size:0.65rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#e5e7eb;align-items:center;gap:0.35rem;">
+          <i class="far fa-calendar-alt" style="color:var(--acc);"></i><span id="m-date-txt"></span>
+        </span>
+      </div>
+      <h2 id="m-title"></h2>
+      <p id="m-desc"></p>
+      <div id="m-chips-wrap" style="display:none;margin-top:1rem;">
+        <label style="font-size:0.65rem;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.1em;display:block;margin-bottom:0.4rem;">Temporadas</label>
+        <div id="m-chips"></div>
+      </div>
+      <div id="m-btns" style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.45rem;"></div>
+    </div>
+  </div>
+  <!-- Watch sub-panel -->
+  <div id="watch-panel" class="sub-panel">
+    <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:1rem;">
+      <div style="display:flex;align-items:center;gap:0.65rem;">
+        <div id="w-icon" style="width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(229,9,20,0.1);display:flex;align-items:center;justify-content:center;color:var(--acc);"><i class="fas fa-tv"></i></div>
+        <div><h3 id="w-title" style="font-size:0.98rem;font-weight:700;">Ver</h3><p style="font-size:0.64rem;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.15rem;">Elige el episodio</p></div>
+      </div>
+      <button id="w-close-btn" class="tv-btn" style="background:rgba(255,255,255,0.06);color:#9ca3af;padding:0.4rem 0.65rem;font-size:1.1rem;">&times;</button>
+    </div>
+    <div id="w-controls"></div>
+    <button id="w-confirm" class="confirm-btn" style="background:var(--acc);color:#fff;"><span>REPRODUCIR</span><i class="fas fa-play" style="font-size:0.75rem;opacity:0.7;"></i></button>
+  </div>
+  <!-- DL sub-panel -->
+  <div id="dl-panel" class="sub-panel">
+    <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:1rem;">
+      <div style="display:flex;align-items:center;gap:0.65rem;">
+        <div style="width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(37,99,235,0.1);display:flex;align-items:center;justify-content:center;color:#3b82f6;"><i class="fas fa-cloud-download-alt"></i></div>
+        <div><h3 style="font-size:0.98rem;font-weight:700;">Descargar</h3><p style="font-size:0.64rem;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.15rem;">Elige tu episodio</p></div>
+      </div>
+      <button id="dl-close-btn" class="tv-btn" style="background:rgba(255,255,255,0.06);color:#9ca3af;padding:0.4rem 0.65rem;font-size:1.1rem;">&times;</button>
+    </div>
+    <div id="dl-controls"></div>
+    <button id="dl-confirm" class="confirm-btn" style="background:#2563eb;color:#fff;"><span>IR AL ENLACE</span><i class="fas fa-external-link-alt" style="font-size:0.75rem;opacity:0.7;"></i></button>
+  </div>
+</div>
+
+<!-- VIDEO PANEL -->
+<div id="video-panel">
+  <div id="vid-area">
+    <div id="vid-loader">
+      <div style="text-align:center;">
+        <i class="fas fa-spinner fa-spin" style="font-size:2.5rem;margin-bottom:1rem;display:block;color:var(--acc);"></i>
+        <span style="color:#9ca3af;font-size:0.9rem;">Cargando reproductor...</span>
+      </div>
+    </div>
+    <iframe id="vid-frame" src="" frameborder="0"
+      allow="autoplay; fullscreen *; picture-in-picture; accelerometer; encrypted-media; gyroscope; clipboard-write; web-share"
+      allowfullscreen
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Overlay de zonas de control con mando -->
+    <div id="vid-zone-overlay">
+      <div class="vzone" id="vzone-left"></div>
+      <div class="vzone" id="vzone-center"></div>
+      <div class="vzone" id="vzone-right"></div>
+    </div>
+    <!-- Feedback visual -->
+    <div id="vid-feedback"></div>
+    <!-- Overlay de controles -->
+    <div id="vid-controls">
+      <div id="vid-hint">
+        <div class="vhint-key"><span>↵</span> Play/Pause</div>
+        <div class="vhint-key"><span>◀</span> -10s</div>
+        <div class="vhint-key"><span>▶</span> +10s</div>
+        <div class="vhint-key"><span>F</span> Pantalla completa</div>
+        <div class="vhint-key"><span>Esc</span> Volver</div>
+      </div>
+      <div id="vid-title-el"></div>
+    </div>
+    <!-- Panel de ajustes -->
+    <div id="vid-settings">
+      <div id="vid-settings-title"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PICKER -->
+<div id="picker-overlay">
+  <div id="picker-box"><div id="picker-title"></div></div>
+</div>
+
+<script>
+const URL_JSON='https://raw.githubusercontent.com/keiriblest/SeriesFav/main/series-datos%20(1).json';
+const PLT_COLORS={netflix:'#e50914','disney plus':'#0063e5','apple tv':'#ffffff','hbo max':'#5822b4',prime:'#00a8e1',otros:'#666666',peliculas:'#ffcc00'};
+const MAIN_PLTS=['netflix','disney plus','apple tv','hbo max','prime'];
+let catalogo=[],filtrados=[],proximas=[],favs=JSON.parse(localStorage.getItem('fav_series'))||[];
+let seccion='series',itemIdx=-1,esProxNav=false;
+let currentEstado='',currentPlat='';
+let watchTempSel=null,watchCapSel=null;
+let savedWatchZone='modal-watch',savedWatchZIdx=0;
+let dlTempSel=null,dlCapSel=null;
+let vidCtrlTimer=null,vidSettingsOpen=false;
+let promoIdx=0,promoTimer=null;
+// Video state
+let currentVidUrl='',currentVidType='unknown',vidPlaying=false;
+let ytQuality='default',ytSubs='0',ytSpeed='1';
+let dmQuality='720',dmSubs='0';
+let vmSpeed='1';
+
+// ══════════ FOCUS ENGINE ══════════
+let zone='grid',zIdx=0,prevZone='grid',prevZIdx=0;
+const ZONE_DEF={
+  top:()=>[document.getElementById('top-section-btn'),document.getElementById('buscador')].filter(Boolean),
+  filter:()=>[document.getElementById('btn-estado'),document.getElementById('btn-plat')].filter(Boolean),
+  grid:()=>[...document.querySelectorAll('.pcard')],
+  promo:()=>[document.getElementById('promo-widget')].filter(Boolean),
+  'modal-info':()=>{
+    const btns=[...document.querySelectorAll('#m-btns .tv-btn')].filter(b=>b.style.display!=='none');
+    const chips=[...document.querySelectorAll('#m-chips .chip')];
+    return [...btns,...chips];
+  },
+  'modal-watch':()=>{
+    const r=[];
+    if(document.getElementById('w-temp-btn'))r.push(document.getElementById('w-temp-btn'));
+    if(document.getElementById('w-cap-btn'))r.push(document.getElementById('w-cap-btn'));
+    r.push(document.getElementById('w-confirm'));
+    r.push(document.getElementById('w-close-btn'));
+    return r.filter(Boolean);
+  },
+  'modal-dl':()=>{
+    const r=[];
+    if(document.getElementById('dl-temp-btn'))r.push(document.getElementById('dl-temp-btn'));
+    if(document.getElementById('dl-cap-btn'))r.push(document.getElementById('dl-cap-btn'));
+    r.push(document.getElementById('dl-confirm'));
+    r.push(document.getElementById('dl-close-btn'));
+    return r.filter(Boolean);
+  },
+  video:()=>[],
+  'vid-settings':()=>[...document.querySelectorAll('.vsetting-item')],
+  picker:()=>[...document.querySelectorAll('.picker-item')]
+};
+function getItems(z){return(ZONE_DEF[z]||(() => []))().filter(el=>el&&el.offsetParent!==null);}
+function applyFocus(z,idx){
+  document.querySelectorAll('.tv-focused').forEach(el=>el.classList.remove('tv-focused'));
+  const items=getItems(z);
+  if(!items.length)return;
+  idx=Math.max(0,Math.min(idx,items.length-1));
+  prevZone=zone;prevZIdx=zIdx;zone=z;zIdx=idx;
+  items[idx].classList.add('tv-focused');
+  items[idx].scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function setZone(z,idx=0){applyFocus(z,idx);}
+
+// ══════════ INIT ══════════
+async function init(){
+  try{
+    const r=await fetch(URL_JSON);
+    catalogo=await r.json();
+    proximas=catalogo.filter(s=>s.seccion==='proximas');
+    if(proximas.length)initPromo();
+    filtrar();
+    setTimeout(()=>setZone('grid',0),200);
+  }catch(e){console.error(e);}
+}
+
+// ══════════ PROMO WIDGET ══════════
+function initPromo(){
+  document.getElementById('promo-widget').style.display='block';
+  const dots=document.getElementById('promo-dots');
+  dots.innerHTML='';
+  const max=Math.min(proximas.length,8);
+  for(let i=0;i<max;i++){const d=document.createElement('div');d.className='pdot'+(i===0?' active':'');dots.appendChild(d);}
+  updatePromoWidget();
+  promoTimer=setInterval(()=>{promoIdx=(promoIdx+1)%proximas.length;updatePromoWidget();},5000);
+}
+function updatePromoWidget(){
+  const item=proximas[promoIdx];if(!item)return;
+  const color=getColor(item);
+  const img=document.getElementById('promo-img');
+  img.src=item.imgURL;img.onerror=()=>{img.src='https://via.placeholder.com/56x84?text=?';};
+  document.getElementById('promo-label').style.color=color;
+  document.getElementById('promo-label').innerText='Próximamente';
+  document.getElementById('promo-title').innerText=item.titulo;
+  document.getElementById('promo-plat').innerText=item.plataforma;
+  [...document.querySelectorAll('.pdot')].forEach((d,i)=>d.classList.toggle('active',i===promoIdx%Math.min(proximas.length,8)));
+}
+function onPromoClick(){esProxNav=true;openModal(promoIdx);}
+
+// ══════════ HELPERS ══════════
+function isPeli(item){const t=(item.tipo||'').toLowerCase(),s=(item.seccion||'').toLowerCase(),p=(item.plataforma||'').toLowerCase();return t==='pelicula'||t==='peli'||s==='pelis'||p==='pelis'||p==='película'||p==='peliculas';}
+function getColor(item){if(isPeli(item))return PLT_COLORS['peliculas'];const p=item.plataforma.toLowerCase();return PLT_COLORS[p]||(MAIN_PLTS.includes(p)?'#e50914':'#666666');}
+function toggleFav(titulo){if(favs.includes(titulo))favs=favs.filter(t=>t!==titulo);else favs.push(titulo);localStorage.setItem('fav_series',JSON.stringify(favs));filtrar();}
+function mkBtn(bg,color,icon,label){const b=document.createElement('button');b.className='tv-btn';b.style.background=bg;b.style.color=color;b.innerHTML=`<i class="fas ${icon}"></i>${label?' '+label:''}`;return b;}
+
+// ══════════ RENDER GRID ══════════
+function render(data){
+  const g=document.getElementById('grid');
+  if(!data.length){g.innerHTML=`<div style="grid-column:1/-1;padding:4rem 0;text-align:center;color:#4b5563;">No hay contenido.</div>`;return;}
+  g.innerHTML=data.map((item,i)=>{
+    const isFav=favs.includes(item.titulo),color=getColor(item);
+    return `<div class="pcard" data-idx="${i}" onclick="openModal(${i})">
+      <button class="fav-dot${isFav?' active':''}" onclick="event.stopPropagation();toggleFav('${item.titulo.replace(/'/g,"\'")}')"><i class="fas fa-heart" ${isFav?`style="color:${color}"`:''}></i></button>
+      <img src="${item.imgURL}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=?'" loading="lazy">
+      <div class="overlay">
+        <span style="font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:${color};">${item.plataforma}</span>
+        <h4 style="font-size:0.82rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.titulo}</h4>
+      </div></div>`;
+  }).join('');
+}
+
+function filtrar(){
+  const q=document.getElementById('buscador').value.toLowerCase();
+  const icons={series:'fa-tv',peliculas:'fa-film',favoritos:'fa-heart'};
+  const labels={series:'Series',peliculas:'Películas',favoritos:'Mi Lista'};
+  const titles={series:['Catálogo de Series','Explora tus series favoritas.'],peliculas:['Películas','El mejor cine a un clic.'],favoritos:['Mi Lista','Tu contenido guardado.']};
+  document.getElementById('main-title').innerText=titles[seccion][0];
+  document.getElementById('main-subtitle').innerText=titles[seccion][1];
+  document.getElementById('top-section-btn').innerHTML=`<i class="fas ${icons[seccion]}"></i> ${labels[seccion]} <i class="fas fa-chevron-down" style="font-size:0.58rem;opacity:0.55;"></i>`;
+  const eL={'':' Todo',vistas:' Vistas','no-vistas':' Pendientes',proximas:' Próximamente'};
+  document.getElementById('lbl-estado').innerText=eL[currentEstado]||currentEstado;
+  document.getElementById('lbl-plat').innerText=currentPlat||'Todas';
+  filtrados=catalogo.filter(s=>{
+    const peli=isPeli(s),mq=s.titulo.toLowerCase().includes(q);
+    const tStr=(s.temporada||'').toUpperCase(),nT=parseInt(tStr.replace('T',''));
+    if(tStr.startsWith('T')&&!isNaN(nT)&&nT>=2&&s.seccion!=='proximas')return false;
+    let ms=false;
+    if(seccion==='series')ms=!peli;
+    else if(seccion==='peliculas')ms=peli;
+    else if(seccion==='favoritos')ms=favs.includes(s.titulo);
+    const me=!currentEstado||s.seccion===currentEstado;
+    let mp=true;
+    if(seccion!=='peliculas'){
+      if(!currentPlat||currentPlat==='Todas')mp=true;
+      else if(currentPlat==='Otros')mp=!MAIN_PLTS.includes(s.plataforma.toLowerCase());
+      else mp=s.plataforma.toLowerCase()===currentPlat.toLowerCase();
+    }
+    return mq&&ms&&me&&mp;
+  });
+  render(filtrados);
+}
+
+// ══════════ PICKER ══════════
+let pickerCB=null;
+function openPicker(title,options,currentVal,cb){
+  pickerCB=cb;
+  const box=document.getElementById('picker-box');
+  document.getElementById('picker-title').innerText=title;
+  [...box.querySelectorAll('.picker-item')].forEach(el=>el.remove());
+  options.forEach(opt=>{
+    const d=document.createElement('div');
+    d.className='picker-item'+(opt.value===currentVal?' selected':'');
+    d.innerHTML=opt.label;d.dataset.value=opt.value;
+    d.onclick=()=>{cb(opt.value);closePicker();};
+    box.appendChild(d);
+  });
+  document.getElementById('picker-overlay').classList.add('show');
+  const items=[...box.querySelectorAll('.picker-item')];
+  const ci=items.findIndex(i=>i.dataset.value===currentVal);
+  setZone('picker',ci>=0?ci:0);
+}
+function closePicker(){
+  document.getElementById('picker-overlay').classList.remove('show');
+  const wp=document.getElementById('watch-panel').classList.contains('show');
+  const dp=document.getElementById('dl-panel').classList.contains('show');
+  const vo=document.getElementById('video-panel').classList.contains('show');
+  if(vo&&vidSettingsOpen)setTimeout(()=>setZone('vid-settings',0),60);
+  else if(wp)setTimeout(()=>setZone('modal-watch',0),60);
+  else if(dp)setTimeout(()=>setZone('modal-dl',0),60);
+  else if(document.getElementById('modal').classList.contains('show'))setTimeout(()=>setZone('modal-info',0),60);
+  else setTimeout(()=>setZone(prevZone,prevZIdx),60);
+}
+
+// ══════════ SECTION/FILTER PICKERS ══════════
+function openSectionPicker(){
+  openPicker('Sección',[
+    {value:'series',label:'<i class="fas fa-tv" style="margin-right:0.5rem;"></i>Series'},
+    {value:'peliculas',label:'<i class="fas fa-film" style="margin-right:0.5rem;"></i>Películas'},
+    {value:'favoritos',label:'<i class="fas fa-heart" style="margin-right:0.5rem;"></i>Mi Lista'}
+  ],seccion,(val)=>{seccion=val;if(val==='peliculas')currentPlat='';filtrar();setTimeout(()=>setZone('grid',0),100);});
+}
+function openEstadoPicker(){
+  openPicker('Estado',[{value:'',label:'Todo'},{value:'vistas',label:'Vistas'},{value:'no-vistas',label:'Pendientes'},{value:'proximas',label:'Próximamente'}],currentEstado,(val)=>{currentEstado=val;filtrar();setTimeout(()=>setZone('filter',0),80);});
+}
+function openPlatPicker(){
+  openPicker('Plataforma',[{value:'',label:'Todas'},{value:'Netflix',label:'Netflix'},{value:'Disney Plus',label:'Disney Plus'},{value:'Apple TV',label:'Apple TV'},{value:'HBO Max',label:'HBO Max'},{value:'Prime',label:'Prime'},{value:'Otros',label:'Otras'}],currentPlat,(val)=>{currentPlat=val;filtrar();setTimeout(()=>setZone('filter',1),80);});
+}
+
+// ══════════ MODAL ══════════
+function showModal(){document.getElementById('modal').classList.add('show');}
+function hideModal(){document.getElementById('modal').classList.remove('show');}
+function openModal(idx){
+  const lista=esProxNav?proximas:filtrados;
+  if(!lista||!lista.length)return;
+  if(idx<0)idx=lista.length-1;if(idx>=lista.length)idx=0;
+  itemIdx=idx;fillModal(lista[idx]);
+}
+function fillModal(s){
+  if(!s)return;
+  closeSubPanels();
+  const isFav=favs.includes(s.titulo),color=getColor(s);
+  document.getElementById('m-platform').innerText=s.plataforma||'Desconocida';
+  document.getElementById('m-platform').style.color=color;
+  const db=document.getElementById('m-date-badge'),dt=document.getElementById('m-date-txt');
+  if(s.seccion==='proximas'&&s.fecha&&s.fecha.trim()!==''){dt.innerText='Estreno: '+s.fecha;db.style.display='inline-flex';}else db.style.display='none';
+  document.getElementById('m-title').innerText=s.titulo;
+  document.getElementById('m-desc').innerText=s.descripcion||'';
+  document.getElementById('m-img').innerHTML=`<img src="${s.imgURL}" style="max-height:90%;max-width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.8);object-fit:contain;">`;
+  const be=document.getElementById('m-btns');be.innerHTML='';
+  const hw=s.verURL&&((typeof s.verURL==='string'&&s.verURL.trim()!=='"')||(Array.isArray(s.verURL)&&s.verURL.length>0));
+  if(hw){const b=mkBtn('#e50914','#fff','fa-tv','Ver ahora');b.onclick=()=>showWatch(s);be.appendChild(b);}
+  const bt=mkBtn('#fff','#000','fa-play-circle','Tráiler');bt.onclick=()=>playVideo(s.trailerURL,s.titulo,true);be.appendChild(bt);
+  if(s.descargas&&s.descargas.length>0){const bd=mkBtn('#2563eb','#fff','fa-download','Descargar');bd.onclick=()=>showDL(s);be.appendChild(bd);}
+  const bf=mkBtn(isFav?color:'rgba(255,255,255,0.1)','#fff','fa-heart','');bf.style.padding='0.62rem 0.88rem';bf.style.border='1px solid rgba(255,255,255,0.1)';bf.onclick=()=>{toggleFav(s.titulo);fillModal(catalogo.find(x=>x.titulo===s.titulo)||s);};be.appendChild(bf);
+  const cw=document.getElementById('m-chips-wrap'),ch=document.getElementById('m-chips');ch.innerHTML='';
+  const vers=catalogo.filter(item=>item.titulo===s.titulo&&!isPeli(item));
+  if(vers.length>1&&!isPeli(s)){
+    cw.style.display='block';
+    vers.sort((a,b)=>{const g=x=>{let l=x.temporada||(x.descargas&&x.descargas[0]?.temporada)||'T1';return parseInt(l.toString().replace(/\D/g,''))||0;};return g(a)-g(b);});
+    vers.forEach(v=>{
+      let lbl=v.temporada||(v.descargas&&v.descargas[0]?.temporada)||'T1';
+      const c=document.createElement('button');c.className='chip';
+      const isCur=v.imgURL===s.imgURL&&v.descripcion===s.descripcion;
+      c.style.cssText=isCur?'background:#fff;color:#000;border:2px solid #fff;':'background:rgba(255,255,255,0.07);color:#9ca3af;border:1px solid rgba(255,255,255,0.07);';
+      c.innerText=lbl.toString().startsWith('T')?lbl:'T'+lbl;
+      c.onclick=()=>fillModal(v);ch.appendChild(c);
+    });
+  }else cw.style.display='none';
+  showModal();
+  setTimeout(()=>setZone('modal-info',0),80);
+}
+function closeSubPanels(){
+  document.getElementById('watch-panel').classList.remove('show');
+  document.getElementById('dl-panel').classList.remove('show');
+  document.getElementById('m-wrapper').style.display='grid';
+}
+function closeModal(){closeSubPanels();hideModal();const si=itemIdx;itemIdx=-1;esProxNav=false;setTimeout(()=>setZone('grid',Math.max(0,si)),80);}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
+
+// ══════════ WATCH ══════════
+function showWatch(s){
+  document.getElementById('m-wrapper').style.display='none';
+  const panel=document.getElementById('watch-panel'),wc=document.getElementById('w-controls');
+  panel.classList.add('show');
+  const isEp=Array.isArray(s.verURL)&&s.verURL.some(i=>i.capitulo||i.temporada);
+  if(!isEp){
+    document.getElementById('w-title').innerText='Ver Película';
+    document.getElementById('w-icon').innerHTML='<i class="fas fa-film"></i>';
+    wc.innerHTML='<div style="padding:1rem;background:rgba(229,9,20,0.05);border:1px solid rgba(229,9,20,0.1);border-radius:11px;text-align:center;color:#d1d5db;font-weight:600;font-size:0.88rem;">Presiona REPRODUCIR para comenzar</div>';
+    document.getElementById('w-confirm').onclick=()=>{
+  savedWatchZone=zone;savedWatchZIdx=zIdx;playVideo(Array.isArray(s.verURL)?s.verURL[0]:s.verURL,s.titulo);panel.classList.remove('show');};
+  }else{
+    document.getElementById('w-title').innerText='Ver Serie';
+    document.getElementById('w-icon').innerHTML='<i class="fas fa-tv"></i>';
+    const temps=[...new Set(s.verURL.map(d=>d.temporada))].sort((a,b)=>(parseInt(a.toString().replace(/\D/g,''))||0)-(parseInt(b.toString().replace(/\D/g,''))||0));
+    watchTempSel=temps[0];watchCapSel=null;
+    const getCaps=()=>s.verURL.filter(d=>d.temporada===watchTempSel).sort((a,b)=>(parseInt(a.capitulo.toString().replace(/\D/g,''))||0)-(parseInt(b.capitulo.toString().replace(/\D/g,''))||0));
+    const renderW=()=>{
+      const caps=getCaps();if(!watchCapSel||!caps.find(c=>c.url===watchCapSel))watchCapSel=caps[0]?.url||null;
+      const capObj=caps.find(c=>c.url===watchCapSel);
+      const capTxt=capObj?(capObj.capitulo.toString().startsWith('C')?'Cap. '+capObj.capitulo.slice(1):capObj.capitulo):'Elegir';
+      const tempTxt=watchTempSel?(watchTempSel.toString().startsWith('T')?'Temp. '+watchTempSel.slice(1):watchTempSel):'Elegir';
+      wc.innerHTML=`<div style="display:flex;flex-direction:column;gap:0.7rem;">
+        <div><div style="font-size:0.63rem;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.1em;margin-bottom:0.3rem;">Temporada</div>
+        <button id="w-temp-btn" class="tv-btn" style="background:rgba(255,255,255,0.08);color:#fff;width:100%;justify-content:space-between;padding:0.75rem 1rem;"><span>${tempTxt}</span><i class="fas fa-chevron-right" style="font-size:0.62rem;opacity:0.55;"></i></button></div>
+        <div><div style="font-size:0.63rem;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.1em;margin-bottom:0.3rem;">Capítulo</div>
+        <button id="w-cap-btn" class="tv-btn" style="background:rgba(255,255,255,0.08);color:#fff;width:100%;justify-content:space-between;padding:0.75rem 1rem;"><span>${capTxt}</span><i class="fas fa-chevron-right" style="font-size:0.62rem;opacity:0.55;"></i></button></div>
+      </div>`;
+      document.getElementById('w-temp-btn').onclick=()=>{
+        const opts=temps.map(t=>({value:t,label:t.toString().startsWith('T')?'Temporada '+t.slice(1):t}));
+        openPicker('Temporada',opts,watchTempSel,(val)=>{watchTempSel=val;watchCapSel=null;renderW();setTimeout(()=>setZone('modal-watch',0),80);});
+      };
+      document.getElementById('w-cap-btn').onclick=()=>{
+        const caps2=getCaps();const opts=caps2.map(c=>({value:c.url,label:c.capitulo.toString().startsWith('C')?'Capítulo '+c.capitulo.slice(1):c.capitulo}));
+        openPicker('Capítulo',opts,watchCapSel,(val)=>{watchCapSel=val;renderW();setTimeout(()=>setZone('modal-watch',0),80);});
+      };
+      document.getElementById('w-confirm').onclick=()=>{
+  savedWatchZone=zone;savedWatchZIdx=zIdx;
+        if(watchCapSel){const co=getCaps().find(c=>c.url===watchCapSel);const lbl=co?(co.capitulo.toString().startsWith('C')?'Cap. '+co.capitulo.slice(1):co.capitulo):'';playVideo(watchCapSel,s.titulo+(lbl?' - '+lbl:''));panel.classList.remove('show');}
+      };
+    };
+    renderW();
+  }
+  setTimeout(()=>setZone('modal-watch',0),80);
+}
+function closeWatch(){document.getElementById('watch-panel').classList.remove('show');document.getElementById('m-wrapper').style.display='grid';setTimeout(()=>setZone('modal-info',0),60);}
+document.getElementById('w-close-btn').onclick=closeWatch;
+
+// ══════════ DOWNLOAD ══════════
+function showDL(s){
+  document.getElementById('m-wrapper').style.display='none';
+  const panel=document.getElementById('dl-panel'),dc=document.getElementById('dl-controls');
+  panel.classList.add('show');dlTempSel=null;dlCapSel=null;
+  const peli=isPeli(s)||s.descargas.some(d=>d.temporada==='Pelis');
+  if(peli){
+    dc.innerHTML='<div style="padding:1rem;background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.1);border-radius:11px;text-align:center;font-weight:600;font-size:0.88rem;">Película lista para descarga</div>';
+    document.getElementById('dl-confirm').onclick=()=>{if(s.descargas[0].url)window.open(s.descargas[0].url,'_blank');closeDL();};
+  }else{
+    const temps=[...new Set(s.descargas.map(d=>d.temporada))].sort((a,b)=>(parseInt(a.toString().replace(/\D/g,''))||0)-(parseInt(b.toString().replace(/\D/g,''))||0));
+    dlTempSel=temps[0];
+    const getCaps=()=>s.descargas.filter(d=>d.temporada===dlTempSel).sort((a,b)=>(parseInt(a.capitulo.toString().replace(/\D/g,''))||0)-(parseInt(b.capitulo.toString().replace(/\D/g,''))||0));
+    const renderDL=()=>{
+      const caps=getCaps();if(!dlCapSel||!caps.find(c=>c.url===dlCapSel))dlCapSel=caps[0]?.url||null;
+      const capObj=caps.find(c=>c.url===dlCapSel);
+      const capTxt=capObj?(capObj.capitulo.toString().startsWith('C')?'Cap. '+capObj.capitulo.slice(1):capObj.capitulo):'Elegir';
+      const tempTxt=dlTempSel?(dlTempSel.toString().startsWith('T')?'Temp. '+dlTempSel.slice(1):dlTempSel):'Elegir';
+      dc.innerHTML=`<div style="display:flex;flex-direction:column;gap:0.7rem;">
+        <div><div style="font-size:0.63rem;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.1em;margin-bottom:0.3rem;">Temporada</div>
+        <button id="dl-temp-btn" class="tv-btn" style="background:rgba(255,255,255,0.08);color:#fff;width:100%;justify-content:space-between;padding:0.75rem 1rem;"><span>${tempTxt}</span><i class="fas fa-chevron-right" style="font-size:0.62rem;opacity:0.55;"></i></button></div>
+        <div><div style="font-size:0.63rem;text-transform:uppercase;color:#6b7280;font-weight:700;letter-spacing:0.1em;margin-bottom:0.3rem;">Capítulo</div>
+        <button id="dl-cap-btn" class="tv-btn" style="background:rgba(255,255,255,0.08);color:#fff;width:100%;justify-content:space-between;padding:0.75rem 1rem;"><span>${capTxt}</span><i class="fas fa-chevron-right" style="font-size:0.62rem;opacity:0.55;"></i></button></div>
+      </div>`;
+      document.getElementById('dl-temp-btn').onclick=()=>{
+        const opts=temps.map(t=>({value:t,label:t.toString().startsWith('T')?'Temporada '+t.slice(1):t}));
+        openPicker('Temporada',opts,dlTempSel,(val)=>{dlTempSel=val;dlCapSel=null;renderDL();setTimeout(()=>setZone('modal-dl',0),80);});
+      };
+      document.getElementById('dl-cap-btn').onclick=()=>{
+        const caps2=getCaps();const opts=caps2.map(c=>({value:c.url,label:c.capitulo.toString().startsWith('C')?'Capítulo '+c.capitulo.slice(1):c.capitulo}));
+        openPicker('Capítulo',opts,dlCapSel,(val)=>{dlCapSel=val;renderDL();setTimeout(()=>setZone('modal-dl',0),80);});
+      };
+      document.getElementById('dl-confirm').onclick=()=>{if(dlCapSel){window.open(dlCapSel,'_blank');closeDL();}};
+    };
+    renderDL();
+  }
+  setTimeout(()=>setZone('modal-dl',0),80);
+}
+function closeDL(){document.getElementById('dl-panel').classList.remove('show');document.getElementById('m-wrapper').style.display='grid';setTimeout(()=>setZone('modal-info',0),60);}
+document.getElementById('dl-close-btn').onclick=closeDL;
+
+// ══════════ VIDEO ══════════
+function detectAndBuildUrl(url){
+  if(!url||typeof url!=='string')return{url:'',type:'unknown'};
+  url=url.trim();
+  // YouTube
+  const yt=url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
+  if(yt)return{url:`https://www.youtube.com/embed/${yt[1]}?autoplay=1&controls=1&rel=0&modestbranding=1&enablejsapi=1`,type:'youtube',id:yt[1]};
+  // Dailymotion
+  const dm=url.match(/dailymotion\.com\/(?:video\/|embed\/video\/)([a-zA-Z0-9]+)/);
+  if(dm)return{url:`https://www.dailymotion.com/embed/video/${dm[1]}?autoplay=1&controls=1&sharing-enable=0`,type:'dailymotion',id:dm[1]};
+  // Vimeo
+  const vm=url.match(/vimeo\.com\/(\d+)/);
+  if(vm)return{url:`https://player.vimeo.com/video/${vm[1]}?autoplay=1&controls=1`,type:'vimeo',id:vm[1]};
+  // Directo — añadir autoplay
+  const sep=url.includes('?')?'&':'?';
+  return{url:url+(url.includes('autoplay')?'':sep+'autoplay=1'),type:'direct'};
+}
+
+function playVideo(url,titulo,isTrailer=false){
+  hideModal();
+  currentVidUrl=url||'';
+  const vp=document.getElementById('video-panel'),fr=document.getElementById('vid-frame'),ld=document.getElementById('vid-loader');
+  vp.classList.add('show');
+  fr.style.display='none';
+  ld.style.display='flex';
+  ld.innerHTML='<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size:2.5rem;margin-bottom:1rem;display:block;color:var(--acc);"></i><span style="color:#9ca3af;font-size:0.9rem;">Cargando reproductor...</span></div>';
+  document.getElementById('vid-title-el').innerText=titulo+(isTrailer?' (Tráiler)':'');
+  
+  vidPlaying=true;
+
+  vidSettingsOpen=false;
+  document.getElementById('vid-settings').classList.remove('show');
+  // Reset ajustes
+  ytQuality='default';ytSubs='0';ytSpeed='1';dmQuality='720';vmSpeed='1';
+  if(currentVidUrl){
+    const{url:builtUrl,type}=detectAndBuildUrl(currentVidUrl);
+    currentVidType=type;
+    fr.src=builtUrl;
+    fr.style.display='block';
+    // Ocultar loader cuando carga (con timeout fallback)
+    fr.onload=()=>{ld.style.display='none';setTimeout(()=>fr.focus(),300);};
+    setTimeout(()=>{ld.style.display='none';},3000);
+  }else{
+    ld.innerHTML='<div style="text-align:center;color:#6b7280;"><i class="fas fa-ban" style="font-size:2rem;margin-bottom:0.5rem;display:block;"></i>No disponible.</div>';
+  }
+  document.getElementById('vid-controls').classList.remove('hidden-ctrl');
+  setTimeout(()=>setZone('video',0),100);
+}
+
+
+function showFeedback(icon){
+  const fb=document.getElementById('vid-feedback');
+  if(!fb)return;
+  fb.innerHTML=icon;
+  fb.classList.remove('pop');
+  void fb.offsetWidth;
+  fb.classList.add('pop');
+  clearTimeout(fb._t);
+  fb._t=setTimeout(()=>fb.classList.remove('pop'),600);
+}
+
+function toggleFullscreen(){
+  const vp=document.getElementById('video-panel');
+  if(!document.fullscreenElement){
+    vp.requestFullscreen&&vp.requestFullscreen();
+    showFeedback('⛶');
+  } else {
+    document.exitFullscreen&&document.exitFullscreen();
+  }
+}
+
+function simClick(zone){
+  // Simula un clic en la zona indicada del iframe (izquierda, centro, derecha)
+  const fr=document.getElementById('vid-frame');
+  if(!fr)return;
+  const rect=fr.getBoundingClientRect();
+  let x;
+  if(zone==='left') x=rect.left+rect.width*0.15;
+  else if(zone==='right') x=rect.left+rect.width*0.85;
+  else x=rect.left+rect.width*0.5;
+  const y=rect.top+rect.height*0.5;
+  // Foco al iframe primero
+  fr.focus();
+}
+
+function showVidControls(){
+  document.getElementById('vid-controls').classList.remove('hidden-ctrl');
+  clearTimeout(vidCtrlTimer);
+  vidCtrlTimer=setTimeout(()=>{if(!vidSettingsOpen)document.getElementById('vid-controls').classList.add('hidden-ctrl');},4000);
+}
+
+
+// ══ AJUSTES DEL REPRODUCTOR (según tipo detectado) ══
+
+function toggleVidSettings(){
+  vidSettingsOpen=!vidSettingsOpen;
+  const panel=document.getElementById('vid-settings');
+  if(vidSettingsOpen){
+    buildVidSettings();
+    panel.classList.add('show');
+    showVidControls();
+    setTimeout(()=>setZone('vid-settings',0),80);
+  }else{
+    panel.classList.remove('show');
+    setTimeout(()=>setZone('video',1),60);
+  }
+}
+
+function buildVidSettings(){
+  const panel=document.getElementById('vid-settings');
+  const title=document.getElementById('vid-settings-title');
+  [...panel.querySelectorAll('.vsetting-item')].forEach(e=>e.remove());
+
+  if(currentVidType==='youtube'){
+    title.innerHTML='Ajustes · <span style="color:var(--acc);">YouTube</span>';
+    addVidSettingRow(panel,'fa-film','Calidad',
+      ['default','hd1080','hd720','large','medium','small'],
+      ['Auto','1080p','720p','480p','360p','240p'],
+      ytQuality,
+      (val)=>{ytQuality=val;reloadWithParams();}
+    );
+    addVidSettingRow(panel,'fa-tachometer-alt','Velocidad',
+      ['0.25','0.5','0.75','1','1.25','1.5','1.75','2'],
+      ['0.25×','0.5×','0.75×','1×','1.25×','1.5×','1.75×','2×'],
+      ytSpeed,
+      (val)=>{ytSpeed=val;sendMsg({event:'command',func:'setPlaybackRate',args:[parseFloat(val)]});}
+    );
+    addVidSettingRow(panel,'fa-closed-captioning','Subtítulos',
+      ['0','1'],['Off','On'],
+      ytSubs,
+      (val)=>{ytSubs=val;reloadWithParams();}
+    );
+  }else if(currentVidType==='dailymotion'){
+    title.innerHTML='Ajustes · <span style="color:#0066DC;">Dailymotion</span>';
+    addVidSettingRow(panel,'fa-film','Calidad',
+      ['2160','1080','720','480','380','240'],
+      ['4K','1080p','720p','480p','380p','240p'],
+      dmQuality,
+      (val)=>{dmQuality=val;reloadWithParams();}
+    );
+    addVidSettingRow(panel,'fa-closed-captioning','Subtítulos',
+      ['0','1'],['Off','On'],
+      dmSubs,
+      (val)=>{dmSubs=val;reloadWithParams();}
+    );
+  }else if(currentVidType==='vimeo'){
+    title.innerHTML='Ajustes · <span style="color:#1ab7ea;">Vimeo</span>';
+    addVidSettingRow(panel,'fa-tachometer-alt','Velocidad',
+      ['0.5','0.75','1','1.25','1.5','2'],
+      ['0.5×','0.75×','1×','1.25×','1.5×','2×'],
+      vmSpeed,
+      (val)=>{vmSpeed=val;sendMsg({method:'setPlaybackRate',value:parseFloat(val)});}
+    );
+  }else{
+    // Reproductor desconocido — opciones genéricas via postMessage
+    title.innerHTML='Ajustes · <span style="color:#6b7280;">Reproductor</span>';
+    const info=document.createElement('div');
+    info.style.cssText='padding:0.7rem 0.75rem;font-size:0.8rem;color:#9ca3af;line-height:1.5;border-radius:8px;background:rgba(255,255,255,0.03);';
+    info.innerText='Los ajustes (calidad, audio, subs) están disponibles dentro del reproductor. Usa el icono ⚙ que aparece en el vídeo al pasar el cursor.';
+    panel.appendChild(info);
+  }
+  // Siempre: abrir en nueva pestaña
+  const sep=document.createElement('div');sep.style.cssText='border-top:1px solid rgba(255,255,255,0.06);margin:0.3rem 0;';panel.appendChild(sep);
+  addVidActionRow(panel,'fa-external-link-alt','Abrir en nueva pestaña',()=>{if(currentVidUrl)window.open(currentVidUrl,'_blank');});
+}
+
+function addVidSettingRow(panel,icon,label,values,labels,currentVal,onChange){
+  const d=document.createElement('div');d.className='vsetting-item';
+  const curLabel=labels[values.indexOf(currentVal)]||currentVal;
+  d.innerHTML=`<span><i class="fas ${icon}" style="width:1.1rem;opacity:0.65;margin-right:0.35rem;"></i>${label}</span><span class="vs-val">${curLabel}</span>`;
+  d.onclick=()=>{
+    const opts=values.map((v,i)=>({value:v,label:labels[i]}));
+    const cv=values[labels.indexOf(d.querySelector('.vs-val').innerText)]||values[0];
+    openPicker(label,opts,cv,(val)=>{
+      d.querySelector('.vs-val').innerText=labels[values.indexOf(val)];
+      onChange(val);
+      setTimeout(()=>setZone('vid-settings',0),60);
+    });
+  };
+  panel.appendChild(d);
+}
+function addVidActionRow(panel,icon,label,onClick){
+  const d=document.createElement('div');d.className='vsetting-item';
+  d.innerHTML=`<span><i class="fas ${icon}" style="width:1.1rem;opacity:0.65;margin-right:0.35rem;"></i>${label}</span><span class="vs-val"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></span>`;
+  d.onclick=onClick;panel.appendChild(d);
+}
+
+function sendMsg(obj){
+  try{document.getElementById('vid-frame').contentWindow.postMessage(JSON.stringify(obj),'*');}catch(_){}
+}
+function reloadWithParams(){
+  const fr=document.getElementById('vid-frame');
+  const{url:base,type,id}=detectAndBuildUrl(currentVidUrl);
+  if(type==='youtube'){fr.src=base+`&vq=${ytQuality}&cc_load_policy=${ytSubs}`;}
+  else if(type==='dailymotion'){fr.src=`https://www.dailymotion.com/embed/video/${id}?autoplay=1&controls=1&quality=${dmQuality}&subtitles=${dmSubs}`;}
+  else fr.src=base;
+  fr.onload=null;
+}
+
+function closeVideo(){
+  document.getElementById('video-panel').classList.remove('show');
+  document.getElementById('vid-frame').src='';
+  vidSettingsOpen=false;
+  document.getElementById('vid-settings').classList.remove('show');
+  clearTimeout(vidCtrlTimer);
+  if(itemIdx>=0){
+    showModal();
+    const lista=seccion==='proximas'?proximas:filtrados;
+    const s=lista[itemIdx];
+    if(s){
+      setTimeout(()=>{
+        showWatch(s);
+        setTimeout(()=>setZone('modal-watch',savedWatchZIdx),80);
+      },60);
+    } else {
+      setTimeout(()=>setZone('modal-info',0),80);
+    }
+  } else {
+    setTimeout(()=>setZone('grid',0),80);
+  }
+}
+
+// ══════════ KEYBOARD ══════════
+document.addEventListener('keydown',e=>{
+  const key=e.key;
+  const pickerOpen=document.getElementById('picker-overlay').classList.contains('show');
+  const modalOpen=document.getElementById('modal').classList.contains('show');
+  const videoOpen=document.getElementById('video-panel').classList.contains('show');
+
+  // PICKER
+  if(pickerOpen){
+    e.preventDefault();
+    const items=getItems('picker');
+    if(key==='ArrowDown'){applyFocus('picker',Math.min(zIdx+1,items.length-1));return;}
+    if(key==='ArrowUp'){applyFocus('picker',Math.max(zIdx-1,0));return;}
+    if(key==='Enter'||key===' '){items[zIdx]?.click();return;}
+    if(key==='Escape'||key==='Backspace'||key==='GoBack'){closePicker();return;}
+    return;
+  }
+
+  // VIDEO
+  if(videoOpen){
+    // Botón Atrás → volver al modal, nunca salir de la app
+    if(key==='Escape'||key==='Backspace'||key==='GoBack'){
+      e.preventDefault();
+      if(vidSettingsOpen){toggleVidSettings();return;}
+      closeVideo();return;
+    }
+
+    // Botón ajustes del mando
+    if(['Settings','MediaSettings','ContextMenu','F9','ColorF2Green','Green','Info'].includes(key)){
+      e.preventDefault();toggleVidSettings();return;
+    }
+
+    // Panel de ajustes abierto → navegar con flechas dentro de él
+    if(vidSettingsOpen){
+      e.preventDefault();
+      const items=getItems('vid-settings');
+      if(key==='ArrowDown')applyFocus('vid-settings',Math.min(zIdx+1,items.length-1));
+      else if(key==='ArrowUp')applyFocus('vid-settings',Math.max(zIdx-1,0));
+      else if(key==='Enter'||key===' ')items[zIdx]?.click();
+      else if(key==='ArrowLeft'){document.getElementById('vid-settings').classList.remove('show');vidSettingsOpen=false;setTimeout(()=>setZone('video',1),60);}
+      return;
+    }
+
+    // Flechas → seek / volumen con feedback visual
+    if(key==='ArrowLeft'||key==='ArrowRight'){
+      e.preventDefault();
+      showVidControls();
+      if(key==='ArrowLeft'){
+        showFeedback('⏪');
+        // Intentar seek vía postMessage (funciona en reproductores compatibles)
+        try{
+          if(currentVidType==='youtube')sendMsg({event:'command',func:'seekBy',args:[-10]});
+          else if(currentVidType==='vimeo')sendMsg({method:'seekBy',value:-10});
+        }catch(_){}
+        // Simular tecla izquierda dentro del iframe como fallback
+        document.getElementById('vid-frame').focus();
+        document.getElementById('vid-frame').contentWindow?.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowLeft',keyCode:37,bubbles:true}));
+      } else {
+        showFeedback('⏩');
+        try{
+          if(currentVidType==='youtube')sendMsg({event:'command',func:'seekBy',args:[10]});
+          else if(currentVidType==='vimeo')sendMsg({method:'seekBy',value:10});
+        }catch(_){}
+        document.getElementById('vid-frame').focus();
+        document.getElementById('vid-frame').contentWindow?.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',keyCode:39,bubbles:true}));
+      }
+      return;
+    }
+    if(key==='ArrowUp'||key==='ArrowDown'){
+      e.preventDefault();
+      showVidControls();
+      if(key==='ArrowUp'){
+        showFeedback('🔊');
+        try{if(currentVidType==='youtube')sendMsg({event:'command',func:'setVolume',args:[100]});}catch(_){}
+        document.getElementById('vid-frame').focus();
+      } else {
+        showFeedback('🔉');
+        try{if(currentVidType==='youtube')sendMsg({event:'command',func:'setVolume',args:[50]});}catch(_){}
+        document.getElementById('vid-frame').focus();
+      }
+      return;
+    }
+
+    // Enter / OK → play/pause + foco al iframe
+    if(key==='Enter'||key===' '){
+      e.preventDefault();
+      vidPlaying=!vidPlaying;
+      showFeedback(vidPlaying?'▶':'⏸');
+      showVidControls();
+      try{
+        if(currentVidType==='youtube'){sendMsg({event:'command',func:vidPlaying?'playVideo':'pauseVideo',args:[]});}
+        else if(currentVidType==='dailymotion'){sendMsg({command:vidPlaying?'play':'pause'});}
+        else if(currentVidType==='vimeo'){sendMsg({method:vidPlaying?'play':'pause'});}
+      }catch(_){}
+      // Foco al iframe para que el reproductor reciba el evento
+      document.getElementById('vid-frame').focus();
+      return;
+    }
+
+    // F o botón verde del mando → fullscreen
+    if(key==='f'||key==='F'||key==='MediaPlay'||key==='ColorF0Red'||key==='Green'||key==='ColorF2Green'){
+      e.preventDefault();
+      toggleFullscreen();
+      return;
+    }
+
+    return;
+  }
+
+  // MODAL
+  if(modalOpen){
+    if(key==='Escape'||key==='Backspace'||key==='GoBack'){e.preventDefault();if(zone==='modal-watch'){closeWatch();return;}if(zone==='modal-dl'){closeDL();return;}closeModal();return;}
+    const items=getItems(zone);
+    if(key==='ArrowDown'){e.preventDefault();applyFocus(zone,Math.min(zIdx+1,items.length-1));return;}
+    if(key==='ArrowUp'){e.preventDefault();applyFocus(zone,Math.max(zIdx-1,0));return;}
+    if(zone==='modal-info'){
+      if(key==='ArrowRight'){e.preventDefault();if(itemIdx!==-1){esProxNav=false;openModal(itemIdx+1);}return;}
+      if(key==='ArrowLeft'){e.preventDefault();if(itemIdx!==-1){esProxNav=false;openModal(itemIdx-1);}return;}
+    }
+    if(key==='Enter'||key===' '){e.preventDefault();items[zIdx]?.click();return;}
+    return;
+  }
+
+  // MAIN
+  if(key==='Escape'||key==='Backspace'||key==='GoBack'){e.preventDefault();return;}
+  const items=getItems(zone);
+  if(zone==='top'){
+    if(key==='ArrowDown'){e.preventDefault();setZone('filter',0);return;}
+    if(key==='Enter'||key===' '){e.preventDefault();openSectionPicker();return;}
+    return;
+  }
+  if(zone==='filter'){
+    if(key==='ArrowRight'&&zIdx<items.length-1){e.preventDefault();applyFocus('filter',zIdx+1);return;}
+    if(key==='ArrowLeft'&&zIdx>0){e.preventDefault();applyFocus('filter',zIdx-1);return;}
+    if(key==='ArrowUp'){e.preventDefault();setZone('top',0);return;}
+    if(key==='ArrowDown'){e.preventDefault();setZone('grid',0);return;}
+    if(key==='Enter'||key===' '){e.preventDefault();zIdx===0?openEstadoPicker():openPlatPicker();return;}
+    return;
+  }
+  if(zone==='grid'){
+    const cards=[...document.querySelectorAll('.pcard')];if(!cards.length)return;
+    const cols=Math.max(1,Math.round(document.getElementById('grid').offsetWidth/(cards[0]?.offsetWidth||155)));
+    if(key==='ArrowRight'){e.preventDefault();applyFocus('grid',Math.min(zIdx+1,cards.length-1));return;}
+    if(key==='ArrowLeft'){e.preventDefault();applyFocus('grid',Math.max(zIdx-1,0));return;}
+    if(key==='ArrowDown'){e.preventDefault();applyFocus('grid',Math.min(zIdx+cols,cards.length-1));return;}
+    if(key==='ArrowUp'){e.preventDefault();if(zIdx<cols)setZone('filter',0);else applyFocus('grid',zIdx-cols);return;}
+    if(key==='Enter'||key===' '){e.preventDefault();cards[zIdx]?.click();return;}
+    return;
+  }
+  if(zone==='promo'){
+    if(key==='Enter'||key===' '){e.preventDefault();onPromoClick();return;}
+    if(key==='ArrowDown'){e.preventDefault();setZone('grid',0);return;}
+    return;
+  }
+});
+
+init();
+</script>
+
+</body>
+</html>

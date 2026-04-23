@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <title>Selecciona tu experiencia</title>
+    <style>
+        /* --- ESTILO BASE Y FONDO --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Montserrat', -apple-system, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Capa de mezcla de color (Rojo Carmesí) */
+        body:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: hard-light;
+            background: linear-gradient(45deg, #600000, #b41414);
+            pointer-events: none;
+        }
+
+        /* Hemos eliminado el body:after que contenía el texto */
+
+        canvas#mitosys {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* --- INTERFAZ DE USUARIO --- */
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .selection-box {
+            display: flex;
+            gap: 40px;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .option {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 130px;
+        }
+
+        .option:hover {
+            transform: translateY(-8px);
+            background: rgba(180, 20, 20, 0.1);
+            border-color: rgba(230, 26, 26, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .option svg {
+            width: 45px;
+            height: 45px;
+            fill: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            transition: fill 0.4s ease;
+        }
+
+        .option:hover svg {
+            fill: #e61a1a;
+        }
+
+        .option p {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* --- LOADER --- */
+        .loader-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .loader {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid #e61a1a;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+        .visible { display: flex !important; opacity: 1 !important; }
+        
+        .loading-text {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        @media (max-width: 575px) {
+            .selection-box { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="mitosys"></canvas>
+
+    <div class="container">
+        <div id="selection-box" class="selection-box">
+            <div class="option" onclick="selectExperience('desktop')">
+                <svg viewBox="0 0 24 24"><path d="M20,18H4V6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H9V22H15V20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg>
+                <p>Escritorio</p>
+            </div>
+            <div class="option" onclick="selectExperience('mobile')">
+                <svg viewBox="0 0 24 24"><path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.1 5.9,23 7,23H17C18.1,23 19,22.1 19,21V3C19,1.89 18.1,1 17,1Z" /></svg>
+                <p>Móvil</p>
+            </div>
+        </div>
+
+        <div id="loader-content" class="loader-content">
+            <div class="loader"></div>
+            <p class="loading-text">Preparando experiencia</p>
+        </div>
+    </div>
+
+    <script>
+        let canvas = document.getElementById('mitosys'),
+            ctx = canvas.getContext('2d'),
+            winW = canvas.width = window.innerWidth,
+            winH = canvas.height = window.innerHeight,
+            Balls = [],
+            maxBalls = 8;
+
+        let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+        class Ball {
+            constructor() {
+                this.r = 150 + Math.random() * 150;
+                this.pos = { x: Math.random() * winW, y: Math.random() * winH };
+                this.direction = { x: -0.5 + Math.random(), y: -0.5 + Math.random() };
+                this.activePos = { x: this.pos.x, y: this.pos.y };
+            }
+
+            draw() {
+                let gradient = ctx.createRadialGradient(
+                    this.activePos.x - this.r/3, 
+                    this.activePos.y - this.r/7, 
+                    0, 
+                    this.activePos.x, 
+                    this.activePos.y, 
+                    this.r
+                );
+                gradient.addColorStop(0, '#fff');
+                gradient.addColorStop(0.95, '#000');
+                
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.activePos.x, this.activePos.y, this.r, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+            
+            update() {
+                this.activePos.x += this.direction.x;
+                this.activePos.y += this.direction.y;
+                
+                if (this.activePos.x < 0 || this.activePos.x > winW) this.direction.x *= -1;
+                if (this.activePos.y < 0 || this.activePos.y > winH) this.direction.y *= -1;
+
+                let dx = mouse.x - this.activePos.x;
+                let dy = mouse.y - this.activePos.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 300) {
+                    this.activePos.x -= dx * 0.01;
+                    this.activePos.y -= dy * 0.01;
+                }
+            }
+        }
+
+        const init = () => {
+            winW = canvas.width = window.innerWidth;
+            winH = canvas.height = window.innerHeight;
+            ctx.globalCompositeOperation = "lighten";
+            Balls = [];
+            for (let i = 0; i < maxBalls; i++) {
+                Balls.push(new Ball());
+            }
+        }
+
+        const animate = () => {
+            ctx.clearRect(0, 0, winW, winH);
+            Balls.forEach(ball => {
+                ball.update();
+                ball.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        const getMouse = (e) => {
+            mouse.x = e.clientX || (e.touches ? e.touches[0].pageX : window.innerWidth/2);
+            mouse.y = e.clientY || (e.touches ? e.touches[0].pageY : window.innerHeight/2);
+        };
+
+        ['mousemove', 'touchstart', 'touchmove'].forEach(e => {
+            window.addEventListener(e, getMouse);
+        });
+
+        window.addEventListener('resize', init);
+
+        function selectExperience(type) {
+            const selection = document.getElementById('selection-box');
+            const loader = document.getElementById('loader-content');
+            
+            selection.style.opacity = '0';
+            selection.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                selection.classList.add('hidden');
+                loader.classList.add('visible');
+            }, 600);
+
+            setTimeout(() => {
+                window.location.replace(type === 'mobile' ? "mobile.html" : "desktop.html");
+            }, 2200);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+node_modules/ 
+dist/ 
+build/ 
+out/ 
+*.exe 
+*.msi 
+*.dmg 
+*.zip 
+*.tar.gz 
+*.7z 
+*.log 
+.DS_Store 
+Thumbs.db 
+desktop.ini 
+.vscode/ 
+.idea/ 
+.env

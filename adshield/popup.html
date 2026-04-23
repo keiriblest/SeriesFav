@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdShield</title>
+<style>
+  :root {
+    --bg: #171614;
+    --surface: #1c1b19;
+    --surface2: #242321;
+    --border: #2e2d2b;
+    --text: #cdccca;
+    --muted: #797876;
+    --faint: #4a4947;
+    --accent: #4f98a3;
+    --accent-dim: #1f3e42;
+    --red: #e05252;
+    --red-dim: #3a1f1f;
+    --green: #6daa45;
+    --green-dim: #1e3317;
+    --radius: 8px;
+    --radius-sm: 5px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    background: var(--bg);
+    color: var(--text);
+    padding: 0;
+    overflow: hidden;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .logo {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+  }
+  .title { font-size: 15px; font-weight: 600; color: var(--text); }
+  .subtitle { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green);
+    margin-left: auto;
+    flex-shrink: 0;
+    box-shadow: 0 0 6px var(--green);
+  }
+
+  .counter-section {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .counter-icon { font-size: 20px; }
+  .counter-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .counter-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .section {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .shield-list { display: flex; flex-direction: column; gap: 4px; }
+  .shield-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+  }
+  .shield-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+  .shield-dot.warn { background: #e8af34; }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-label { font-size: 12px; color: var(--text); }
+  .toggle {
+    position: relative;
+    width: 36px; height: 20px;
+    cursor: pointer;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-track {
+    position: absolute; inset: 0;
+    background: var(--faint);
+    border-radius: 20px;
+    transition: background 200ms;
+  }
+  .toggle input:checked + .toggle-track { background: var(--accent); }
+  .toggle-thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 14px; height: 14px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 200ms;
+    pointer-events: none;
+  }
+  .toggle input:checked ~ .toggle-thumb { transform: translateX(16px); }
+
+  footer {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-text { font-size: 11px; color: var(--faint); }
+  .reset-btn {
+    font-size: 11px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: background 150ms, color 150ms;
+  }
+  .reset-btn:hover { background: var(--surface2); color: var(--text); }
+</style>
+</head>
+<body>
+<header>
+  <svg class="logo" viewBox="0 0 28 28" fill="none" aria-label="AdShield logo">
+    <path d="M14 2L4 6.5V13c0 5.25 4.2 10.15 10 11.5C19.8 23.15 24 18.25 24 13V6.5L14 2Z" fill="#4f98a3" opacity="0.2"/>
+    <path d="M14 2L4 6.5V13c0 5.25 4.2 10.15 10 11.5C19.8 23.15 24 18.25 24 13V6.5L14 2Z" stroke="#4f98a3" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M10 13.5l2.5 2.5 5.5-5.5" stroke="#4f98a3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div>
+    <div class="title">AdShield</div>
+    <div class="subtitle">Anti Popup &amp; Redirect</div>
+  </div>
+  <div class="status-dot" title="Activo"></div>
+</header>
+
+<div class="counter-section">
+  <div>
+    <div class="counter-value" id="count">0</div>
+    <div class="counter-label">elementos bloqueados esta sesión</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Capas de protección</div>
+  <div class="shield-list">
+    <div class="shield-item"><span class="shield-dot"></span>Bloqueo de red (66 dominios)</div>
+    <div class="shield-item"><span class="shield-dot"></span>Interceptor window.open()</div>
+    <div class="shield-item"><span class="shield-dot"></span>Anti-redirección en iframes</div>
+    <div class="shield-item"><span class="shield-dot"></span>Eliminador de overlays trampa</div>
+    <div class="shield-item"><span class="shield-dot warn"></span>Protección de foco (blur)</div>
+  </div>
+</div>
+
+<div class="toggle-row">
+  <span class="toggle-label">Extensión activa</span>
+  <label class="toggle">
+    <input type="checkbox" id="toggleEnabled" checked>
+    <span class="toggle-track"></span>
+    <span class="toggle-thumb"></span>
+  </label>
+</div>
+
+<footer>
+  <span class="footer-text">AdShield v1.0</span>
+  <button class="reset-btn" id="resetBtn">Resetear contador</button>
+</footer>
+
+<script src="popup.js"></script>
+</body>
+</html>
